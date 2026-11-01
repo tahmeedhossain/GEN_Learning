@@ -1,0 +1,419 @@
+# University Physics Volume 2, chapters 5-10 (electrostatics, potential, capacitance, circuits)
+
+§ 2 5.0
+P Mechanics used two kinds of force: contact forces such as friction and tension, and [[ngrav|gravitation]], which acts across empty space between masses. This chapter begins the study of electricity and magnetism with another force that acts at a distance, the force between electric charges. It is far stronger than gravity, and between atoms it is the origin of most contact [[F|forces]]. The chapter introduces charge and its conservation, separates conductors from insulators, states the force law between point charges, and then replaces that force by an electric field, defined in the same way as the [[gfield|gravitational field]].
+
+§ 2 5.1
+P Amber rubbed with fur attracts bits of straw and paper. Around 1600 William Gilbert called substances that behave in this way electrics, from the Greek word for amber, and such effects of charge at rest are now called *static electricity*. Rubbing shows that [[q|electric charge]] comes in two kinds. Two glass rods rubbed with silk repel each other, and so do two amber rods rubbed with fur, but a rubbed glass rod attracts a rubbed amber rod. Like charges repel and unlike charges attract: these are *electrostatic repulsion* and *electrostatic attraction*. Following Benjamin Franklin, the charge of rubbed glass is called positive and that of rubbed amber negative. Charges add with their signs, and a body whose charges sum to zero is neutral. The SI unit of charge is the *coulomb* (C), the charge carried in one second by a current of one ampere.
+N O q | Electric charge | q | prim
+d A property of matter that comes in two signs: like charges repel, unlike attract. Additive; SI unit the coulomb.
+g static electricity; electric charge; coulomb; electrostatic repulsion; electrostatic attraction
+X electric force :: = coul
+P Rubbing does not create charge; it moves it. When glass is rubbed with silk, electrons pass from the glass to the silk, and the glass is left with a positive charge equal in size to the negative charge gained by the silk. This is an instance of the [[qcons|law of conservation of charge]]: the algebraic sum of the [[q|charges]] in an isolated system never changes. Charge can move from one body to another, but no process has been found that changes the total, including reactions of elementary particles. When a gamma ray creates an electron and a positron, the two carry equal and opposite charges, and the total stays zero. The law also holds locally: charge cannot vanish at one point and reappear at another without flowing through the space between.
+N M qcons | Conservation of charge | Σ q = const | ax
+d The total charge of an isolated system never changes; charging a body only moves charge from one body to another.
+p charge additive with sign; conserved in every process observed; local form is the continuity equation
+g law of conservation of charge
+R[law] qcons <- q : Σ q_i constant in an isolated system | Charge moves, total stays | Rubbing transfers electrons, it does not create charge.
+P Ordinary matter carries charge on two kinds of particle. The electron, identified by J. J. Thomson in 1897, has charge −e, and the proton has charge +e, where e = 1.602 × 10⁻¹⁹ C. Scattering experiments analysed by Rutherford in 1911 showed that the positive charge and nearly all the mass of an atom are concentrated in a tiny *nucleus*, with the electrons around it. The nucleus also holds neutrons, which are neutral; James Chadwick discovered them in 1932. These [[atom|charge carriers]] fix the [[q|charge]] of any body: with N_p protons and N_e electrons, q = (N_p − N_e)e. The charges of ordinary bodies are therefore whole multiples of e, and a coulomb is the charge of about 6.24 × 10¹⁸ protons. An atom or molecule with more or fewer electrons than protons is an ion. Charging a solid moves electrons, since its nuclei stay in place.
+N S atom | Charge carriers | e⁻, p⁺, n |
+d Ordinary charge is carried by electrons (−e) and protons (+e); neutrons are neutral. An ion has more or fewer electrons than protons.
+m composition of matter: numbers of electrons, protons, neutrons; net charge (N_p − N_e)e, e = 1.602 × 10⁻¹⁹ C
+g electron; proton; neutron; ion
+R[def] atom <- q : q = (N_p − N_e) e | Charge in units of e | Charges of ordinary bodies are integer multiples of e.
+
+§ 2 5.2
+P Materials differ in how freely charge moves through them. In a metal, each atom gives up one or more of its outer electrons, which then belong to no single atom and move through the whole solid. These *conduction electrons* make the metal a [[cond|conductor]]: charge placed on it spreads over the body, and charge flows through it from one body to another. The positive ions left behind stay fixed in the lattice. Which [[atom|charge carriers]] are free depends on the material. In metals they are electrons; in salt water and in the fluids of the body they are positive and negative ions.
+N S cond | Conductor | free charges |
+d A material in which some electrons (conduction electrons) move freely; charge placed on it spreads out, and nearby charges can induce a separation (charging by induction).
+m bulk with mobile charge density that rearranges in response to fields
+g conduction electron; conductor; charging by induction
+R[def] cond <- atom : outer electrons detached from their atoms | Free electrons | The mobile electrons carry charge through the material.
+P In an [[insul|insulator]] such as glass, rubber or dry wood, the [[atom|electrons]] stay bound to their atoms or molecules, and charge placed on the surface stays where it was put. A nearby charge still acts on an insulator. It shifts each electron cloud slightly relative to its nucleus, or turns molecules whose charges are already separated, so that each molecule becomes a small *dipole*: equal positive and negative charges a short distance apart. This *polarization* leaves a thin layer of opposite charge on the side facing the outside charge. The electric force weakens with distance, so the attraction of the near side outweighs the repulsion of the far side. That is why a charged comb picks up neutral scraps of paper.
+N S insul | Insulator | bound charges |
+d A material whose charges are bound to atoms; a field can only shift them slightly, polarizing the material into small dipoles.
+m bulk with bound charges; response = polarization (displacement of bound charges)
+g insulator; polarization; dipole
+R[def] insul <- atom : electrons bound to their atoms | Bound electrons | Charges move only within each atom or molecule.
+P A conductor can also be charged without contact, by *charging by induction*. Bring a negatively charged rod near a neutral metal sphere on an insulating stand. Conduction electrons in the sphere are repelled to its far side, which leaves the near side positive. Now connect the sphere to the ground with a wire, and electrons flow away into the Earth. Break the ground connection first, then remove the rod. The sphere keeps a net positive charge, which spreads over its surface, and the rod has lost none of its own charge. Every step only moves charge, as [[qcons|charge conservation]] requires, and the free electrons of the [[cond|conductor]] make the separation possible.
+
+§ 2 5.3
+P In 1785 Charles-Augustin de Coulomb measured the force between small charged spheres with a torsion balance. The result is [[coul|Coulomb's law]]: two point [[q|charges]] q₁ and q₂ a distance r apart exert forces on each other along the line joining them, proportional to the product q₁q₂ and inversely proportional to r². Here r is the magnitude of the difference of the two [[r|position vectors]], and the force exerted by q₁ on q₂ is F⃗₁₂ = (1/4πε₀)(q₁q₂/r²) r̂₁₂, where r̂₁₂ points from q₁ toward q₂. A positive product q₁q₂ gives repulsion, a negative one attraction. The constant contains the [[eps0|permittivity of vacuum]], ε₀ = 8.854 × 10⁻¹² C²/(N·m²), and k = 1/(4πε₀) = 8.99 × 10⁹ N·m²/C². This *electrostatic force* is one more [[F|force]] to enter Newton's second law. It is exact for source charges at rest, the subject of *electrostatics*; moving charges also exert magnetic forces.
+Q F⃗₁₂ = (1/4πε₀)(q₁q₂/r²) r̂₁₂
+N M coul | Coulomb's law | F = q₁q₂/(4πε₀ r²) | ax
+d Two point charges exert forces on each other along the line joining them, proportional to the product of the charges and inversely to the square of the distance.
+p inverse square; central; sign of q₁q₂ gives repulsion or attraction; one law of electrostatics
+g Coulomb force; electrostatics; electrostatic force; Coulomb’s law
+N O eps0 | Permittivity of vacuum | ε₀ | prim
+d Constant in Coulomb's law, 8.85 × 10⁻¹² C²/(N·m²); k = 1/(4πε₀) ≈ 8.99 × 10⁹ N·m²/C².
+g permittivity of vacuum
+R[law] F <- coul, q, eps0, r : F⃗₁₂ = (1/4πε₀) q₁q₂/r² r̂₁₂ | Force between charges | Another force law, entered in the second law.
+P [[coul|Coulomb's law]] has the same mathematical form as [[ngrav|Newton's law of gravitation]]: both forces are central and fall off as the inverse square of the distance. The sources differ. Mass has one sign and gravity always attracts, while charge has two signs, so electric forces can repel as well as attract, and they can cancel. The electric force is also far stronger. For two protons, the ratio of the electric repulsion to the gravitational attraction is ke²/(Gmₚ²) = 1.24 × 10³⁶, the same at every separation because both forces vary as 1/r². Gravity nonetheless rules on astronomical scales. Large bodies are almost exactly neutral, so their electric forces cancel, while the gravitational attractions of all their parts add up.
+R[analog] coul <- ngrav : both inverse square and central; charge has two signs, mass one | Same form as gravitation | Coulomb's law has the mathematical form of Newton's law of gravitation.
+P When several charges act on one charge Q, each pair interacts as if the others were absent, and the net force on Q is the [[vadd|vector sum]] of the separate Coulomb forces. This [[esup|principle of superposition]] is an experimental fact; it does not follow from [[coul|Coulomb's law]] for one pair. As an example, put +2.0 μC at x = 0 and −2.0 μC at x = 0.20 m. A charge of +1.0 μC at x = 0.10 m is pushed away from the first and pulled toward the second, so both forces point along +x. Each has magnitude (8.99 × 10⁹ N·m²/C²)(2.0 × 10⁻⁶ C)(1.0 × 10⁻⁶ C)/(0.10 m)² = 1.8 N, and the net force is 3.6 N along +x.
+Q F⃗ = (Q/4πε₀) Σᵢ (qᵢ/rᵢ²) r̂ᵢ
+N M esup | Superposition of electric forces | F⃗ = Σ F⃗_i |
+d The force from several charges is the vector sum of the forces each would exert alone.
+p linear in the source charges; pairwise forces unaffected by other charges; vector addition
+g principle of superposition
+R[law] esup <- coul, vadd : F⃗ = (Q/4πε₀) Σ q_i/r_i² r̂_i | Forces add as vectors | An experimental fact about electric forces.
+P Superposition means that an electrostatic system of point charges is fully described by its [[pts|point-charge configuration]]: a list of the [[q|charges]] q_i and their [[r|position vectors]] r⃗_i. Nothing else is needed to find the force on any one of the charges or, as the next section shows, the field that they produce together. The description fits charges whose sizes are small compared with their separations, such as small charged spheres far apart or ions in a dilute solution. Charge spread over a large body is treated later in the chapter as the limit of very many point charges.
+N S pts | Point-charge configuration | {q_i, r⃗_i} |
+d The simplest electrostatic state: which charges there are and where they sit.
+m N points of ℝ³, each with a charge label q_i
+R[def] pts <- q, r : {(q_i, r⃗_i)} | Charges at positions | Positions as position vectors.
+
+§ 2 5.4
+P The force on a charge Q from a [[pts|point-charge configuration]] is proportional to Q, by [[coul|Coulomb's law]] and [[esup|superposition]]. Dividing by Q leaves a quantity that depends only on the source charges and on the point P where Q sits. This is the [[Efield|electric field]] at P, a sum of Coulomb terms with the constant 1/(4πε₀) of the [[eps0|permittivity of vacuum]]; r_i is the distance from q_i to P, and r̂_i points from q_i toward P. Each positive source charge contributes a field pointing away from it and each negative one a field pointing toward it, both falling off as 1/r². The electric field is a *vector field*, a vector at every point of space, like the gravitational field. A *scalar field*, such as the temperature throughout a room, assigns a number to every point instead.
+Q E⃗(P) = (1/4πε₀) Σᵢ (qᵢ/rᵢ²) r̂ᵢ
+N S Efield | Electric field | E⃗(r⃗) |
+d The field produced by source charges, defined at every point of space; a test charge there feels qE⃗.
+m vector field on ℝ³ (away from point charges)
+g electric field; superposition
+R[thm] Efield <- pts, coul, esup, eps0 : E⃗(P) = (1/4πε₀) Σ q_i/r_i² r̂_i | Superposed Coulomb fields | Removes the test charge from the force law.
+P The [[Eval|field value]] at a point is measured with a small test charge q: the force on it divided by q gives E⃗ = F⃗/q, in newtons per coulomb. The test charge must be small enough not to disturb the source charges. Read the other way, the [[Efield|field]] gives the [[F|force]] on any [[q|charge]] placed at that point, F⃗ = qE⃗, along E⃗ for positive q and opposite to it for negative q. The force depends only on the field where the charge is. A small example shows the scale of electric effects: an electron is held up against its weight by a downward field of only E = mₑg/e = 5.57 × 10⁻¹¹ N/C. Fields in electrical devices are larger by many orders of magnitude, so the weight of electrons and ions can almost always be ignored.
+N O Eval | Field value | E⃗ = F⃗/q |
+d Force per unit test charge at a point; measured with a small test charge.
+R[read] Eval <- Efield : E⃗ at one point | Value of the field | The field evaluated where the test charge sits.
+R[law] F <- Eval, q : F⃗ = qE⃗ | Force from the field | The field acts locally on a charge placed in it.
+
+§ 2 5.5
+P Charge is quantized, but a body of everyday size carries so many elementary charges that its charge can be treated as spread continuously; 1 nC is already the charge of about 6.2 × 10⁹ electrons. A [[chdist|continuous charge distribution]] is described by a density. Charge along a thin wire has a *linear charge density* λ in C/m, charge on a surface a *surface charge density* σ in C/m², and charge through a volume a *volume charge density* ρ in C/m³. A small piece holds charge dq = λ dl, σ dA or ρ dV, and the total [[q|charge]] is the [[integ|integral]] of the density over the line, surface or volume. For uniform densities, Q = λL, σA or ρV.
+Q Q = ∫ λ dl = ∫ σ dA = ∫ ρ dV
+N S chdist | Continuous charge distribution | λ, σ, ρ |
+d Charge spread along a line, over a surface or through a volume, described by a charge density; an infinite straight wire and an infinite plane are idealised cases.
+m density function on a curve (λ), surface (σ) or region (ρ); dq = λ dl, σ dA, ρ dV
+g continuous charge distribution; linear charge density; surface charge density; volume charge density; infinite straight wire; infinite plane
+R[def] chdist <- q, integ : Q = ∫ λ dl = ∫ σ dA = ∫ ρ dV | Densities of charge | Smooth limit of many point charges.
+P To find the [[Efield|electric field]] of such a [[chdist|distribution]], treat each piece dq as a point charge with [[coul|Coulomb's law]] and add the pieces by [[esup|superposition]]; the sum becomes an [[integ|integral]]. Symmetry removes most of the work. For an *infinite straight wire* with uniform λ, the field components along the wire cancel in pairs. Integrating the perpendicular components over the whole wire gives E = 2kλ/r = λ/(2πε₀r), directed radially away from the wire for positive λ. For an *infinite plane* with uniform σ, adding the fields of rings centred on the foot of the perpendicular gives E = σ/(2ε₀), perpendicular to the plane and independent of the distance from it. Real wires and sheets produce these fields at points much closer to them than to their ends or edges.
+Q E⃗(P) = (1/4πε₀) ∫ (dq/r²) r̂
+R[thm] Efield <- chdist, coul, esup, integ : E⃗ = (1/4πε₀) ∫ dq/r² r̂;  wire 2kλ/r, plane σ/2ε₀ | Integrate the superposition | The sum over charges becomes an integral.
+
+§ 2 5.6
+P A field can be shown as arrows drawn at a grid of points, but a clearer picture uses [[flines|field lines]]: curves that are tangent to the [[Efield|electric field]] at every point, with arrows in the direction of E⃗. Field lines start on positive charges and end on negative charges, or run off to infinity. Where the field is not zero it has a single direction, so two lines never cross. The number of lines drawn leaving or entering a charge is chosen proportional to its magnitude. The *field line density*, the number of lines per unit area crossing a small surface perpendicular to them, is then proportional to the field strength: the lines crowd together where the field is strong and spread apart where it is weak.
+N M flines | Field lines | tangent to E⃗ |
+d Curves drawn tangent to the field, starting on positive and ending on negative charges, more crowded where the field is stronger.
+p never cross; line density ∝ |E⃗|; number leaving a charge ∝ q
+g field line; field line density
+R[def] flines <- Efield : dr⃗ × E⃗ = 0 | Integral curves of the field | A picture of the vector field.
+P For a single point charge the lines are radial. The same number of lines crosses every sphere centred on the charge, and the area of a sphere grows as r², so the line density falls as 1/r², in agreement with [[coul|Coulomb's law]]. This match works only because the field is an inverse-square field in three dimensions, and the next chapter turns it into a law. For a positive and a negative charge of equal size, the lines leave the positive charge and curve around into the negative one. For two equal positive charges, every line runs outward, the lines from each charge bend away from the other, and the field is zero at the midpoint between them. On paper, line density is only a rough guide, because a flat drawing shows a slice through lines that fill space.
+
+§ 2 5.7
+P Two charges +q and −q separated by a small displacement d⃗, pointing from the negative to the positive charge, form an electric dipole. Its [[pdip|electric dipole moment]] is p⃗ = qd⃗, measured in C·m; d⃗ is the difference between the [[r|position vectors]] of the two [[q|charges]]. Many molecules are *permanent dipoles*. In water the oxygen atom draws electrons toward itself, and the molecule has a dipole moment of about 6.2 × 10⁻³⁰ C·m. Other atoms and molecules have no dipole moment of their own, but an applied field pushes their electron clouds one way and their nuclei the other, creating an *induced dipole*. For weak fields the induced moment is proportional to the field. At distances large compared with d, the field of a dipole depends on q and d only through p⃗.
+N O pdip | Electric dipole moment | p⃗ = q d⃗ |
+d Charge times separation of a ± charge pair; molecules can have a permanent dipole or one induced by a field.
+g permanent dipole; dipole moment; induced dipole
+R[def] pdip <- q, r : p⃗ = q d⃗ | Charge times separation | Points from − to +.
+P In a uniform [[Eval|field]] E⃗, the forces +qE⃗ and −qE⃗ on the two ends of a dipole are equal and opposite, so the net force is zero. Their [[tau|torque]] about the centre is not zero. The forces act at +d⃗/2 and −d⃗/2, so the torque is (d⃗/2) × qE⃗ + (−d⃗/2) × (−qE⃗) = qd⃗ × E⃗. With the [[pdip|dipole moment]] and the [[cross|vector product]], τ⃗ = p⃗ × E⃗, of magnitude pE sin θ, where θ is the angle between p⃗ and E⃗. The torque turns the dipole toward the direction of the field, its stable orientation. In a field of 1.0 × 10⁶ N/C a water molecule feels a torque of at most 6.2 × 10⁻²⁴ N·m. In a nonuniform field the two forces no longer balance, and an aligned dipole is pulled toward the stronger field.
+Q τ⃗ = p⃗ × E⃗
+R[thm] tau <- pdip, Eval, cross : τ⃗ = p⃗ × E⃗ | Torque on a dipole | A uniform field turns a dipole without net force.
+
+# ---------------------------------------------------------------- Chapter 6
+§ 2 6.0
+P [[coul|Coulomb's law]] and [[esup|superposition]] give the [[Efield|field]] of any [[chdist|charge distribution]], but the integrals are often difficult. This chapter states the same physics in a second form, named after Carl Friedrich Gauss. It relates the field on a closed surface to the charge enclosed by it, through a quantity called flux, which measures how much field passes through a surface and corresponds to counting [[flines|field lines]]. For distributions with enough symmetry, Gauss's law gives the field in a few lines. It also shows that the excess charge of a [[cond|conductor]] with its charges at rest sits on its surface.
+
+§ 2 6.1
+P Water flowing with velocity v⃗ through a wire loop of area A gives a [[Q|volume flow rate]] vA when the loop faces the flow, and vA cos θ when the loop's normal is tilted by θ from v⃗. *Flux* is the general name for such a quantity. A flat surface is described by its *area vector* A⃗ = A n̂, where n̂ is the unit *normal vector* perpendicular to the surface. The [[PhiE|electric flux]] of a uniform [[Efield|field]] through the surface is the [[dot|scalar product]] Φ = E⃗·A⃗ = EA cos θ. For a curved surface or a nonuniform field, the surface is divided into small patches dA⃗ = n̂ dA, each with its own normal, and their contributions are added in an [[integ|integral]]. The unit of electric flux is N·m²/C.
+Q Φ = ∫_S E⃗·n̂ dA = ∫_S E⃗·dA⃗
+N O PhiE | Electric flux | Φ = ∫ E⃗·dA⃗ |
+d The amount of field passing through a surface: field component along the area vector (normal to the surface) times area, summed over the surface.
+g flux; electric flux; area vector
+R[def] PhiE <- Efield, dot, integ : Φ = ∫_S E⃗·n̂ dA | Surface integral | For a uniform field, EA cos θ.
+P A surface has two sides, so the sign of the flux depends on which normal is chosen. For a closed surface the normal is taken to point outward: flux leaving the enclosed volume counts as positive and flux entering it as negative. As an example, a uniform field of 2.0 × 10³ N/C passes through a 0.10 m by 0.20 m rectangle whose normal makes 60° with the field. The flux is (2.0 × 10³ N/C)(0.020 m²)(cos 60°) = 20 N·m²/C. A closed surface in a uniform field has zero net flux, since every field line that enters it also leaves. More generally, the flux counts the [[flines|field lines]] crossing a surface, so a closed surface has a net [[PhiE|flux]] only if lines begin or end inside it.
+
+§ 2 6.2
+P Place a point charge q at the centre of a sphere of radius r. By [[coul|Coulomb's law]], the field on the sphere points radially outward with magnitude q/(4πε₀r²), so the outward [[PhiE|flux]] is E·4πr² = q/ε₀, where ε₀ is the [[eps0|permittivity of vacuum]]. The radius cancels because the field falls as 1/r² while the area grows as r². The same flux passes through any closed surface around the charge. Each small patch receives flux in proportion to the solid angle it subtends at the charge, and any closed surface around the charge subtends the full solid angle 4π. A charge outside the surface contributes zero net flux, since its field lines enter and then leave. By [[esup|superposition]] the fluxes of all the charges add, which gives [[gauss|Gauss's law]].
+Q Φ = ∮_S E⃗·n̂ dA = q_{enc}/ε₀
+N M gauss | Gauss's law | ∮E⃗·dA⃗ = q_enc/ε₀ |
+d The electric flux through any closed (Gaussian) surface equals the enclosed charge divided by ε₀.
+p holds for every closed surface; follows from Coulomb's law and superposition; charge outside contributes zero net flux
+g Gaussian surface
+R[thm] gauss <- PhiE, coul, esup, eps0 : flux of a point charge through any closed surface = q/ε₀ | Inverse square ⇒ flux law | Field lines from a charge cross every enclosing surface; superposition sums the charges.
+P The closed surface in [[gauss|Gauss's law]] is called a *Gaussian surface*. It is imaginary and can be chosen freely: the law holds for every closed surface and every distribution of charge. Only the enclosed charge q_{enc} appears on the right, but the field on the left is the total field of all charges, inside and outside the surface. Since the law fixes only an integral of the field, it does not by itself give the field at each point. For charges at rest it follows from [[coul|Coulomb's law]] and superposition, as shown above. Unlike Coulomb's law, it also holds for moving charges and changing fields, and it is one of the four basic equations of electromagnetism.
+
+§ 2 6.3
+P [[gauss|Gauss's law]] gives the field directly when symmetry fixes the direction of E⃗ and makes its magnitude constant over a suitable Gaussian surface; this is the [[symm|symmetry method]]. A charge distribution has *spherical symmetry* if it looks the same after any rotation about a centre, *cylindrical symmetry* if it is unchanged by rotations about an axis and by shifts along it, and *planar symmetry* if it is unchanged by shifts parallel to a plane. The Gaussian surface is chosen so that each part of it is either perpendicular to E⃗, with E constant there, or parallel to E⃗, with no flux. The flux integral then reduces to E times the area A crossed by the field, and E = q_{enc}/(ε₀A). For a spherical distribution, a concentric sphere of radius r gives E = q_{enc}/(4πε₀r²).
+N M symm | Symmetry method | E constant on the surface |
+d With spherical, cylindrical or planar symmetry the field is constant on a well-chosen Gaussian surface, and Gauss's law gives it directly.
+p spherical E = q/(4πε₀r²); cylindrical E = λ/(2πε₀r); planar E = σ/(2ε₀)
+g spherical symmetry; cylindrical symmetry; planar symmetry
+R[thm] symm <- gauss : Φ = E∮dA = EA = q_enc/ε₀ | Field pulled out of the integral | Symmetry fixes direction and constancy of E⃗.
+P The [[symm|symmetry method]] reproduces the integrals of the previous chapter in a few lines and gives new results for the [[Efield|electric field]]. For a long line of charge λ, a coaxial cylinder of radius r and length L has flux only through its curved side: E·2πrL = λL/ε₀, so E = λ/(2πε₀r). For a plane with charge density σ, a box that straddles the plane with two faces of area A parallel to it gives 2EA = σA/ε₀, so E = σ/(2ε₀). Outside any spherically symmetric distribution of total charge Q, the field is that of a point charge Q at the centre, as in gravitation. Inside a uniformly charged ball of radius R only the charge Qr³/R³ is enclosed, so E = Qr/(4πε₀R³) grows linearly from zero at the centre. Without exact symmetry, [[gauss|Gauss's law]] still holds but no longer yields E by itself.
+R[thm] Efield <- gauss, symm : E = q_enc/(ε₀ A) | Fields of symmetric distributions | A second route to the field.
+
+§ 2 6.4
+P In a [[cond|conductor]], free electrons move whenever a field acts on them. Charges are therefore at rest only if the field inside the material is zero everywhere; this defines a [[condeq|conductor in electrostatic equilibrium]]. Apply [[gauss|Gauss's law]] to a closed surface drawn inside the conductor, just below its surface. The field is zero on it, so the flux is zero and so is the enclosed charge: any excess charge sits on the outer surface. Just outside, the field must be perpendicular to the surface, since a component along the surface would move the surface charges. A small box straddling the surface has flux only through its outer face, so EA = σA/ε₀, and E = σ/ε₀.
+Q E = σ/ε₀,   E⃗ ⟂ surface
+N S condeq | Conductor in electrostatic equilibrium | E = 0 inside |
+d With charges at rest, the field inside a conductor is zero, excess charge sits on the surface, and just outside E = σ/ε₀ perpendicular to the surface.
+m E⃗ = 0 in the bulk; surface charge σ; E⃗ ⟂ surface outside with magnitude σ/ε₀
+R[thm] condeq <- cond, gauss : free charges move until E = 0 inside; Gauss ⇒ no interior charge | Equilibrium of free charges | A nonzero interior field would keep moving charge.
+X free electrons :: = cond
+P The field σ/ε₀ just outside a conductor is twice the field σ/(2ε₀) of an isolated sheet with the same σ, because here all the flux leaves through one face. A neutral [[cond|conductor]] placed in an external field reaches equilibrium by polarization: conduction electrons gather on one side and leave positive charge on the other, until the field of these induced surface charges cancels the external field inside the metal. A cavity inside the metal that contains no charge is free of field as well, so a closed metal box shields its interior from external static fields. The charge on a [[condeq|conductor in equilibrium]] is not spread evenly; the next chapter shows that it gathers where the surface curves most sharply.
+
+# ---------------------------------------------------------------- Chapter 7
+§ 2 7.0
+P The electric force between point charges is central and varies as the inverse square of the distance, like gravity. It is therefore a [[cons|conservative force]], and a system of charges has a [[U|potential energy]], as a system of masses does. This chapter defines electric potential energy and then the potential, the energy per unit charge. The potential is a scalar field, easier to calculate than the [[Efield|electric field]], and the field follows from it by differentiation. Differences of potential, measured in volts, are what batteries supply and meters read. Surfaces of equal potential complete the picture of the field and explain how charge is distributed on [[condeq|conductors in equilibrium]].
+
+§ 2 7.1
+P Move a charge q from a distance r_A to a distance r_B from a fixed charge Q. The [[coul|Coulomb force]] points along the line from Q, so only the radial part of each displacement contributes to the work, and W = kqQ(1/r_A − 1/r_B), whatever the path. The force is therefore [[cons|conservative]], and the system has a [[U|potential energy]] whose change equals minus this work. With the zero at infinite separation, the [[Ue|electric potential energy]] of two point charges is U(r) = qQ/(4πε₀r). The calculation is the same as for gravitation, but the sign of U follows the sign of qQ. For like charges U is positive and decreases as they separate, so released charges fly apart. For unlike charges U is negative, and work must be supplied to pull them apart.
+Q U(r) = qQ/(4πε₀r)
+N O Ue | Electric potential energy | U = kqQ/r |
+d Potential energy of a system of charges; the Coulomb force is conservative, so it exists.
+g electric potential energy
+R[thm] Ue <- coul, U, cons : U(r) = −∫_∞^r F_r dr′ = qQ/(4πε₀ r), with F_r = qQ/(4πε₀ r′²) | Work of the Coulomb force | Same calculation as for gravity, with a sign set by qQ.
+P For several point charges the potential energy is a sum over pairs, U = k Σ q_{i}q_{j}/r_{ij}, with each pair counted once. It equals the work needed to bring the charges together from infinite separation. When only electric forces act, the [[Emech|mechanical energy]] K + U is conserved, as in mechanics. Two protons released from rest 2.00 × 10⁻¹⁵ m apart, a typical distance in a nucleus, start with [[Ue|potential energy]] ke²/r = 1.15 × 10⁻¹³ J. When they are far apart this energy has become kinetic energy, shared equally because their momenta are equal and opposite, so each proton has 5.77 × 10⁻¹⁴ J. Inside a nucleus a stronger attractive force holds the protons together against this repulsion.
+
+§ 2 7.2
+P The [[Ue|potential energy]] of a test charge q placed among fixed source charges is proportional to q. The ratio V = U/q therefore depends only on the sources and on the position of the test charge. It is the [[Vfield|electric potential]], a scalar field: a single number at each point, defined, like any potential energy, only up to an additive constant. For a point source Q, with the zero at infinity, V = Q/(4πε₀r). The unit of potential is the *volt*, 1 V = 1 J/C, named after Alessandro Volta. A [[q|charge]] q at a point where the potential is V has potential energy qV.
+N S Vfield | Electric potential | V(r⃗) |
+d Potential energy per unit charge at each point; a scalar field defined up to an additive constant.
+m scalar field on ℝ³ modulo constants
+g electric potential
+R[def] Vfield <- Ue, q : V = U/q | Energy per charge | Independent of the test charge.
+P The potential can also be found from the [[Efield|field]] directly. On a small step dl⃗ the field does work E⃗·dl⃗ on a unit charge, a [[dot|scalar product]], and the potential falls by the same amount. Adding the steps in an [[integ|integral]] gives the difference in [[Vfield|potential]] between two points. The result does not depend on the path, because the electrostatic field is conservative. In a uniform field E, the potential falls by Ed over a distance d along the field, which is why the unit of field, N/C, can also be written V/m.
+Q V_B − V_A = −∫_A^B E⃗·dl⃗
+R[thm] Vfield <- Efield, integ, dot : V_B − V_A = −∫_A^B E⃗·dl⃗ | Line integral of the field | Path-independent because the field is conservative.
+P Only differences of potential have physical meaning, and the arbitrary constant cancels in them. The potential difference ΔV_{AB} = V_B − V_A between two points is also called the [[dV|voltage]]; it follows from the [[Vfield|potential]] and is measured with a voltmeter. A charge q that moves through a potential difference ΔV changes its potential energy by ΔU = qΔV. For particles a convenient energy unit is the *electron-volt*, the energy a particle of charge e gains in moving through a potential difference of 1 V: 1 eV = 1.602 × 10⁻¹⁹ J. An electron accelerated from rest through 1.00 kV gains 1.00 keV of kinetic energy. Its speed is then v = √(2K/mₑ) = 1.88 × 10⁷ m/s, about 6 % of the speed of light, so the nonrelativistic expression for K is adequate.
+N O dV | Voltage | ΔV |
+d Potential difference between two points, measured with a voltmeter; SI unit the volt. qΔV is an energy (electron-volt for q = e).
+g electric potential difference; voltage; electron-volt
+R[def] dV <- Vfield : ΔV_AB = V_B − V_A,  ΔU = qΔV | Difference of potentials | The constant drops out.
+
+§ 2 7.3
+X electric dipole; electric dipole moment :: = pdip
+P Potentials of point charges add like fields, but as scalars. For a [[pts|point-charge configuration]], the potential at P is the sum of the point-charge potentials, with r_i the distance from q_i to P and the constant 1/(4πε₀) set by the [[eps0|permittivity of vacuum]]. No directions enter, so this sum is easier than the vector sum for the field, and the field can be found from it afterward. The potential of an electric dipole is an example. At a distance r much larger than the separation d, the distances from P to the two charges differ by about d cos θ, and the two terms combine into V = kp⃗·r̂/r², where p⃗ is the [[pdip|electric dipole moment]] and θ the angle between p⃗ and r̂. This [[Vfield|potential]] falls off as 1/r², faster than that of a single charge, because the two charges nearly cancel.
+Q V_P = (1/4πε₀) Σᵢ qᵢ/rᵢ
+R[thm] Vfield <- pts, eps0 : V_P = (1/4πε₀) Σ q_i/r_i;  dipole kp⃗·r̂/r² | Superposed point potentials | Scalars add, an easier sum than for fields.
+P For a [[chdist|continuous distribution]] the sum becomes an [[integ|integral]], V_P = k∫dq/r. On the axis of a ring of radius R carrying charge Q, every piece is at the same distance √(z² + R²) from the point, so V = kQ/√(z² + R²), with no vector components to track. Outside a uniformly charged sphere, or a charged spherical conductor, V = kQ/r, as for a point charge. A *Van de Graaff generator* uses a large hollow metal sphere of this kind to reach high potentials. The surrounding air sets the limit: at the surface E = V/R, and air begins to conduct at about 3 × 10⁶ V/m, so a sphere of radius 0.20 m can reach about 6 × 10⁵ V.
+
+§ 2 7.4
+P The integral of the field gives the potential; the reverse step is differentiation with respect to position. For a scalar field V(x, y, z), the partial derivative ∂V/∂x is the [[ddt|derivative]] with respect to x taken with y and z held fixed, and ∂V/∂y and ∂V/∂z are defined in the same way. The three partial derivatives, taken as [[comp|components]] along î, ĵ and k̂, form the [[grad|gradient]], ∇V = î ∂V/∂x + ĵ ∂V/∂y + k̂ ∂V/∂z. The gradient points in the direction in which V increases fastest, and its magnitude is that fastest rate of increase per unit length. Along any small step dl⃗, the change in V is dV = ∇V·dl⃗.
+N M grad | Gradient | ∇V |
+d The vector of partial derivatives of a scalar field; points toward steepest increase.
+p linear; ∇ = î ∂/∂x + ĵ ∂/∂y + k̂ ∂/∂z; ∇V ⟂ level surfaces
+g gradient
+R[gen] grad <- ddt, comp : ∂/∂x, ∂/∂y, ∂/∂z along the unit vectors | Derivatives along each axis | The derivative taken with respect to position.
+P Along every small step dV = −E⃗·dl⃗ and also dV = ∇V·dl⃗, so the [[Efield|electric field]] is minus the [[grad|gradient]] of the [[Vfield|potential]]. In components, E_x = −∂V/∂x, E_y = −∂V/∂y and E_z = −∂V/∂z. The field points toward decreasing potential, as a ball rolls downhill. For a point charge, V = kQ/r depends only on r, and E_r = −dV/dr = kQ/r² recovers the Coulomb field. For V = (5.0 V/m²)x², the field is E_x = −(10 V/m²)x, which points toward x = 0 from both sides. The whole field thus follows from one scalar function. The relation holds for static charges; when magnetic fields change in time, the electric field gains a part that no potential describes.
+Q E⃗ = −∇V
+R[thm] Efield <- Vfield, grad : E⃗ = −∇V | Field from potential | The inverse of the line integral.
+
+§ 2 7.5
+P Points at the same [[Vfield|potential]] form [[equipot|equipotential surfaces]]; in a plane drawing they appear as *equipotential lines*. Moving a charge along an equipotential takes no work, since ΔV = 0 there. For a step dl⃗ within the surface, dV = ∇V·dl⃗ = 0, so the [[grad|gradient]], and with it the [[Efield|electric field]] E⃗ = −∇V, is perpendicular to every equipotential. Field lines cross equipotentials at right angles and point from higher to lower potential. The picture resembles a topographic map: equipotentials are the contour lines of constant height, the field points down the steepest slope, and it is strongest where the contours are closest. For a point charge the equipotentials are concentric spheres; in a uniform field they are parallel planes.
+N M equipot | Equipotential surfaces | V = const |
+d Surfaces of constant potential; the field is perpendicular to them and no work is done moving a charge along one. A conductor's surface is one; grounding sets it to zero.
+p E⃗ ⟂ equipotentials; ΔV = 0 along them; conductors in equilibrium are equipotentials
+g equipotential surface; equipotential line; grounding
+R[thm] equipot <- Vfield, Efield, grad : E⃗ = −∇V ⟂ {V = const} | Level sets of V | The gradient is normal to level surfaces.
+P A [[condeq|conductor in electrostatic equilibrium]] has zero field inside and a field perpendicular to its surface outside, so the whole conductor is at one potential. Connecting a conductor to the Earth, a very large conductor, brings it to the Earth's potential, usually chosen as zero; this is *grounding*. On an isolated conductor, charge gathers where the surface curves most sharply. Two distant spheres of radii R₁ and R₂ joined by a wire share one potential, kQ₁/R₁ = kQ₂/R₂. Their surface charge densities, and the fields σ/ε₀ just outside them, are then in the ratio R₂/R₁, so the smaller sphere has the stronger field. Near a sharp point the field can exceed the breakdown field of air, about 3 × 10⁶ V/m, and charge leaks away. A *lightning rod* is a pointed conductor connected to the ground, so that a strike reaches the ground through it, not through the building.
+
+§ 2 7.6
+X electrostatic precipitators; ink jet printer; photoconductor; Van de Graaff generator; xerography :: applications of electrostatics
+P Many devices use the [[F|force]] F⃗ = qE⃗ on charged particles together with [[n2|Newton's second law]]. A *Van de Graaff generator* carries charge on a moving belt into a hollow metal sphere; the charge moves to the outer surface of the [[condeq|conductor]], so more can be added until the potential reaches millions of volts. *Xerography* charges a drum coated with a *photoconductor*, which is an [[insul|insulator]] in the dark and a [[cond|conductor]] when lit. Light from the original discharges the bright areas, charged toner sticks to the remaining charge, and the toner is transferred to paper and fused by heat. A *laser printer* writes the pattern with a laser. Continuous *ink jet printers* steer charged droplets between deflecting plates, and *electrostatic precipitators* charge smoke particles and collect them on plates.
+
+# ---------------------------------------------------------------- Chapter 8
+§ 2 8.0
+P Two conductors with equal and opposite charges store charge, and with it energy, in the field between them. Such a device, the capacitor, is in almost every circuit: it smooths voltages, stores the energy for a camera flash or a defibrillator, and tunes radios. This chapter defines capacitance from the [[condeq|equilibrium of conductors]] and the [[dV|voltage]] between them, combines capacitors in networks, finds the energy they store and assigns that energy to the [[Efield|electric field]]. It ends with the effect of an [[insul|insulator]] placed between the conductors, explained by the polarization of its molecules.
+
+§ 2 8.1
+P A [[capst|capacitor]] consists of two conductors, called plates whatever their shape, that carry charges +Q and −Q; usually a battery has moved the charge Q from one to the other. Each plate is a [[condeq|conductor in electrostatic equilibrium]] and therefore an equipotential, so a single potential difference ΔV exists between them. The field is concentrated in the space between the plates, which holds vacuum, air or an insulating *dielectric*. The standard example is the *parallel-plate capacitor*: two flat plates of area A a distance d apart, with d small compared with the size of the plates, so that the field between them is nearly uniform and the field outside nearly zero.
+N S capst | Capacitor | ±Q on two conductors |
+d Two conductors carrying equal and opposite charges, often separated by a dielectric; the parallel-plate capacitor is the standard example.
+m pair of conductors in electrostatic equilibrium with charges +Q, −Q; field confined mainly between them
+g capacitor; parallel-plate capacitor; dielectric
+R[def] capst <- condeq : two equipotential conductors with charges ±Q | Charged conductor pair | Each conductor is an equipotential.
+P Doubling the charges on the plates doubles the field everywhere, by superposition, and therefore doubles the [[dV|potential difference]]. The ratio C = Q/ΔV is the [[Cap|capacitance]] of the [[capst|capacitor]], the charge stored per volt. It depends only on the shape, size and spacing of the conductors and on the material between them, not on Q. The SI unit is the *farad*, 1 F = 1 C/V, named after Michael Faraday. One farad is a large capacitance; capacitors in electronic circuits typically range from picofarads to millifarads. An *electrolytic capacitor* reaches a large capacitance in a small volume, because its dielectric is a very thin oxide film.
+N O Cap | Capacitance | C = Q/V |
+d Charge stored per volt of potential difference; depends only on geometry and the material between the conductors. SI unit the farad.
+g capacitance
+R[def] Cap <- capst, dV : C = Q/ΔV | Charge per voltage | Q and ΔV are proportional.
+P For a parallel-plate capacitor, the charge spreads over the inner faces with density σ = Q/A. By the [[symm|symmetry method]], each plate alone produces a field σ/(2ε₀); between the plates the two fields add to E = σ/ε₀, and outside they cancel. The potential difference is ΔV = Ed = Qd/(ε₀A), so the [[Cap|capacitance]] is C = ε₀A/d, set by the geometry and the [[eps0|permittivity of vacuum]]. Plates of area 1.0 m² that are 1.0 mm apart give only 8.9 nF; one farad at that spacing would need about 110 km² of plate. The same method gives C = 4πε₀R₁R₂/(R₂ − R₁) for concentric spheres and C = 2πε₀l/ln(R₂/R₁) for a length l of *coaxial cable*.
+Q C = ε₀A/d
+R[thm] Cap <- symm, eps0 : C = ε₀A/d (parallel plates) | From the field between plates | E = σ/ε₀, ΔV = Ed.
+P Practical capacitors vary these quantities. A *variable air capacitor*, used to tune radios, changes the overlap of two sets of interleaved plates as a shaft turns. Rolled capacitors wind two long strips of metal foil, separated by a thin insulating film, into a compact cylinder, which gives a large area with a small spacing. Living cells also act as capacitors. A *cell membrane*, an insulating layer a few nanometres thick, separates conducting fluids that carry opposite charges on its two sides. Its [[Cap|capacitance]] is about 1 μF per square centimetre, so a small transfer of ions sets up the potential difference of about 70 mV across it.
+
+§ 2 8.2
+P Capacitors are often connected in networks, and a network can be replaced by a single equivalent capacitor. In a *parallel combination*, every capacitor connects the same two conductors, so all share one [[dV|potential difference]] ΔV, and their charges add: Q = (C₁ + C₂ + ⋯)ΔV. In a *series combination*, the capacitors are joined end to end. The two plates connected between neighbouring capacitors form an isolated conductor that starts neutral, so by [[qcons|charge conservation]] it carries +Q on one plate and −Q on the other. Every capacitor in the series then holds the same charge Q, and the potential differences add: ΔV = Q/C₁ + Q/C₂ + ⋯. With the definition of [[Cap|capacitance]], these give the rules for [[capnet|capacitors in series and parallel]].
+Q C_P = C₁ + C₂ + ⋯,   1/C_S = 1/C₁ + 1/C₂ + ⋯
+N M capnet | Capacitors in series and parallel | 1/C_S = Σ 1/C_i,  C_P = Σ C_i |
+d Capacitors in parallel share a voltage and their capacitances add; in series they share a charge and the inverses add.
+p series: same Q; parallel: same ΔV; follows from charge conservation and additivity of potential differences
+g series combination; parallel combination
+R[thm] capnet <- Cap, qcons, dV : parallel: Q = ΣQ_i at common ΔV;  series: ΔV = ΣΔV_i at common Q | Combine | Charge conservation on the connecting wires.
+P A series combination has less capacitance than its smallest member, and a parallel combination more than its largest. Take C₁ = 2.00 μF and C₂ = 3.00 μF. In parallel they act as 5.00 μF. In series, 1/C_S = (1/2.00 + 1/3.00) μF⁻¹, so C_S = 1.20 μF. Connected in series to a 12.0 V battery, each capacitor holds Q = C_{S}ΔV = 14.4 μC. The potential differences are then Q/C₁ = 7.20 V and Q/C₂ = 4.80 V, which add up to the 12.0 V of the battery: the smaller capacitor takes the larger share. Larger networks are reduced step by step, one series or parallel group at a time, with the same [[capnet|combination rules]].
+
+§ 2 8.3
+P Charging a capacitor takes work, because each new bit of charge must be carried from the negative plate to the positive plate against the field between them. When the charge is q, the [[dV|potential difference]] is q/C, and moving a further dq takes [[W|work]] dW = (q/C) dq. Integrating from zero to the final charge Q, with the definition of [[Cap|capacitance]], gives the [[UC|energy stored in a capacitor]]. The factor ½ appears because the voltage rises from zero during charging. A *defibrillator* may, for example, charge a 150 μF capacitor to 2.0 kV, which stores ½(150 × 10⁻⁶ F)(2.0 × 10³ V)² = 300 J, and then send much of this energy through the patient's chest in a few milliseconds.
+Q U = Q²/(2C) = ½CV² = ½QV
+N O UC | Energy stored in a capacitor | U = ½CV² |
+d Work needed to charge a capacitor, stored in its electric field.
+R[thm] UC <- Cap, dV, W : U = ∫₀^Q (q/C) dq = Q²/2C = ½CV² | Work to move charge | Each dq is moved across the current voltage q/C.
+P The energy can be located. In a parallel-plate capacitor, C = ε₀A/d and V = Ed, so the [[UC|stored energy]] is U = ½(ε₀A/d)(Ed)² = ½ε₀E²(Ad). The product Ad is the volume between the plates, where the field is. The [[uE|energy density]], the energy per unit volume, is therefore u_E = ½ε₀E², fixed by the [[Eval|field]] and the [[eps0|permittivity of vacuum]] alone. Although derived here for a capacitor, the result holds for any electric field in vacuum, and it shows that energy can be assigned to the field itself, wherever the field is. In air at 3.0 × 10⁶ V/m, close to breakdown, u_E = 40 J/m³.
+Q u_E = ½ε₀E²
+N O uE | Electric energy density | u_E = ½ε₀E² |
+d Energy per unit volume stored in an electric field.
+g energy density
+R[thm] uE <- UC, Eval, eps0 : U/(Ad) with C = ε₀A/d, V = Ed | Energy per volume | The energy belongs to the field.
+
+§ 2 8.4
+P Charge a parallel-plate capacitor, disconnect it so that its charge Q stays fixed, and slide a slab of [[insul|insulating]] material into the gap until it fills the space. A voltmeter across the plates shows the potential difference falling from V₀ to V₀/κ. The number κ is the [[kappa|dielectric constant]] of the material. Since Q is unchanged, the [[Cap|capacitance]] rises from C₀ to C = κC₀, and the field between the plates, V/d, falls from E₀ to E₀/κ. Measured values are never below 1: κ = 1 for vacuum, 1.0006 for air at atmospheric pressure, between about 2 and 4 for common plastics and paper, and about 80 for water at room temperature. A parallel-plate capacitor filled with a dielectric has C = κε₀A/d.
+Q C = κC₀
+N O kappa | Dielectric constant | κ = C/C₀ = E₀/E |
+d Factor by which an insulating material between the plates raises the capacitance and lowers the field.
+g dielectric constant
+R[meas] kappa <- Cap, insul : κ = C/C₀ | Capacitance with and without dielectric | Measured, always ≥ 1.
+P The stored energy changes as well. With Q fixed, U = Q²/(2C) falls to U₀/κ: the field does work on the slab and pulls it into the gap. If the battery stays connected instead, the voltage stays fixed, the charge rises to κQ₀, and the [[UC|stored energy]] ½CV² grows by the factor κ, with the energy drawn from the battery. In practice a dielectric serves three purposes: it raises the capacitance, it holds the plates apart mechanically, and it withstands a larger field than air before conducting. The next section explains the value of the [[kappa|dielectric constant]] from the response of molecules.
+
+§ 2 8.5
+P A dielectric weakens the field because its molecules respond to it. In an applied field E⃗₀, nonpolar molecules acquire *induced electric-dipole moments* along the field, and polar molecules, which are permanent [[pdip|dipoles]], turn partly into line with it against the disorder of thermal motion. Inside the [[insul|insulator]], the positive end of each dipole sits next to the negative end of its neighbour, and these charges cancel on average. At the two faces next to the plates they do not: thin layers of *induced surface charges* ±σ_i remain, each opposite in sign to the charge on the nearby plate. The surface charges produce an *induced electrical field* of magnitude σ_i/ε₀ opposite to the applied one, so the net [[Efield|field]] inside is E = E₀ − σ_i/ε₀. This is the [[dielmod|molecular model of a dielectric]].
+N M dielmod | Molecular model of a dielectric | E⃗_i = (1/κ − 1)E⃗₀ |
+d The applied field induces or aligns molecular dipoles; the induced surface charges create an induced field that partly cancels the applied one.
+p linear for weak fields; induced field opposite to the applied field; explains κ > 1
+g induced electric-dipole moment; induced electrical field; induced surface charges
+R[thm] dielmod <- insul, pdip, Efield : aligned dipoles ⇒ surface charge ±σ_i ⇒ E = E₀ − σ_i/ε₀ | Polarization | Dipoles inside cancel; only surface charges remain.
+P The [[dielmod|molecular model]] explains the [[kappa|dielectric constant]]. Write the induced field as a component E_i along E⃗₀, which is negative because the induced field opposes the applied one. The net field is E₀ + E_i, so κ = E₀/(E₀ + E_i). The induced field opposes the applied field but never reverses it, so κ > 1. Equivalently, the induced field is E⃗_i = (1/κ − 1)E⃗₀, and the induced surface charge density is σ_i = (1 − 1/κ)σ, where σ is the charge density on the plates. For weak fields the induced dipoles are proportional to the field, so κ is a constant of the material.
+Q E⃗_i = (1/κ − 1)E⃗₀
+R[thm] kappa <- dielmod : κ = E₀/(E₀ + E_i) | Dielectric constant explained | From the induced field.
+P A strong enough field tears bound electrons from their molecules, and the [[insul|insulator]] suddenly conducts. This is *dielectric breakdown*. The largest [[Eval|field]] a material can withstand without breaking down is its [[Ebreak|dielectric strength]]. For dry air at atmospheric pressure it is about 3 × 10⁶ V/m, and good solid insulators withstand ten or more times as much. Breakdown sets the largest voltage a capacitor can hold, V_{max} = E_{max}d. An air-filled capacitor with a 1.0 mm gap sparks over at about 3 kV, which is one reason capacitors for high voltages use solid dielectrics.
+N O Ebreak | Dielectric strength | E_max |
+d Largest field an insulator withstands before it breaks down and conducts.
+g dielectric breakdown; dielectric strength
+R[meas] Ebreak <- insul, Eval : field at which bound electrons are torn free | Breakdown | Sets the maximum voltage of a capacitor.
+
+# ---------------------------------------------------------------- Chapter 9
+§ 2 9.0
+P Until now the charges have been at rest, and inside a [[condeq|conductor in equilibrium]] the [[Efield|field]] was zero. This chapter lets charge move. A battery keeps a [[dV|potential difference]] between the ends of a wire, so a field persists inside the metal and drives a steady flow of [[q|charge]], an electric current. The chapter describes current in terms of moving carriers, introduces resistivity and resistance, states Ohm's law and where it fails, finds the power delivered to circuit elements, and ends with superconductors, which carry current with no resistance at all.
+
+§ 2 9.1
+P An [[curr|electric current]] is a flow of charge. Choose a cross section of a wire and count the [[q|charge]] ΔQ that crosses it in a time Δt. The average current is I_{ave} = ΔQ/Δt, and the current at an instant is the [[ddt|time derivative]] I = dQ/dt. The SI unit is the *ampere*, 1 A = 1 C/s, named after André-Marie Ampère; it is one of the base units of the SI. A phone charger that delivers 2.0 A for one hour moves 7.2 × 10³ C, the charge of 4.5 × 10²² electrons. The direction of the *conventional current* is the direction in which positive charge would move. In metals the carriers are electrons, which move opposite to the conventional current, a consequence of Franklin's choice of signs.
+Q I = dQ/dt
+N O curr | Electric current | I = dQ/dt |
+d Rate at which charge passes a cross section; SI unit the ampere (1 A = 1 C/s). Conventional current points the way positive charge would move.
+g ampere (amp); electrical current; conventional current
+R[def] curr <- q, ddt : I = dQ/dt;  I_ave = ΔQ/Δt | Charge per time | Counted at a cross section.
+P A steady current needs a closed path. If a wire simply ended, charge would pile up at the end and its field would stop the flow. An [[circuit|electric circuit]] is a closed loop of [[cond|conductors]] through a source, such as a battery, and elements such as lamps, resistors and capacitors. In a single loop the [[curr|current]] is the same at every point once it is steady. Charge is not used up in a circuit: it circulates, while the source supplies energy and the elements take it. Circuits are drawn as a *schematic*, in which wires are lines and each element has a standard symbol. A car's *starter motor*, for example, appears as one element in a loop with the battery, a switch and heavy cables.
+N S circuit | Electric circuit | closed path |
+d A closed conducting path through sources and elements, drawn as a schematic; charge flows steadily only around closed paths.
+m graph of elements joined at junctions; state = branch currents and capacitor charges
+g circuit; schematic
+R[def] circuit <- cond, curr : conducting loop carrying current | Closed path for charge | Current needs a closed path.
+
+§ 2 9.2
+P In a metal the [[cond|conduction electrons]] move in random directions at speeds near 10⁶ m/s, colliding constantly with the vibrating lattice. Random motion carries no net charge through a cross section. An applied field adds a small average velocity, the [[vd|drift velocity]] v⃗_d, which for electrons is opposite to the field. Suppose a wire of cross section A contains n carriers per unit volume, each with [[q|charge]] q. In a time Δt the carriers within a distance v_{d}Δt of a cross section pass through it, so ΔQ = nqAv_{d}Δt and the [[curr|current]] is I = nqAv_d. Copper has about one free electron per atom, n = 8.5 × 10²⁸ m⁻³. For 1.0 A in a copper wire of cross section 1.0 mm², v_d = I/(neA) = 7.3 × 10⁻⁵ m/s, less than a tenth of a millimetre per second.
+Q I = nqAv_d
+N O vd | Drift velocity | v_d = I/(nqA) |
+d Small average velocity of the charge carriers along a wire, superposed on their fast random motion.
+g drift velocity
+R[thm] vd <- curr, cond, q : I = nqAv_d | Carriers crossing the area | n carriers per volume, each of charge q.
+P The [[Jcur|current density]] J⃗ = nqv⃗_d is the current per unit area at a point, built from the [[vd|drift velocity]] and the carrier [[q|charge]]. It points along the motion of positive carriers; for electrons q = −e and v⃗_d is opposite to the field, so J⃗ points along the field. The current is the flux of J⃗ through a cross section, I = ∫ J⃗·dA⃗, which reduces to I = JA for a uniform current. In the copper wire above, J = 1.0 × 10⁶ A/m². A switch lights a lamp at once, despite the slow drift, because the field that pushes the carriers is set up along the wire at a speed comparable to the speed of light, and electrons everywhere in the circuit start drifting together. In an incandescent lamp, a thin tungsten filament carries a large current density and is heated until it glows.
+N S Jcur | Current density | J⃗ = nqv⃗_d |
+d Current per unit area at each point of a conductor; integrated over a cross section it gives the current.
+m vector field on the conductor; I = ∫ J⃗·dA⃗
+g current density
+R[def] Jcur <- vd, q : J⃗ = n q v⃗_d | Local current | Points along the motion of positive carriers.
+
+§ 2 9.3
+P A field is needed to keep a current flowing, because collisions with the lattice continually take away the momentum that the carriers gain. In many materials the [[Jcur|current density]] is proportional to the [[Eval|field]]. The [[resist|resistivity]] ρ = E/J states how large a field a material needs per unit current density; its inverse σ = 1/ρ is the *electrical conductivity*. Here ρ and σ are properties of the material, not charge densities. The SI unit of resistivity is the ohm metre. Copper at 20 °C has ρ = 1.68 × 10⁻⁸ Ω·m, glass between about 10¹⁰ and 10¹⁴ Ω·m, and semiconductors lie in between. In metals ρ rises with [[temp|temperature]], because the lattice vibrates more and scatters the electrons more often; near room temperature ρ = ρ₀[1 + α(T − T₀)], with α = 3.9 × 10⁻³ K⁻¹ for copper.
+N O resist | Resistivity | ρ = E/J |
+d Material property: field needed per unit current density; its inverse is the electrical conductivity. It grows roughly linearly with temperature in metals.
+g electrical conductivity; resistivity
+R[def] resist <- Eval, Jcur : ρ = E/J,  σ = 1/ρ | Field per current density | ρ = ρ₀[1 + α(T − T₀)].
+P For a whole component, the [[Rres|resistance]] is the ratio of the [[dV|voltage]] across it to the [[curr|current]] through it, R ≡ ΔV/I. Its unit is the *ohm*, 1 Ω = 1 V/A, and a resistor is a component made to have a stated resistance. The definition applies to any element, whatever the relation between its current and voltage. For a uniform wire of length L and cross section A, the [[resist|resistivity]] fixes R: integrating E = ρJ along the wire gives ΔV = EL = ρ(I/A)L, so R = ρL/A. A copper wire 10 m long with a cross section of 1.0 mm² has R = 0.17 Ω. Because R is proportional to ρ, resistance also rises with temperature, as R = R₀(1 + αΔT), and a platinum wire whose resistance is measured serves as a precise thermometer.
+Q R = ρL/A
+N O Rres | Resistance | R = V/I |
+d Voltage per current of a component; for a uniform wire R = ρL/A. SI unit the ohm.
+g resistance; ohm
+R[def] Rres <- dV, curr : R ≡ ΔV/I | Voltage per current | Defined for any element.
+R[thm] Rres <- resist : R = ρL/A | Geometry and material | Integrating E = ρJ along the wire.
+
+§ 2 9.4
+P For a metal wire kept at constant temperature, experiment shows that the current is proportional to the applied voltage over a wide range, so its [[Rres|resistance]] does not depend on V or I. This is [[ohm|Ohm's law]], published by Georg Simon Ohm in 1827. In local form it reads J⃗ = σE⃗, with a conductivity, and hence a [[resist|resistivity]], that does not depend on the field. Materials and devices that obey it are *ohmic*. Ohm's law is an empirical property of many materials, not a general law of nature, and the definition R ≡ ΔV/I does not imply it. Many devices are *nonohmic*: a *diode* conducts readily in one direction and hardly at all in the other, and the filament of a lamp heats up as the current rises, so its resistance grows.
+N M ohm | Ohm's law | V = IR |
+d For many materials current is proportional to voltage with R independent of V (ohmic); devices such as diodes are nonohmic.
+p linear current–voltage relation; J⃗ = σE⃗ locally; empirical, not universal
+g Ohm’s law; ohmic; nonohmic; diode
+R[law] ohm <- Rres, resist : R independent of V and I | Empirical linearity | A property of the material, not a definition.
+P In the form I = V/R, [[ohm|Ohm's law]] predicts the [[curr|current]] in an ohmic element: the source fixes the [[dV|voltage]] across it, the element fixes its [[Rres|resistance]], and the current follows. A 12.0 V battery across a 4.00 Ω resistor drives a current of 3.00 A, and doubling the voltage doubles the current. A graph of current against voltage for an ohmic element is a straight line through the origin with slope 1/R. For a diode it is a curve that stays near zero for one polarity and rises steeply for the other. The simple relation V = IR is the basis of the circuit analysis in the next chapter.
+Q I = V/R
+R[law] curr <- ohm, dV, Rres : I = V/R | Current from voltage | The source sets V, the element sets R.
+
+§ 2 9.5
+P A charge dq that passes through an element with a [[dV|potential difference]] ΔV across it loses potential energy dq ΔV, which the element receives. Dividing by dt gives the rate of energy transfer, the [[P|power]] P = dW/dt = (dq/dt)ΔV. Since dq/dt is the [[curr|current]], the [[Pel|electric power]] delivered to the element is P = IV; one watt equals one ampere times one volt. In a resistor the energy becomes thermal energy, and with V = IR the power can be written P = I²R = V²/R. A 12.0 V headlamp that draws 5.00 A uses 60.0 W, and its hot filament has a resistance of 2.40 Ω.
+Q P = IV = I²R = V²/R
+N O Pel | Electric power | P = IV |
+d Rate at which electrical energy is delivered to an element; in a resistor it becomes heat at I²R = V²/R.
+g electrical power
+R[thm] Pel <- curr, dV, P : P = dW/dt = (dq/dt)ΔV = IV | Power from charge and voltage | Energy qΔV delivered at rate I.
+P Electrical energy is sold by the kilowatt-hour, 1 kW·h = (1000 W)(3600 s) = 3.6 × 10⁶ J; a 1.5 kW heater running for 4.0 h uses 6.0 kW·h. The I²R loss explains how power is sent over long distances. To deliver a [[Pel|power]] P at voltage V, a line must carry the current I = P/V, and the line's [[Rres|resistance]] R dissipates I²R = P²R/V². Raising the voltage tenfold cuts the current to a tenth and the loss in the line to a hundredth, which is why long-distance lines operate at hundreds of kilovolts. Efficiency matters at the user's end too: a light-emitting diode gives the same light as an incandescent lamp for a small fraction of its power.
+
+§ 2 9.6
+P As a metal is cooled its [[resist|resistivity]] decreases, and classical conduction theory predicts a smooth approach to a small residual value set by impurities and defects. In 1911 Heike Kamerlingh Onnes, cooling mercury with liquid helium, found instead that its resistance dropped abruptly to zero below about 4.2 K. This is *superconductivity*. Each superconducting material has a *critical temperature* T_c below which ρ = 0 within the precision of every measurement; a current started in a superconducting ring persists for years without a source. The [[supercond|superconducting state]] is reached by lowering the [[temp|temperature]] and is a distinct phase of matter. In 1933 the *Meissner effect* was found: a superconductor also expels magnetic fields from its interior, which zero resistance alone would not require.
+N S supercond | Superconducting state | R = 0 below T_c | q
+d Below a critical temperature some materials lose all resistance and expel magnetic fields (Meissner effect); a quantum effect of electron pairs.
+m macroscopic phase below T_c with ρ = 0 and B = 0 in the bulk
+g superconductivity; critical temperature; Meissner effect
+R[meas] supercond <- resist, temp : ρ → 0 abruptly at T_c | Measured transition | Classical conduction theory cannot explain it.
+X Josephson junction; SQUID :: devices built on superconductivity
+P The explanation requires quantum mechanics. In the *BCS theory* of John Bardeen, Leon Cooper and Robert Schrieffer, published in 1957, an electron moving through the lattice slightly distorts it, and the distortion attracts a second electron. The two form a bound pair, and these *Cooper pairs* all occupy one collective quantum state. Scattering would have to disturb this whole state, which costs a finite energy, so at low temperature the pairs flow without loss; classical physics has no counterpart to the [[supercond|superconducting state]]. Materials with T_c above 77 K, the boiling point of liquid nitrogen, have been known since 1987. Superconducting coils produce the strong magnetic fields of MRI scanners and particle accelerators. A *Josephson junction*, a thin barrier through which pairs tunnel, is the basis of the *SQUID*, a detector of extremely weak magnetic fields.
+
+# ---------------------------------------------------------------- Chapter 10
+§ 2 10.0
+P Charge flows steadily only around a closed [[circuit|circuit]] that contains a source. This chapter analyses circuits with steady, direct currents. It starts with the source itself, its electromotive force and internal resistance, and then reduces networks of [[Rres|resistors]] to single equivalent resistances. Kirchhoff's rules, which rest on [[qcons|charge conservation]] and on the [[Vfield|potential]], handle circuits that cannot be reduced in this way. The same rules show how meters measure current and voltage and, applied to a resistor together with a [[Cap|capacitor]], give currents that change exponentially in time. The chapter ends with household wiring and electrical safety.
+
+§ 2 10.1
+X potential difference :: = dV
+P A charge that goes once around a closed circuit returns to its starting [[Vfield|potential]], so the electrostatic field does no net work on it. Yet the charge loses energy steadily in the resistors. A source must therefore do nonelectrostatic work, chemical in a *battery* and mechanical in a generator, to carry charge inside it from the low-potential terminal to the high-potential one. The [[emf|electromotive force]] ε, or emf, is this [[W|work]] per unit [[q|charge]], ε = dW/dq, measured in volts. Despite its name, it is not a force. With no current, the [[dV|potential difference]] between the terminals equals ε. The first battery was Alessandro Volta's *voltaic pile* of 1800, a stack of zinc and copper disks separated by cloth soaked in salt water.
+N O emf | Electromotive force | ε |
+d Work per unit charge done by a source (battery, generator) in moving charge around a circuit; the voltage of the source with no current.
+g electromotive force (emf)
+R[def] emf <- W, q : ε = dW/dq | Work per charge by the source | Not a force; a potential difference maintained by nonelectrostatic work.
+P A real source has an *internal resistance* r, because the current must also pass through the materials inside it. When the source delivers a [[curr|current]] I, [[ohm|Ohm's law]] applied inside it gives a potential drop Ir, so the [[Vterm|terminal voltage]] is V = ε − Ir, lower than the [[emf|emf]]. A 9.0 V battery with r = 1.5 Ω connected to a 16.5 Ω load drives I = 9.0 V/18.0 Ω = 0.50 A, and its terminal voltage is 9.0 V − 0.75 V = 8.25 V. A *lead–acid battery* joins six cells of about 2 V each to give 12 V. During discharge, the negative electrode is the *anode*, where oxidation releases electrons into the external circuit, and the positive electrode is the *cathode*. Internal resistance grows as a battery ages, so *battery testers* measure the terminal voltage while drawing a current.
+Q V = ε − Ir
+N O Vterm | Terminal voltage | V = ε − Ir |
+d Voltage across a source's terminals; below its emf by the potential drop on its internal resistance.
+g potential drop; terminal voltage; internal resistance
+R[thm] Vterm <- emf, curr, ohm : V_terminal = ε − I r | Internal resistance | Ohm's law inside the source.
+
+§ 2 10.2
+P Several resistors can be replaced by a single *equivalent resistance* that draws the same current at the same voltage. In a *series circuit* the resistors are joined end to end, and the same current I passes through each, because in a steady state [[qcons|charge conservation]] does not let charge pile up between them. The [[dV|potential differences]] add, and with [[ohm|Ohm's law]] for each resistor V = IR₁ + IR₂ + ⋯, so the resistances of [[Req|resistors in series]] add. In a *parallel circuit* each resistor connects the same two points, so all have the same voltage V, and the currents add: I = V/R₁ + V/R₂ + ⋯. For resistors in parallel, the inverses of the resistances therefore add.
+Q R_s = R₁ + R₂ + ⋯,   1/R_p = 1/R₁ + 1/R₂ + ⋯
+N M Req | Resistors in series and parallel | R_s = Σ R_i,  1/R_p = Σ 1/R_i |
+d Resistors in series carry the same current and their resistances add; in parallel they share the voltage and the inverses add.
+p series: same I; parallel: same V; equivalent resistance replaces a network
+g equivalent resistance
+R[thm] Req <- ohm, qcons, dV : series V = ΣIR_i;  parallel I = ΣV/R_i | Combine with Ohm's law | Charge conservation at junctions.
+P A series combination has more resistance than its largest member, a parallel combination less than its smallest. Consider 6.00 Ω and 3.00 Ω in parallel, equivalent to 2.00 Ω, in series with 4.00 Ω and a 12.0 V source. The total [[Req|equivalent resistance]] is 6.00 Ω, so the source supplies 2.00 A. The parallel pair has (2.00 A)(2.00 Ω) = 4.00 V across it, so 0.667 A flows through the 6.00 Ω resistor and 1.33 A through the 3.00 Ω resistor, together 2.00 A. Household appliances are connected in parallel, so each receives the full supply voltage and can be switched on its own. Switching on a *refrigerator* adds a branch and raises the total current drawn from the supply.
+
+§ 2 10.3
+P Some circuits, such as a *multi-loop circuit* with sources in more than one branch, cannot be reduced to series and parallel combinations. They are solved with [[kirch|Kirchhoff's rules]], formulated by Gustav Kirchhoff. The *junction rule* states that the total current into any junction equals the total current out; it is [[qcons|charge conservation]], since in a steady state no charge accumulates at a junction. The *loop rule* states that the potential differences around any closed loop add to zero; it holds because the [[Vfield|potential]] has a single value at each point, so a trip around a loop returns to the starting value. Applied to the junctions and loops of a [[circuit|circuit]], the two rules give linear equations for the unknown branch currents.
+Q Σ I_{in} = Σ I_{out},   Σ ΔV = 0
+N M kirch | Kirchhoff's rules | ΣI_in = ΣI_out;  ΣV = 0 |
+d Junction rule: current into a junction equals current out. Loop rule: the potential differences around any closed loop sum to zero.
+p junction rule = charge conservation; loop rule = potential is single-valued; linear equations for branch currents
+g Kirchhoff’s rules; junction rule; loop rule
+R[thm] kirch <- qcons, Vfield, circuit : charge does not accumulate at junctions;  V returns to its value around a loop | Conservation and conservative field | Both rules follow from earlier laws.
+P To apply the rules, give each branch current a symbol and an assumed direction. Crossing a resistor in the assumed direction of its current is a potential drop, −IR, and crossing it the other way is +IR. Crossing a source from its negative to its positive terminal adds +ε, and crossing it the other way adds −ε. One junction equation fewer than the number of junctions, together with enough independent loops, gives as many equations as unknown currents. A negative result means that the current flows against the assumed direction. The same [[kirch|rules]] govern *solar cells* joined into panels: cells in series add their emfs, and rows of cells in parallel add their currents.
+P As an example, connect three branches between the same two junctions: a 10.0 V source in series with 2.00 Ω, a 4.00 V source in series with 2.00 Ω, both with their positive terminals toward the upper junction, and a 4.00 Ω resistor. Take the lower junction as zero potential and let V be the potential of the upper one. Each branch then carries (ε − V)/R toward the upper junction, and the junction rule gives (10.0 V − V)/2.00 Ω + (4.00 V − V)/2.00 Ω = V/4.00 Ω, so V = 5.60 V. The currents are 2.20 A up through the first source, 1.40 A down through the resistor and −0.800 A through the second source. The stronger source drives current backward through the weaker one and charges it, as the [[kirch|loop rule]] around the two sources confirms.
+
+§ 2 10.4
+P An *ammeter* measures the current in a branch, so the current must pass through it: it is connected in series, and its own resistance adds to that of the branch. A *voltmeter* measures the potential difference between two points and is connected in parallel with the element between them, so it draws some current itself. By the rules for [[Req|resistors in series and parallel]], an [[meters|ammeter or voltmeter]] disturbs the [[circuit|circuit]] little only if the ammeter's resistance is much smaller, and the voltmeter's much larger, than the resistances around it. A 10 MΩ voltmeter across a 10 kΩ resistor forms a parallel combination of 9.99 kΩ, a change of 0.1 %. A 1 kΩ voltmeter across the same resistor would form 0.91 kΩ and change the voltage it is meant to measure.
+N M meters | Ammeter and voltmeter | series, small R / parallel, large R |
+d An ammeter is placed in series and has very small resistance; a voltmeter is placed in parallel and has very large resistance, so neither disturbs the circuit much.
+p ammeter R → 0; voltmeter R → ∞; loading error otherwise
+g ammeter; voltmeter
+R[thm] meters <- Req, circuit : inserting a meter changes R_eq by a negligible amount | Minimal disturbance | Follows from the series and parallel rules.
+P An *analog meter* is built around a galvanometer, a coil that turns in the field of a permanent magnet and deflects a needle in proportion to the current through it. A small resistance connected in parallel with the coil, a shunt, turns it into an ammeter for large currents; a large resistance in series turns it into a voltmeter. A *digital meter* converts a voltage into a number electronically and typically has an input resistance of about 10 MΩ on its voltage ranges. An *ohmmeter* passes a known current through a component and measures the voltage across it, giving its [[Rres|resistance]] as R = ΔV/I. The component must first be disconnected from its circuit, so that no other source or path affects the reading.
+
+§ 2 10.5
+P An [[rc|RC circuit]] contains a resistor and a capacitor in series. Connect an uncharged capacitor C and a resistor R to a source of emf ε by closing a switch at t = 0. The [[kirch|loop rule]] gives ε − IR − q/C = 0, where IR is the potential drop across the resistor from [[ohm|Ohm's law]] and q/C is the voltage across the [[Cap|capacitor]]. The current charges the capacitor, I = dq/dt, so the loop rule becomes a first-order differential equation for q(t). Its solution with q(0) = 0 is q(t) = Cε(1 − e^{−t/RC}). The current starts at ε/R, as if the capacitor were a plain wire, and decays as I = (ε/R)e^{−t/RC}. The product τ = RC, in seconds, is the *time constant*: after one τ the charge has reached 1 − 1/e = 63.2 % of its final value Cε.
+Q q(t) = Cε(1 − e^{−t/RC}),   I(t) = (ε/R)e^{−t/RC}
+N M rc | RC circuit | q = Cε(1 − e^{−t/RC}) |
+d A capacitor charging or discharging through a resistor: charge and current change exponentially with time constant τ = RC.
+p first-order linear differential equation; τ = RC; charging q → Cε, discharging q = Q e^{−t/RC}
+g RC circuit
+R[thm] rc <- kirch, Cap, ohm : ε − IR − q/C = 0,  I = dq/dt | Loop rule with a capacitor | A first-order equation for q(t).
+P A capacitor with initial charge Q that discharges through a resistor obeys q/C − IR = 0 with I = −dq/dt, so q(t) = Qe^{−t/RC}, and the current decays in the same way. With R = 10 kΩ and C = 100 μF, τ = 1.0 s, and after 3τ only e^{−3} ≈ 5 % of the charge remains. During charging the source supplies energy Qε = Cε², while the capacitor stores ½Cε²; the other half is dissipated in the resistor, whatever the value of R. [[rc|RC circuits]] set the timing of many devices. A *flash camera* charges its capacitor slowly from a battery and discharges it through the flash tube in about a millisecond, and an RC circuit can set the interval between the pulses of a *pacemaker*.
+
+§ 2 10.6
+X shock hazard; thermal hazard; three-wire system :: electrical safety (applications)
+P Household wiring carries alternating current, but its hazards follow from the same relations. A *thermal hazard* arises when a wire carries more [[curr|current]] than it is rated for: the [[Pel|power]] I²R heats it and can start a fire. A *short circuit*, a path of very low [[Rres|resistance]] around the load, makes the current very large; fuses and circuit breakers open the circuit. A *shock hazard* arises when current passes through the body: about 1 mA can be felt, and about 100 mA across the chest can disrupt the heartbeat. In the *three-wire system* a ground wire connects metal cases to the Earth, so a fault trips the breaker. A *ground fault circuit interrupter* opens the circuit when the currents in the live and neutral wires differ by a few milliamperes.

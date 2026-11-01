@@ -1,0 +1,986 @@
+<title>University Physics Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,400;7..72,600&family=STIX+Two+Text:ital,wght@0,400;1,400&display=swap">
+<style>
+/* Layout: chapter bar and book arc map on top; three panes below: what you have read (left),
+   the chapter's concept graph in model | state | observable columns (centre), the selected concept (right). */
+:root {
+  --paper: #f4f6f8;
+  --panel: #ffffff;
+  --ink: #1a2330;
+  --muted: #5b6777;
+  --rule: #d5dce4;
+  --faint: #eaeff3;
+  --obs: #a9670d;
+  --mod: #5f45bf;
+  --sta: #0d746d;
+  --and: #2b62c2;
+  --or: #bd3279;
+  --rel: #378424;
+  --qand: #d2461a;
+  --qor: #9c7000;
+  --fail: #8a94a1;
+  --hl: #ffe45c;
+  --hl-soft: #fff4b8;
+  --accent: #23508e;
+  --f-display: "Literata", Georgia, "Times New Roman", serif;
+  --f-ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-math: "STIX Two Text", "Cambria Math", "Times New Roman", serif;
+  --step-0: 0.75rem;
+  --step-1: 0.8125rem;
+  --step-2: 0.9375rem;
+  --step-3: 1.125rem;
+  --step-4: 1.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f141a; --panel: #161c24; --ink: #e1e7ee; --muted: #9ba6b4; --rule: #2a3440; --faint: #1d252f;
+    --obs: #e2a54b; --mod: #a492f3; --sta: #39b8ad;
+    --and: #6e9ef2; --or: #ec6dae; --rel: #77c860; --qand: #ff7c4f; --qor: #e1b440; --fail: #6b7583;
+    --hl: rgba(255, 220, 60, 0.42); --hl-soft: rgba(255, 220, 60, 0.16); --accent: #91b5f6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f141a; --panel: #161c24; --ink: #e1e7ee; --muted: #9ba6b4; --rule: #2a3440; --faint: #1d252f;
+  --obs: #e2a54b; --mod: #a492f3; --sta: #39b8ad;
+  --and: #6e9ef2; --or: #ec6dae; --rel: #77c860; --qand: #ff7c4f; --qor: #e1b440; --fail: #6b7583;
+  --hl: rgba(255, 220, 60, 0.42); --hl-soft: rgba(255, 220, 60, 0.16); --accent: #91b5f6;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-ui); font-size: var(--step-1); line-height: 1.45; }
+* { box-sizing: border-box; }
+button, select, input { font: inherit; color: inherit; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.app { display: flex; flex-direction: column; min-height: 100%; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- top bar ---------- */
+.top { background: var(--panel); border-bottom: 1px solid var(--rule); padding-block: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.brand { display: flex; flex-direction: column; min-width: 0; margin-right: auto; }
+.brand h1 { font-family: var(--f-display); font-weight: 600; font-size: var(--step-3); margin: 0; letter-spacing: -0.005em; text-wrap: balance; }
+.brand p { margin: 0; color: var(--muted); font-size: var(--step-0); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { border: 1px solid var(--rule); background: var(--panel); border-radius: 6px; padding: 5px 10px; cursor: pointer; line-height: 1.2; white-space: nowrap; }
+.btn:hover { border-color: var(--muted); }
+.btn[disabled] { opacity: 0.4; cursor: default; }
+.btn.primary { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+select.btn { padding-right: 6px; max-width: 360px; }
+#chapCtl { flex-wrap: nowrap; min-width: 0; }
+#chapCtl select { min-width: 0; flex: 1 1 auto; }
+@media (max-width: 759px) { #chapCtl { flex: 1 1 100%; } #chapCtl select { max-width: none; } }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.seg label { position: relative; padding: 5px 9px; cursor: pointer; border-right: 1px solid var(--rule); font-size: var(--step-0); display: flex; align-items: center; }
+.seg label:last-child { border-right: 0; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg input:checked + span { font-weight: 700; }
+.seg label:has(input:checked) { background: var(--faint); }
+.seg label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: -2px; }
+.ctl-label { font-size: var(--step-0); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ---------- book map ---------- */
+.mapbar { background: var(--panel); border-bottom: 1px solid var(--rule); padding-block: 4px 2px; overflow: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.mapbar svg { display: block; width: 100%; height: 98px; }
+.map-tick { cursor: pointer; }
+.map-tick rect { fill: var(--faint); stroke: var(--rule); }
+.map-tick text { font-size: 9px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.map-tick.cur rect { fill: var(--hl); stroke: var(--ink); }
+.map-tick.cur text { fill: var(--ink); font-weight: 700; }
+.map-tick.feed rect { fill: var(--hl-soft); stroke: var(--accent); }
+.map-tick:focus-visible rect { stroke: var(--accent); stroke-width: 2; }
+.arc { fill: none; stroke: var(--muted); opacity: 0.05; }
+.arc.in { stroke: var(--accent); opacity: 0.85; }
+.vol-label { font-size: 10px; fill: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---------- three panes ---------- */
+.main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; min-height: 0; }
+.pane { min-width: 0; min-height: 0; }
+.reader, .card { background: var(--panel); }
+.reader { border-top: 1px solid var(--rule); }
+.card { border-top: 1px solid var(--rule); }
+.graph-pane { display: flex; flex-direction: column; }
+@media (min-width: 760px) {
+  .main { grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); grid-template-areas: "graph card" "graph reader"; }
+  .graph-pane { grid-area: graph; border-right: 1px solid var(--rule); }
+  .card { grid-area: card; border-top: 0; }
+  .reader { grid-area: reader; }
+}
+@media (min-width: 1180px) {
+  html, body { overflow: hidden; }
+  .app { height: 100%; }
+  .main { grid-template-columns: minmax(250px, 300px) minmax(0, 1fr) minmax(300px, 360px); grid-template-areas: "reader graph card"; }
+  .reader { grid-area: reader; border-top: 0; border-right: 1px solid var(--rule); overflow-y: auto; }
+  .card { overflow-y: auto; }
+  .graph-pane { border-right: 1px solid var(--rule); }
+  .graph-scroll { overflow-y: auto; }
+}
+
+/* ---------- graph ---------- */
+.graph-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 10px 16px 6px; }
+.graph-head h2 { font-family: var(--f-display); font-weight: 600; font-size: var(--step-4); margin: 0; line-height: 1.15; text-wrap: balance; }
+.eyebrow { font-size: var(--step-0); color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
+.stepbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 4px 16px 10px; border-bottom: 1px solid var(--rule); }
+.stepbar input[type=range] { flex: 1 1 160px; min-width: 120px; accent-color: var(--ink); }
+.steptext { font-size: var(--step-0); color: var(--muted); font-variant-numeric: tabular-nums; min-width: 0; }
+.graph-scroll { position: relative; flex: 1; min-height: 0; }
+.colheads { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(3px); border-bottom: 1px solid var(--rule); }
+.colheads div { padding: 6px 0 5px; font-size: var(--step-0); text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.colheads b { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+#graph { display: block; width: 100%; }
+.band-rule { stroke: var(--rule); }
+.band-title { font-size: 11px; fill: var(--muted); letter-spacing: 0.04em; }
+.band-title .num { font-weight: 700; fill: var(--ink); }
+.band-bg { fill: var(--faint); }
+.col-guide { fill: var(--panel); opacity: 0.55; }
+.node { cursor: pointer; }
+.node .pill { stroke-width: 1.4; }
+.node .lbl { font-size: 11.5px; fill: var(--ink); }
+.node .tag { font-size: 9px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.node.past .pill { stroke-dasharray: 4 3; }
+.node.trace .pill { stroke-dasharray: 2 3; }
+.node.trace { opacity: 0.85; }
+.node .glow { fill: var(--hl); opacity: 0; }
+.node.fresh .glow { opacity: 1; }
+.node:focus-visible .pill { stroke-width: 3; }
+.node.sel .pill { stroke-width: 3; }
+.route path.edge { fill: none; stroke-width: 1.6; }
+.route path.hit { fill: none; stroke: transparent; stroke-width: 10; cursor: pointer; }
+.route.failed path.edge { stroke-dasharray: 5 4; }
+.route .xmark { font-size: 12px; font-weight: 700; fill: var(--fail); }
+.route.fresh path.edge { stroke-width: 2.6; }
+.route.sel path.edge { stroke-width: 3; }
+svg.dim .node:not(.on) { opacity: 0.34; }
+svg.dim .route:not(.on) { opacity: 0.1; }
+svg.dim .route.on path.edge { stroke-width: 2.4; }
+@media (prefers-reduced-motion: no-preference) {
+  .route.fresh path.edge { animation: draw 0.9s ease-out both; stroke-dasharray: 600; }
+  .route.fresh.failed path.edge { animation: none; stroke-dasharray: 5 4; }
+  @keyframes draw { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
+  .node.fresh .glow { animation: glow 1.4s ease-out both; }
+  @keyframes glow { from { opacity: 0; } 30% { opacity: 1; } to { opacity: 0.9; } }
+}
+.empty-note { font-size: 12px; fill: var(--muted); }
+
+/* ---------- key ---------- */
+.key { margin: 8px 16px 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); }
+.key summary { cursor: pointer; padding: 6px 10px; font-size: var(--step-0); text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+.key-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px 18px; padding: 4px 12px 12px; }
+.key-item { display: flex; align-items: center; gap: 8px; font-size: var(--step-0); min-width: 0; }
+.key-item svg { flex: none; }
+
+/* ---------- reader ---------- */
+.reader-in, .card-in { padding: 14px 16px 22px; }
+.reader h3, .card h3 { font-family: var(--f-display); font-weight: 600; font-size: var(--step-3); margin: 2px 0 6px; line-height: 1.25; text-wrap: balance; }
+.meta { color: var(--muted); font-size: var(--step-0); }
+.feeders { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 4px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--rule); border-radius: 999px; padding: 2px 8px; font-size: var(--step-0); background: var(--panel); cursor: pointer; max-width: 100%; text-align: left; }
+.chip:hover { border-color: var(--muted); }
+.chip.active { background: var(--hl-soft); border-color: var(--accent); }
+.chip .n { font-variant-numeric: tabular-nums; color: var(--muted); }
+.sec { border-top: 1px solid var(--rule); padding: 9px 0 8px; }
+.sec-head { display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
+.sec-head .t { font-weight: 700; font-size: var(--step-1); min-width: 0; }
+.sec-head .t .num { color: var(--muted); font-variant-numeric: tabular-nums; margin-right: 4px; }
+.sec-head a { font-size: var(--step-0); white-space: nowrap; }
+.evs { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.ev { display: flex; align-items: center; gap: 7px; padding: 2px 6px; border-radius: 4px; cursor: pointer; font-size: var(--step-1); line-height: 1.3; }
+.ev:hover { background: var(--faint); }
+.ev.todo { color: var(--muted); }
+.ev.todo .mk { opacity: 0.45; }
+.ev.cur { background: var(--hl); color: var(--ink); }
+.ev .arrow { color: var(--muted); }
+.ev.link { font-size: var(--step-0); }
+.sec .none { font-size: var(--step-0); color: var(--muted); margin-top: 4px; }
+.terms { margin-top: 14px; border-top: 1px solid var(--rule); padding-top: 8px; }
+.terms summary { cursor: pointer; font-size: var(--step-0); color: var(--muted); }
+.terms ul { margin: 6px 0 0; padding-left: 18px; font-size: var(--step-0); }
+.terms li { margin: 2px 0; }
+
+/* ---------- card ---------- */
+.type-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pill-tag { font-size: var(--step-0); border-radius: 4px; padding: 1px 6px; border: 1px solid var(--rule); text-transform: uppercase; letter-spacing: 0.06em; }
+.formula { font-family: var(--f-math); font-size: var(--step-3); line-height: 1.35; margin: 4px 0 8px; overflow-wrap: anywhere; }
+.desc { font-size: var(--step-2); line-height: 1.5; margin: 6px 0 10px; max-width: 65ch; }
+.facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 10px; font-size: var(--step-1); margin: 8px 0 12px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; min-width: 0; }
+.props { margin: 4px 0 0; padding-left: 18px; }
+.props li { margin: 1px 0; }
+.math { font-family: var(--f-math); font-size: var(--step-2); }
+.block-title { font-size: var(--step-0); text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin: 14px 0 6px; }
+.rt { border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; margin: 6px 0; background: var(--panel); }
+.rt.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.rt .rt-title { font-weight: 700; font-size: var(--step-1); display: flex; justify-content: space-between; gap: 8px; }
+.rt .rt-title .k { font-weight: 400; color: var(--muted); font-size: var(--step-0); white-space: nowrap; }
+.rt .rt-f { font-family: var(--f-math); font-size: var(--step-2); margin: 4px 0; overflow-wrap: anywhere; }
+.rt .rt-d { font-size: var(--step-1); color: var(--ink); }
+.rt .ins { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.uses { display: flex; flex-wrap: wrap; gap: 4px; }
+.trace-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 2px; }
+.small { font-size: var(--step-0); color: var(--muted); }
+.mk { flex: none; }
+footer { border-top: 1px solid var(--rule); background: var(--panel); padding-block: 10px 14px; font-size: var(--step-0); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 18px; }
+footer p { margin: 0; max-width: 90ch; }
+@media (min-width: 1180px) { footer { display: none; } .reader .credit { display: block; } }
+.credit { display: none; margin-top: 18px; font-size: var(--step-0); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 10px; }
+.credit p { margin: 0 0 6px; }
+.tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--panel); font-size: var(--step-0); padding: 4px 8px; border-radius: 5px; max-width: 280px; }
+.tip .f { font-family: var(--f-math); font-size: var(--step-1); display: block; }
+.vec { position: relative; display: inline-block; }
+.vec::after { content: "→"; position: absolute; left: 50%; top: -0.5em; transform: translateX(-50%); font-size: 0.62em; line-height: 1; font-style: normal; }
+sub, sup { font-size: 0.72em; line-height: 0; }
+.chip .ttl { max-width: 17ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chap-link { font-size: var(--step-0); }
+</style>
+
+<div class="app">
+  <header class="top gutter">
+    <div class="brand">
+      <h1>University Physics Network</h1>
+      <p>OpenStax <i>University Physics</i>, Volumes 1–3, read as a growing network of observables, models and states</p>
+    </div>
+    <div class="controls" id="chapCtl">
+      <button class="btn" id="prevChap" type="button" aria-label="Previous chapter">‹</button>
+      <select class="btn" id="chapter" aria-label="Chapter"></select>
+      <button class="btn" id="nextChap" type="button" aria-label="Next chapter">›</button>
+    </div>
+    <div class="controls" role="group" aria-label="Earlier chapters">
+      <span class="ctl-label">Earlier chapters</span>
+      <div class="seg">
+        <label><input type="radio" name="earlier" id="earlier-needed" value="needed" checked><span>As needed</span></label>
+        <label><input type="radio" name="earlier" id="earlier-all" value="all"><span>All at once</span></label>
+        <label><input type="radio" name="earlier" id="earlier-off" value="off"><span>Hide</span></label>
+      </div>
+    </div>
+  </header>
+  <div class="mapbar gutter" aria-label="Book map: arcs show which earlier chapters supply concepts to each chapter">
+    <svg id="map" role="img" aria-label="Chapters of the three volumes in reading order"></svg>
+  </div>
+  <main class="main">
+    <section class="pane graph-pane" aria-label="Concept graph">
+      <div class="graph-head">
+        <div style="min-width:0">
+          <div class="eyebrow" id="gEyebrow"></div>
+          <h2 id="gTitle"></h2>
+        </div>
+      </div>
+      <div class="stepbar">
+        <button class="btn" id="toStart" type="button" aria-label="Chapter start">⏮</button>
+        <button class="btn" id="back" type="button">‹ Back</button>
+        <button class="btn primary" id="fwd" type="button">Next concept ›</button>
+        <button class="btn" id="toEnd" type="button" aria-label="Whole chapter">⏭</button>
+        <input type="range" id="step" min="0" max="1" value="1" aria-label="Reading position in the chapter">
+        <span class="steptext" id="stepText"></span>
+        <label class="small" style="display:flex;align-items:center;gap:5px"><input type="checkbox" id="follow" checked> Card follows reading</label>
+      </div>
+      <details class="key" id="key">
+        <summary>How to read the graph</summary>
+        <div class="key-grid" id="keyGrid"></div>
+      </details>
+      <div class="graph-scroll" id="gscroll">
+        <div class="colheads" id="colheads">
+          <div><svg class="mk" width="12" height="12" viewBox="-6 -6 12 12"><rect x="-4.5" y="-4.5" width="9" height="9" rx="2" style="fill:var(--mod)"></rect></svg>Models <b id="cM"></b></div>
+          <div><svg class="mk" width="12" height="12" viewBox="-6 -6 12 12"><path d="M-5,0 L-2.5,-4.3 L2.5,-4.3 L5,0 L2.5,4.3 L-2.5,4.3 Z" style="fill:var(--sta)"></path></svg>States <b id="cS"></b></div>
+          <div><svg class="mk" width="12" height="12" viewBox="-6 -6 12 12"><circle r="4.6" style="fill:var(--obs)"></circle></svg>Observables <b id="cO"></b></div>
+        </div>
+        <svg id="graph" role="group" aria-label="Concepts of the chapter and the earlier concepts they use"></svg>
+      </div>
+    </section>
+    <aside class="pane card" aria-label="Selected concept"><div class="card-in" id="card"></div></aside>
+    <aside class="pane reader" aria-label="Reading order"><div class="reader-in" id="reader"></div></aside>
+  </main>
+  <footer class="gutter" id="footer"></footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(() => {
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const NODES = DATA.nodes, ROUTES = DATA.routes, EVENTS = DATA.events, CHAPTERS = DATA.chapters;
+const SVGNS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+const byId = new Map(NODES.map(n => [n.id, n]));
+const routeById = new Map(ROUTES.map(r => [r.id, r]));
+const ckey = (v, c) => v + "." + c;
+const chapIdx = new Map(CHAPTERS.map((c, i) => [ckey(c.vol, c.ch), i]));
+CHAPTERS.forEach((c, i) => { c.i = i; c.e0 = c.events[0]; c.e1 = c.events[1]; });
+NODES.forEach(n => { n.ci = chapIdx.get(ckey(n.vol, n.chapter)); n.t = n.type[0].toUpperCase(); });
+ROUTES.forEach(r => { r.ci = chapIdx.get(ckey(r.vol, r.chapter)); });
+EVENTS.forEach(e => { e.ci = chapIdx.get(ckey(e.chapter_key[0], e.chapter_key[1])); });
+const routesInto = new Map(), routesFrom = new Map();
+const push = (m, k, v) => { if (!m.has(k)) m.set(k, []); m.get(k).push(v); };
+ROUTES.forEach(r => { push(routesInto, r.target, r); r.inputs.forEach(i => push(routesFrom, i.node, r)); });
+const chapNodes = CHAPTERS.map(() => []), chapRoutes = CHAPTERS.map(() => []);
+NODES.forEach(n => chapNodes[n.ci].push(n));
+ROUTES.forEach(r => chapRoutes[r.ci].push(r));
+chapNodes.forEach(a => a.sort((x, y) => x.event - y.event));
+const COVER = DATA.coverage || [];
+const TYPE = { O: { name: "Observable", v: "--obs", col: 2 }, M: { name: "Model", v: "--mod", col: 0 }, S: { name: "State", v: "--sta", col: 1 } };
+const ERA = { classical: "Classical", relativistic: "Relativistic", quantum: "Quantum" };
+const TAGNAME = { def: "definition", law: "law", thm: "derivation", read: "read off", approx: "approximation", lim: "limit", gen: "generalisation", meas: "measurement", fail: "failed prediction", analog: "analogy" };
+const KINDNAME = { classical: "classical", relativistic: "relativistic", quantum: "quantum", to_relativistic: "classical → relativistic", to_quantum: "into quantum theory", to_classical: "quantum or relativistic → classical", failed: "failed classical prediction", mixed: "mixed" };
+const volName = v => "Volume " + v;
+const secLabel = num => num.endsWith(".0") ? "Ch " + num.split(".")[0] + " introduction" : "§" + num;
+const homeTag = n => "V" + n.vol + " §" + n.section.replace(/\.0$/, " intro");
+const chapLabel = c => `V${c.vol} Ch ${c.ch}`;
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+function fmt(s) {
+  let h = esc(s);
+  h = h.replace(/(\S)\u20D7/g, '<span class="vec">$1</span>');
+  h = h.replace(/_\{([^}]*)\}/g, '<sub>$1</sub>').replace(/\^\{([^}]*)\}/g, '<sup>$1</sup>');
+  h = h.replace(/_([A-Za-z0-9α-ωΑ-Ωℓ′∞]+)/g, '<sub>$1</sub>');
+  h = h.replace(/\^([A-Za-z0-9α-ωγ′−+]+)/g, '<sup>$1</sup>');
+  return h;
+}
+
+/* ---------------- state ---------------- */
+const S = { ci: 4, ev: CHAPTERS[4].e1, mode: "needed", sel: null, follow: true, trace: 0, hover: null, home: null };
+try {
+  const saved = JSON.parse(localStorage.getItem("upnet-state") || "null");
+  if (saved && Number.isInteger(saved.ci) && CHAPTERS[saved.ci]) {
+    S.ci = saved.ci; S.ev = Math.max(CHAPTERS[S.ci].e0 - 1, Math.min(CHAPTERS[S.ci].e1, saved.ev));
+    if (["needed", "all", "off"].includes(saved.mode)) S.mode = saved.mode;
+    S.follow = saved.follow !== false;
+  }
+} catch (e) { /* storage unavailable */ }
+const m = /^#v([123])c(\d{1,2})$/.exec(location.hash || "");
+if (m && chapIdx.has(ckey(+m[1], +m[2]))) { S.ci = chapIdx.get(ckey(+m[1], +m[2])); S.ev = CHAPTERS[S.ci].e1; }
+if (!S.sel) { const firstModel = chapNodes[S.ci].find(n => n.id === "n2") || chapNodes[S.ci][0]; S.sel = { kind: "node", id: firstModel.id }; }
+let keyOpen = window.matchMedia("(min-width: 760px)").matches;
+try { const k = localStorage.getItem("upnet-key"); if (k !== null) keyOpen = k === "1"; } catch (e) {}
+const save = () => { try { localStorage.setItem("upnet-state", JSON.stringify({ ci: S.ci, ev: S.ev, mode: S.mode, follow: S.follow })); } catch (e) {} };
+
+/* ---------------- text measurement ---------------- */
+const mctx = document.createElement("canvas").getContext("2d");
+const LABEL_FONT = '11.5px "Atkinson Hyperlegible", system-ui, sans-serif';
+function textW(s) { mctx.font = LABEL_FONT; return mctx.measureText(s).width; }
+function wrap(label, maxW, maxLines) {
+  const words = label.split(" "); const lines = []; let cur = "";
+  for (const w of words) {
+    const t = cur ? cur + " " + w : w;
+    if (textW(t) <= maxW || !cur) cur = t; else { lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) {
+    const keep = lines.slice(0, maxLines); let last = keep[maxLines - 1];
+    while (last.length > 1 && textW(last + "…") > maxW) last = last.slice(0, -1);
+    keep[maxLines - 1] = last + "…"; return keep;
+  }
+  return lines;
+}
+
+/* ---------------- layout ---------------- */
+function geometry(width) {
+  const padX = 16, gapX = width < 520 ? 8 : 22;
+  const colW = (width - 2 * padX - 2 * gapX) / 3;
+  const per = Math.max(1, Math.min(4, Math.floor(colW / 136)));
+  return { width, padX, gapX, colW, per, cellW: colW / per, bandHead: 28, bandPad: 10 };
+}
+const layoutCache = new Map();
+function layout(ci, extra, width) {
+  const key = ci + "|" + Math.round(width) + "|" + extra.join(",");
+  if (layoutCache.has(key)) return layoutCache.get(key);
+  const g = geometry(width), c = CHAPTERS[ci];
+  const carried = c.carried_in.map(x => x.node);
+  const extraIds = extra.filter(id => byId.get(id).ci !== ci && !carried.includes(id));
+  const earlier = [...carried, ...extraIds].map(id => byId.get(id))
+    .sort((a, b) => a.ci - b.ci || a.event - b.event).map(n => n.id);
+  const bands = [];
+  if (earlier.length) bands.push({ key: "earlier", title: "From earlier chapters", ids: earlier });
+  c.sections.forEach(s => {
+    const ids = chapNodes[ci].filter(n => n.section === s.num).map(n => n.id);
+    if (ids.length) bands.push({ key: s.num, num: s.num, title: s.title, ids });
+  });
+  const pos = new Map(); let y = 6;
+  const maxTextW = Math.max(40, g.colW - 40), hGap = 10;
+  for (const b of bands) {
+    b.top = y;
+    const isE = b.key === "earlier";
+    const byCol = [[], [], []];
+    b.ids.forEach(id => byCol[TYPE[byId.get(id).t].col].push(id));
+    let bandH = 0;
+    byCol.forEach((ids, k) => {
+      const x0 = g.padX + k * (g.colW + g.gapX);
+      const rows = []; let row = null;
+      ids.forEach(id => {
+        const n = byId.get(id);
+        const lines = wrap(n.label, maxTextW, 3);
+        let w = Math.min(g.colW - 2, Math.max(...lines.map(textW)) + 30);
+        if (isE) w = Math.min(g.colW - 2, Math.max(w, textW(homeTag(n)) * 0.8 + 10));
+        const d = { id, lines, w, h: 10 + lines.length * 14 };
+        if (!row || (row.w + hGap + d.w > g.colW && row.items.length)) { row = { items: [], w: -hGap, h: 0 }; rows.push(row); }
+        row.items.push(d); row.w += hGap + d.w; row.h = Math.max(row.h, d.h);
+      });
+      let ry = y + g.bandHead;
+      rows.forEach(r => {
+        const rh = r.h + 14 + (isE ? 12 : 0);
+        const cy = ry + rh / 2 + (isE ? 5 : 0);
+        let cx = x0 + (g.colW - r.w) / 2;
+        r.items.forEach(d => {
+          pos.set(d.id, { x: cx + d.w / 2, y: cy, w: d.w, h: d.h, lines: d.lines, col: k, band: b.key });
+          cx += d.w + hGap;
+        });
+        ry += rh;
+      });
+      bandH = Math.max(bandH, ry - (y + g.bandHead));
+    });
+    b.height = g.bandHead + Math.max(bandH, 30) + g.bandPad; y += b.height;
+  }
+  const out = { g, bands, pos, height: Math.max(y + 10, 160), earlier, extraIds };
+  layoutCache.set(key, out);
+  return out;
+}
+
+/* ---------------- what is visible ---------------- */
+function traceSet(id, depth, upto) {
+  const nodes = new Set([id]), routes = new Set(); let frontier = [id];
+  for (let d = 0; d < depth && frontier.length; d++) {
+    const next = [];
+    for (const x of frontier) {
+      const limit = x === id ? upto : byId.get(x).event;
+      for (const r of routesInto.get(x) || []) {
+        if (r.event > limit) continue;
+        routes.add(r.id);
+        r.inputs.forEach(inp => { if (!nodes.has(inp.node)) { nodes.add(inp.node); next.push(inp.node); } });
+      }
+    }
+    frontier = next;
+  }
+  return { nodes, routes };
+}
+function visible() {
+  const c = CHAPTERS[S.ci];
+  const nodes = new Set(), routes = new Set(), past = new Set();
+  chapNodes[S.ci].forEach(n => { if (n.event <= S.ev) nodes.add(n.id); });
+  if (S.mode !== "off") c.carried_in.forEach(x => { if (S.mode === "all" || x.first_needed_event <= S.ev) { nodes.add(x.node); past.add(x.node); } });
+  chapRoutes[S.ci].forEach(r => { if (r.event <= S.ev && nodes.has(r.target) && r.inputs.some(i => nodes.has(i.node))) routes.add(r.id); });
+  let trace = null;
+  if (S.trace && S.sel && S.sel.kind === "node" && byId.get(S.sel.id).event <= S.ev) {
+    trace = traceSet(S.sel.id, S.trace, S.ev);
+    trace.nodes.forEach(id => nodes.add(id));
+    trace.routes.forEach(id => routes.add(id));
+  }
+  return { nodes, routes, past, trace };
+}
+
+/* ---------------- svg helpers ---------------- */
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function marker(t, g, cx, cy, s) {
+  const fill = `fill:var(${TYPE[t].v})`;
+  if (t === "O") return el("circle", { cx, cy, r: 4.6 * s, style: fill }, g);
+  if (t === "M") return el("rect", { x: cx - 4.5 * s, y: cy - 4.5 * s, width: 9 * s, height: 9 * s, rx: 2 * s, style: fill }, g);
+  const a = 5 * s, b = 2.5 * s, h = 4.3 * s;
+  return el("path", { d: `M${cx - a},${cy} L${cx - b},${cy - h} L${cx + b},${cy - h} L${cx + a},${cy} L${cx + b},${cy + h} L${cx - b},${cy + h} Z`, style: fill }, g);
+}
+const eraColor = era => era === "quantum" ? "--qand" : era === "relativistic" ? "--rel" : "--and";
+const eraOr = era => era === "quantum" ? "--qor" : era === "relativistic" ? "--rel" : "--or";
+const MARKERS = ["--and", "--or", "--rel", "--qand", "--qor", "--fail"];
+
+/* ---------------- graph ---------------- */
+const svg = $("graph"), scroller = $("gscroll");
+let LAST = null;
+function drawGraph(vis) {
+  const width = Math.max(300, svg.getBoundingClientRect().width || scroller.getBoundingClientRect().width || 800);
+  const extra = vis.trace ? [...vis.trace.nodes] : [];
+  const L = layout(S.ci, extra, width);
+  const g = L.g;
+  svg.innerHTML = "";
+  svg.setAttribute("viewBox", `0 0 ${width} ${L.height}`);
+  svg.setAttribute("height", L.height);
+  $("colheads").style.paddingLeft = g.padX + "px"; $("colheads").style.paddingRight = g.padX + "px"; $("colheads").style.columnGap = g.gapX + "px";
+  const defs = el("defs", {}, svg);
+  MARKERS.forEach(v => {
+    const mk = el("marker", { id: "ar" + v, viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: "auto-start-reverse" }, defs);
+    el("path", { d: "M0,1 L10,5 L0,9 z", style: `fill:var(${v})` }, mk);
+  });
+  const bg = el("g", {}, svg), routeG = el("g", {}, svg), nodeG = el("g", {}, svg);
+  // bands
+  L.bands.forEach((b, i) => {
+    if (b.key === "earlier") el("rect", { class: "band-bg", x: 0, y: b.top, width, height: b.height - 4, rx: 0 }, bg);
+    if (i > 0 || b.key !== "earlier") el("line", { class: "band-rule", x1: 0, x2: width, y1: b.top, y2: b.top }, bg);
+    const t = el("text", { class: "band-title", x: g.padX + 2, y: b.top + 17 }, bg);
+    if (b.key === "earlier") {
+      const shown = b.ids.filter(id => vis.nodes.has(id)).length;
+      t.textContent = `From earlier chapters · ${shown} of ${b.ids.length} in view`;
+    } else {
+      const ts = el("tspan", { class: "num" }, t); ts.textContent = b.num.endsWith(".0") ? "Chapter introduction" : secLabel(b.num) + "  ";
+      if (!b.num.endsWith(".0")) { const tt = el("tspan", {}, t); tt.textContent = b.title; }
+    }
+  });
+  // routes
+  const visRoutes = [...vis.routes].map(id => routeById.get(id));
+  const okCount = new Map();
+  visRoutes.forEach(r => { if (r.kind !== "failed") okCount.set(r.target, (okCount.get(r.target) || 0) + 1); });
+  let gradN = 0;
+  // anchors: a point on a pill's boundary plus the outward normal there
+  const blocked = (p, sx) => {
+    for (const [id, q] of L.pos) {
+      if (q === p || q.col !== p.col || q.band !== p.band) continue;
+      if (Math.abs(q.y - p.y) > (p.h + q.h) / 2) continue;
+      const gap = sx > 0 ? (q.x - q.w / 2) - (p.x + p.w / 2) : (p.x - p.w / 2) - (q.x + q.w / 2);
+      if (gap > -4 && gap < 26) return true;
+    }
+    return false;
+  };
+  const sideAnchor = (p, sx) => ({ x: p.x + sx * p.w / 2, y: p.y, nx: sx, ny: 0 });
+  const vertAnchor = (p, sy) => ({ x: p.x, y: p.y + sy * p.h / 2, nx: 0, ny: sy });
+  function anchorToward(p, tx, ty) {
+    const sx = tx >= p.x ? 1 : -1;
+    if (!blocked(p, sx)) return sideAnchor(p, sx);
+    if (!blocked(p, -sx) && Math.abs(tx - p.x) < p.w) return sideAnchor(p, -sx);
+    return vertAnchor(p, ty >= p.y ? 1 : -1);
+  }
+  const outerSide = p => p.col === 0 ? -1 : 1;
+  const sameCol = (a, b) => a.col === b.col && Math.abs(a.x - b.x) < (a.w + b.w) / 2 + 6;
+  function curve(a, b) {
+    const dist = Math.hypot(b.x - a.x, b.y - a.y);
+    const sameSide = a.nx !== 0 && a.nx === b.nx;
+    const La = sameSide ? 16 + Math.min(54, Math.abs(b.y - a.y) * 0.12) : Math.max(22, Math.min(140, dist * 0.42));
+    const Lb = sameSide ? La : La;
+    return `M${a.x},${a.y} C${a.x + a.nx * La},${a.y + a.ny * La} ${b.x + b.nx * Lb},${b.y + b.ny * Lb} ${b.x},${b.y}`;
+  }
+  visRoutes.forEach(r => {
+    const tp = L.pos.get(r.target); if (!tp) return;
+    const ins = r.inputs.filter(i => vis.nodes.has(i.node) && L.pos.get(i.node));
+    if (!ins.length) return;
+    const T = byId.get(r.target);
+    const failed = r.kind === "failed";
+    const isOr = !failed && (okCount.get(r.target) || 0) > 1;
+    const stemVar = failed ? "--fail" : (isOr ? eraOr(T.era) : eraColor(T.era));
+    const cls = ["route"]; if (failed) cls.push("failed"); if (r.event === S.ev) cls.push("fresh");
+    const gr = el("g", { class: cls.join(" "), "data-rid": r.id }, routeG);
+    const inPos = ins.map(i => L.pos.get(i.node));
+    const cx = inPos.reduce((s, p) => s + p.x, 0) / inPos.length, cy = inPos.reduce((s, p) => s + p.y, 0) / inPos.length;
+    let tA;
+    if (inPos.every(p => sameCol(p, tp))) {
+      const sx = outerSide(tp);
+      tA = blocked(tp, sx) ? vertAnchor(tp, cy >= tp.y ? 1 : -1) : sideAnchor(tp, sx);
+    } else tA = anchorToward(tp, cx, cy);
+    const multi = ins.length > 1;
+    const J = multi ? { x: tA.x + tA.nx * 18, y: tA.y + tA.ny * 18, nx: tA.nx, ny: tA.ny } : tA;
+    ins.forEach((inp, k) => {
+      const sp = inPos[k], S0 = byId.get(inp.node);
+      let sA;
+      if (sameCol(sp, tp) && tA.nx !== 0) sA = blocked(sp, tA.nx) ? vertAnchor(sp, J.y >= sp.y ? 1 : -1) : sideAnchor(sp, tA.nx);
+      else sA = anchorToward(sp, J.x, J.y);
+      const d = curve(sA, J);
+      let stroke;
+      if (failed) stroke = "var(--fail)";
+      else {
+        const endVar = multi ? eraColor(T.era) : stemVar;
+        if (S0.era !== T.era) {
+          const gid = "gr" + (gradN++);
+          const lg = el("linearGradient", { id: gid, gradientUnits: "userSpaceOnUse", x1: sA.x, y1: sA.y, x2: J.x, y2: J.y }, defs);
+          el("stop", { offset: "0%", style: `stop-color:var(${eraColor(S0.era)})` }, lg);
+          el("stop", { offset: "100%", style: `stop-color:var(${endVar})` }, lg);
+          stroke = `url(#${gid})`;
+        } else stroke = `var(${endVar})`;
+      }
+      el("path", { class: "edge", d, style: `stroke:${stroke}`, "marker-end": multi ? null : `url(#ar${stemVar})` }, gr);
+      el("path", { class: "hit", d }, gr);
+    });
+    if (multi) {
+      el("path", { class: "edge", d: `M${J.x},${J.y} L${tA.x},${tA.y}`, style: `stroke:var(${stemVar})`, "marker-end": `url(#ar${stemVar})` }, gr);
+      el("circle", { cx: J.x, cy: J.y, r: 3.2, style: `fill:var(${failed ? "--fail" : eraColor(T.era)})` }, gr);
+    }
+    if (failed) {
+      const xm = el("text", { class: "xmark", x: J.x + (J.nx < 0 ? -12 : 4), y: J.y - 5 }, gr); xm.textContent = "✕";
+    }
+    const tl = el("title", {}, gr); tl.textContent = `${r.title || "Route"}: ${r.formula}`;
+  });
+  // nodes
+  [...vis.nodes].forEach(id => {
+    const p = L.pos.get(id); if (!p) return;
+    const n = byId.get(id);
+    const isPast = n.ci !== S.ci;
+    const isTrace = isPast && !vis.past.has(id);
+    const cls = ["node", "t" + n.t]; if (isPast) cls.push("past"); if (isTrace) cls.push("trace");
+    if (n.event === S.ev) cls.push("fresh");
+    const gN = el("g", { class: cls.join(" "), "data-id": id, tabindex: 0, role: "button", "aria-label": `${TYPE[n.t].name}: ${n.label}` }, nodeG);
+    const x0 = p.x - p.w / 2, y0 = p.y - p.h / 2;
+    el("rect", { class: "glow", x: x0 - 4, y: y0 - 3, width: p.w + 8, height: p.h + 6, rx: 9 }, gN);
+    el("rect", { class: "pill", x: x0, y: y0, width: p.w, height: p.h, rx: 7, style: `fill:color-mix(in srgb, var(${TYPE[n.t].v}) ${isPast ? 6 : 12}%, var(--panel));stroke:var(${TYPE[n.t].v})` }, gN);
+    if (n.era !== "classical") el("circle", { cx: x0 + 11, cy: p.y, r: 7.6, style: `fill:none;stroke-width:1.6;stroke:var(${n.era === "quantum" ? "--qand" : "--rel"})` }, gN);
+    marker(n.t, gN, x0 + 11, p.y, 1);
+    const tx = el("text", { class: "lbl", x: x0 + 22, y: p.y - (p.lines.length - 1) * 7 + 4 }, gN);
+    p.lines.forEach((ln, i) => { const ts = el("tspan", { x: x0 + 22, dy: i ? 14 : 0 }, tx); ts.textContent = ln; });
+    if (isPast) { const tg = el("text", { class: "tag", x: x0 + p.w - 2, y: y0 - 3, "text-anchor": "end" }, gN); tg.textContent = homeTag(n); }
+  });
+  if (!vis.nodes.size) {
+    const t = el("text", { class: "empty-note", x: width / 2, y: 60, "text-anchor": "middle" }, svg);
+    t.textContent = "Start of the chapter. Press “Next concept” to read the first one.";
+  }
+  LAST = { L, vis };
+  applyHighlight();
+  const counts = { M: 0, S: 0, O: 0 };
+  vis.nodes.forEach(id => counts[byId.get(id).t]++);
+  $("cM").textContent = counts.M; $("cS").textContent = counts.S; $("cO").textContent = counts.O;
+}
+
+function neighborhood(id) {
+  const on = new Set([id]), ron = new Set();
+  if (!LAST) return { on, ron };
+  LAST.vis.routes.forEach(rid => {
+    const r = routeById.get(rid);
+    const ends = [r.target, ...r.inputs.map(i => i.node)];
+    if (ends.includes(id)) { ron.add(rid); ends.forEach(e => on.add(e)); }
+  });
+  return { on, ron };
+}
+function applyHighlight() {
+  if (!LAST) return;
+  let on = null, ron = null;
+  const focus = S.hover || (S.sel && S.sel.kind === "node" ? S.sel.id : null);
+  if (S.home) {
+    on = new Set(); ron = new Set();
+    LAST.vis.nodes.forEach(id => { const n = byId.get(id); if (n.ci === S.home) on.add(id); });
+    LAST.vis.routes.forEach(rid => { const r = routeById.get(rid); if (r.inputs.some(i => on.has(i.node))) { ron.add(rid); on.add(r.target); } });
+  } else if (S.trace && LAST.vis.trace) {
+    on = new Set(LAST.vis.trace.nodes); ron = new Set(LAST.vis.trace.routes);
+  } else if (focus && LAST.vis.nodes.has(focus)) {
+    ({ on, ron } = neighborhood(focus));
+  } else if (S.sel && S.sel.kind === "route" && LAST.vis.routes.has(S.sel.id)) {
+    const r = routeById.get(S.sel.id);
+    on = new Set([r.target, ...r.inputs.map(i => i.node)]); ron = new Set([r.id]);
+  }
+  svg.classList.toggle("dim", !!on);
+  svg.querySelectorAll(".node").forEach(e => {
+    const id = e.getAttribute("data-id");
+    e.classList.toggle("on", !!on && on.has(id));
+    e.classList.toggle("sel", !!S.sel && S.sel.kind === "node" && S.sel.id === id);
+  });
+  svg.querySelectorAll(".route").forEach(e => {
+    const rid = e.getAttribute("data-rid");
+    e.classList.toggle("on", !!ron && ron.has(rid));
+    e.classList.toggle("sel", !!S.sel && S.sel.kind === "route" && S.sel.id === rid);
+  });
+}
+
+/* ---------------- graph events ---------------- */
+const tip = $("tip");
+svg.addEventListener("click", e => {
+  const nEl = e.target.closest(".node"), rEl = e.target.closest(".route");
+  tip.hidden = true;
+  if (nEl) selectNode(nEl.getAttribute("data-id"));
+  else if (rEl) select({ kind: "route", id: rEl.getAttribute("data-rid") });
+  else { S.sel = null; S.trace = 0; S.home = null; render(); }
+});
+svg.addEventListener("keydown", e => {
+  const nEl = e.target.closest(".node");
+  if (nEl && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); selectNode(nEl.getAttribute("data-id")); }
+});
+svg.addEventListener("pointerover", e => {
+  const nEl = e.target.closest(".node");
+  if (nEl) {
+    S.hover = nEl.getAttribute("data-id"); applyHighlight();
+    const n = byId.get(S.hover);
+    tip.innerHTML = `${esc(n.label)}<span class="f">${fmt(n.symbol)}</span>`;
+    tip.hidden = false;
+  }
+});
+svg.addEventListener("pointermove", e => {
+  if (tip.hidden) return;
+  const x = Math.min(window.innerWidth - 290, e.clientX + 14), y = e.clientY + 16;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+});
+svg.addEventListener("pointerout", e => {
+  const nEl = e.target.closest(".node");
+  if (nEl && !nEl.contains(e.relatedTarget)) { S.hover = null; tip.hidden = true; applyHighlight(); }
+});
+
+/* ---------------- selection & navigation ---------------- */
+function select(sel) { S.sel = sel; S.home = null; if (!sel || sel.kind !== "node") S.trace = 0; render(); }
+function selectNode(id) {
+  const n = byId.get(id);
+  if (S.sel && S.sel.kind === "node" && S.sel.id !== id) S.trace = 0;
+  if (LAST && LAST.vis.nodes.has(id)) { S.sel = { kind: "node", id }; S.home = null; render(); return; }
+  goChapter(n.ci, { ev: Math.max(n.event, CHAPTERS[n.ci].e1) });
+  S.sel = { kind: "node", id }; render();
+}
+function goChapter(ci, opts = {}) {
+  ci = Math.max(0, Math.min(CHAPTERS.length - 1, ci));
+  const c = CHAPTERS[ci];
+  S.ci = ci; S.home = null; S.trace = 0;
+  S.ev = opts.ev !== undefined ? Math.max(c.e0 - 1, Math.min(c.e1, opts.ev)) : c.e1;
+  if (opts.follow) followEvent();
+  try { history.replaceState(null, "", `#v${c.vol}c${c.ch}`); } catch (e) {}
+  scroller.scrollTop = 0;
+}
+function followEvent() {
+  if (!S.follow) return;
+  const e = EVENTS[S.ev];
+  if (!e || e.ci !== S.ci) return;
+  S.trace = 0;
+  S.sel = e.kind === "node" ? { kind: "node", id: e.node } : { kind: "route", id: e.routes[0] };
+}
+function stepTo(ev) {
+  const c = CHAPTERS[S.ci];
+  if (ev > c.e1) { if (S.ci < CHAPTERS.length - 1) { goChapter(S.ci + 1, { ev: CHAPTERS[S.ci + 1].e0, follow: true }); } }
+  else if (ev < c.e0 - 1) { if (S.ci > 0) { goChapter(S.ci - 1, { ev: CHAPTERS[S.ci - 1].e1 }); } }
+  else { S.ev = ev; if (ev === c.e0 - 1 && S.follow) S.sel = null; followEvent(); }
+  render(); scrollToFresh();
+}
+function scrollToFresh() {
+  if (!LAST) return;
+  const e = EVENTS[S.ev]; if (!e || e.ci !== S.ci || e.kind !== "node") return;
+  const p = LAST.L.pos.get(e.node); if (!p) return;
+  const box = scroller.getBoundingClientRect(), svgBox = svg.getBoundingClientRect();
+  const yAbs = svgBox.top + p.y * (svgBox.height / LAST.L.height);
+  if (scroller.scrollHeight > scroller.clientHeight + 4) {
+    if (yAbs < box.top + 40 || yAbs > box.bottom - 40) scroller.scrollTop += yAbs - (box.top + box.height / 2);
+  }
+}
+
+/* ---------------- reader ---------------- */
+function renderReader() {
+  const c = CHAPTERS[S.ci];
+  const feeders = new Map();
+  c.carried_in.forEach(x => { const h = byId.get(x.node).ci; feeders.set(h, (feeders.get(h) || 0) + 1); });
+  const fChips = [...feeders.entries()].sort((a, b) => a[0] - b[0]).map(([h, k]) => {
+    const hc = CHAPTERS[h];
+    return `<button class="chip${S.home === h ? " active" : ""}" type="button" data-home="${h}" title="${esc(hc.title)}: ${k} concept${k > 1 ? "s" : ""}" aria-pressed="${S.home === h}">${chapLabel(hc)} <span class="ttl">${esc(hc.title)}</span> <span class="n">${k}</span></button>`;
+  }).join("");
+  const evs = EVENTS.filter(e => e.ci === S.ci);
+  const secs = c.sections.filter(s => !(s.num.endsWith(".0") && !evs.some(e => e.section === s.num))).map(s => {
+    const list = evs.filter(e => e.section === s.num).map(e => {
+      const st = e.index < S.ev ? "done" : e.index === S.ev ? "cur" : "todo";
+      if (e.kind === "node") {
+        const n = byId.get(e.node);
+        return `<li class="ev ${st}" data-ev="${e.index}" tabindex="0" role="button">${mkSvg(n.t, n.era)}<span>${esc(n.label)}</span></li>`;
+      }
+      const r = routeById.get(e.routes[0]);
+      return `<li class="ev link ${st}" data-ev="${e.index}" tabindex="0" role="button"><span class="arrow">↳</span><span>New link into ${esc(byId.get(r.target).label)}</span></li>`;
+    }).join("");
+    return `<div class="sec"><div class="sec-head"><span class="t"><span class="num">${s.num.endsWith(".0") ? "" : s.num}</span>${esc(s.title)}</span><a href="${esc(s.url)}" target="_blank" rel="noopener">Read ↗</a></div>${list ? `<ul class="evs">${list}</ul>` : `<div class="none">No new concepts drawn from this section.</div>`}</div>`;
+  }).join("");
+  const cov = COVER.filter(x => x.vol === c.vol && x.section.split(".")[0] === String(c.ch));
+  const nNode = cov.filter(x => x.status === "node").length, nRef = cov.filter(x => x.status === "node by reference").length;
+  const notDrawn = cov.filter(x => x.status === "not modelled");
+  const refList = cov.filter(x => x.status === "node by reference").map(x => `<li>${esc(x.term)} → ${esc(byId.get(x.node).label)} (${homeTag(byId.get(x.node))})</li>`).join("");
+  const ndList = notDrawn.map(x => `<li><b>${esc(x.term)}</b>: ${esc(x.reason)}</li>`).join("");
+  $("reader").innerHTML = `
+    <div class="eyebrow">${volName(c.vol)} · ${esc(c.unit || "")}</div>
+    <h3>Chapter ${c.ch}. ${esc(c.title)}</h3>
+    <div class="chap-link"><a href="${esc(c.sections[0].url)}" target="_blank" rel="noopener">Open the chapter in the book ↗</a></div>
+    <div class="meta">${c.new_nodes} new concepts · ${c.routes} links · uses ${c.carried_in.length} concepts from ${feeders.size} earlier chapter${feeders.size === 1 ? "" : "s"}</div>
+    ${feeders.size ? `<div class="small" style="margin-top:8px">Earlier chapters it draws on (tap to highlight):</div><div class="feeders" aria-label="Earlier chapters this one draws on">${fChips}</div>` : ""}
+    ${secs}
+    <details class="terms"><summary>Book key terms: ${nNode} drawn here, ${nRef} drawn elsewhere, ${notDrawn.length} not drawn</summary>
+      ${refList ? `<div class="small" style="margin-top:6px">Drawn as an existing node</div><ul>${refList}</ul>` : ""}
+      ${ndList ? `<div class="small" style="margin-top:6px">Not drawn, with the reason</div><ul>${ndList}</ul>` : ""}
+    </details>
+    <div class="credit">${creditHTML()}</div>`;
+}
+function mkSvg(t, era) {
+  const fill = `fill:var(${TYPE[t].v})`;
+  let shape = t === "O" ? `<circle r="4.6" style="${fill}"></circle>` : t === "M" ? `<rect x="-4.5" y="-4.5" width="9" height="9" rx="2" style="${fill}"></rect>` : `<path d="M-5,0 L-2.5,-4.3 L2.5,-4.3 L5,0 L2.5,4.3 L-2.5,4.3 Z" style="${fill}"></path>`;
+  const ring = era && era !== "classical" ? `<circle r="7.2" style="fill:none;stroke-width:1.5;stroke:var(${era === "quantum" ? "--qand" : "--rel"})"></circle>` : "";
+  return `<svg class="mk" width="16" height="16" viewBox="-8 -8 16 16" aria-hidden="true">${ring}${shape}</svg>`;
+}
+$("reader").addEventListener("click", e => {
+  const ev = e.target.closest(".ev"), chip = e.target.closest(".chip");
+  if (ev) { S.ev = +ev.getAttribute("data-ev"); const E = EVENTS[S.ev]; S.trace = 0; S.home = null; S.sel = E.kind === "node" ? { kind: "node", id: E.node } : { kind: "route", id: E.routes[0] }; render(); scrollToFresh(); }
+  else if (chip) { const h = +chip.getAttribute("data-home"); S.home = S.home === h ? null : h; S.trace = 0; if (S.home !== null && S.mode === "off") setMode("needed"); render(); }
+});
+$("reader").addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.closest(".ev")) { e.preventDefault(); e.target.closest(".ev").click(); } });
+
+/* ---------------- card ---------------- */
+function nodeChip(id) {
+  const n = byId.get(id);
+  const here = n.ci === S.ci;
+  return `<button class="chip" type="button" data-node="${esc(id)}">${mkSvg(n.t, n.era)}${esc(n.label)}${here ? "" : ` <span class="n">${homeTag(n)}</span>`}</button>`;
+}
+function routeBlock(r, selected) {
+  const tag = r.tags.length ? r.tags.map(t => TAGNAME[t] || t).join(", ") : "derivation";
+  return `<div class="rt${selected ? " sel" : ""}" data-route="${r.id}">
+    <div class="rt-title"><span>${esc(r.title || "Link")}</span><span class="k">${esc(tag)} · ${secLabel(r.section)}${r.vol !== CHAPTERS[S.ci].vol || r.ci !== S.ci ? " V" + r.vol : ""}</span></div>
+    <div class="rt-f">${fmt(r.formula)}</div>
+    ${r.description ? `<div class="rt-d">${fmt(r.description)}</div>` : ""}
+    <div class="ins">${r.inputs.map(i => nodeChip(i.node)).join("")} <span class="small" style="align-self:center">→</span> ${nodeChip(r.target)}</div>
+    ${r.kind !== "classical" ? `<div class="small" style="margin-top:4px">${esc(KINDNAME[r.kind] || r.kind)}${r.logic === "AND" ? " · all inputs needed together" : ""}</div>` : (r.logic === "AND" ? `<div class="small" style="margin-top:4px">All inputs needed together</div>` : "")}
+  </div>`;
+}
+function renderCard() {
+  const card = $("card");
+  const c = CHAPTERS[S.ci];
+  if (!S.sel) {
+    card.innerHTML = `<div class="eyebrow">Nothing selected</div><h3>Pick a concept</h3>
+      <p class="desc">Click a concept in the graph or in the reading list to see what it is, where the book introduces it, how it is obtained from earlier concepts, and where it is used later.</p>
+      <p class="small">This chapter adds ${c.new_nodes} concepts and ${c.routes} links, and draws on ${c.carried_in.length} concepts from earlier chapters.</p>`;
+    return;
+  }
+  if (S.sel.kind === "route") {
+    const r = routeById.get(S.sel.id);
+    card.innerHTML = `<div class="eyebrow">Link · ${esc(KINDNAME[r.kind] || r.kind)}</div><h3>${esc(r.title || "Link")}</h3>${routeBlock(r, true)}
+      <p class="small">A link lists the concepts that are needed together (AND) to obtain its target. Several links into one concept are alternative routes (OR).</p>`;
+    return;
+  }
+  const n = byId.get(S.sel.id);
+  const sec = CHAPTERS[n.ci].sections.find(s => s.num === n.section);
+  const ins = (routesInto.get(n.id) || []).filter(r => r.event <= Math.max(S.ev, n.event)).sort((a, b) => a.event - b.event);
+  const later = (routesInto.get(n.id) || []).filter(r => r.event > Math.max(S.ev, n.event));
+  const usedBy = new Map();
+  (routesFrom.get(n.id) || []).forEach(r => { if (!usedBy.has(r.target)) usedBy.set(r.target, r); });
+  const usedList = [...usedBy.keys()].map(id => byId.get(id)).sort((a, b) => a.event - b.event);
+  const ahead = usedList.filter(x => x.event > S.ev).length;
+  const era = n.era !== "classical" ? `<span class="pill-tag" style="border-color:var(${n.era === "quantum" ? "--qand" : "--rel"})">${ERA[n.era]}</span>` : "";
+  const flags = [n.primitive ? "taken as given (measured)" : "", n.postulate ? "taken as a starting assumption" : ""].filter(Boolean).join("");
+  card.innerHTML = `
+    <div class="type-row">${mkSvg(n.t, n.era)}<span class="pill-tag" style="border-color:var(${TYPE[n.t].v})">${TYPE[n.t].name}</span>${era}</div>
+    <h3>${esc(n.label)}</h3>
+    <div class="formula">${fmt(n.symbol)}</div>
+    <p class="desc">${fmt(n.description)}</p>
+    <dl class="facts">
+      <dt>Introduced</dt><dd>${volName(n.vol)}, ${secLabel(n.section)}${n.section.endsWith(".0") ? "" : " " + esc(sec ? sec.title : "")} · <a href="${esc(sec ? sec.url : "#")}" target="_blank" rel="noopener">Read in the book ↗</a></dd>
+      ${n.book_terms.length ? `<dt>Book terms</dt><dd>${n.book_terms.map(esc).join("; ")}</dd>` : ""}
+      ${n.math_structure ? `<dt>Structure</dt><dd class="math">${fmt(n.math_structure)}</dd>` : ""}
+      ${flags ? `<dt>Status</dt><dd>${flags}</dd>` : ""}
+    </dl>
+    ${n.properties ? `<div class="block-title">Properties</div><ul class="props">${n.properties.map(p => `<li>${fmt(p)}</li>`).join("")}</ul>` : ""}
+    <div class="block-title">How it is obtained${ins.length ? ` · ${ins.length} route${ins.length > 1 ? "s" : ""}` : ""}</div>
+    ${ins.length ? ins.map(r => routeBlock(r, false)).join("") : `<p class="small">No route leads here: the network takes it as a starting point.</p>`}
+    ${later.length ? `<p class="small">${later.length} more route${later.length > 1 ? "s" : ""} into this concept appear${later.length > 1 ? "" : "s"} later in the book.</p>` : ""}
+    <div class="trace-row"><span class="small">Show where it comes from</span>
+      <div class="seg" role="radiogroup" aria-label="Trace depth">
+        ${[[0, "Off"], [1, "1 step"], [2, "2 steps"], [3, "3 steps"], [99, "All"]].map(([v, t]) => `<label><input type="radio" name="trace" id="trace-${v}" value="${v}"${S.trace === v ? " checked" : ""}><span>${t}</span></label>`).join("")}
+      </div></div>
+    <div class="block-title">Used by${usedList.length ? ` · ${usedList.length} concept${usedList.length > 1 ? "s" : ""}${ahead ? `, ${ahead} later in the book` : ""}` : ""}</div>
+    ${usedList.length ? `<div class="uses">${usedList.map(x => nodeChip(x.id)).join("")}</div>` : `<p class="small">Nothing in the book builds on it within this network.</p>`}`;
+}
+$("card").addEventListener("click", e => {
+  const chip = e.target.closest("[data-node]");
+  if (chip) { selectNode(chip.getAttribute("data-node")); return; }
+});
+$("card").addEventListener("change", e => {
+  if (e.target.name === "trace") { S.trace = +e.target.value; S.home = null; if (S.trace && S.mode === "off") setMode("needed"); render(); }
+});
+
+/* ---------------- book map ---------------- */
+const mapSvg = $("map");
+const FEEDS = CHAPTERS.map(c => { const f = new Map(); c.carried_in.forEach(x => { const h = byId.get(x.node).ci; f.set(h, (f.get(h) || 0) + 1); }); return f; });
+function drawMap() {
+  const W = Math.max(300, mapSvg.getBoundingClientRect().width || 800), H = 98, base = 60, pad = 8, volGap = 16;
+  mapSvg.setAttribute("viewBox", `0 0 ${W} ${H}`); mapSvg.innerHTML = "";
+  const n = CHAPTERS.length, step = (W - 2 * pad - 2 * volGap) / n;
+  const X = i => pad + (CHAPTERS[i].vol - 1) * volGap + (i + 0.5) * step;
+  const arcs = el("g", {}, mapSvg);
+  CHAPTERS.forEach((c, j) => FEEDS[j].forEach((k, i) => {
+    const x1 = X(i), x2 = X(j), h = Math.min(base - 6, 5 + (x2 - x1) * 0.3);
+    el("path", { class: "arc" + (j === S.ci ? " in" : ""), "data-to": j, d: `M${x1},${base} Q${(x1 + x2) / 2},${base - 2 * h} ${x2},${base}`, "stroke-width": (0.6 + Math.sqrt(k) * 0.75).toFixed(2) }, arcs);
+  }));
+  const ticks = el("g", {}, mapSvg);
+  const tw = Math.max(5, Math.min(18, step - 2));
+  CHAPTERS.forEach((c, i) => {
+    const cls = ["map-tick"]; if (i === S.ci) cls.push("cur"); if (FEEDS[S.ci].has(i)) cls.push("feed");
+    const gT = el("g", { class: cls.join(" "), "data-ci": i, tabindex: 0, role: "button", "aria-label": `${chapLabel(c)}: ${c.title}` }, ticks);
+    el("rect", { x: X(i) - tw / 2, y: base, width: tw, height: 10, rx: 2 }, gT);
+    if (step >= 13 || c.ch % 5 === 0 || c.ch === 1) { const t = el("text", { x: X(i), y: base + 21, "text-anchor": "middle" }, gT); t.textContent = c.ch; }
+    const tl = el("title", {}, gT); tl.textContent = `${chapLabel(c)} ${c.title}${FEEDS[S.ci].has(i) ? ` · supplies ${FEEDS[S.ci].get(i)} concepts to the open chapter` : ""}`;
+  });
+  [1, 2, 3].forEach(v => {
+    const idx = CHAPTERS.map((c, i) => c.vol === v ? i : -1).filter(i => i >= 0);
+    const t = el("text", { class: "vol-label", x: X(idx[0]) - tw / 2, y: base + 34 }, mapSvg);
+    t.textContent = W < 760 ? "Vol " + v : ["", "Vol 1 · Mechanics, waves, sound", "Vol 2 · Thermodynamics, electricity, magnetism", "Vol 3 · Optics, relativity, quantum physics"][v];
+  });
+}
+mapSvg.addEventListener("click", e => { const t = e.target.closest(".map-tick"); if (t) { goChapter(+t.getAttribute("data-ci")); S.sel = null; render(); } });
+mapSvg.addEventListener("keydown", e => { const t = e.target.closest(".map-tick"); if (t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); t.dispatchEvent(new MouseEvent("click", { bubbles: true })); } });
+mapSvg.addEventListener("pointerover", e => {
+  const t = e.target.closest(".map-tick"); if (!t) return;
+  const j = +t.getAttribute("data-ci");
+  mapSvg.querySelectorAll(".arc").forEach(a => a.classList.toggle("in", +a.getAttribute("data-to") === j));
+});
+mapSvg.addEventListener("pointerout", e => { if (e.target.closest(".map-tick")) mapSvg.querySelectorAll(".arc").forEach(a => a.classList.toggle("in", +a.getAttribute("data-to") === S.ci)); });
+
+/* ---------------- key ---------------- */
+function keyItem(svgInner, text, w = 46) { return `<div class="key-item"><svg width="${w}" height="20" viewBox="0 0 ${w} 20" aria-hidden="true">${svgInner}</svg><span>${text}</span></div>`; }
+$("keyGrid").innerHTML = [
+  keyItem(`<g transform="translate(10,10)"><rect x="-4.5" y="-4.5" width="9" height="9" rx="2" style="fill:var(--mod)"/></g><g transform="translate(24,10)"><path d="M-5,0 L-2.5,-4.3 L2.5,-4.3 L5,0 L2.5,4.3 L-2.5,4.3 Z" style="fill:var(--sta)"/></g><g transform="translate(38,10)"><circle r="4.6" style="fill:var(--obs)"/></g>`, "Model, state, observable. Models act on states to give observables."),
+  keyItem(`<g transform="translate(14,10)"><circle r="7.2" style="fill:none;stroke-width:1.5;stroke:var(--rel)"/><circle r="4.6" style="fill:var(--obs)"/></g><g transform="translate(34,10)"><circle r="7.2" style="fill:none;stroke-width:1.5;stroke:var(--qand)"/><circle r="4.6" style="fill:var(--obs)"/></g>`, "Ring: relativistic (green) or quantum (vermilion) concept."),
+  keyItem(`<path d="M2,4 C14,4 16,10 28,10" style="fill:none;stroke:var(--and);stroke-width:1.6"/><path d="M2,16 C14,16 16,10 28,10" style="fill:none;stroke:var(--and);stroke-width:1.6"/><circle cx="28" cy="10" r="3" style="fill:var(--and)"/><path d="M28,10 L42,10" style="stroke:var(--and);stroke-width:1.6"/><path d="M38,6 L44,10 L38,14z" style="fill:var(--and)"/>`, "AND: inputs that are needed together meet at a dot."),
+  keyItem(`<path d="M2,5 C16,5 24,10 40,10" style="fill:none;stroke:var(--or);stroke-width:1.6"/><path d="M2,16 C16,16 24,12 40,12" style="fill:none;stroke:var(--or);stroke-width:1.6"/><path d="M36,6 L44,10 L36,14z" style="fill:var(--or)"/>`, "OR: magenta (gold if quantum) arrows are alternative routes to one concept."),
+  keyItem(`<defs><linearGradient id="kg" gradientUnits="userSpaceOnUse" x1="2" y1="10" x2="40" y2="10"><stop offset="0" style="stop-color:var(--and)"/><stop offset="1" style="stop-color:var(--qand)"/></linearGradient></defs><path d="M2,10 L40,10" style="stroke:url(#kg);stroke-width:2"/><path d="M36,6 L44,10 L36,14z" style="fill:var(--qand)"/>`, "Colour gradient: the link crosses from one theory to another (classical, relativistic, quantum)."),
+  keyItem(`<path d="M2,10 L40,10" style="stroke:var(--fail);stroke-width:1.6;stroke-dasharray:5 4"/><text x="20" y="7" style="font-size:11px;font-weight:700;fill:var(--fail)">✕</text>`, "Failed classical prediction the book discusses."),
+  keyItem(`<rect x="2" y="3" width="40" height="14" rx="6" style="fill:var(--faint);stroke:var(--mod);stroke-dasharray:4 3"/>`, "Dashed outline: a concept from an earlier chapter, labelled with the section that introduced it."),
+  keyItem(`<rect x="2" y="2" width="40" height="16" rx="7" style="fill:var(--hl)"/>`, "Highlight: the concept just read."),
+].join("");
+
+/* ---------------- controls ---------------- */
+const chapSel = $("chapter");
+chapSel.innerHTML = [1, 2, 3].map(v => `<optgroup label="${volName(v)}">${CHAPTERS.filter(c => c.vol === v).map(c => `<option value="${c.i}">${c.ch}. ${esc(c.title)}</option>`).join("")}</optgroup>`).join("");
+chapSel.addEventListener("change", () => { goChapter(+chapSel.value); S.sel = null; render(); });
+$("prevChap").addEventListener("click", () => { goChapter(S.ci - 1); S.sel = null; render(); });
+$("nextChap").addEventListener("click", () => { goChapter(S.ci + 1); S.sel = null; render(); });
+$("fwd").addEventListener("click", () => stepTo(S.ev + 1));
+$("back").addEventListener("click", () => stepTo(S.ev - 1));
+$("toStart").addEventListener("click", () => { S.ev = CHAPTERS[S.ci].e0 - 1; S.sel = null; S.trace = 0; render(); });
+$("toEnd").addEventListener("click", () => { S.ev = CHAPTERS[S.ci].e1; render(); });
+$("step").addEventListener("input", e => { S.ev = CHAPTERS[S.ci].e0 - 1 + (+e.target.value); followEvent(); render(); });
+$("follow").addEventListener("change", e => { S.follow = e.target.checked; save(); });
+function setMode(v) { S.mode = v; const r = document.querySelector(`input[name=earlier][value=${v}]`); if (r) r.checked = true; }
+document.querySelectorAll("input[name=earlier]").forEach(r => r.addEventListener("change", e => { S.mode = e.target.value; S.home = null; render(); }));
+document.addEventListener("keydown", e => {
+  if (e.target.closest && e.target.closest("input, select, textarea")) return;
+  if (e.key === "ArrowRight") { e.preventDefault(); stepTo(S.ev + 1); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); stepTo(S.ev - 1); }
+  else if (e.key === "]") { goChapter(S.ci + 1); S.sel = null; render(); }
+  else if (e.key === "[") { goChapter(S.ci - 1); S.sel = null; render(); }
+  else if (e.key === "Escape") { S.sel = null; S.trace = 0; S.home = null; render(); }
+});
+
+function creditHTML() {
+  const st = DATA.stats;
+  return `<p>Source: <a href="https://openstax.org/details/books/university-physics-volume-1" target="_blank" rel="noopener"><i>University Physics</i>, Volumes 1–3</a>, by Samuel J. Ling, Jeff Sanny and William Moebs with contributing authors, OpenStax, Rice University, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>; access for free at <a href="https://openstax.org/books/university-physics-volume-1/pages/1-introduction" target="_blank" rel="noopener">openstax.org</a>. The book fixes the order in which concepts appear and the list of key terms; node and link descriptions were written for this network.</p>
+  <p>${st.nodes} concepts, ${st.routes} links. The book's ${st.glossary_terms} key terms: ${st.glossary_node} drawn as nodes, ${st.glossary_node_by_reference} matched to a node of another section, ${st.glossary_not_modelled} not drawn (reasons listed per chapter).</p>
+  <p>This network is an adaptation of the book (its order and key terms, with new descriptions and links) and is shared under the same licence, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>. Prepared with AI assistance (Claude, Anthropic).</p>`;
+}
+$("footer").innerHTML = creditHTML();
+$("key").open = keyOpen;
+$("key").addEventListener("toggle", () => { try { localStorage.setItem("upnet-key", $("key").open ? "1" : "0"); } catch (e) {} });
+
+/* ---------------- render ---------------- */
+function render() {
+  const c = CHAPTERS[S.ci];
+  chapSel.value = String(S.ci);
+  $("prevChap").disabled = S.ci === 0; $("nextChap").disabled = S.ci === CHAPTERS.length - 1;
+  const total = c.e1 - c.e0 + 1, k = S.ev - c.e0 + 1;
+  const st = $("step"); st.max = total; st.value = k;
+  $("back").disabled = S.ci === 0 && k <= 0;
+  $("fwd").disabled = S.ci === CHAPTERS.length - 1 && k >= total;
+  const e = EVENTS[S.ev];
+  const where = e && e.ci === S.ci ? ` · ${secLabel(e.section)}` : "";
+  $("stepText").textContent = k <= 0 ? `Before the first concept of ${total} steps` : `Step ${k} of ${total}${where}`;
+  $("gEyebrow").textContent = `${volName(c.vol)} · Chapter ${c.ch}${c.unit ? " · " + c.unit : ""}`;
+  $("gTitle").textContent = c.title;
+  document.querySelectorAll("input[name=earlier]").forEach(r => { r.checked = r.value === S.mode; });
+  $("follow").checked = S.follow;
+  if (S.sel && S.sel.kind === "node" && !byId.has(S.sel.id)) S.sel = null;
+  const vis = visible();
+  drawGraph(vis);
+  renderReader();
+  renderCard();
+  drawMap();
+  save();
+}
+window.addEventListener("hashchange", () => {
+  const h = /^#v([123])c(\d{1,2})$/.exec(location.hash || "");
+  if (h && chapIdx.has(ckey(+h[1], +h[2]))) { goChapter(chapIdx.get(ckey(+h[1], +h[2]))); S.sel = null; render(); }
+});
+let rT = null;
+window.addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => { layoutCache.clear(); render(); }, 120); });
+render();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { layoutCache.clear(); render(); });
+})();
+</script>

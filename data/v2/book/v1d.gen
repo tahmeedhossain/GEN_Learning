@@ -1,0 +1,374 @@
+# University Physics Volume 1, chapters 14-17
+
+§ 1 14.0
+P Solids keep their shape because they resist shear [[stress]]. Liquids and gases cannot resist it, so they flow. This chapter describes both as continuous media with a density, a pressure and a velocity at every point. It starts with fluids at rest, where [[n2|Newton's second law]] applied to a small volume of fluid shows how [[pres|pressure]] grows with depth and explains hydraulics and buoyancy. It then treats fluids in motion: conservation of mass gives the continuity equation, and the [[wet|work–energy theorem]] gives Bernoulli's equation. It ends with viscosity, which resists flow, and with turbulence.
+§ 1 14.1
+P Matter occurs in several *phases of matter*. In a *solid* the atoms stay near fixed positions, so a solid keeps its shape. In a *liquid* the molecules remain close together but can slide past one another; in a *gas* they are far apart and move almost freely; a *plasma* is a gas of ions and free electrons. Liquids and gases are [[fluid|fluids]]: a fluid at rest cannot sustain a shear [[stress]], so any shear makes it flow. At rest it exerts only a normal force on a surface, described by the [[pres|pressure]] p = F/A, the force per unit area, in pascals (1 Pa = 1 N/m²). In a *static fluid* the pressure at a point is the same in all directions. *Atmospheric pressure* at sea level is about 1.013 × 10⁵ Pa.
+N S fluid | Fluid | ρ(r⃗), p(r⃗) |
+d A liquid or gas: matter that flows because it cannot resist a shear stress when at rest; described by fields such as density and pressure.
+m continuum: scalar fields ρ(r⃗, t), p(r⃗, t) on a region of ℝ³
+g fluids
+R[def] fluid <- stress, pres : at rest only normal stress (pressure), no shear stress | Matter that flows | Shear stress makes a fluid flow instead of deform elastically.
+P The [[rho|density]] of a material is its [[m|mass]] per unit volume, ρ = m/V, in kg/m³; volume has the dimension of [[L|length]] cubed. In a *homogeneous substance* the density is the same everywhere, so any sample gives the same ratio m/V. In a *heterogeneous substance*, such as granite, it varies from point to point and is defined locally as ρ = dm/dV. Water has ρ = 1.00 × 10³ kg/m³, air at sea level about 1.2 kg/m³, and lead 1.13 × 10⁴ kg/m³. Liquids and solids are nearly incompressible, while the density of a gas changes readily with pressure. The [[sg|specific gravity]] is the density divided by that of water, a pure number. Lead, at 11.3, sinks in water; ice, at 0.917, floats.
+N O rho | Density | ρ = m/V |
+d Mass per unit volume.
+g density
+R[def] rho <- m, L : ρ = m/V,  V ∼ ℓ³ | Mass per volume | For a nonuniform body ρ = dm/dV.
+N O sg | Specific gravity | ρ/ρ_water |
+d Density relative to that of water; dimensionless.
+g specific gravity
+R[def] sg <- rho : ρ/ρ_water | Ratio of densities | Above 1 the material sinks in water.
+X pressure :: = pres
+
+§ 1 14.2
+P Most gauges measure pressure relative to the surrounding air. A tyre gauge reads the [[pabs|gauge pressure]] p_g, the excess over atmospheric pressure; the absolute pressure is the total, p_{abs} = p_g + p_{atm}. Gauge pressure is negative in a partial vacuum, but absolute [[pres|pressure]] cannot be. An open-tube *manometer* is a U-shaped tube of liquid with one arm connected to the gas and the other open to the air; a difference h in the heights of the two columns means a gauge pressure ρgh, as the next section shows. A mercury *barometer*, introduced by Evangelista Torricelli, is a tube closed at the top with almost empty space above the mercury, so its column height measures the absolute pressure of the atmosphere, about 760 mm at sea level. Besides the *pascal*, the *torr*, 1/760 of an atmosphere or about 133 Pa, is still used.
+N O pabs | Gauge and absolute pressure | p_abs = p_g + p_atm |
+d Gauges read pressure relative to the atmosphere; absolute pressure adds atmospheric pressure.
+g gauge pressure; absolute pressure
+R[def] pabs <- pres : p_abs = p_g + p_atm | Relative to the atmosphere | Gauge pressure can be negative, absolute cannot.
+
+§ 1 14.3
+P Take a [[fluid]] at rest, with the y axis pointing up, and a thin horizontal layer of it with area A and thickness dy. The layer does not accelerate, so by [[n2|Newton's second law]] the forces on it balance. The [[pres|pressure]] below pushes up with pA, the pressure above pushes down with (p + dp)A, and the weight of the layer is ρgA dy, with [[rho|density]] ρ and [[g|free-fall acceleration]] g. Balance gives dp/dy = −ρg: pressure falls with height and grows with depth. This is [[hydro|hydrostatic equilibrium]]. For constant density, the pressure at depth h below a point at pressure p₀ is p = p₀ + ρgh, whatever the shape of the container. At 10.0 m below the surface of a lake the gauge pressure is (1.00 × 10³ kg/m³)(9.80 m/s²)(10.0 m) = 9.80 × 10⁴ Pa, almost one atmosphere.
+Q dp/dy = −ρg,   p = p₀ + ρgh
+N M hydro | Hydrostatic equilibrium | dp/dy = −ρg |
+d In a fluid at rest pressure grows with depth so that each fluid element is balanced: p = p₀ + ρgh for constant density.
+p ρ constant ⇒ p linear in depth; pressure depends only on depth, not container shape; static
+g hydrostatic equilibrium
+R[thm] hydro <- n2, rho, g, pres, fluid : (p + dp)A − pA = −ρgA dy | Forces on a fluid layer | Net force on a thin layer is zero.
+P In a fluid at rest, the pressure profile is fixed only up to its value at one point. If the pressure at the surface of an enclosed liquid is raised by Δp, it therefore rises by the same Δp everywhere in the liquid. This consequence of [[hydro|hydrostatic equilibrium]] is [[pascal|Pascal's principle]], and it is the basis of *hydraulics*. In a *hydraulic jack*, a force F₁ on a small piston of area A₁ raises the pressure by F₁/A₁, and the same increase pushes on a large piston of area A₂ at the same level, so F₂ = F₁A₂/A₁. With A₂/A₁ = 100, a push of 200 N supports a load of 2.00 × 10⁴ N. No energy is gained: the liquid is incompressible, so the large piston moves one hundredth as far as the small one, and the two works are equal.
+Q F₁/A₁ = F₂/A₂
+N M pascal | Pascal's principle | Δp transmitted undiminished |
+d A pressure change applied to an enclosed fluid reaches every part of it; a hydraulic jack multiplies force by the area ratio.
+p consequence of hydrostatic equilibrium; F₁/A₁ = F₂/A₂ in hydraulics; work is still conserved
+g Pascal’s principle; hydraulic jack
+R[thm] pascal <- hydro : p(y) = p₀ + ρg(y₀ − y);  Δp₀ shifts p everywhere | Additive constant | The pressure profile is fixed up to the pressure at one point.
+
+§ 1 14.4
+P A body immersed in a [[fluid]] is pushed upward by the fluid around it. This net upward force is the [[FB|buoyant force]], and it arises because [[pres|pressure]] grows with depth. Consider a submerged block of height h whose top and bottom faces have area A. The horizontal forces on its sides cancel. Its bottom face is deeper than its top face by h, so by [[hydro|hydrostatic equilibrium]] the pressure there is larger by ρ_{fl} gh, where ρ_{fl} is the density of the fluid. The net upward force is ρ_{fl} ghA = ρ_{fl} V g, with V = hA the volume of the block. It depends neither on the depth of the block nor on the material it is made of.
+N O FB | Buoyant force | F_B = ρ_fl V g |
+d Net upward force of a fluid on an immersed body.
+g buoyant force
+
+P The result holds for a body of any shape. Imagine the body replaced by fluid filling the same space. That fluid would be in [[hydro|hydrostatic equilibrium]], so the pressure forces on its surface would exactly support its [[w|weight]]. The pressure on each part of the surface depends only on depth, not on what lies inside, so the real body feels the same total force. This is [[archi|Archimedes' principle]], named after Archimedes of Syracuse: the buoyant force equals the weight of the fluid displaced. With the [[rho|density]] of the fluid and the [[g|free-fall acceleration]], the [[FB|buoyant force]] is F_B = ρ_{fl} V_{disp} g, where V_{disp} is the submerged volume. A body sinks if its mean density exceeds that of the fluid; otherwise it floats with the fraction ρ_{body}/ρ_{fl} of its volume submerged, 91.7 % for ice in fresh water.
+N M archi | Archimedes' principle | F_B = weight of displaced fluid |
+d A body immersed in a fluid is pushed up by a force equal to the weight of the fluid it displaces.
+p consequence of hydrostatic pressure; independent of the body's material; body floats if its mean density < fluid density
+g Archimedes’ principle
+R[thm] archi <- hydro, w : F⃗_B = −∮ p n̂ dA = weight of the displaced fluid | Pressure difference top to bottom | The same pressure would hold up the fluid that fills the space.
+R[thm] FB <- archi, rho, g : F_B = ρ_fluid V_displaced g | Weight of displaced fluid | Uses the fluid's density, not the body's.
+§ 1 14.5
+P Moving fluids are first described by a simplified model. An [[ideal|ideal fluid]] is a [[fluid]] that is incompressible, with constant density, and has no internal friction. Liquids, and gases moving much more slowly than sound, change density very little, so the model is a good first approximation for them. Internal friction is measured by the [[eta|viscosity]] η. Place a layer of fluid of thickness L between two plates of area A, hold the lower plate fixed and drag the upper one at [[speed]] v. The force needed is F = ηvA/L, so η = (F/A)/(v/L), the shear [[stress]] divided by the velocity gradient. Its SI unit is the pascal second. Water at 20 °C has η = 1.0 × 10⁻³ Pa·s; honey is thousands of times more viscous.
+N M ideal | Ideal fluid | incompressible, nonviscous |
+d A model fluid with constant density and no internal friction; its steady flow is laminar.
+p ρ constant; no viscosity; flow steady and laminar
+g ideal fluid
+R[approx] ideal <- fluid : ρ = const,  η = 0 | Idealisation | Neglects compressibility and viscosity.
+N O eta | Viscosity | η = FL/(vA) |
+d Internal friction of a fluid: the shear stress needed per velocity gradient.
+g viscosity
+R[def] eta <- stress, speed : η = (F/A)/(v/L) | Shear stress per velocity gradient | Measured by shearing a fluid layer between plates.
+P The motion of a fluid, the [[flow|fluid flow]], is described by a [[vvec|velocity vector]] v⃗(r⃗, t) at every point of the [[fluid]]. Curves tangent to the velocity at each point are *streamlines*; in steady flow they do not change in time and are the paths of the fluid elements. In *laminar flow* neighbouring layers slide smoothly past one another; in *turbulent flow* irregular eddies mix them. The [[Q|flow rate]] Q = dV/dt is the volume crossing a surface per unit time, in m³/s. Through a pipe of cross-section A with mean speed v̄, Q = Av̄. A hose that fills a 10.0 L bucket in 20.0 s has Q = 5.00 × 10⁻⁴ m³/s; if its cross-section is 2.00 cm², the mean speed is 2.50 m/s.
+N S flow | Fluid flow | v⃗(r⃗, t) |
+d The motion of a fluid: a velocity at every point. In laminar flow the layers slide smoothly; in turbulent flow eddies mix them.
+m vector field v⃗(r⃗, t) on the fluid region; streamlines tangent to v⃗
+g laminar flow; turbulent flow
+R[def] flow <- fluid, vvec : v⃗(r⃗, t) | Velocity field | Each fluid element has a velocity.
+N O Q | Flow rate | Q = dV/dt = Av |
+d Volume of fluid passing a cross section per unit time.
+g flow rate
+R[def] Q <- flow : Q = dV/dt = A v̄ | Volume per time | Area times mean speed.
+P In steady flow, mass cannot pile up inside a section of a flow tube, so the mass entering per second equals the mass leaving per second. This *mass flow rate* is the [[rho|density]] times the [[Q|flow rate]], ρQ = ρAv, so along any flow tube of a steady [[flow|fluid flow]], ρ₁A₁v₁ = ρ₂A₂v₂. This is the [[contin|equation of continuity]], a statement of conservation of mass. For an incompressible fluid the densities cancel and A₁v₁ = A₂v₂: the flow is faster where the tube is narrower. If the hose above ends in a nozzle of area 0.500 cm², a quarter of its cross-section, the water leaves at 10.0 m/s.
+Q ρ₁A₁v₁ = ρ₂A₂v₂
+N M contin | Continuity equation | ρ₁A₁v₁ = ρ₂A₂v₂ |
+d Mass entering a flow tube equals mass leaving; for an incompressible fluid A₁v₁ = A₂v₂, so the flow speeds up where the tube narrows.
+p local mass conservation; Av constant for incompressible flow; steady flow assumed
+R[thm] contin <- Q, rho, flow : ρAv constant along a flow tube | Mass conservation | No mass is created or stored in steady flow.
+
+§ 1 14.6
+P Bernoulli's equation applies the [[wet|work–energy theorem]] to an [[ideal|ideal fluid]] in steady flow. Follow the fluid in a thin flow tube between points 1 and 2 on a streamline. In a short time a small volume ΔV enters at 1 and, by the [[contin|continuity equation]], the same volume leaves at 2; the net effect is to carry a parcel ΔV from 1 to 2. The surrounding fluid does net work (p₁ − p₂)ΔV on it through the [[pres|pressure]] difference, and with no viscosity no work goes into friction. This work equals the gain in kinetic energy, Δ(½ρv²)ΔV, plus the gain in gravitational potential energy, Δ(ρgy)ΔV. Dividing by ΔV gives [[bern|Bernoulli's equation]], named after Daniel Bernoulli: along a streamline, p + ½ρv² + ρgy is constant.
+Q p + ½ρv² + ρgy = constant
+N M bern | Bernoulli's equation | p + ½ρv² + ρgy = const |
+d Along a streamline of an ideal fluid, pressure plus kinetic and potential energy per volume is constant; faster flow means lower pressure (Bernoulli's principle).
+p work–energy theorem per volume; valid for steady, incompressible, nonviscous flow; along a streamline
+g Bernoulli’s equation; Bernoulli’s principle
+R[thm] bern <- wet, ideal, contin, pres : W_pressure = (p₁ − p₂)ΔV = Δ(½ρv² + ρgy)ΔV | Work–energy for a fluid parcel | Pressure does the work that changes kinetic and potential energy.
+P At constant height the equation gives [[bern|Bernoulli's principle]]: where a fluid moves faster, its pressure is lower. In a *Venturi* meter a pipe narrows, [[contin|continuity]] makes the flow faster in the throat, and the pressure difference between the wide and narrow parts, read on a manometer, gives the flow speed. A *Prandtl tube* on an aircraft compares the pressure at an opening facing the airflow, where the air is brought to rest, with the pressure of the air streaming past; the difference is ½ρv², which gives the airspeed. *Entrainment*, the drawing of surrounding fluid into a fast stream, as in an atomiser or a Bunsen burner, uses the lower pressure in the stream. From a wide tank open to the air, water leaves a hole a depth h below the surface at v = √(2gh), the speed of free fall from height h.
+
+§ 1 14.7
+X turbulence :: = flow
+P In a real fluid viscosity resists the motion, and a pressure difference is needed to keep fluid moving through a pipe. In laminar flow through a tube of radius r and length l, the fluid at the wall is at rest and the speed rises to a maximum on the axis, with a parabolic profile. Integrating this profile over the cross-section gives [[poise|Poiseuille's law]], named after the physician Jean Poiseuille, for the [[Q|flow rate]]: Q = (p₂ − p₁)/R, where p₂ − p₁ is the [[pres|pressure]] difference between the ends and R = 8ηl/(πr⁴) is the resistance, set by the [[eta|coefficient of viscosity]] η. The pressure difference drives the [[flow|flow]] as a voltage drives an electric current, and the pressure falls steadily along the tube. Narrowing a blood vessel by 10 % in radius reduces the flow at fixed pressure difference to 0.9⁴ ≈ 0.66 of its value.
+Q Q = (p₂ − p₁)πr⁴/(8ηl)
+N M poise | Poiseuille's law | Q = (p₂ − p₁)πr⁴/(8ηl) |
+d Laminar viscous flow through a tube: flow rate is the pressure difference over a resistance R = 8ηl/(πr⁴).
+p laminar flow only; Q ∝ r⁴; resistance analogous to an electrical resistance
+g Poiseuille’s law; Poiseuille’s law for resistance
+R[thm] poise <- eta, flow, Q, pres : Q = Δp/R,  R = 8ηl/(πr⁴) | Viscous flow in a tube | Parabolic velocity profile integrated over the cross section.
+P Laminar flow gives way to *turbulence* when inertia dominates viscosity. The [[Re|Reynolds number]] measures their ratio. For flow at mean [[speed]] v through a tube of radius r it is N_R = 2ρvr/η, with ρ the [[rho|density]] and η the [[eta|viscosity]] of the fluid; it is dimensionless. Experiments show that the flow is laminar for N_R below about 2000, turbulent above about 3000, and unstable in between. Blood, with ρ = 1.05 × 10³ kg/m³ and η = 3.0 × 10⁻³ Pa·s, flowing at 0.40 m/s through an aorta of radius 1.0 cm has N_R = 2800, near the transition. A body falling through a fluid speeds up until the [[FD|drag force]] balances its [[w|weight]] minus the [[FB|buoyant force]]; it then moves at its [[vT|terminal velocity]].
+N O Re | Reynolds number | N_R = 2ρvr/η |
+d Dimensionless ratio of inertial to viscous effects; flow in a tube is laminar below about 2000 and turbulent above about 3000.
+g Reynolds number
+R[def] Re <- rho, speed, eta : N_R = 2ρvr/η | Inertia over viscosity | Predicts the onset of turbulence.
+
+# ---------------------------------------------------------------- Chapter 15
+§ 1 15.0
+P Many systems move back and forth about a stable position: a mass on a spring, a pendulum, the atoms of a crystal. Near a stable [[eqpt|equilibrium point]] the force on a displaced body is nearly proportional to the displacement, as in [[hooke|Hooke's law]], and [[n2|Newton's second law]] then gives one universal motion, described by a sine or cosine. This chapter studies that motion, then adds friction, which makes it die away, and a periodic push, which can build it up. A *tuned-mass damper*, a heavy mass on springs and dampers near the top of a tall building, uses both effects: driven by the sway, it swings against the building and absorbs energy from it.
+§ 1 15.1
+P A motion that repeats itself at regular intervals is *periodic motion*; a periodic motion back and forth about an equilibrium is an *oscillation*. The [[Tper|period]] T is the [[dtm|elapsed time]] for one complete cycle, after which the position and velocity have their earlier values again. The [[freq|frequency]] f = 1/T is the number of cycles per unit time, with SI unit the hertz, 1 Hz = 1 s⁻¹. A heart beating 72 times per minute has f = 1.2 Hz and T = 0.83 s. The quartz crystal of a watch oscillates at 32 768 Hz, with a period of about 30.5 μs.
+N O Tper | Period | T |
+d Time for one cycle of a periodic motion (an oscillation).
+g periodic motion; period (T); oscillation
+R[def] Tper <- dtm : T = Δt per cycle | Duration of a cycle | The motion repeats after T.
+N O freq | Frequency | f = 1/T |
+d Number of cycles per unit time; SI unit the hertz.
+g frequency (f)
+R[def] freq <- Tper : f = 1/T | Inverse of the period | Cycles per second.
+P The model oscillator is a block of mass m on a frictionless horizontal surface, attached to a spring. Measure x from the position where the spring is relaxed. Within the elastic range the spring exerts the force F = −kx of [[hooke|Hooke's law]], and [[n2|Newton's second law]] gives m d²x/dt² = −kx. A system obeying this equation is a [[sho|simple harmonic oscillator]], and its motion is *simple harmonic motion*: the acceleration is proportional to the displacement and opposite to it. The equation is linear, so a sum of solutions is again a solution. A block hanging from a vertical spring obeys the same equation when x is measured from its new equilibrium position, where the spring force balances the weight.
+Q m d²x/dt² = −kx
+N M sho | Simple harmonic oscillator | m d²x/dt² = −kx |
+d A mass on an ideal spring: the restoring force is proportional to displacement, giving simple harmonic motion.
+p linear second-order equation; ω = √(k/m) independent of amplitude (isochronous); solutions superpose
+g simple harmonic oscillator; simple harmonic motion (SHM)
+R[law] sho <- n2, hooke : m ẍ = −k x | Second law with a Hooke force | The equation of motion of a spring–mass system.
+P The solutions are x(t) = A cos(ωt + φ), where the [[omega|angular frequency]] ω is fixed by the spring and the mass, as shown below. This [[shm|harmonic oscillation]] is the general solution of the [[sho|oscillator equation]]. The *amplitude* A is the largest displacement from the *equilibrium position* x = 0, and the *phase shift* φ sets where the cycle stands at t = 0. Differentiating gives v(t) = −Aω sin(ωt + φ) and a(t) = −Aω² cos(ωt + φ) = −ω²x. The speed is greatest, Aω, as the block passes through equilibrium, and the acceleration is greatest, Aω², at the ends of the motion. The constants A and φ are fixed by the initial position and velocity: a block released from rest at x = 0.10 m has A = 0.10 m and φ = 0.
+N S shm | Harmonic oscillation | x(t) = A cos(ωt + φ) |
+d The oscillator's state: amplitude A and phase shift φ about the equilibrium position; equivalently the pair (x, v) at one instant.
+m (A, φ) ∈ [0, ∞) × S¹; equivalently a point (x, v) on an ellipse in the phase plane
+g amplitude (A); equilibrium position; phase shift
+R[thm] shm <- sho : x(t) = A cos(ωt + φ) | Solution of the oscillator equation | A and φ are fixed by the initial position and velocity.
+P The [[kspr|force constant]] k of a spring is the force per unit stretch, k = −F/x, the slope of the straight line of [[hooke|Hooke's law]]; it is measured by hanging known weights on the spring, and its unit is N/m. Substituting the solution into the [[sho|oscillator equation]] gives −mω²x = −kx, so the [[omega|angular frequency]] is ω = √(k/m), set only by k and the [[m|mass]]. The [[Tper|period]] is T = 2π/ω = 2π√(m/k), and the frequency is f = (1/2π)√(k/m). Neither depends on the amplitude. A stiffer spring makes the oscillation faster, and a larger mass makes it slower. A 0.500 kg block on a spring with k = 200 N/m has ω = 20.0 rad/s and T = 0.314 s.
+Q ω = √(k/m),   T = 2π√(m/k)
+N O kspr | Force constant | k |
+d Stiffness of a spring: force per unit stretch, in N/m.
+g force constant (k)
+R[def] kspr <- hooke : k = −F/x | Slope of the force law | Measured from the spring's response.
+R[thm] omega <- sho, kspr, m : ω = √(k/m) = 2πf | Oscillator frequency | The angular frequency reappears as the oscillator's natural frequency.
+R[thm] Tper <- omega : T = 2π/ω = 2π√(m/k) | Period of the oscillator | Independent of amplitude.
+
+§ 1 15.2
+X elastic potential energy :: = Uel
+P Springs are not special. Near a stable [[eqpt|equilibrium point]] x₀ the [[U|potential energy]] U(x) has a minimum, so U′(x₀) = 0 and U″(x₀) > 0. Expanding the [[F|force]] F = −dU/dx to first order in the displacement gives F ≈ −U″(x₀)(x − x₀): a [[Frest|restoring force]] proportional to the displacement and directed back toward x₀, as from a spring of force constant U″(x₀). *Stability* is decided by the curvature: at a maximum of U the same expansion gives a force pointing away, and a displaced body does not return. Two atoms bound by the *Lennard-Jones 6-12 potential*, U = 4ε[(σ/r)¹² − (σ/r)⁶], have their stable separation at r₀ = 2^{1/6}σ, and small vibrations of the bond are harmonic. Large displacements leave the linear range.
+N O Frest | Restoring force | F = −k(x − x₀) |
+d Force that pushes a body back toward a stable equilibrium point; linear for small displacements.
+g restoring force
+R[thm] Frest <- eqpt, F, U : F ≈ −U″(x₀)(x − x₀) | Near a minimum of U | Every stable equilibrium behaves like a spring for small displacements.
+X stable equilibrium point :: = eqpt
+P For the block on a spring, energy passes back and forth between the [[Uel|elastic potential energy]] ½kx² and the [[K|kinetic energy]] ½mv². Inserting the [[shm|harmonic oscillation]] x = A cos(ωt + φ), v = −Aω sin(ωt + φ) and using mω² = k gives the total ½kA²[cos²(ωt + φ) + sin²(ωt + φ)] = ½kA². The [[Emech|mechanical energy]] is constant and set by the amplitude. At the *turning points* x = ±A all of it is potential; at x = 0 all of it is kinetic, so v_{max} = A√(k/m). At any position, v = ±√((k/m)(A² − x²)). Doubling the amplitude quadruples the energy.
+Q E = ½kx² + ½mv² = ½kA²
+R[thm] Emech <- shm, Uel, K : E = ½kx² + ½mv² = ½kA² | Energy of the oscillator | Kinetic and potential energy exchange, their sum fixed by the amplitude.
+
+§ 1 15.3
+P A point moving at constant [[omega|angular frequency]] ω on a circle of radius A is in uniform [[circ|circular motion]]. Its angle at time t is ωt + φ, so its x coordinate is A cos(ωt + φ), the same function as the [[shm|harmonic oscillation]] of a spring. Simple harmonic motion is the projection of uniform circular motion onto a diameter. The projection works for the other quantities too. The *tangential velocity* of the point has magnitude Aω, and its x component is −Aω sin(ωt + φ); the [[ac|centripetal acceleration]] Aω² has x component −Aω² cos(ωt + φ). A peg on a turntable rotating at ω = √(k/m), lit from the side, casts a shadow that moves exactly like a mass m on a spring of force constant k.
+R[analog] shm <- circ, omega : x(t) = A cos(ωt + φ) is the projection of uniform circular motion | Reference circle | Simple harmonic motion is one component of uniform circular motion.
+
+§ 1 15.4
+P A [[spend|simple pendulum]] is a small *pendulum bob* of mass m on a light, inextensible string of length L. At an angle θ from the vertical, the component of the bob's weight along its arc, −mg sin θ, pulls it back, and [[n2|Newton's second law]] along the arc gives mL d²θ/dt² = −mg sin θ. The mass cancels. For small angles sin θ ≈ θ in radians, and the equation becomes that of the [[sho|harmonic oscillator]] with k/m replaced by g/L. So ω = √(g/L) and T = 2π√(L/g), independent of the mass and, for small swings, of the amplitude. At 15° the approximation is off by about 1 %. Since T depends only on L and the [[g|free-fall acceleration]], timing a pendulum measures g: a pendulum 0.994 m long has T = 2.00 s where g = 9.80 m/s².
+Q d²θ/dt² = −(g/L)θ,   T = 2π√(L/g)
+N M spend | Simple pendulum | T = 2π√(L/g) |
+d A point mass on a light string; for small angles it is a harmonic oscillator whose period depends only on length and g.
+p small-angle approximation sin θ ≈ θ; period independent of mass and (small) amplitude
+g simple pendulum
+R[approx] spend <- sho, n2, g : d²θ/dt² = −(g/L) sin θ ≈ −(g/L)θ | Small angles | The same equation as the spring with k/m → g/L.
+P A [[ppend|physical pendulum]] is any rigid body swinging about a fixed pivot. Let L be the distance from the pivot to the centre of mass and I the [[I|moment of inertia]] about the pivot. The [[w|weight]] acts at the centre of mass and exerts the torque −mgL sin θ about the pivot, so the [[n2rot|second law for rotation]] gives I d²θ/dt² = −mgL sin θ ≈ −mgLθ for small angles. This is again the [[sho|oscillator equation]], with ω = √(mgL/I) and T = 2π√(I/(mgL)). For a point mass, I = mL² and the simple pendulum is recovered. A uniform rod of length ℓ pivoted at one end has I = mℓ²/3 and L = ℓ/2, so T = 2π√(2ℓ/(3g)); a rod 1.00 m long swings with T = 1.64 s.
+N M ppend | Physical pendulum | T = 2π√(I/(mgL)) |
+d An extended body swinging about a pivot; its period depends on its moment of inertia and the distance L from pivot to centre of mass.
+p small angles; reduces to the simple pendulum for I = mL²
+g physical pendulum
+R[approx] ppend <- n2rot, I, sho, w : I d²θ/dt² = −mgL sin θ ≈ −mgLθ | Torque of gravity | Second law for rotation with small angles.
+P A [[tpend|torsional pendulum]] is a body hung from a wire or fibre that twists instead of swinging. Twisting the wire through an angle θ produces a restoring torque τ = −κθ, where the *torsion constant* κ depends on the material and dimensions of the wire. The [[n2rot|second law for rotation]] gives I d²θ/dt² = −κθ, with I the [[I|moment of inertia]] of the body about the wire, the rotational form of the [[sho|oscillator equation]]. Hence T = 2π√(I/κ). The torque is linear for any twist within the elastic range of the wire, with no small-angle condition, so torsional pendulums serve as timekeepers and as sensitive torque balances.
+N M tpend | Torsional pendulum | T = 2π√(I/κ) |
+d A body twisting on a wire whose restoring torque is proportional to the twist angle.
+p linear restoring torque τ = −κθ; exact harmonic motion for elastic twist
+g torsional pendulum
+R[thm] tpend <- n2rot, I, sho : I d²θ/dt² = −κθ | Restoring torque | Rotational version of the spring–mass system.
+
+§ 1 15.5
+P Real oscillations die away because friction removes mechanical energy. The simplest model adds to the [[sho|harmonic oscillator]] a [[FD|drag force]] proportional to the velocity, −bv, as for slow motion through a viscous fluid. The equation of motion of this [[damp|damped oscillator]] is m d²x/dt² + b dx/dt + kx = 0, and the motion is *damped harmonic motion*. Without damping the system would oscillate at its *natural angular frequency* ω₀ = √(k/m). For weak damping, b² < 4mk, the motion is *underdamped*: x(t) = A₀e^{−bt/2m} cos(ωt + φ) with ω = √(ω₀² − (b/2m)²). The block still oscillates, a little more slowly than without damping, and its amplitude decays exponentially, falling by the factor 1/e in the time 2m/b.
+Q m d²x/dt² + b dx/dt + kx = 0
+N M damp | Damped oscillator | mẍ + bẋ + kx = 0 |
+d An oscillator with a drag force proportional to velocity; it is underdamped (decaying oscillation), critically damped or overdamped (no oscillation).
+p linear; underdamped b² < 4mk: x = A₀e^{−bt/2m} cos(ωt + φ), ω = √(ω₀² − (b/2m)²); critical b² = 4mk; overdamped b² > 4mk
+g natural angular frequency; underdamped; critically damped; overdamped
+R[gen] damp <- sho, FD : add −b v (slow viscous drag) | Oscillator with drag | The linear drag law added to the spring force.
+P Stronger damping removes the oscillation. When b² = 4mk the system is *critically damped*: displaced and released, it returns to equilibrium in the shortest time without overshooting. When b² > 4mk it is *overdamped* and creeps back more slowly, the more slowly the larger b is. The regime of a [[damp|damped oscillator]] is chosen by design. The shock absorbers of a car are set close to critical damping, so the car settles quickly after a bump without bouncing, while a door closer is usually overdamped so that the door never slams.
+
+§ 1 15.6
+P A swing pushed at the right moments goes higher and higher. To model this, add a *periodic driving force* F₀ sin ωt to the [[damp|damped oscillator]]. The equation m d²x/dt² + b dx/dt + kx = F₀ sin ωt describes the [[forced|driven oscillator]]. Once the initial transient has died out, the mass oscillates at the driving frequency ω, not at its own, with amplitude A = F₀/√(m²(ω² − ω₀²)² + b²ω²). The amplitude is largest when ω is close to the natural angular frequency ω₀ = √(k/m); this is *resonance*. At ω = ω₀ the amplitude is F₀/(bω₀), so the weaker the damping, the higher and narrower the resonance peak. Far below ω₀ the response approaches the static stretch F₀/k, and far above it the inertia of the mass keeps the amplitude small.
+Q A = F₀/√(m²(ω² − ω₀²)² + b²ω²)
+N M forced | Driven oscillator and resonance | mẍ + bẋ + kx = F₀ sin ωt |
+d A damped oscillator pushed periodically settles into motion at the driving frequency; its amplitude peaks (resonance) when the driving frequency is near the natural one.
+p steady state at the driving frequency; A = F₀/√(m²(ω² − ω₀²)² + b²ω²); sharper resonance for weaker damping
+g resonance
+R[gen] forced <- damp : add a periodic driving force F₀ sin ωt | Driven damped oscillator | The response is largest near ω = ω₀.
+
+# ---------------------------------------------------------------- Chapter 16
+§ 1 16.0
+P An oscillation stays in one place. When the parts of a medium are coupled, the oscillation of one part drives its neighbours, and the disturbance travels: this is a wave. The chapter describes waves on strings and in fluids. It defines wavelength and wave speed, writes the wave function, derives the wave equation from [[n2|Newton's second law]], finds the energy a wave carries, and shows how waves combine into interference patterns and standing waves. At each point of the medium the motion is the [[shm|harmonic oscillation]] of Chapter 15.
+§ 1 16.1
+P A [[wave]] is a disturbance that travels while the material carrying it stays, on average, where it was. In a *mechanical wave* the disturbance moves through a *medium*, a [[sys|system of particles]] such as a string, water or air, in which each part pushes or pulls on its neighbours. In a periodic wave each part performs a [[shm|harmonic oscillation]] about its equilibrium, slightly delayed relative to the part before it, and these delays make the pattern move. In a *transverse wave* the medium moves perpendicular to the direction of travel, as on a plucked string; in a *longitudinal wave* it moves along that direction, as in sound. *Electromagnetic waves* need no medium, and *matter waves* describe particles in quantum mechanics; both are treated in later volumes.
+N S wave | Wave | y(x, t) |
+d A disturbance that travels through a medium (mechanical wave) while each part of the medium only oscillates about its equilibrium; transverse or longitudinal.
+m displacement field y(x, t) of the medium, ℝ × ℝ → ℝ (or a vector field in 3D)
+g wave; mechanical wave; transverse wave; longitudinal wave
+R[gen] wave <- shm, sys : coupled oscillators of a medium, each delayed along the propagation | Oscillation that travels | Neighbouring parts of the medium push on each other.
+P A periodic wave repeats in space as well as in time. Its [[lam|wavelength]] λ is the distance between neighbouring points in the same state of motion, such as two adjacent crests, read from a snapshot of the [[wave]]. Its *amplitude* is the largest displacement of the medium from equilibrium. Each point of the medium oscillates with the [[Tper|period]] T and [[freq|frequency]] f of the source. In one period the pattern advances by one wavelength, so the [[vwave|wave speed]], the magnitude of the wave velocity, is v = λ/T = λf. It is set by the medium, not by the source: on a given string a higher frequency gives a shorter wavelength at the same speed. Water waves with crests 2.0 m apart passing a post every 0.50 s travel at 4.0 m/s.
+Q v = λ/T = λf
+N O lam | Wavelength | λ |
+d Distance between adjacent identical points of a periodic wave.
+g wavelength
+R[read] lam <- wave : y(x + λ, t) = y(x, t) | Spatial period | Read off a snapshot of the wave.
+N O vwave | Wave speed | v = λ/T = λf |
+d Speed at which the disturbance propagates; set by the medium, not by the source.
+g wave velocity; wave speed
+R[thm] vwave <- lam, Tper, freq : v = λ/T = λ f | One wavelength per period | The pattern advances λ during each period.
+
+§ 1 16.2
+P A *wave function* y(x, t) gives the displacement of the medium at position x and time t. Suppose a shape y = f(x) at t = 0 moves in the +x direction at the [[vwave|wave speed]] v without changing. At time t it has shifted by vt, so the displacement at x is what it was at x − vt at t = 0: y(x, t) = f(x − vt). A shape moving toward −x is f(x + vt). This [[trav|traveling wave function]] describes any [[wave]] that keeps its form. A *pulse* is a single localised disturbance of this kind, such as one flick sent along a rope.
+N S trav | Traveling wave function | y = f(x ∓ vt) |
+d A wave shape that moves without changing; a pulse is a single such disturbance and y = A sin(kx − ωt + φ) is the periodic case.
+m function of the single variable x − vt (or x + vt); periodic case y = A sin(kx ∓ ωt + φ)
+g wave function; pulse
+R[thm] trav <- wave, vwave : y(x, t) = f(x − vt) | Shape moving at v | The same profile shifted by vt.
+P A periodic wave has the shape of a sine, y(x, t) = A sin(kx − ωt + φ). The sine repeats when kx grows by 2π, that is, after one [[lam|wavelength]], so the [[kwave|wave number]] is k = 2π/λ, in radians per metre. It plays the role in space that the [[omega|angular frequency]] ω = 2π/T plays in time. The argument kx − ωt + φ is the *phase of the wave*. Writing it as k(x − (ω/k)t) + φ shows that the wave speed is v = ω/k = λf. The velocity of a piece of the medium is a different quantity: for a transverse wave it is ∂y/∂t = −Aω cos(kx − ωt + φ), perpendicular to the direction of travel, with maximum Aω.
+N O kwave | Wave number | k = 2π/λ |
+d Spatial angular frequency of a wave, in rad/m; v = ω/k.
+g wave number
+R[def] kwave <- lam : k = 2π/λ | Radians per length | Companion of ω = 2π/T.
+P Differentiating y = f(x − vt) twice with respect to t gives v²f″, and twice with respect to x gives f″. The derivatives are partial: the [[ddt|time derivative]] is taken at fixed x, and the space derivative at fixed t. Every [[trav|traveling wave function]] therefore satisfies the [[waveeq|linear wave equation]]. Its general solution is f(x − vt) + g(x + vt), a sum of waves travelling in the two directions. The equation is linear, so the sum of any two solutions is again a solution. Conversely, whenever Newton's laws for a medium lead to this equation, the medium carries waves of any shape at the speed v.
+Q ∂²y/∂x² = (1/v²) ∂²y/∂t²
+N M waveeq | Linear wave equation | ∂²y/∂x² = (1/v²) ∂²y/∂t² |
+d The equation satisfied by every wave travelling at speed v in a linear medium.
+p linear (solutions superpose); second order in x and t; general solution f(x − vt) + g(x + vt)
+g linear wave equation
+R[thm] waveeq <- trav, ddt : ∂²f(x − vt)/∂t² = v² ∂²f(x − vt)/∂x² | Differentiate the wave function | Every travelling profile satisfies it.
+
+§ 1 16.3
+P Newton's laws give the speed of a wave on a stretched string. Take a short piece of string of length dx and [[lmd|linear mass density]] μ, so its mass is μ dx, under [[T|tension]] F_T. For small transverse displacements the tension has the same magnitude all along the string, but its direction at the two ends of the piece differs by the change in slope ∂y/∂x. The net transverse force is therefore F_T (∂²y/∂x²) dx, and [[n2|Newton's second law]] gives μ dx ∂²y/∂t² = F_T ∂²y/∂x² dx. This is the [[waveeq|linear wave equation]] with v² = F_T/μ, so the [[vwave|wave speed]] on a string is v = √(F_T/μ). A guitar string with μ = 5.0 × 10⁻³ kg/m under a tension of 180 N carries waves at 190 m/s.
+Q v = √(F_T/μ)
+R[thm] waveeq <- n2, T, lmd : μ dx ∂²y/∂t² = F_T ∂²y/∂x² dx | Second law for a string element | The net transverse tension force on a small piece of string gives the wave equation.
+R[thm] vwave <- T, lmd, waveeq : v = √(F_T/μ) | Speed on a string | Tension over linear mass density.
+P The same reasoning works in other media, and the speed always has the form of the square root of an elastic property over an inertial property. For a compression wave in a fluid, the elastic property is the [[Bmod|bulk modulus]] B, the pressure increase per fractional decrease in volume, and the inertial property is the [[rho|density]] ρ. Newton's second law for a thin slab of fluid leads to the wave equation with [[vwave|wave speed]] v = √(B/ρ). For water, B = 2.2 × 10⁹ Pa and ρ = 1.00 × 10³ kg/m³ give v ≈ 1.5 × 10³ m/s. Other things being equal, stiffer media carry waves faster and denser media carry them more slowly.
+R[thm] vwave <- Bmod, rho : v = √(B/ρ) | Compression wave in a fluid | Elastic property over inertial property.
+
+§ 1 16.4
+P A wave carries energy along the medium although the medium itself does not travel. Each piece of a string carrying the [[trav|traveling wave]] y = A sin(kx − ωt) has [[K|kinetic energy]] from its transverse motion and potential energy from its stretching. For a piece of mass μ dx, with [[lmd|linear mass density]] μ and [[omega|angular frequency]] ω, the kinetic energy averaged over a cycle is ¼μA²ω² dx, and the potential energy has the same average. One wavelength therefore holds the energy E_λ = ½μA²ω²λ. This energy passes a given point in one period, so the average [[Pwave|power of the wave]] is P_{ave} = E_λ/T = ½μA²ω²v, with v the [[vwave|wave speed]]. The power grows as the square of the amplitude and the square of the frequency.
+Q P_{ave} = ½μA²ω²v
+N O Pwave | Wave power | P_ave = ½μA²ω²v |
+d Energy per unit time carried by a wave; proportional to the square of the amplitude and of the frequency.
+R[thm] Pwave <- trav, lmd, omega, vwave, K : P_ave = ½ μ A² ω² v | Energy per wavelength per period | Kinetic plus potential energy of the string per wavelength, divided by T.
+P A wave spreading in two or three dimensions is described by its [[Iint|intensity]] I, the power per unit area crossing a surface perpendicular to the direction of travel, I = P/A, in W/m². It follows from the [[Pwave|wave power]] by dividing by the area over which that power is spread. A point source emitting power P equally in all directions spreads it over a sphere of area 4πr², so I = P/(4πr²): without absorption, the intensity falls as 1/r². A source of 1.00 W gives I = 7.96 × 10⁻⁴ W/m² at 10.0 m, and a quarter of that at 20.0 m.
+Q I = P/(4πr²)
+N O Iint | Intensity | I = P/A |
+d Power per unit area carried by a wave; for a spherical wave I = P/(4πr²).
+g intensity (I)
+R[def] Iint <- Pwave : I = P/A;  spherical I = P/(4πr²) | Power per area | Falls as 1/r² for a point source.
+
+§ 1 16.5
+P A wave that reaches the end of its medium is reflected, and the reflection depends on how the end is held. At a fixed end, such as a string tied to a wall, the displacement must stay zero; this is the *fixed boundary condition*. The reflected wave is the one that, added to the incident wave, cancels it at the end at every instant, so a pulse comes back inverted. At a free end, such as a string tied to a ring that slides without friction on a vertical rod, the slope ∂y/∂x must be zero; this is the *free boundary condition*, and a pulse comes back upright. Such [[bc|boundary conditions]] select the solutions of the [[waveeq|wave equation]] that are allowed. Where two different strings are joined, part of a wave is transmitted and part is reflected.
+N M bc | Boundary conditions | fixed or free end |
+d At a fixed end the displacement is zero and a reflected pulse is inverted; at a free end the slope is zero and the pulse returns upright.
+p fixed: y = 0; free: ∂y/∂x = 0; partial reflection and transmission at a change of medium
+g fixed boundary condition; free boundary condition
+R[thm] bc <- waveeq : reflected wave chosen to satisfy the end condition | Reflection | The incident and reflected waves together meet the condition at the end.
+P When two waves pass through the same part of a medium, the result is [[interf|interference]]. Two identical sinusoidal waves travelling the same way and in step, crest on crest, combine into a wave of twice the amplitude; this is *constructive interference*. If one is shifted by half a wavelength, crest meets trough, the displacements cancel and the medium stays at rest; this is *destructive interference*. Intermediate shifts give intermediate amplitudes. After overlapping, each wave continues as if the other had not been there.
+N S interf | Interference | y_R = [2A cos(φ/2)] sin(kx − ωt + φ/2) |
+d Two overlapping waves add constructively (in phase, double amplitude) or destructively (half a cycle apart, cancel).
+m superposed wave field; resultant amplitude 2A|cos(φ/2)| set by the phase difference φ
+g interference; constructive interference; destructive interference
+
+P These observations are explained by the [[superp|superposition principle]]: where waves overlap, the displacement of the medium is the sum of the displacements the waves would cause separately, y = y₁ + y₂. The principle is a consequence of the linearity of the [[waveeq|wave equation]]: if y₁ and y₂ are solutions, so is y₁ + y₂, since the derivative of a sum is the sum of the derivatives. It holds as long as the amplitudes are small enough for the medium to respond linearly. Adding two [[trav|traveling waves]] A sin(kx − ωt) and A sin(kx − ωt + φ), which differ by a *phase shift* φ, with the identity sin a + sin b = 2 sin((a + b)/2) cos((a − b)/2), gives the resultant below. The [[interf|interference]] is constructive for φ = 0, 2π, 4π, … and destructive for φ = π, 3π, ….
+Q y_R = [2A cos(φ/2)] sin(kx − ωt + φ/2)
+N M superp | Superposition principle | y = y₁ + y₂ |
+d When waves overlap, the displacements add; follows from the linearity of the wave equation.
+p linearity; holds for small amplitudes in linear media; waves pass through each other unchanged
+g superposition
+R[thm] superp <- waveeq : L[y₁ + y₂] = L[y₁] + L[y₂] = 0 | Linearity | Sums of solutions are solutions.
+R[thm] interf <- superp, trav : A sin(kx − ωt) + A sin(kx − ωt + φ) | Sum of two waves | Trigonometric identity for the sum of two sines.
+§ 1 16.6
+P A wave on a string with a fixed end is reflected and travels back through the incoming wave. By the [[superp|superposition principle]], two [[trav|traveling waves]] of equal amplitude and frequency moving in opposite directions add to A sin(kx − ωt) + A sin(kx + ωt) = 2A sin kx cos ωt. This is a [[standw|standing wave]]: the pattern does not travel. Each point oscillates at angular frequency ω with its own amplitude 2A|sin kx|. At *nodes*, where kx = nπ, the medium never moves; midway between them, at *antinodes*, it oscillates with the full amplitude 2A. Neighbouring nodes are half a wavelength apart. A fixed end satisfies its [[bc|boundary condition]] by being a node.
+Q y(x, t) = [2A sin kx] cos ωt
+N S standw | Standing wave | y = [2A sin kx] cos ωt |
+d Two equal waves moving in opposite directions produce a pattern that does not travel: nodes stay at rest, antinodes oscillate most.
+m product of a fixed spatial profile and a time oscillation; nodes at kx = nπ
+g standing wave; node; antinode
+R[thm] standw <- superp, trav, bc : A sin(kx − ωt) + A sin(kx + ωt) = 2A sin kx cos ωt | Counter-propagating waves | Reflection from the ends supplies the second wave.
+P A string of length L fixed at both ends must have a node at each end. With one node at x = 0, the other requires kL = nπ, so only the wavelengths λ_n = 2L/n fit, with n = 1, 2, 3, …. With the [[vwave|wave speed]] v = √(F_T/μ), the allowed frequencies are f_n = nv/2L = nf₁. These [[standw|standing waves]], selected by the [[bc|boundary conditions]], are the [[modes|normal modes]] of the string, and any motion of the string is a superposition of them. The lowest, f₁ = v/2L, is the *fundamental frequency*; the higher ones are *overtones*. Each mode acts as an oscillator, so a string driven at one of its frequencies f_n responds strongly; this is [[forced|resonance]]. A guitar string 0.650 m long with v = 190 m/s has f₁ = 146 Hz.
+Q λ_n = 2L/n,   f_n = nv/2L
+N S modes | Normal modes | λ_n = 2L/n,  f_n = n v/2L |
+d A string fixed at both ends can only hold standing waves that fit its length: the fundamental and its overtones.
+m discrete family n = 1, 2, 3, …; any motion is a superposition of modes
+g normal mode; fundamental frequency; overtone
+R[thm] modes <- standw, bc, vwave : nodes at both ends ⇒ L = nλ/2 | Fit the length | The boundary conditions select the wavelengths.
+R[thm] forced <- modes : driving at f_n gives large amplitude | Resonance of a string | Each normal mode is an oscillator that resonates when driven at its frequency.
+
+# ---------------------------------------------------------------- Chapter 17
+§ 1 17.0
+P Sound is the most familiar mechanical [[wave]]. It travels through gases, liquids and solids as a longitudinal wave, so the results of Chapter 16 apply to it: its speed follows from the [[Bmod|bulk modulus]] and density of the medium, it carries energy, and it reflects and forms standing waves. This chapter adds what is particular to sound: the link between pressure and displacement in a sound wave, the decibel scale of intensity, the modes of air columns in musical instruments, beats, the Doppler effect of moving sources and observers, and the shock waves of supersonic flight.
+§ 1 17.1
+P A [[sound|sound wave]] is a longitudinal [[wave]]. A vibrating source pushes the neighbouring layer of air, which pushes the next, so *compressions*, where the molecules are crowded and the [[pres|pressure]] is slightly raised, alternate with *rarefactions*, where it is slightly lowered. Let s(x, t) = s_{max} cos(kx − ωt + φ) be the displacement of the air along the direction of travel. A layer whose displacement varies with x is compressed by the fractional amount −∂s/∂x, and the [[Bmod|bulk modulus]] B turns this into the pressure change Δp = −B ∂s/∂x = Δp_{max} sin(kx − ωt + φ), with Δp_{max} = Bks_{max}. The pressure wave is a quarter cycle out of phase with the displacement wave: the pressure change is greatest where the displacement is zero. *Hearing*, the perception of sound, belongs to physiology.
+N S sound | Sound wave | Δp(x, t),  s(x, t) |
+d A longitudinal wave of compressions and rarefactions in a medium; the pressure wave is a quarter cycle out of phase with the displacement wave.
+m pressure field Δp = Δp_max sin(kx ∓ ωt + φ) and displacement field s = s_max cos(kx ∓ ωt + φ)
+g sound
+R[thm] sound <- wave, pres, Bmod : Δp = −B ∂s/∂x | Pressure wave in a fluid | The displacement wave compresses and expands the medium.
+X hearing :: perception of sound (physiology)
+
+§ 1 17.2
+P The [[vsound|speed of sound]] is a property of the medium. Apply [[n2|Newton's second law]] to a thin slab of fluid that a [[sound|sound wave]] pushes back and forth: the net pressure force on the slab, set by the [[Bmod|bulk modulus]] B, accelerates its mass, set by the [[rho|density]] ρ. The result is the wave equation with v = √(B/ρ), the square root of an *elastic property* over an *inertial property*. Because v = fλ and the source fixes the *frequency*, the *wavelength* in a medium is λ = v/f; a 343 Hz tone in air at 20 °C has λ = 1.00 m. All audible frequencies travel at the same speed in air, so the low notes of a *woofer* and the high notes of a *tweeter* reach a listener together.
+Q v = √(B/ρ)
+N O vsound | Speed of sound | v = √(B/ρ) |
+d Set by an elastic property over an inertial property of the medium: √(B/ρ) in fluids, √(Y/ρ) in solids, √(γRT/M) in an ideal gas.
+R[thm] vsound <- sound, Bmod, rho : v = √(B/ρ) | Elastic over inertial property | Newton's second law for a slab of fluid.
+P In a thin solid rod the elastic property is [[Ymod|Young's modulus]] Y, and the [[vsound|speed of sound]] is v = √(Y/ρ), with ρ the [[rho|density]] of the rod. Steel, with Y = 2.0 × 10¹¹ Pa and ρ = 7.8 × 10³ kg/m³, carries sound at about 5.1 × 10³ m/s, some fifteen times faster than air. In a gas, the compressions of a sound wave are too quick for heat to flow between them, and for an ideal gas the bulk modulus is then γp, with γ the ratio of the gas's heat capacities, 1.40 for air. This gives v = √(γRT/M), with R = 8.314 J/(mol·K), T the absolute temperature and M the molar mass: in air, 331 m/s at 0 °C and 343 m/s at 20 °C. *Seismic waves* in the Earth include longitudinal and transverse waves, which travel at different speeds.
+R[thm] vsound <- Ymod, rho : v = √(Y/ρ) | In a solid rod | Young's modulus replaces B.
+
+§ 1 17.3
+P The ear responds to sound [[Iint|intensities]] from about 10⁻¹² W/m² to above 1 W/m², twelve orders of magnitude, and perceives equal ratios of intensity roughly as equal steps. Sound is therefore described on a logarithmic scale. The [[beta|sound intensity level]] is β = 10 log₁₀(I/I₀), in *decibels* (dB), with the reference intensity I₀ = 10⁻¹² W/m², near the threshold of hearing at 1000 Hz. The decibel is a tenth of the bel, named after Alexander Graham Bell. Multiplying the intensity by 10 adds 10 dB, and doubling it adds 10 log₁₀ 2 ≈ 3.0 dB. Conversation is about 60 dB, I = 10⁻⁶ W/m²; long exposure above about 85 dB damages hearing, and 120 dB is near the threshold of pain.
+Q β = 10 log₁₀(I/I₀)
+N O beta | Sound intensity level | β = 10 log₁₀(I/I₀) dB |
+d Logarithmic measure of intensity relative to the threshold I₀ = 10⁻¹² W/m².
+g sound intensity level
+R[def] beta <- Iint : β = 10 log₁₀(I/I₀) | Logarithmic scale | A factor 10 in intensity adds 10 dB.
+P The [[Iint|intensity]] of a [[sound|sound wave]] can be written with its pressure amplitude. The wave carries the power per unit area ½ρω²s_{max}²v, the result for a string with the mass per length replaced by the mass per volume, where ρ is the [[rho|density]] of the medium and v the [[vsound|speed of sound]]. With Δp_{max} = Bks_{max} and the [[Bmod|bulk modulus]] B = ρv², the displacement amplitude is s_{max} = Δp_{max}/(ρvω), and I = (Δp_{max})²/(2ρv). At the threshold of pain in air, I = 1 W/m², with ρ = 1.20 kg/m³ and v = 343 m/s, the pressure amplitude is √(2 × 1.20 × 343) Pa ≈ 28.7 Pa, less than 3 × 10⁻⁴ atmosphere. At the threshold of hearing it is about 3 × 10⁻⁵ Pa.
+Q I = (Δp_{max})²/(2ρv)
+R[thm] Iint <- sound, rho, vsound : I = (Δp_max)²/(2ρv) | Intensity of a sound wave | From the pressure amplitude.
+P A *transducer* converts one form of signal into another: a microphone turns sound into an electrical signal, and the ear turns it into nerve impulses. Several further terms describe sound as it is heard. The *sound pressure level* puts the pressure amplitude on a decibel scale and, for a wave travelling freely in air, nearly equals the intensity level. *Pitch* is the perceived height of a tone and follows its frequency; musical *notes* are tones at agreed frequencies. *Loudness* grows with the [[beta|sound intensity level]] but also depends on frequency, since the ear is most sensitive between about 2000 and 5000 Hz. It is measured in *phons*: a sound has a loudness of n phons if it seems as loud as a 1000 Hz tone of n dB. *Timbre*, which distinguishes a violin from a flute playing the same note, depends on the mix of overtones.
+X sound pressure level; loudness; phon; pitch; notes; timbre :: how sound is perceived and described in music; no new model
+X transducer :: a device
+
+§ 1 17.4
+P Sound forms [[standw|standing waves]] in air columns, with [[bc|boundary conditions]] set by the ends of the tube. At a closed end the air cannot move, so the displacement has a node there and the pressure an antinode. At an open end the air meets the room and the pressure stays nearly atmospheric, so the displacement has an antinode, a little beyond the end. Counting [[modes|normal modes]] as for a string, with these acoustic end conditions, gives the [[tubemodes|air-column modes]] of a [[sound|sound wave]]. A tube open at both ends has antinodes at both ends and holds λ_n = 2L/n and f_n = nv/2L, with n = 1, 2, 3, …. A tube closed at one end has a node there and an antinode at the open end, so it holds only λ_n = 4L/n and f_n = nv/4L, with n odd.
+Q f_n = nv/4L,   n = 1, 3, 5, …
+N S tubemodes | Air-column modes | f_n = nv/2L or nv/4L |
+d Standing sound waves in a tube: open at both ends all harmonics f_n = nv/2L; closed at one end only odd ones, f_n = nv/4L.
+m discrete modes; displacement antinode at an open end, node at a closed end
+g fundamental; harmonics; overtones
+R[thm] tubemodes <- modes, sound, bc : open end ↔ antinode, closed end ↔ node | Boundary conditions in a tube | The string's mode counting with acoustic end conditions.
+P The lowest mode of a tube is its *fundamental*. The higher modes are *overtones*, and those at integer multiples of the fundamental frequency are *harmonics*, so a tube closed at one end has only odd harmonics. A tube 0.250 m long, closed at one end, has the fundamental f₁ = v/4L = (343 m/s)/(1.00 m) = 343 Hz in air at 20 °C, and overtones at 1029 Hz and 1715 Hz. *Resonance* in a tube is shown with a *tuning fork* held over a cylinder partly filled with water: the sound becomes loud whenever the air column above the water is a quarter, three quarters, five quarters, … of a wavelength long. *Noise reduction* headphones use a different effect, [[interf|destructive interference]]: a microphone picks up the outside noise and the speaker adds the inverted signal.
+
+§ 1 17.5
+P Most musical instruments couple a vibrating source to a resonator. A flute is open at both ends; such *tubes with symmetrical boundary conditions* have the [[tubemodes|air-column modes]] f_n = nv/2L with all harmonics, like a string fixed at both ends. A clarinet is effectively closed at the mouthpiece and open at the other end; such *tubes with anti-symmetrical boundary conditions* favour odd harmonics, f_n = nv/4L, and sound an octave lower than an open tube of the same length. Players select notes by changing the effective length with holes, valves or a slide. In string instruments the [[modes|normal modes]] of the strings set the frequencies, and the hollow body acts as a *resonant cavity* that radiates the sound. The mix of modes excited gives each instrument its timbre.
+§ 1 17.6
+P Two tones of nearly equal [[freq|frequency]] sounded together produce a loudness that swells and fades regularly. By the [[superp|superposition principle]], the pressure at the ear is the sum of the two waves. For equal amplitudes, cos ω₁t + cos ω₂t = 2 cos(½(ω₁ − ω₂)t) cos(½(ω₁ + ω₂)t): a tone at the average frequency whose amplitude varies slowly. The loudness peaks whenever the slow factor reaches +1 or −1, which happens twice in each of its cycles, so these *beats* occur at the [[fbeat|beat frequency]] f_B = |f₂ − f₁|. Musicians tune by ear this way: a string at 442 Hz sounded with a 440 Hz tuning fork gives 2 beats per second, and the beats slow down and vanish as the string reaches 440 Hz.
+Q f_B = |f₂ − f₁|
+N O fbeat | Beat frequency | f_B = |f₂ − f₁| |
+d Two sounds of slightly different frequency produce a loudness that rises and falls at the difference frequency.
+g beats; beat frequency
+R[thm] fbeat <- superp, freq : cos ω₁t + cos ω₂t = 2 cos(Δω t/2) cos(ω̄t) | Superposition in time | Slowly varying envelope at the difference frequency.
+
+§ 1 17.7
+P The pitch of a siren drops as an ambulance passes; this is the *Doppler effect*. Let a source emit the [[freq|frequency]] f_s in still air, where sound travels at the [[vsound|speed of sound]] v. If the source moves toward an observer at speed v_s, each crest is emitted a distance v_s/f_s closer than the one before, so the wavelength ahead of it shortens to (v − v_s)/f_s and the observer hears f_o = f_s v/(v − v_s). If instead the observer moves toward a stationary source at speed v_o, then by [[galrel|relative motion]] the crests pass the observer at speed v + v_o, so f_o = f_s(v + v_o)/v. Together these give the [[fdop|Doppler-shifted frequency]] below, with the upper signs for motion toward the other party. All speeds are measured relative to the air.
+Q f_o = f_s (v ± v_o)/(v ∓ v_s)
+N O fdop | Doppler-shifted frequency | f_o = f_s (v ± v_o)/(v ∓ v_s) |
+d The frequency heard changes when source or observer moves through the medium: higher when approaching, lower when receding.
+g Doppler effect; Doppler shift
+R[thm] fdop <- vsound, freq, galrel : wavelength compressed by the source's motion, crossing rate changed by the observer's | Moving source and observer | Velocities are measured relative to the medium.
+P For a source approaching at 30.0 m/s while emitting 500 Hz, with v = 343 m/s, a stationary observer hears 500 Hz × 343/313 = 548 Hz; once it has passed and recedes at the same speed, the observer hears 500 Hz × 343/373 = 460 Hz. The size of this *Doppler shift* measures the speed along the line of sight, which is how Doppler ultrasound measures the speed of blood flow. Light shows a similar shift, but with no medium for light it must be treated by relativity. The light from receding galaxies is shifted to lower frequencies, a *red shift*.
+
+§ 1 17.8
+P A source moving faster than the [[vsound|speed of sound]] outruns its own sound. A wavefront emitted a time t ago has grown to radius vt, while the source has moved v_s t ahead of the point of emission. All the wavefronts touch a cone with the source at its apex, whose half-angle θ obeys sin θ = vt/(v_s t) = 1/M, where the *Mach number* M = v_s/v. On the cone the wavefronts add by [[superp|superposition]] into a sharp pressure jump, the [[shock|shock wave]]. Where the cone sweeps over the ground it is heard as a *sonic boom*, for as long as the aircraft flies faster than sound. A jet at Mach 2.00 trails a cone of half-angle 30.0°. A boat faster than the surface waves it makes leaves a V-shaped *bow wake*, and a charged particle moving through water faster than light travels in water emits *Cerenkov radiation*.
+Q sin θ = v/v_s = 1/M
+N S shock | Shock wave | sin θ = v/v_s = 1/M |
+d A source faster than sound piles up its wavefronts on a cone; the pressure jump is heard as a sonic boom, and a boat's bow wake is the surface analogue.
+m conical envelope of spherical wavefronts, half-angle θ with sin θ = v/v_s (Mach number M = v_s/v)
+g shock wave; sonic boom; bow wake
+R[thm] shock <- vsound, superp : wavefronts emitted at earlier positions overlap on a cone | Supersonic source | Constructive superposition along the envelope.

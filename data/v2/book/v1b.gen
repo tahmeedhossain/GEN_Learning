@@ -1,0 +1,352 @@
+# University Physics Volume 1, chapters 5-9
+# Reading text (P paragraphs, Q display equations) written for this network.
+
+§ 1 5.0
+P Chapters 3 and 4 described motion without asking what produces it: from the acceleration and the initial position and velocity, [[integ|integration in time]] returns the [[rt|trajectory]]. This chapter supplies the cause. Other bodies exert forces, and the forces determine the acceleration. Newton's three laws state how: the first identifies the frames in which the laws hold, the second relates net force, mass and acceleration, and the third pairs every force with an equal and opposite force on another body. With the common forces of mechanics (weight, the normal force, tension and the spring force), these laws turn the description of motion into its prediction.
+
+§ 1 5.1
+X dynamics :: names the branch of mechanics that studies causes of motion
+P *Dynamics* is the part of mechanics that asks why motion changes. Its central quantity is [[F|force]], a push or a pull exerted on a body by another body. A force has a magnitude and a direction. *Contact forces* act where surfaces touch, as when a hand pushes a cart or a floor supports a box; *field forces*, such as gravity and the electric force, act across a distance. Forces are measured with a calibrated spring. A stretched spring exerts a *restoring force* that pulls back toward its relaxed length, and the same stretch always signals the same force; two identical springs pulling side by side at that stretch exert twice the force. The SI unit of force is the newton, 1 N = 1 kg·m/s², named after Isaac Newton, whose Principia of 1687 set out the laws of this chapter.
+N O F | Force | F⃗ | prim
+d A push or pull on a body, with magnitude and direction; measured by the stretch of a calibrated spring. SI unit the newton, 1 N = 1 kg·m/s².
+g force; newton
+P To find how forces affect one body, isolate it. A [[fbd|free-body diagram]] represents the body by a point and draws from that point every external force, that is, every force exerted on the body by something outside it. Each is drawn as a [[vec|vector]], with its true direction and a length proportional to its magnitude. [[F|Forces]] that the body exerts on other objects are left out, and so are forces between its own parts. One diagram is drawn for each body of interest, and drawing it is the first step of every problem in this chapter.
+N M fbd | Free-body diagram | FBD |
+d Isolates one body and draws every external force on it as a vector from the body; the starting point of every force problem.
+p separates the system from its surroundings; only external forces drawn; one diagram per body
+g free-body diagram
+R[def] fbd <- F, vec : each external force drawn as a vector on the isolated body | Isolating the system | Forces are vectors, so the diagram is a list of vectors acting on one body.
+P The forces on a [[fbd|free-body diagram]] combine by [[vadd|vector addition]] into the [[Fnet|net external force]], F⃗_{net} = ΣF⃗ = F⃗₁ + F⃗₂ + ⋯. The order of the terms does not matter, and in practice the sum is taken in [[comp|components]] along chosen axes. A crate on a smooth floor, pulled with 3.0 N toward the east and 4.0 N toward the north, has a horizontal net force of 5.0 N, directed 53.1° north of east. For a body treated as a particle, only this sum matters: two different sets of forces with the same sum have the same effect on its motion.
+N O Fnet | Net external force | F⃗_net |
+d Vector sum of all external forces on a body.
+g net external force; external force
+R[def] Fnet <- fbd, vadd : F⃗_net = Σ F⃗ = F⃗₁ + F⃗₂ + ⋯ | Vector sum | Forces combine like any vectors, so the order of summation is irrelevant.
+
+§ 1 5.2
+P A puck pushed across rough concrete soon stops, while the same puck on smooth ice slides much farther. The difference is friction, a force exerted by the surface; it is an external force like any other. As friction is reduced, the puck keeps its velocity for longer, and the idealised limit is [[n1|Newton's first law]]: a body on which the [[Fnet|net external force]] is zero keeps a constant velocity, remaining at rest or moving uniformly in a straight line. This tendency to keep the present velocity is *inertia*, and the law is also called the *law of inertia*. [[m|Mass]] is the measure of inertia. A body with zero net force has zero acceleration and is said to be in *equilibrium*; large forces may act on it, but they cancel.
+N M n1 | Newton's first law | F⃗_net = 0 ⇒ v⃗ = const | ax
+d A body keeps its velocity unless a net external force acts; this tendency is inertia, measured by mass.
+p defines the class of inertial frames; Galilean invariant; special case F⃗_net = 0 of the second law
+g Newton’s first law of motion; law of inertia; inertia
+P The first law does not hold in every [[frame|reference frame]]. Seen from a car that brakes hard, a bag on the seat starts to slide forward although nothing pushes it forward. The law therefore singles out the [[inframe|inertial reference frames]], the frames in which a body free of net force has zero acceleration, and [[n1|Newton's first law]] asserts that such frames exist. Any frame moving at constant velocity relative to an inertial frame is also inertial; accelerating and rotating frames are not. A frame fixed to the ground is inertial to good approximation: Earth's rotation gives a point on the equator a [[ac|centripetal acceleration]] of only 0.034 m/s², about 0.35 % of the [[g|free-fall acceleration]].
+N M inframe | Inertial reference frame | inertial frame |
+d A frame in which the first law holds; any frame moving at constant velocity relative to one is also inertial.
+p closed under constant-velocity changes of frame; accelerating or rotating frames excluded
+g inertial reference frame
+R[def] inframe <- n1, frame : frames in which F⃗_net = 0 ⇒ a⃗ = 0 | Frames selected by the first law | The first law picks out the frames in which the other laws are stated.
+
+§ 1 5.3
+P Experiments with carts on a low-friction track, pulled by calibrated springs, show two proportionalities: at fixed mass the acceleration is proportional to the net force, and at fixed net force it is inversely proportional to the mass. [[n2|Newton's second law]] combines them: the [[Fnet|net external force]] on a body equals its [[m|mass]] times its [[avec|acceleration]]. Solved for the acceleration, a⃗ = F⃗_{net}/m, the law says that the acceleration points along the net force and that the mass sets how strongly the body responds. Only external forces enter; forces between parts of the body cancel. As a vector equation it stands for one scalar equation per axis, ΣF_x = ma_x and likewise for y and z. It also fixes the newton: 1 N gives 1 kg an acceleration of 1 m/s². A net force of 3000 N gives a 1200 kg car an acceleration of 2.50 m/s².
+Q F⃗_{net} = ΣF⃗ = m a⃗
+N M n2 | Newton's second law | F⃗_net = m a⃗ | ax
+d The net external force on a body equals its mass times its acceleration; one equation per component.
+p linear in the forces (superposition); vector equation; valid in inertial frames; second order in time, so r⃗₀ and v⃗₀ fix the motion
+g Newton’s second law of motion
+R[law] avec <- n2, Fnet, m : a⃗ = F⃗_net / m | Acceleration from force | Forces determine acceleration; mass sets the response.
+P The second law also determines motion. Writing the acceleration as the second time derivative of position gives m d²r⃗/dt² = F⃗_{net}, a differential equation of second order. When the [[Fnet|net force]] is known as a function of position, velocity and time, the equation can be solved, in the simplest cases by [[integ|integrating]] the acceleration twice, first to the velocity and then to the position. The solution is the [[rt|trajectory]], and its two constants of integration are fixed by the initial position r⃗(0) and the initial velocity v⃗(0). A constant net force gives constant acceleration and hence the [[kin|constant-acceleration kinematics]] of Chapter 3. In this form [[n2|Newton's second law]] holds in inertial frames, for a body of constant [[m|mass]] moving much slower than light. Newton framed the law around the change of mass times velocity, his quantity of motion, now called momentum; Chapter 9 returns to that form.
+R[law] rt <- n2, Fnet, m, integ : m d²r⃗/dt² = F⃗_net;  r⃗(0), v⃗(0) given | Equation of motion | Integrating the second law with initial position and velocity gives the trajectory.
+> integ: integrates the acceleration twice in time
+
+§ 1 5.4
+P Near Earth's surface every body in [[ffall|free fall]] has the same acceleration g⃗, directed downward, of magnitude g = 9.80 m/s². In free fall the only force on the body is the gravitational pull of the Earth, so [[n2|Newton's second law]] identifies that force: it is the [[w|weight]], w⃗ = m g⃗, of magnitude w = mg. A body of [[m|mass]] 70.0 kg weighs 686 N. Mass and weight are different quantities. Mass is a property of the body, measured in kilograms and the same everywhere; weight is a force, measured in newtons, which depends on the local value of the [[g|free-fall acceleration]]. On the Moon, where g = 1.62 m/s², the same body weighs 113 N, but it resists changes of velocity just as much.
+N O w | Weight | w⃗ = m g⃗ |
+d Gravitational force of the Earth on a body near its surface; proportional to mass, unlike mass itself it depends on location.
+g weight
+R[law] w <- n2, m, g : w⃗ = m g⃗ | Second law in free fall | In free fall the only force is the weight and the acceleration is g⃗.
+X free fall :: = ffall
+P Strictly, a body falling through air is never in free fall: air resistance acts as well and grows with speed until it nearly balances the weight, as Chapter 6 shows. It is negligible only for short drops of compact, dense objects. A bathroom scale does not measure weight directly; it measures the force with which it pushes up on whatever stands on it. In a freely falling elevator or an orbiting spacecraft, scale and body fall together, the scale reads zero, and the body is called weightless. Gravity has not vanished: 400 km above the ground g is still about 8.7 m/s², nearly 90 % of its surface value. Weightlessness is [[ffall|free fall]], not the absence of [[w|weight]].
+
+§ 1 5.5
+P Every force arises from an interaction between two bodies. [[n3|Newton's third law]] states that if body A exerts a force F⃗_{AB} on body B, then B exerts a force F⃗_{BA} = −F⃗_{AB} on A, equal in magnitude, opposite in direction and simultaneous. Two spring scales hooked together read the same however hard they are pulled. The two forces of a pair are of the same kind and act on different bodies, so they never appear together in the [[fbd|free-body diagram]] of one body and never cancel each other. A book resting on a table is pulled down by the Earth and pulls the Earth up with an equal force. The table's upward push on the book is a different force; its partner is the book's downward push on the table.
+N M n3 | Newton's third law | F⃗_AB = −F⃗_BA | ax
+d Forces come in pairs: when A pushes on B, B pushes back on A with an equal and opposite force. The two act on different bodies.
+p equal magnitude, opposite direction; act on different bodies; internal forces of a system cancel in pairs
+g Newton’s third law of motion
+X thrust :: an example of a third-law force pair (rocket propulsion is the §9.7 node)
+P Which forces cancel depends on the system chosen. For a system of several bodies, the forces between its members occur in third-law pairs inside the system, and their sum is zero; the [[Fnet|net force]] on the system is the sum of the external forces alone. To move forward, a body must therefore push on something else. A swimmer pushes water backward and the water pushes the swimmer forward. A car's tyres push backward on the road, and the road pushes the car forward. A rocket engine expels gas backward at high speed, and the gas pushes the engine forward with a force called *thrust*. In each case the forward force is exerted by another body; internal forces alone cannot accelerate a system.
+
+§ 1 5.6
+P A book on a table does not sink into it. The table deforms very slightly and pushes back with a contact force perpendicular to its surface, the [[Nf|normal force]] N⃗, where normal means perpendicular. It grows as needed to prevent penetration, up to the point where the surface breaks. Its magnitude follows from [[n2|Newton's second law]] applied across the surface: if the body does not accelerate perpendicular to the surface and no other force acts in that direction, the normal force balances the perpendicular component of the [[w|weight]]. On a level surface N = mg. On a plane inclined at angle θ, only the component mg cos θ presses into the surface, so N = mg cos θ; for a 10.0 kg block on a 30.0° slope, N = 84.9 N.
+N O Nf | Normal force | N⃗ |
+d Contact force perpendicular to a surface, as large as needed to stop the body from moving into it.
+g normal force
+R[law] Nf <- n2, w : N = mg (level);  N = mg cos θ (incline) | Equilibrium across the surface | No acceleration perpendicular to the surface fixes N.
+P A string, rope or cable pulled taut transmits a pulling force along its length, the [[T|tension]] T. A rope can only pull, never push. If its mass is negligible, the tension is the same along its whole length, and a frictionless pulley changes the direction of the rope without changing the tension. For a body hanging at rest from a vertical rope, [[n2|Newton's second law]] with zero acceleration gives T = mg: the rope balances the [[w|weight]]. If a load hangs from the middle of a wire that sags by an angle θ below the horizontal on each side, the two halves together must supply mg vertically, so T = mg/(2 sin θ). A 5.00 kg load on a wire sagging by 5.0° produces a tension of 281 N, almost six times its weight.
+N O T | Tension | T |
+d Pulling force transmitted along a string or cable.
+g tension
+R[law] T <- n2, w : T = mg for a mass hanging at rest | Equilibrium of a hanging mass | The rope balances the weight.
+P Hanging increasing loads from a spring shows that, for moderate loads, its extension grows in proportion to the load. A spring stretched or compressed by x from its relaxed length therefore pulls or pushes back with a force proportional to x. This is [[hooke|Hooke's law]], F = −kx. The force constant k, in N/m, measures the stiffness of the spring, and the minus sign says that the force opposes the displacement. The law is an approximation that holds while the deformation stays small, below the proportional limit of the material. Because the spring's [[F|force]] follows from its deformation, a calibrated spring is the standard way to measure forces: a spring scale with k = 500 N/m stretched by 2.00 cm reads 10.0 N. Each force in this section has an agent and a third-law partner. Forces that appear only because motion is described from an accelerating frame have neither; such *fictitious forces* are treated in Chapter 6.
+N M hooke | Hooke's law | F = −kx | ax
+d A spring pulls back with a force proportional to its stretch from the relaxed length.
+p linear restoring force; k > 0 (force constant); valid below the elastic limit
+g Hooke’s law
+R[law] F <- hooke : F = −kx | Spring force | A force whose value follows from the deformation of a spring; also how forces are measured.
+
+§ 1 5.7
+P A [[fbd|free-body diagram]] is drawn in a fixed order. Represent the chosen body by a dot. Find everything that touches or pulls it: a surface gives a [[Nf|normal force]] and possibly friction, a rope a [[T|tension]], a spring a force given by [[hooke|Hooke's law]], and the Earth the [[w|weight]]. Draw each external force as an arrow from the dot in its true direction. Leave out forces the body exerts on other things, and never add ma as a force; it is the result of the forces, not one of them. Choose axes, ideally one along the expected acceleration, and resolve the forces into components. For interacting bodies draw one diagram each: the two forces of a pair related by [[n3|Newton's third law]] always appear on different diagrams.
+
+# ---------------------------------------------------------------- Chapter 6
+§ 1 6.0
+P Newton's laws are general, but to solve a problem one also needs the forces themselves. This chapter adds force laws for two contact forces met everywhere: friction between solid surfaces and drag in a fluid. Both are empirical and valid only over limited ranges. It then applies [[n2|Newton's second law]] to [[circ|circular motion]], where a net force toward the centre must produce the [[ac|centripetal acceleration]] of Chapter 4, and shows how the laws must be modified when motion is described from an accelerating or rotating frame.
+
+§ 1 6.1
+P Newton's laws of motion are applied in a fixed order: a [[fbd|free-body diagram]] for each body, axes, then [[n2|Newton's second law]] for each axis. In *particle equilibrium* every component of the [[Fnet|net force]] vanishes; in *particle acceleration* the components equal ma_x and ma_y, and [[kin|kinematics]] then gives positions and times. In an *Atwood machine*, masses m₁ > m₂ hang from a light rope over a light, frictionless pulley; the second law for each mass gives the magnitude of their acceleration, a = (m₁ − m₂)g/(m₁ + m₂). A person of mass m in an *elevator* accelerating upward at a is pushed by the floor with a [[Nf|normal force]] N = m(g + a). A velocity-dependent force, such as the drag force, makes the second law a differential equation.
+
+§ 1 6.2
+P When one solid surface slides, or tends to slide, over another, the contact force between them has a component along the surfaces that opposes the relative motion or its onset. This component is [[frict|friction]]. Pulling a block across a table with a spring scale shows that doubling the load on the block doubles the friction, while turning the block onto a smaller face hardly changes it: friction is roughly proportional to the [[Nf|normal force]], f ∝ N, and nearly independent of the apparent area of contact. The reason is microscopic. Even polished surfaces touch only at the tips of their irregularities, and pressing harder enlarges this true contact area roughly in proportion to the load. Sliding requires shearing these junctions, and the force per unit area needed is a *shear stress* characteristic of the materials. The law is empirical, and its constants must be measured for each pair of surfaces.
+N M frict | Friction law | f ≤ μN |
+d Contact force parallel to a surface that opposes relative motion (kinetic) or its onset (static), proportional to the normal force.
+p empirical; usually μ_s > μ_k; nearly independent of contact area; nonconservative
+g friction
+R[law] frict <- Nf : f ∝ N | Proportional to the normal force | The coefficients μ_s, μ_k characterise the pair of surfaces.
+P A heavy crate pushed gently does not move, because [[fs|static friction]] matches the push. Static friction takes whatever value equilibrium requires, up to a maximum: f_s ≤ μ_s N, where μ_s is the *coefficient of static friction* and N the [[Nf|normal force]]. The [[frict|friction law]] fixes only this maximum. It also yields a simple measurement on an *inclined plane*. On a slope of angle θ, a block has N = mg cos θ and a weight component mg sin θ along the slope; static friction can hold it as long as mg sin θ ≤ μ_s mg cos θ, so the block starts to slide when tan θ reaches μ_s. The mass cancels. If sliding begins at 26.6°, then μ_s = tan 26.6° = 0.50.
+N O fs | Static friction | f_s ≤ μ_s N |
+d Friction between surfaces not sliding relative to each other; adjusts up to a maximum μ_s N.
+g static friction
+R[law] fs <- frict, Nf : f_s ≤ μ_s N | Up to a threshold | Takes whatever value equilibrium requires, up to μ_s N.
+P Once the surfaces slide, the [[frict|friction law]] gives a force of fixed magnitude, the [[fk|kinetic friction]] f_k = μ_k N, with N the [[Nf|normal force]]. It opposes the body's velocity relative to the surface. The *coefficient of kinetic friction* μ_k is usually smaller than μ_s, so a sliding object is easier to keep moving than to start. Both coefficients are dimensionless; they range from a few hundredths for ice sliding on ice to about 1 for rubber on dry concrete, and an *artificial joint* is designed to be near the low end. A 20.0 kg crate on a level floor with μ_s = 0.50 and μ_k = 0.40 has N = 196 N. It stays at rest under any horizontal push up to 98 N; once sliding, it is opposed by 78.4 N, and a 100 N push accelerates it at 21.6 N/20.0 kg = 1.08 m/s².
+N O fk | Kinetic friction | f_k = μ_k N |
+d Friction between sliding surfaces, opposite to the relative velocity.
+g kinetic friction
+R[law] fk <- frict, Nf : f_k = μ_k N | Sliding friction | Fixed by the normal force once sliding starts.
+
+§ 1 6.3
+P A body moving at speed v on a circle of radius r has the [[ac|centripetal acceleration]] a_C = v²/r, directed toward the centre. By [[n2|Newton's second law]], a net force toward the centre must produce it. This is the [[Fc|centripetal force]], F_c = mv²/r = mrω², where m is the body's [[m|mass]] and ω the [[omega|angular frequency]]. It is not a new kind of force but a role that some force fills: tension for a stone whirled on a string, gravity for a satellite, [[fs|static friction]] for a car on a flat curve. Friction can supply at most μ_s mg there, so the car can take the curve only if v²/r ≤ μ_s g. A 1200 kg car rounding a curve of radius 50.0 m at 15.0 m/s needs a centripetal force of 5400 N, and the road must provide μ_s ≥ 0.46.
+N O Fc | Centripetal force | F_c = mv²/r |
+d Net force toward the centre that a circular motion requires; supplied by tension, friction, gravity or a normal force.
+g centripetal force
+R[law] Fc <- n2, ac, m : F_c = m v²/r = m r ω² | Second law for circular motion | Mass times centripetal acceleration.
+P On a [[bank|banked curve]] the road is tilted toward the centre by an angle θ, so the [[Nf|normal force]] has an inward horizontal component. Without friction, the vertical component balances the [[w|weight]] and the horizontal component supplies the [[Fc|centripetal force]]: N cos θ = mg and N sin θ = mv²/r. Dividing the two equations gives tan θ = v²/(rg). At this design speed a car needs no friction to take the curve, a condition called *ideal banking*. The angle does not depend on the mass, but each angle suits only one speed. A curve of radius 100 m designed for 20.0 m/s should be banked at 22.2°; cars that are faster or slower rely on friction to hold their path.
+N M bank | Banked curve | tan θ = v²/(rg) |
+d A road tilted so the horizontal part of the normal force supplies the centripetal force at a design speed.
+p ideal banking needs no friction; θ independent of mass; one design speed per angle
+g banked curve; ideal banking
+R[thm] bank <- Fc, Nf, w : N sin θ = mv²/r,  N cos θ = mg | Normal force as centripetal force | Dividing the two components gives tan θ = v²/(rg).
+P All forces so far have been described from an [[inframe|inertial frame]]. Consider a frame whose origin accelerates at a⃗_{frame} without rotating. By the rules of [[galrel|relative motion]], the acceleration of a body measured in this frame is a⃗′ = a⃗ − a⃗_{frame}, so [[n2|Newton's second law]] becomes m a⃗′ = F⃗_{net} − m a⃗_{frame}. In such a [[noninert|noninertial frame of reference]] the second law holds only if an *inertial force* −m a⃗_{frame} is added to the real forces. This force is proportional to the mass and has neither an agent nor a third-law partner. In a car accelerating forward at 2.45 m/s², a pendulum hangs tilted backward by 14.0° from the vertical, with tan θ = a/g = 0.250. A passenger explains the tilt by a backward inertial force; an observer on the ground sees the string's tension accelerating the bob forward.
+N M noninert | Noninertial frame | a⃗_frame ≠ 0 |
+d An accelerating or rotating frame; the laws of motion hold there only if inertial (fictitious) forces such as the centrifugal force are added.
+p inertial forces proportional to mass; no third-law partner; disappear in an inertial frame
+g noninertial frame of reference; inertial force
+R[thm] noninert <- inframe, galrel, n2 : m a⃗′ = F⃗_net − m a⃗_frame | Second law in an accelerating frame | The frame's acceleration appears as an extra force −m a⃗_frame.
+P In a frame rotating steadily with angular velocity ω⃗, whose magnitude is the [[omega|angular frequency]] ω of the rotation, two inertial forces are needed. A body at rest in the frame, at distance r from the axis, is subject to the outward *centrifugal force* mrω². A *centrifuge* spins samples so fast that this force exceeds their weight many times over and drives the denser parts of a mixture outward. A body moving with [[vvec|velocity]] v⃗′ relative to the frame is also subject to the [[Fcor|Coriolis force]], F⃗ = −2m ω⃗ × v⃗′, a [[cross|vector product]] perpendicular to v⃗′ that bends the path without changing the speed. Earth turns at ω = 7.29 × 10⁻⁵ rad/s, so at 100 m/s the Coriolis acceleration is at most 2ωv′ = 0.0146 m/s², yet over hours it turns storms counterclockwise in the Northern Hemisphere. Both forces belong to the [[noninert|noninertial frame]] and vanish in an inertial one.
+N O Fcor | Coriolis force | F⃗ = −2m ω⃗ × v⃗′ |
+d Inertial force on a body moving relative to a rotating frame, perpendicular to its velocity; deflects winds and projectiles on Earth.
+g Coriolis force
+R[thm] Fcor <- noninert, omega, vvec, cross : F⃗_Cor = −2m ω⃗ × v⃗′ | Rotating frame | Appears with the centrifugal force when Newton's law is written in a rotating frame.
+
+§ 1 6.4
+P A body moving through a fluid such as air or water is resisted by the [[FD|drag force]], which points opposite to its velocity relative to the fluid and grows with its [[speed|speed]]. For most motions through air, from a thrown ball to a car on a highway, the body leaves a turbulent wake and the drag is close to F_D = ½CρAv². Here ρ is the density of the fluid, A the cross-sectional area that faces the flow and C the dimensionless *drag coefficient*, which depends on the shape of the body. The coefficient is measured in a *wind tunnel*; a sphere has C ≈ 0.5 and a streamlined modern car about 0.3. For slow motion of a small sphere of radius r through a fluid of viscosity η, the flow stays smooth and the drag is instead linear in the speed, given by Stokes' law, F_s = 6πrηv.
+N O FD | Drag force | F_D = ½CρAv² |
+d Resistance of a fluid to a body moving through it; grows with the square of speed for fast motion, linearly for slow motion in viscous fluid.
+g drag force
+R[law] FD <- speed : F_D = ½ C ρ A v² (fast);  F_s = 6π r η v (Stokes, slow) | Empirical drag laws | C is the drag coefficient, ρ the fluid density, A the area facing the flow, η the viscosity.
+P A body falling from rest speeds up, and the growing drag reduces its acceleration until the drag balances the weight. From then on the net force is zero, [[n2|Newton's second law]] gives zero acceleration, and the body falls at constant speed, its [[vT|terminal velocity]]. Equating the [[FD|drag force]] ½CρAv² with the [[w|weight]] mg gives v_T = √(2mg/(ρCA)). A hailstone 2.0 cm across, of mass 3.8 g, with C = 0.50 and A = 3.1 × 10⁻⁴ m², falls through air of density 1.21 kg/m³ at about 20 m/s. For bodies of the same shape and density, m grows as the cube of the size and A as its square, so v_T grows as the square root of the size: dust drifts down while large bodies fall fast. In the slow, viscous regime, neglecting buoyancy, the balance 6πrηv_T = mg gives v_T = mg/(6πrη) instead.
+N O vT | Terminal velocity | v_T = √(2mg/(ρCA)) |
+d Constant speed reached when the drag force balances the weight.
+g terminal velocity
+R[thm] vT <- FD, w, n2 : F_D = mg ⇒ v_T = √(2mg/(ρCA)) | Zero acceleration | The second law with net force zero.
+
+# ---------------------------------------------------------------- Chapter 7
+§ 1 7.0
+P The second law predicts motion by following the [[F|forces]] from instant to instant. Often only the speeds at two positions are wanted, and the forces are known as functions of position rather than of time. This chapter therefore integrates [[n2|Newton's second law]] along the path instead of over time. Three quantities result: work, the integral of a force along a displacement; kinetic energy, ½mv²; and power, the rate at which work is done. The second law then takes a scalar form: the net work done on a body equals the change of its kinetic energy.
+
+§ 1 7.1
+P A force transfers energy to a body that moves along the direction of the force. For a constant [[F|force]] and a straight [[dr|displacement]] Δr⃗, the [[W|work]] done by the force is the [[dot|scalar product]] W = F⃗·Δr⃗ = F Δr cos θ, where θ is the angle between the force and the displacement. Work is a scalar. It is positive when the force has a component along the motion, negative when that component is opposite to the motion, and zero when the force is perpendicular to it, like the [[Nf|normal force]] on a body sliding on a level floor. For a varying force or a curved path, the path is divided into small steps dr⃗ and the contributions F⃗·dr⃗ are added, which in the limit is an [[integ|integral]] along the path. The SI unit of work is the *joule*, 1 J = 1 N·m.
+Q W_{AB} = ∫_{A}^{B} F⃗·dr⃗
+N O W | Work | W = ∫F⃗·dr⃗ |
+d Energy transferred by a force acting along a displacement; only the component of force along the path does work. SI unit the joule.
+g work
+R[def] W <- F, dr, dot, integ : W_AB = ∫_A^B F⃗·dr⃗ | Line integral of force | Adds F⃗·dr⃗ along the path; gravity gives −mgΔy, a spring −½k(x_B² − x_A²).
+P Three forces recur in practice. The [[w|weight]] is constant, so its work depends only on the change in height, W = −mg(y_B − y_A), whatever the path; while a 2.00 kg book is lifted by 1.50 m, gravity does −29.4 J of work on it. The spring force of [[hooke|Hooke's law]], F = −kx, varies with position, and integrating it gives W = −½k(x_B² − x_A²). A spring with k = 200 N/m, stretched from its relaxed length by 0.100 m, does −1.00 J of work on the hand that stretches it. A *bungee cord* behaves roughly like such a spring once it is taut. [[fk|Kinetic friction]] of constant magnitude always opposes the motion, so its work is −f_k times the length of the path, and a longer route between the same two points means more negative work.
+
+§ 1 7.2
+P The quantity that work changes is the [[K|kinetic energy]] of a body, K = ½mv², built from its [[m|mass]] and its [[speed|speed]]. It is a scalar, never negative, and measured in joules, since 1 kg·m²/s² = 1 N·m = 1 J. Doubling the speed quadruples the kinetic energy, while doubling the mass only doubles it. A 0.145 kg baseball thrown at 40.0 m/s has K = 116 J, and a 1500 kg car at 25.0 m/s has 469 kJ. The expression holds for speeds much smaller than the speed of light; at higher speeds special relativity replaces it with a formula that reduces to ½mv² when v/c is small.
+N O K | Kinetic energy | K = ½mv² |
+d Energy of motion of a particle; depends on the frame through the speed.
+g kinetic energy
+R[def] K <- m, speed : K = ½ m v² | Mass and speed | Scalar, never negative.
+P Kinetic energy depends on the [[frame|reference frame]], because speed does. A 1.00 kg parcel resting on a seat in a train that moves at 30.0 m/s has zero kinetic energy in the train's frame and 450 J in the ground frame. If a passenger throws it forward at 10.0 m/s relative to the train, its kinetic energy becomes 50.0 J in the train frame and 800 J in the ground frame. The two observers disagree about the gain, 50.0 J against 350 J, and therefore about the work done by the passenger's hand, which during the throw moves farther in the ground frame. Each account is consistent within its own frame. For a system of particles, the [[K|kinetic energy]] is the sum of ½m_j v_j² over its particles, all measured in one frame.
+
+§ 1 7.3
+P Several forces usually act on a body at once. Each does its own [[W|work]], and their sum is the [[Wnet|net work]]. For a particle all forces share the same displacement, and the scalar product is distributive, so the net work also equals the work of the [[Fnet|net external force]]: W_{net} = ∫F⃗_{net}·dr⃗ = ΣW_i. A 5.00 kg box dragged 3.00 m across a level floor by a horizontal 40.0 N pull, against 25.0 N of kinetic friction, receives +120 J from the pull and −75.0 J from friction, while the normal force and the weight, both perpendicular to the motion, do no work. Then W_{net} = 45.0 J, the same as (40.0 N − 25.0 N) × 3.00 m.
+N O Wnet | Net work | W_net |
+d Work done by the net force, equal to the sum of the works of all forces.
+g net work
+R[def] Wnet <- W, Fnet : W_net = ∫F⃗_net·dr⃗ = Σ W_i | Sum of works | Work is linear in the force.
+P Net work changes speed. Take [[n2|Newton's second law]], m dv⃗/dt = F⃗_{net}, and form the scalar product of both sides with the displacement dr⃗ = v⃗ dt. The right side becomes F⃗_{net}·dr⃗, the work of the net force in that step. The left side becomes m v⃗·dv⃗ = d(½mv²), the change of [[K|kinetic energy]]. Integrating from A to B gives the [[wet|work–energy theorem]]: the [[Wnet|net work]] done on a particle equals the change of its kinetic energy. It holds for any forces, constant or not, because it is the second law in integrated form. If the box of the last example started from rest, it ends with K = 45.0 J and a speed of √(2 × 45.0 J / 5.00 kg) = 4.24 m/s.
+Q W_{net} = K_B − K_A
+N M wet | Work–energy theorem | W_net = ΔK |
+d The net work done on a particle equals its change of kinetic energy.
+p scalar consequence of the second law; holds for any forces; the path enters only through W_net
+g work-energy theorem
+R[thm] wet <- n2, Wnet, K : ∫ m (dv⃗/dt)·v⃗ dt = ½mv_B² − ½mv_A² | Integrating the second law | Dot the second law with v⃗ dt and integrate.
+P The theorem relates forces, distances and speeds without involving time. A car skidding to a stop on a level road with locked wheels loses its kinetic energy to the work of kinetic friction, μ_k mgd = ½mv², so its stopping distance d = v²/(2μ_k g) grows as the square of the speed: twice as fast takes four times as far. On a frictionless *loop-the-loop* track of radius R, the [[Nf|normal force]] is perpendicular to the motion and does no work, so between the bottom and the top only the [[w|weight]] changes K, through the work −mg(2R). At the top the car stays on the track only if its weight does not exceed the [[Fc|centripetal force]] required there, mg ≤ mv_{top}²/R. The [[wet|work–energy theorem]] then requires v_{bottom}² = v_{top}² + 4gR ≥ 5gR, that is, at least 4.43 m/s at the bottom for R = 0.40 m.
+
+§ 1 7.4
+P Engines and muscles are rated less by how much work they can do than by how fast they do it. [[P|Power]] is the rate at which work is done. Over a finite interval Δt, the *average power* is the work divided by the time, W/Δt; the *instantaneous power* is the limit of this ratio as the interval shrinks, the [[ddt|time derivative]] P = dW/dt of the [[W|work]]. The SI unit is the watt, 1 W = 1 J/s; an older unit, the horsepower, is about 746 W. A motor that lifts a 500 kg load through 12.0 m in 20.0 s at constant speed does 58 800 J of work, an average power of 2940 W, or about 3.9 hp.
+N O P | Power | P = dW/dt |
+d Rate at which work is done; P = F⃗·v⃗ for a force acting on a moving body. Average power is work over elapsed time.
+g power; average power
+R[def] P <- W, ddt : P = dW/dt | Rate of work | Average power W/Δt over a finite interval.
+P For a force acting on a moving body, the work in a time dt is dW = F⃗·dr⃗ = F⃗·v⃗ dt. Dividing by dt expresses the [[P|power]] delivered by the [[F|force]] as its [[dot|scalar product]] with the [[vvec|velocity]], P = F⃗·v⃗. Only the component of the force along the velocity delivers power. At constant speed the driving force balances the resistance, so the power needed is the resistance times the speed: a cyclist holding 10.0 m/s against 25.0 N of air [[FD|drag]] and rolling resistance must supply 250 W. Because drag grows as v², the power needed to overcome it grows as v³, and doubling the speed takes eight times the power.
+Q P = dW/dt = F⃗·v⃗
+R[thm] P <- F, vvec, dot : P = F⃗·v⃗ | Force times velocity | dW = F⃗·dr⃗ divided by dt.
+
+# ---------------------------------------------------------------- Chapter 8
+§ 1 8.0
+P The [[W|work]] done by the [[w|weight]] or by a spring between two points does not depend on the path taken between them. This chapter turns that observation into a new quantity, potential energy, which stores the work of such forces in the configuration of a system. Added to the [[K|kinetic energy]], it gives the mechanical energy, which stays constant when only these forces do work and otherwise changes by the work of the remaining forces. Conservation of energy then solves many problems without reference to time, and a graph of potential energy shows where a body can move and where it can rest.
+
+§ 1 8.1
+P For some forces the [[W|work]] done as a body moves from A to B depends only on the end points, not on the path. For such a force one can define a function of position, the [[U|potential energy]], whose decrease equals the work done: ΔU_{AB} = U_B − U_A = −W_{AB}. Only this *potential energy difference* has physical meaning. The zero of U can therefore be placed at any convenient configuration; another choice adds the same constant everywhere and changes no prediction. Potential energy belongs to a system of interacting bodies, such as a body and the Earth or a block and a spring, not to one body alone. When the force does positive work, U decreases by the same amount; when it does negative work, energy is stored.
+Q ΔU_{AB} = U_B − U_A = −W_{AB}
+N O U | Potential energy | U(r⃗) |
+d Energy of a system stored in its configuration; only differences are physical, so the zero can be chosen freely.
+g potential energy; potential energy difference
+R[def] U <- W : ΔU_AB = U_B − U_A = −W_AB | Minus the work | Defined for forces whose work depends only on the end points.
+P Near Earth's surface the [[w|weight]] is constant, and its work between heights y_A and y_B is −mg(y_B − y_A) along any path. The definition of [[U|potential energy]] then gives the [[Ugrav|gravitational potential energy]] of the body–Earth system, U(y) = mgy + const, with y measured upward. The constant is usually chosen so that U is zero at the floor or the ground, but any choice works. Raising a 5.00 kg box from the floor to a shelf 2.00 m higher increases U by 98.0 J, whatever route the box takes; if it falls back, it regains those 98.0 J as [[K|kinetic energy]] when air resistance is negligible. The formula assumes heights small compared with Earth's radius, so that g stays constant.
+N O Ugrav | Gravitational potential energy (near Earth) | U = mgy |
+d Potential energy of the body–Earth system for a height y near the surface.
+g gravitational potential energy
+R[thm] Ugrav <- U, w : U(y) = mgy + const | Work of the weight | −W = mg(y_B − y_A).
+P A spring obeying [[hooke|Hooke's law]] does work −½k(x_B² − x_A²) when its end moves from x_A to x_B, again independent of the path. Its [[U|potential energy]], the [[Uel|elastic potential energy]], is therefore U(x) = ½kx² + const, and the natural choice puts U = 0 at the relaxed length, x = 0. Stretch and compression by the same amount store the same energy; a spring with k = 400 N/m compressed by 5.0 cm stores 0.50 J. A *bungee jumper* shows both kinds of potential energy at work. During the free fall, [[Ugrav|gravitational potential energy]] becomes kinetic energy. Once the cord is taut it stretches, storing elastic energy, until at the lowest point the jumper stops and, if losses are neglected, all the gravitational energy lost so far is stored in the cord.
+N O Uel | Elastic potential energy | U = ½kx² |
+d Potential energy stored in a stretched or compressed spring.
+g elastic potential energy
+R[thm] Uel <- U, hooke : U(x) = ½kx² + const | Work of the spring | −W = ½k(x_B² − x_A²).
+
+§ 1 8.2
+P A [[cons|conservative force]] is one whose [[W|work]] between any two points is the same along every path. Equivalently, its work around every closed path is zero, ∮F⃗·dr⃗ = 0: going from A to B along one path and back along another, the two contributions cancel. Gravity near the Earth and the force of an ideal spring are conservative, and a potential energy can be defined only for forces of this kind. [[fk|Kinetic friction]] is not conservative. On any closed path its work is −f_k times the path length, which is never zero. [[FD|Drag]], which also always opposes the motion, is not conservative either.
+N M cons | Conservative force | ∮F⃗·dr⃗ = 0 |
+d A force whose work between two points is independent of the path; equivalently zero around every closed path, and derivable from a potential energy.
+p path independence ⇔ ∮ = 0 ⇔ F⃗ = −∇U; F⃗·dr⃗ is an exact differential (∂F_x/∂y = ∂F_y/∂x); gravity and springs conservative, friction not
+g conservative force; exact differential
+R[def] cons <- W : W_AB independent of path | Path independence | A property of the work integral of the force.
+P Since the work of a [[cons|conservative force]] is minus the change of [[U|potential energy]], the [[F|force]] can be recovered from U. For a small displacement dℓ in any direction, F_{ℓ} dℓ = −dU, so the component of the force along that direction is F_{ℓ} = −dU/dℓ, and in three dimensions F⃗ = −∇U: the force points down the steepest slope of U. From U = ½kx² this returns F = −kx, and from U = mgy it returns F_y = −mg. Conversely, a force F⃗ = F_x î + F_y ĵ can be conservative only if F_x dx + F_y dy is an *exact differential*, which requires ∂F_x/∂y = ∂F_y/∂x. In arbitrary units, the force (2xy, x²) passes this test and has U = −x²y; the swirling force (−y, x) fails it and does work 2π once around the unit circle counterclockwise.
+R[thm] F <- U, cons : F_ℓ = −dU/dℓ;  F⃗ = −∇U | Force from potential energy | A conservative force is minus the gradient of its potential energy.
+P Kinetic friction, air drag and the push of a muscle or a motor are *non-conservative forces*: their [[W|work]] depends on the path, and no potential energy describes it. The work done on a body therefore splits into two parts: the work of the [[cons|conservative forces]], which equals −ΔU, and the rest, the [[Wnc|work of nonconservative forces]], W_{nc} = W_{net} − W_{cons}. Friction and drag make W_{nc} negative and turn mechanical energy into thermal energy of the surfaces or the air. A motor or a muscle can make it positive, drawing on energy stored in fuel, food or a battery.
+N O Wnc | Work of nonconservative forces | W_nc |
+d Work by forces such as friction or air resistance, which depends on the path and changes the mechanical energy.
+g non-conservative force
+R[def] Wnc <- W, cons : W_nc = W_net − W_cons | Path-dependent part | The part of the work that has no potential energy.
+
+§ 1 8.3
+P The sum of the [[K|kinetic energy]] of a system and its [[U|potential energy]] is its [[Emech|mechanical energy]], E = K + U. Because the zero of U is a matter of choice, E is defined only up to an additive constant, but its changes are not affected. A ball thrown straight up shows the two terms trading places: on the way up K decreases while the gravitational potential energy grows, at the top K is zero, and on the way down the exchange runs in reverse.
+N O Emech | Mechanical energy | E = K + U |
+d Kinetic plus potential energy of a system.
+g mechanical energy
+R[def] Emech <- K, U : E = K + U | Sum | Depends on the chosen zero of U only through a constant.
+P Split the [[Wnet|net work]] in the [[wet|work–energy theorem]] into the work of conservative forces, which is minus the change of [[U|potential energy]], and the [[Wnc|nonconservative work]] W_{nc}: then ΔK = −ΔU + W_{nc}, or Δ(K + U) = W_{nc}. The [[Emech|mechanical energy]] changes only through the work of nonconservative forces. When they do no work, mechanical energy is a conserved quantity, the same at every point of the motion. This is the [[econs|conservation of mechanical energy]]. Energy removed by friction is not destroyed: it reappears as thermal energy of the surfaces, and when every form of energy is counted, the total energy of an isolated system does not change.
+Q K_A + U_A + W_{nc} = K_B + U_B
+N M econs | Conservation of mechanical energy | ΔE = W_nc |
+d Mechanical energy changes only through the work of nonconservative forces; without them it is a conserved quantity.
+p scalar conservation law; follows from the work–energy theorem with W_cons = −ΔU; energy lost to friction becomes thermal energy
+g energy conservation
+X conserved quantity :: = econs
+R[thm] econs <- wet, U, Wnc, Emech : W_net = −ΔU + W_nc = ΔK ⇒ Δ(K + U) = W_nc | Split the work | Conservative work is moved into the potential energy.
+P [[econs|Energy conservation]] replaces a calculation in time by a comparison of two states. A block released from rest 1.00 m up a frictionless ramp reaches the bottom with ½mv² = mgh, so v = √(2gh) = 4.43 m/s for any shape of ramp and any mass. It then slides onto a level floor where μ_k = 0.25. [[fk|Kinetic friction]] does work −μ_k mgd, and the block stops when this has removed the whole mgh, after d = h/μ_k = 4.0 m. *Bar graphs of total energy* make such accounts visible: at each stage, bars for K, U and the energy converted by friction stand side by side, and their total height stays the same.
+
+§ 1 8.4
+P For motion along a line, plotting U(x) together with the total energy E, a horizontal line, gives a [[pediag|potential energy diagram]]. By [[econs|conservation of mechanical energy]], K = E − U(x) at every position, and because K cannot be negative, the body can be found only where E ≥ U(x). The vertical gap between the line and the curve is the kinetic energy. Where the curve meets the line, K = 0: the body stops momentarily and reverses, so such a position is a *turning point*. A mass on a spring with energy E oscillates between the turning points x = ±√(2E/k), where ½kx² = E. The force is minus the slope of the [[U|potential energy]] curve, so on the graph the body is always pushed downhill.
+N M pediag | Potential-energy diagram | U(x) and E |
+d A plot of U(x) with the total energy as a horizontal line; motion is allowed only where E ≥ U, and reverses at turning points.
+p K = E − U(x) ≥ 0; turning points where U(x) = E; force is minus the slope
+g potential energy diagram; turning point
+R[thm] pediag <- econs, U : K = E − U(x) ≥ 0 | Energy conservation on a graph | Reads the allowed motion off U(x).
+P Where the curve is flat, dU/dx = 0, the [[F|force]] F = −dU/dx vanishes, and a body placed there at rest stays at rest. Such an [[eqpt|equilibrium point]] can be read off the [[pediag|potential energy diagram]], and its stability is decided by the curvature of U. At a minimum, a small displacement produces a force back toward the equilibrium, and the body oscillates about it: the equilibrium is stable. Near a minimum at x₀, U(x) ≈ U(x₀) + ½U″(x₀)(x − x₀)², which apart from a constant is the [[Uel|elastic potential energy]] of a spring with force constant k = U″(x₀). At a maximum, the force pushes the body farther away, and the equilibrium is unstable. For U(x) = ax⁴ − bx² with a, b > 0, x = 0 is unstable and x = ±√(b/(2a)) are stable.
+N S eqpt | Equilibrium point | dU/dx = 0 |
+d A position where the force vanishes; stable at a minimum of U (small disturbances oscillate), unstable at a maximum.
+m point x₀ with U′(x₀) = 0; stable if U″(x₀) > 0
+g equilibrium point
+R[thm] eqpt <- pediag, F : F = −dU/dx = 0 at x₀ | Flat points of U | Curvature of U decides stability.
+
+§ 1 8.5
+X renewable; non-renewable :: energy resources; societal context without new physics
+P [[Emech|Mechanical energy]] is one of several forms of energy, and only the total over all forms is conserved. *Thermal energy* is the random kinetic and potential energy of atoms and molecules; *chemical energy* is stored in molecular bonds; *electrical energy* is carried by charges and currents; *radiant energy* travels as light and other electromagnetic waves; *nuclear energy* is stored in atomic nuclei. Sources replenished on human timescales, such as *hydropower*, *wind power*, *geothermal* heat and *solar power*, are *renewable*; *fossil fuels* such as coal, oil and natural gas, and the uranium used for fission, are *non-renewable*. Every conversion obeys [[econs|energy conservation]], yet some energy always ends up as thermal energy at low temperature, which is hard to use again. The rate of conversion is a [[P|power]].
+
+# ---------------------------------------------------------------- Chapter 9
+§ 1 9.0
+P Forces between bodies often act for short or poorly known times, as in a collision or an explosion. This chapter introduces a quantity that can be followed without such details: momentum, mass times velocity. [[n2|Newton's second law]] says that the net force on a body is the rate of change of its momentum, and [[n3|Newton's third law]] makes the internal forces of a system cancel, so the total momentum of an isolated group of bodies cannot change. Momentum conservation, combined with the [[econs|energy conservation]] of Chapter 8, describes collisions, and the centre of mass reduces the motion of a whole system to that of a single point.
+
+§ 1 9.1
+P The [[p|momentum]] of a particle is the product of its [[m|mass]] and its [[vvec|velocity]], p⃗ = m v⃗. It is a vector pointing along the velocity, measured in kg·m/s. Momentum and kinetic energy both grow with mass and speed, but they are different measures of motion. A 10.0 g bullet at 400 m/s and a 2.00 kg ball at 2.00 m/s have the same momentum, 4.00 kg·m/s, yet the bullet carries 800 J of kinetic energy and the ball only 4.00 J. Stopping either of them in the same time requires the same average force; stopping them in the same distance does not.
+N O p | Momentum | p⃗ = m v⃗ |
+d Mass times velocity; a vector.
+g momentum
+R[def] p <- m, vvec : p⃗ = m v⃗ | Mass times velocity | Same direction as the velocity.
+P Newton framed his second law around the change of the quantity of motion, mass times velocity, which is the momentum. In this form [[n2|Newton's second law]] reads F⃗_{net} = dp⃗/dt: the net external force equals the [[ddt|time derivative]] of the [[p|momentum]]. For constant mass, d(mv⃗)/dt = m a⃗, which is the form of Section 5.3. The momentum form is the more general one. It keeps its shape in special relativity, where momentum is no longer m v⃗, and applied to a closed system it handles bodies that gain or lose mass, as Section 9.7 shows. Eliminating v between p = mv and K = ½mv² expresses the [[K|kinetic energy]] of a particle of [[m|mass]] m through its momentum: K = p²/(2m).
+Q F⃗_{net} = dp⃗/dt
+R[gen] n2 <- p, ddt : F⃗_net = dp⃗/dt | Momentum form of the second law | Reduces to m a⃗ for constant mass; Newton's own form.
+R[thm] K <- p, m : K = p²/2m | Kinetic energy from momentum | Eliminates v.
+
+§ 1 9.2
+P A [[F|force]] acting over a time interval changes momentum, and the measure of its accumulated effect is the [[J|impulse]], the [[integ|time integral]] of the force, J⃗ = ∫F⃗(t) dt from t_i to t_f. In a collision the force rises and falls within milliseconds and is rarely known in detail, but the impulse can be written as the average force times the duration, J⃗ = F⃗_{ave}Δt; for each component it is the area under the graph of force against time. Impulse is a vector, measured in N·s, which equals kg·m/s. It accumulates a force over time as [[W|work]] accumulates a force over displacement.
+N O J | Impulse | J⃗ = ∫F⃗ dt |
+d Time integral of a force; for a short collision, average force times duration.
+g impulse
+R[def] J <- F, integ : J⃗ = ∫_{t_i}^{t_f} F⃗(t) dt = F⃗_ave Δt | Force accumulated over time | The time analogue of work.
+P Integrating [[n2|Newton's second law]], F⃗_{net} = dp⃗/dt, over the interval gives the [[imt|impulse–momentum theorem]]: the [[J|impulse]] of the net force equals the change of [[p|momentum]], J⃗ = Δp⃗, however the force varies in between. The theorem explains *seatbelts* and *airbags*. In a crash the passenger's momentum must fall to zero whatever happens, so the impulse is fixed; spreading it over a longer time lowers the average force. A 70.0 kg passenger stopping from 15.0 m/s has Δp = 1050 kg·m/s. Stopped in 0.0100 s by a hard surface, the average force is 105 000 N, about 150 times the passenger's weight; stopped in 0.150 s by a belt and airbag, it is 7000 N. Padding, crumple zones and bent knees on landing work the same way.
+Q J⃗ = ∫F⃗_{net} dt = Δp⃗
+N M imt | Impulse–momentum theorem | J⃗ = Δp⃗ |
+d The impulse of the net force equals the change of momentum.
+p vector; integral form of the second law; independent of the detailed force history
+g impulse-momentum theorem
+R[thm] imt <- n2, J, p : ∫F⃗_net dt = ∫(dp⃗/dt) dt = Δp⃗ | Integrate F = dp/dt | Same content as the second law, over an interval.
+
+§ 1 9.3
+P To treat several bodies together, draw a boundary around them, as for a [[fbd|free-body diagram]], but enclosing all of them. What lies inside is a [[sys|system of particles]], described by the [[m|masses]] m_j and [[rt|trajectories]] r⃗_j(t) of its members. Forces between members are internal to the system; forces exerted from outside the boundary are external. The boundary is a free choice and decides which forces are which: when two skaters push off each other, the push is internal to the two-skater system but external to each skater alone. A system whose members stay the same and on which the net external force is zero is a *closed system* in the sense used here; many texts call it an isolated system.
+N S sys | System of particles | {m_j, r⃗_j(t)} |
+d A chosen set of bodies; forces split into internal (between members) and external. A closed system has no net external force.
+m N labelled trajectories r⃗_j(t) ∈ ℝ³ with masses m_j
+g system; closed system
+R[def] sys <- rt, m, fbd : {(m_j, r⃗_j(t))}, j = 1…N | Collection of particles | The boundary drawn as in a free-body diagram, now around several bodies.
+P Write [[n2|Newton's second law]] in momentum form, dp⃗_j/dt = F⃗_j, for each member of the [[sys|system]] and add the equations. The left sides add up to the rate of change of the total [[p|momentum]], P⃗ = Σp⃗_j; the right sides add up to all forces on all members. By [[n3|Newton's third law]] the internal forces come in equal and opposite pairs and cancel in the sum, so dP⃗/dt = F⃗_{ext}, the net external force. If it is zero, the total momentum is constant: this is the [[pcons|law of conservation of momentum]]. It holds whatever the internal forces are, and component by component; if the external forces have no horizontal component, the horizontal momentum is conserved even while the vertical momentum changes.
+Q P⃗ = p⃗₁ + p⃗₂ + ⋯ + p⃗_N = constant when F⃗_{ext} = 0
+N M pcons | Conservation of momentum | Σ p⃗_j = const |
+d The total momentum of a closed system does not change, whatever happens inside it.
+p vector law (one per component); requires zero net external force; holds for any internal forces
+g Law of Conservation of Momentum
+R[thm] pcons <- n2, n3, sys, p : dP⃗/dt = F⃗_ext + Σ internal = F⃗_ext = 0 | Internal forces cancel in pairs | The third law removes internal forces from the sum.
+P [[pcons|Momentum conservation]] also applies to brief events such as collisions and explosions when external forces act but are small compared with the internal ones: over the short duration their [[J|impulse]] is negligible. A 60.0 kg skater at rest on smooth ice throws a 2.00 kg ball forward at 15.0 m/s. The total momentum was zero and stays zero, so (60.0 kg)v + (2.00 kg)(15.0 m/s) = 0, and the skater recoils at v = −0.500 m/s. The same reasoning gives the recoil of a gun and the push a spacecraft receives from a thruster.
+
+§ 1 9.4
+P In a collision the forces between the bodies are large and brief, so [[pcons|conservation of momentum]] holds for the colliding bodies taken together. It does not fix the outcome alone: in one dimension, two final velocities must be found from a single equation. The missing information is what happens to the [[K|kinetic energy]], and [[coll|collisions]] are classified by it. In an *elastic* collision K is conserved, as nearly happens for hard steel balls and exactly for atoms that collide without being excited. In an *inelastic* collision part of K becomes thermal energy, sound or permanent deformation. A *perfectly inelastic* collision, in which the bodies stick together, loses the most kinetic energy that momentum conservation allows. In an *explosion*, stored energy is released and K increases.
+N M coll | Collisions | P conserved; K? |
+d Collisions conserve momentum; they are classified by kinetic energy: elastic (kept), inelastic (lost), perfectly inelastic (bodies stick together), explosion (gained).
+p momentum conserved in all types; kinetic energy conserved only in elastic collisions; perfectly inelastic loses the most K compatible with P
+g elastic; inelastic; perfectly inelastic; explosion
+R[thm] coll <- pcons, K : P_before = P_after;  K_after vs K_before | Momentum plus energy bookkeeping | Momentum fixes the final motion only together with a statement about K.
+P When m₁, moving at v₁, sticks to m₂ at rest, momentum alone gives the common final velocity v = m₁v₁/(m₁ + m₂), and the fraction of the kinetic energy lost is m₂/(m₁ + m₂). In a head-on elastic collision with m₂ at rest, momentum and kinetic energy together give v₁′ = (m₁ − m₂)v₁/(m₁ + m₂) and v₂′ = 2m₁v₁/(m₁ + m₂). Equal masses exchange velocities. A neutron hitting a *deuteron*, the nucleus of heavy hydrogen with about twice its mass, passes on 8/9 of its kinetic energy, which makes heavy water an effective neutron moderator. A projectile can bounce straight back only from a heavier target; when Geiger and Marsden saw a few alpha particles rebound from gold foil, Rutherford concluded in 1911 that nearly all of an atom's mass sits in a tiny nucleus, far heavier than an alpha particle.
+
+§ 1 9.5
+P In two or three dimensions [[pcons|conservation of momentum]] is a vector law, and it splits into one equation per axis with [[comp|vector components]]: the x components of the [[p|momenta]] add to the same total before and after, and so do the y components. Each equation holds separately, so a planar collision gives two conditions instead of one. A useful case is an elastic glancing [[coll|collision]] of two equal masses, one initially at rest. Momentum gives v⃗₁ = v⃗₁′ + v⃗₂′, and [[K|kinetic energy]] gives v₁² = v₁′² + v₂′². Squaring the first equation and comparing shows that the [[dot|scalar product]] v⃗₁′·v⃗₂′ is zero: unless the collision is head-on, the two bodies move off at right angles, as billiard balls nearly do.
+
+§ 1 9.6
+P Every [[sys|system of particles]] has a special point, the [[rcm|centre of mass]], whose [[r|position vector]] is the mass-weighted average of the positions of its members, r⃗_{CM} = (1/M)Σm_j r⃗_j, where M = Σm_j is the total [[m|mass]]. Each coordinate is averaged separately. For 2.00 kg at x = 0 and 6.00 kg at x = 4.00 m, x_{CM} = (6.00 kg × 4.00 m)/(8.00 kg) = 3.00 m, nearer the heavier mass. The centre of mass need not lie inside any material: for a ring it is the empty centre. Differentiating with respect to time gives the velocity of the centre of mass, v⃗_{CM} = (1/M)Σm_j v⃗_j, and its acceleration, a⃗_{CM} = (1/M)Σm_j a⃗_j.
+Q r⃗_{CM} = (1/M) Σ m_j r⃗_j
+N O rcm | Center of mass | r⃗_CM = Σ m_j r⃗_j / M |
+d Mass-weighted average position of a system; for a continuous body r⃗_CM = (1/M)∫ r⃗ dm.
+g center of mass
+R[def] rcm <- sys, r, m : r⃗_CM = (1/M) Σ m_j r⃗_j | Mass-weighted position | Its derivatives give v⃗_CM and a⃗_CM.
+P Multiply a⃗_{CM} by M and apply [[n2|Newton's second law]] to each member: M a⃗_{CM} = Σm_j a⃗_j is the sum of all forces on all members. The *internal forces* between members cancel in pairs by [[n3|Newton's third law]], and only the *external forces* remain. The result is the [[n2sys|second law for a system]], F⃗_{ext} = M a⃗_{CM} = dP⃗/dt, with total momentum P⃗ = M v⃗_{CM}. The [[rcm|centre of mass]] of any [[sys|system]] moves like a single particle of mass M acted on by the external forces alone, whatever the members do among themselves. A firework shell that bursts in flight scatters fragments in all directions, yet until the first fragment lands, their centre of mass continues along the parabola of [[proj|projectile motion]], air resistance neglected.
+N M n2sys | Second law for a system | F⃗_ext = M a⃗_CM |
+d The centre of mass moves like a single particle of total mass M acted on by the external forces alone.
+p internal forces drop out (third law); P⃗ = M v⃗_CM; reduces many-body motion to one point plus internal motion
+X external force; internal force :: = n2sys
+R[thm] n2sys <- n2, n3, rcm, sys : Σ m_j a⃗_j = F⃗_ext ⇒ M a⃗_CM = F⃗_ext = dP⃗/dt | Summing the second law | Internal pairs cancel.
+P For a continuous body the sum becomes an integral over mass elements dm, r⃗_{CM} = (1/M)∫r⃗ dm. For a thin rod or string along the x axis, an element of length dx has mass dm = λ dx, where λ = dm/dx is the [[lmd|linear mass density]], the [[m|mass]] per unit [[L|length]]; a uniform rod of mass M and length L has λ = M/L. The [[rcm|centre of mass]] is then x_{CM} = (1/M)∫xλ dx, an ordinary [[integ|integral]] along the rod. A uniform rod balances at its midpoint. A rod from x = 0 to x = L whose density grows in proportion to x, λ = λ₀x/L, has M = λ₀L/2 and x_{CM} = 2L/3, two thirds of the way toward its heavier end.
+N O lmd | Linear mass density | λ = dm/dx |
+d Mass per unit length of a rod or string; used to integrate over continuous bodies.
+g linear mass density
+R[def] lmd <- m, L : λ = dm/dx | Mass per length | Uniform rod: λ = M/L.
+R[thm] rcm <- lmd, integ : r⃗_CM = (1/M) ∫ r⃗ dm,  dm = λ dx | Continuous body | Sum becomes an integral.
+
+§ 1 9.7
+P A rocket in empty space has nothing to push against; it gains speed by throwing mass backward. Treat the rocket and the gas it ejects in a short time dt as one closed [[sys|system]]. At time t the rocket has mass m and speed v; it then ejects gas that leaves at speed u relative to the rocket, and its mass changes by dm, a negative amount. [[pcons|Conservation of momentum]] for this system gives, to first order, m dv = −u dm. Integrating from the initial mass m_i to the current mass m gives the [[rocket|rocket equation]], Δv = u ln(m_i/m). The gain in speed depends only on the exhaust speed and the mass ratio, not on how quickly the fuel is burned.
+Q Δv = u ln(m_i/m)
+N M rocket | Rocket equation | Δv = u ln(m_i/m) |
+d A rocket gains speed by ejecting mass backward at exhaust speed u; the gain depends on the logarithm of the mass ratio.
+p momentum conservation for variable mass; logarithmic in mass ratio; independent of burn rate in free space
+g rocket equation
+R[thm] rocket <- pcons, sys : m dv = −u dm ⇒ Δv = u ln(m_i/m) | Momentum of rocket plus exhaust | Applied to the closed system over each instant.
+P With an exhaust speed of 3.0 km/s, typical of chemical rockets, burning fuel until the mass ratio m_i/m reaches 10 gives Δv = 3.0 km/s × ln 10 = 6.9 km/s. Because the logarithm grows slowly, high speeds demand very large mass ratios, and multistage rockets discard empty tanks and engines to keep the ratio favourable. The force of the exhaust on the rocket, the thrust, has magnitude u|dm/dt|. For a rocket climbing vertically near the Earth, the [[w|weight]] is an external force, and if air resistance is neglected the speed gained after a burn of duration t becomes Δv = u ln(m_i/m) − gt.

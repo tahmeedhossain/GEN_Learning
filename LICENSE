@@ -1,0 +1,36 @@
+Copyright (c) 2026 Tahmeed Hossain
+
+This repository is released under two licences.
+
+1. Code: the HTML/JavaScript of the pages (index.html, v1/, v2/, latest/, page/), assets/ and
+   scripts/. MIT License.
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+   associated documentation files (the "Software"), to deal in the Software without restriction,
+   including without limitation the rights to use, copy, modify, merge, publish, distribute,
+   sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in all copies or
+   substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+   NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+   NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+   OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+2. Content: the reading text, the node and route descriptions, data/ (including the data embedded
+   in v1/index.html and v2/index.html), docs/ and assets/img/. Creative Commons
+   Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+   Full text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+   The content is an adaptation of University Physics, Volumes 1-3, senior contributing authors
+   Samuel J. Ling, Jeff Sanny and William Moebs; OpenStax, Rice University, licensed under
+   CC BY-NC-SA 4.0. Access for free at https://openstax.org/details/books/university-physics-volume-1
+   The book supplies the chapter and section structure, section titles and page links, the key terms
+   of each section and their order of first appearance. The reading text and all descriptions are
+   newly written and do not reproduce the book's wording. Changes from the book are documented in
+   README.md.
+
+   Prepared with AI assistance (Claude, Anthropic).

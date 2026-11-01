@@ -1,0 +1,377 @@
+# University Physics Volume 1, chapters 10-13
+
+§ 1 10.0
+P Chapters 4 to 9 treated bodies as points, or as systems whose centre of mass moves like a point. Wheels, rotors, doors and planets also turn. A [[rigid|rigid body]] is a [[sys|system of particles]] whose mutual distances never change. When it turns about an axis fixed in a reference frame, each particle off the axis performs [[circ|circular motion]] in a plane perpendicular to the axis, and all particles turn through the same angle in the same time. One angle θ(t) therefore describes the whole body. This chapter develops the kinematics of that angle, then the moment of inertia, torque, Newton's second law for rotation, and rotational work and power.
+N S rigid | Rigid body on a fixed axis | θ(t) |
+d A body whose particles keep their mutual distances, turning about a fixed axis: every particle moves on a circle and one angle describes them all.
+m one angle θ(t) ∈ S¹ (one degree of freedom); each particle on a circle of fixed radius r_j
+g rigid body
+R[def] rigid <- sys, circ : |r⃗_i − r⃗_j| fixed;  each particle on a circle about the axis | Constrained system of particles | Rigidity reduces N trajectories to one rotation angle.
+
+§ 1 10.1
+P The orientation of a [[rigid|rigid body]] turning about a fixed axis is given by one number, its [[theta|angular position]] θ: the angle between a reference line fixed in the body, perpendicular to the axis, and a fixed direction in the frame. Angles are measured in radians. A point at distance r from the axis that moves through an arc of length s along its circle turns through θ = s/r. A full turn is an arc of length 2πr, so 1 rev = 2π rad = 360°, and 1 rad ≈ 57.3°. As a ratio of two lengths the radian is dimensionless, which is why the unit rad can be written or dropped, as in rad/s or s⁻¹. By convention θ increases for counterclockwise rotation seen from the positive end of the axis.
+N O theta | Angular position | θ = s/r |
+d Angle of a reference line of the body from a fixed direction, in radians: arc length over radius.
+g angular position
+R[read] theta <- rigid : θ = s/r | Angle of the body | The single coordinate of the rotation.
+P The [[angvel|angular velocity]] is the rate of change of the angular position. Its average over an interval is Δθ/Δt, and its limit as Δt → 0, the *instantaneous angular velocity*, is the [[ddt|time derivative]] ω = dθ/dt of [[theta|θ]]. Since all points of a rigid body turn through the same angle, ω is the same for each of them. It is the [[omega|angular frequency]] of circular motion given a direction: the vector ω⃗ lies along the axis, with its sense fixed by the *right-hand rule*. When the fingers of the right hand curl in the direction of rotation, the thumb points along ω⃗. With the origin on the axis, a point at position r⃗ has velocity v⃗ = ω⃗ × r⃗, a [[cross|vector product]], and [[speed|speed]] v_t = rω, where r is its distance from the axis.
+N O angvel | Angular velocity | ω⃗ = dθ/dt |
+d Rate of change of angular position; as a vector it points along the axis by the right-hand rule. Tangential speed v_t = rω.
+g angular velocity; instantaneous angular velocity
+R[def] angvel <- theta, ddt : ω = dθ/dt | Rate of rotation | Same for every point of the rigid body.
+R[gen] angvel <- omega, cross : ω⃗ along the axis, v⃗ = ω⃗ × r⃗ | Angular frequency as a vector | The angular frequency of circular motion, given a direction.
+R[thm] speed <- angvel : v_t = r ω | Tangential speed | Points farther from the axis move faster.
+P [[alpha|Angular acceleration]] measures how fast the [[angvel|angular velocity]] changes. Its average over an interval is Δω/Δt, and the *instantaneous angular acceleration* is the [[ddt|time derivative]] α = dω/dt = d²θ/dt², measured in rad/s². For rotation about a fixed axis the vector α⃗ also lies along the axis, parallel to ω⃗ when the rotation speeds up and antiparallel when it slows down. Differentiating v_t = rω at fixed r shows that a point at distance r from the axis gains speed along its circle at the rate a_t = rα, its [[at|tangential acceleration]]. A wheel that reaches 1200 rev/min, or 126 rad/s, 4.0 s after starting from rest has an average angular acceleration of 31.4 rad/s². A point 0.10 m from its axis then moves at 12.6 m/s, and if α is constant it gains speed at 3.14 m/s².
+Q v_t = rω,   a_t = rα
+N O alpha | Angular acceleration | α = dω/dt |
+d Rate of change of angular velocity; tangential acceleration of a point is a_t = rα.
+g angular acceleration; instantaneous angular acceleration
+R[def] alpha <- angvel, ddt : α = dω/dt = d²θ/dt² | Rate of change of ω | The rotational analogue of acceleration.
+R[thm] at <- alpha : a_t = r α | Tangential acceleration | A point at distance r speeds up along its circle at rα.
+
+§ 1 10.2
+P When the [[alpha|angular acceleration]] is constant, θ, ω and α obey the same equations as x, v and a in [[kin|constant-acceleration kinematics]], and the derivation carries over line by line. Integrating dω/dt = α gives ω = ω₀ + αt; integrating dθ/dt = ω gives θ = θ₀ + ω₀t + ½αt²; eliminating t gives ω² = ω₀² + 2αΔθ, with Δθ = θ − θ₀. The average angular velocity over an interval is (ω₀ + ω)/2. These relations are the [[rotkin|kinematics of rotational motion]], and they hold only while α is constant. On a graph of ω against t the motion is a straight line of slope α, and the area under the line is Δθ. A fan turning at 30.0 rad/s that is switched off and slows at a constant 2.00 rad/s² stops after 15.0 s, having turned through ω₀²/(2|α|) = 225 rad, or 35.8 revolutions.
+Q θ = θ₀ + ω₀t + ½αt²,   ω = ω₀ + αt,   ω² = ω₀² + 2αΔθ
+N M rotkin | Rotational kinematics | θ = θ₀ + ω₀t + ½αt² |
+d Equations for rotation at constant angular acceleration, the same form as the linear ones with θ, ω, α in place of x, v, a.
+p valid for constant α; ω = ω₀ + αt; ω² = ω₀² + 2αΔθ; direct analogue of linear kinematics
+g kinematics of rotational motion
+R[analog] rotkin <- kin, alpha : x → θ, v → ω, a → α | Same mathematics | The derivation of the linear case applies line by line.
+
+§ 1 10.3
+X total linear acceleration :: = avec
+P Angular variables describe the whole body, while the motion of one point depends on its distance r from the axis. Multiplying by r converts one into the other: arc length s = rθ, tangential speed v_t = rω and [[at|tangential acceleration]] a_t = rα. Dividing the kinematic equations of a point along its circle by r gives the rotational ones. Each point also has a [[ac|centripetal acceleration]] a_c = v_t²/r = rω² toward the axis, even at constant [[angvel|angular velocity]]. Its [[avec|total linear acceleration]] a⃗ = a⃗_c + a⃗_t is the vector sum of these perpendicular parts, of magnitude √(a_c² + a_t²). For a wheel of radius 0.40 m that starts from rest with α = 5.0 rad/s², a rim point after 2.0 s, when ω = 10 rad/s, has a_t = 2.0 m/s² and a_c = 40 m/s², so its acceleration points nearly straight at the axis.
+R[thm] ac <- angvel : a_c = r ω² | Centripetal part for a rotating body | Each point of a rigid body has a centripetal acceleration rω².
+
+§ 1 10.4
+P A spinning wheel whose axle is at rest still has kinetic energy, because its particles move. Particle j of a [[rigid|rigid body]], at distance r_j from the axis, moves at v_j = r_j ω, where ω is the common [[angvel|angular velocity]]. Adding the [[K|kinetic energies]] ½m_j v_j² of all the particles gives the [[Krot|rotational kinetic energy]] K = Σ ½m_j(r_j ω)² = ½(Σ m_j r_j²)ω². The angular velocity comes out of the sum because it is the same for every particle, and the masses enter only through the combination Σ m_j r_j². Rotational kinetic energy is not a new form of energy. It is the ordinary kinetic energy of the particles, written in the variable that suits rotation.
+N O Krot | Rotational kinetic energy | K = ½Iω² |
+d Kinetic energy of a rotating rigid body, the sum of ½m_j v_j² with v_j = r_{j}ω.
+g rotational kinetic energy
+R[thm] Krot <- K, angvel, rigid : K = Σ ½ m_j (r_j ω)² = ½(Σ m_j r_j²) ω² | Sum over particles | The mass distribution enters only through Σ m_j r_j².
+P The sum Σ m_j r_j² is the [[I|moment of inertia]] of the body about the axis. It is built from the [[m|masses]] m_j of the particles of the [[rigid|rigid body]] and their distances r_j from the axis; for a continuous body it becomes I = ∫ r² dm. Its SI unit is kg·m². In terms of I, the [[Krot|rotational kinetic energy]] takes the compact form K = ½Iω², the analogue of ½mv² with I in place of m and the [[angvel|angular velocity]] ω in place of v. Mass counts with the square of its distance from the axis, so I depends on the axis chosen. Two small 1.0 kg balls joined by a light rod 1.0 m long have I = 2 × 1.0 kg × (0.50 m)² = 0.50 kg·m² about the centre of the rod, but 1.0 kg·m² about an axis through one of the balls.
+Q K = ½Iω²,   I = Σ m_j r_j²
+N O I | Moment of inertia | I = Σ m_j r_j² |
+d Rotational inertia: how mass is distributed about the axis. Depends on the axis chosen.
+g moment of inertia
+R[def] I <- rigid, m : I = Σ m_j r_j²;  I = ∫ r² dm | Mass-weighted squared distance | Read off the rotational kinetic energy.
+R[def] Krot <- I, angvel : K = ½ I ω² | Compact form | Kinetic energy in terms of I.
+
+P Rotational kinetic energy enters the conservation of energy like any other kinetic energy. A *flywheel* is a wheel built to store it: one with most of its 50 kg mass in a rim of radius 0.40 m has I ≈ MR² = 8.0 kg·m², and at 200 rad/s it holds ½Iω² = 1.6 × 10⁵ J. The rotor of a helicopter and a twirled baton carry rotational kinetic energy in the same way. When a system both rotates and translates, [[econs|conservation of mechanical energy]] counts both kinds of kinetic energy. A block of mass m that falls from rest through a height h while unwinding a string from a pulley of radius R gives mgh = ½mv² + ½Iω², with ω = v/R if the string does not slip, so v = √(2mgh/(m + I/R²)). Energy dissipated by friction at the axle is subtracted from mgh.
+
+§ 1 10.5
+X linear mass density :: = lmd
+P For a continuous body the sum over particles becomes an [[integ|integral]] over mass elements, I = ∫ r² dm. For a thin rod along the x axis, a slice of length dx has mass dm = λ dx, where λ is the [[lmd|linear mass density]], equal to M/L for a uniform rod of mass M and length L. About an axis perpendicular to the rod through its centre, the [[I|moment of inertia]] is I = ∫_{−L/2}^{L/2} x²λ dx = λL³/12 = ML²/12. About a parallel axis through one end, the limits 0 and L give I = ML²/3, four times as much, because more of the mass lies far from the axis. The same procedure gives the moment of inertia of any body whose mass distribution is known.
+R[thm] I <- lmd, integ : I = ∫ r² λ dr | Continuous rod | e.g. ML²/12 about the centre of a thin rod.
+P The two results for the rod are related by the [[paxis|parallel-axis theorem]]. Let I_{CM} be the moment of inertia about an axis through the [[rcm|centre of mass]], and take a *parallel axis* at distance d from it. Measure the position of particle j from the first axis by r⃗′_j, perpendicular to that axis. Its distance from the second axis is |r⃗′_j + d⃗|, where d⃗ is the perpendicular vector from the second axis to the first. Expanding Σ m_j|r⃗′_j + d⃗|² gives Σ m_j r′_j² + 2d⃗·Σ m_j r⃗′_j + Md². The middle term vanishes because Σ m_j r⃗′_j = 0 by the definition of the centre of mass, so the [[I|moment of inertia]] about the new axis is I = I_{CM} + Md². For the rod, ML²/12 + M(L/2)² = ML²/3. Among parallel axes, the one through the centre of mass has the smallest moment of inertia.
+Q I = I_{CM} + Md²
+N M paxis | Parallel-axis theorem | I = I_CM + Md² |
+d The moment of inertia about any axis equals that about the parallel axis through the centre of mass plus Md².
+p d = distance between the axes; I_CM is the minimum over parallel axes; moments of a compound body add
+g parallel axis; parallel-axis theorem
+R[thm] paxis <- I, rcm : Σ m_j |r⃗′_j + d⃗|² with Σ m_j r⃗′_j = 0 | Expand about the centre of mass | The cross term vanishes by the definition of the centre of mass.
+P For a thin flat body the [[smd|surface mass density]] σ = dm/dA, a [[m|mass]] divided by an area, the square of a [[L|length]], plays the role of λ. A uniform disk of mass M and radius R has σ = M/(πR²). Cut it into thin rings of radius r and width dr: each ring has area 2πr dr and mass dm = 2πσr dr, and all of it lies at distance r from the central axis. [[integ|Integrating]] from r = 0 to R gives the [[I|moment of inertia]] I = ∫_{0}^{R} r²σ 2πr dr = πσR⁴/2 = ½MR². A thin hoop of the same mass and radius has all its mass at distance R, so I = MR², twice as much. Moments of inertia of the parts of a compound body about the same axis add: a wheel is a hoop plus spokes plus a hub.
+N O smd | Surface mass density | σ = dm/dA |
+d Mass per unit area of a thin sheet or disk.
+g surface mass density
+R[def] smd <- m, L : σ = dm/dA | Mass per area | Uniform disk: σ = M/(πR²).
+R[thm] I <- smd, integ : I = ∫ r² σ dA | Continuous sheet | e.g. MR²/2 for a uniform disk.
+
+§ 1 10.6
+P How strongly a force turns a body depends on where and in which direction it acts. A door pushed at the handle, at right angles to the door, swings easily; the same push applied at the hinge, or directed along the door toward the hinge, does not turn it at all. The [[tau|torque]] of a [[F|force]] F⃗ applied at [[r|position]] r⃗ relative to a point O is the [[cross|vector product]] τ⃗ = r⃗ × F⃗. Its magnitude is τ = rF sin θ, where θ is the angle between r⃗ and F⃗. This can be read in two ways: as r times the component F sin θ of the force perpendicular to r⃗, or as F times the *lever arm* r⊥ = r sin θ, the perpendicular distance from O to the line along which the force acts. Torque is measured in newton metres, N·m.
+Q τ⃗ = r⃗ × F⃗,   τ = rF sin θ = r⊥F
+N O tau | Torque | τ⃗ = r⃗ × F⃗ |
+d The turning effect of a force about a point or axis: force times lever arm, |τ| = r⊥F, signed by the right-hand rule.
+g torque; lever arm
+R[def] tau <- r, F, cross : τ⃗ = r⃗ × F⃗,  |τ| = r F sin θ = r⊥ F | Cross product | Only the force component perpendicular to r⃗ turns the body.
+
+P For rotation about a fixed axis only the component of the [[tau|torque]] along the axis matters, and it is treated as a signed number. It is positive if the force alone would turn the body counterclockwise as seen from the positive end of the axis, and negative if clockwise; this is the right-hand rule again. A force parallel to the axis, or one whose line of action passes through the axis, exerts no torque about it. Torques about the same axis add, and their sum is the net torque. A 40 N force applied 0.25 m from the hinge of a door, at 60° to the door, produces a torque of 0.25 m × 40 N × sin 60° = 8.7 N·m. The same force at the edge of the door, 0.80 m from the hinge and at right angles to it, gives 32 N·m.
+
+§ 1 10.7
+P Apply [[n2|Newton's second law]] to particle j of a [[rigid|rigid body]] turning about a fixed axis. Along the particle's circle it reads F_{j,⊥} = m_j a_{j,t} = m_j r_j α, where F_{j,⊥} is the component of the net force on the particle along the circle, perpendicular to its radius r_j. Multiplying by r_j turns the left side into the [[tau|torque]] r_j F_{j,⊥} about the axis and the right side into m_j r_j²α. Summing over all particles gives Σ r_j F_{j,⊥} = (Σ m_j r_j²)α. Internal forces come in equal and opposite pairs along the lines joining the particles, so their torques cancel and only external torques remain. The sum on the right is the [[I|moment of inertia]], and the result is [[n2rot|Newton's second law for rotation]]: the net external torque about a fixed axis equals the moment of inertia times the angular acceleration.
+Q Στ = Iα
+N M n2rot | Second law for rotation | Στ = Iα |
+d Net torque about a fixed axis equals moment of inertia times angular acceleration.
+p analogue of F = ma; I depends on the axis; linear in the torques
+g Newton’s second law for rotation; rotational dynamics
+R[thm] n2rot <- n2, tau, I, rigid : Σ r_j F_j,⊥ = Σ m_j r_j² α | Second law for each particle | Multiply the tangential second law by r_j and sum.
+
+P The second law for rotation is the basic equation of [[n2rot|rotational dynamics]]. A net torque produces an angular acceleration inversely proportional to the moment of inertia, as a net force produces an acceleration inversely proportional to mass. The torques and the moment of inertia must refer to the same axis, and that axis must be fixed in an inertial frame or pass through the centre of mass without changing direction. A string wound on a pulley, a uniform disk of mass 2.0 kg and radius 0.10 m with I = ½MR² = 0.010 kg·m², is pulled with a constant force of 5.0 N. If friction at the axle is negligible, the torque is 0.50 N·m and the angular acceleration is α = τ/I = 50 rad/s². A pulley with twice the moment of inertia would turn with half the angular acceleration under the same pull.
+
+§ 1 10.8
+P A force acting on a body that turns about a fixed axis moves its point of application along a circle. In a small rotation dθ that point moves a distance r dθ along the tangent, so the [[W|work]] of the force is dW = F⃗·dr⃗ = F_{⊥}r dθ = τ dθ, where τ is the [[tau|torque]] about the axis and θ the [[theta|angular position]]. The radial component of the force does no work. [[integ|Integrating]] over a finite rotation gives the [[Wrot|rotational work]] W = ∫ τ dθ, taken from θ_A to θ_B. For a constant torque W = τΔθ: a torque of 10 N·m applied through two full turns, 4π rad, does about 126 J of work.
+Q W = ∫_{θ_A}^{θ_B} τ dθ
+N O Wrot | Rotational work | W = ∫ τ dθ |
+d Work done by a torque as the body turns.
+g rotational work
+R[thm] Wrot <- tau, theta, W, integ : dW = F⃗·dr⃗ = τ dθ | Work in angular variables | With dr = r dθ along the circle.
+P The [[wet|work–energy theorem]] holds in rotational form. With Στ = Iα and α = dω/dt = ω dω/dθ, the net work is ∫ Στ dθ = ∫ Iω dω. The [[Wrot|rotational work]] done by all the torques therefore equals the change of [[Krot|rotational kinetic energy]]: W_{AB} = ½Iω_B² − ½Iω_A². The theorem gives the angular velocity after a given rotation without solving for the time. If the 126 J of the previous example is delivered to a wheel with I = 0.50 kg·m² that starts from rest, and friction is negligible, the wheel ends with ω = √(2W/I) ≈ 22.4 rad/s.
+R[gen] wet <- Wrot, Krot : W_AB = K_B − K_A with W = ∫τ dθ, K = ½Iω² | Work–energy theorem for rotation | The same theorem in rotational variables.
+P [[P|Power]] is the rate at which work is done. Dividing dW = τ dθ by dt gives P = τω, the product of the [[tau|torque]] and the [[angvel|angular velocity]]. An engine delivers a given power either as a large torque at a low angular velocity or as a small torque at a high one, and gears trade one for the other. A motor exerting 30 N·m at 3000 rev/min, that is, at ω = 100π rad/s ≈ 314 rad/s, delivers about 9.4 kW.
+Q P = τω
+R[thm] P <- tau, angvel : P = τ ω | Rotational power | dW/dt = τ dθ/dt.
+
+P Each quantity of fixed-axis rotation corresponds to one of linear motion. Angular position θ, angular velocity ω and angular acceleration α correspond to x, v and a; the moment of inertia I corresponds to the mass m; torque τ corresponds to force F. The laws carry over with these replacements: the [[n2rot|second law for rotation]] Στ = Iα corresponds to F = ma, the [[Krot|rotational kinetic energy]] ½Iω² to ½mv², the [[Wrot|rotational work]] ∫τ dθ to ∫F dx, and the power τω to Fv. The correspondence is exact for rotation about a fixed axis, where each rotational quantity reduces to one component along that axis. The next chapter extends it to the counterpart of linear momentum.
+
+# ---------------------------------------------------------------- Chapter 11
+§ 1 11.0
+P Chapter 10 held the axis of rotation fixed. Many rotations are less constrained: a rolling wheel turns while its axle moves forward, and the axis of a spinning top swings slowly around. To treat such motion, this chapter introduces angular momentum, the rotational counterpart of linear [[p|momentum]]. Its rate of change equals the net [[tau|torque]], as the rate of change of momentum equals the net force. It is conserved when no net external torque acts, as [[pcons|momentum is conserved]] when no net external force acts. The chapter begins with rolling without slipping and ends with the precession of a gyroscope.
+
+§ 1 11.1
+P A wheel of radius R rolling on a surface combines translation of its [[rcm|centre of mass]], at its centre, with rotation about an axis through that point. Each point of the wheel, a [[rigid|rigid body]] turning at [[angvel|angular velocity]] ω, moves with the velocity v⃗_{CM} of the centre plus its velocity of rotation about the centre. At the bottom the rotational part has magnitude Rω and points backward, so the contact point moves at v_{CM} − Rω. In [[roll|rolling motion]] without slipping the contact point is instantaneously at rest: v_{CM} = Rω, and by differentiation a_{CM} = Rα. The top of the wheel then moves forward at 2v_{CM}. The force that holds the contact point is [[fs|static friction]], which takes whatever value this requires, up to μ_s N. If more is needed, the wheel slips, and kinetic friction acts instead.
+Q v_{CM} = Rω,   a_{CM} = Rα
+N M roll | Rolling without slipping | v_CM = Rω |
+d A wheel rolls without slipping when its contact point is instantaneously at rest; translation and rotation are then locked together.
+p constraint v_CM = Rω, a_CM = Rα; static friction does no work; K = ½Mv_CM² + ½I_{CM}ω²
+g rolling motion
+R[thm] roll <- rigid, rcm, angvel, fs : v_contact = v_CM − Rω = 0 | Contact point at rest | Static friction supplies the torque without sliding.
+
+P A body of mass m and moment of inertia I_{CM} that rolls without slipping down an incline of angle θ is acted on by its weight, the normal force and static friction f_s up the slope. The second law along the slope, ma_{CM} = mg sin θ − f_s, and the second law for rotation about the centre, f_s R = I_{CM}α = I_{CM}a_{CM}/R, give a_{CM} = g sin θ/(1 + I_{CM}/(mR²)). A uniform solid cylinder, with I_{CM} = ½mR², rolls down with a_{CM} = (2/3)g sin θ and needs f_s = (1/3)mg sin θ; static friction can supply this only if tan θ ≤ 3μ_s. Since the contact point does not move, static friction does no work, and mechanical energy is conserved, with K = ½mv_{CM}² + ½I_{CM}ω². After descending a height h from rest, the cylinder moves at v_{CM} = √(4gh/3).
+
+§ 1 11.2
+P The [[Lang|angular momentum]] of a particle about a point O is the [[cross|vector product]] of its [[r|position vector]] r⃗, measured from O, and its [[p|momentum]] p⃗: l⃗ = r⃗ × p⃗. It is perpendicular to the plane of r⃗ and p⃗, and its magnitude rp sin φ, with φ the angle between them, equals p times the perpendicular distance from O to the line of motion. Angular momentum therefore depends on the choice of O. A particle moving at constant velocity along a straight line has a constant, nonzero angular momentum about any point off that line, and zero about points on it. For a system of particles the total angular momentum L⃗ = Σ l⃗_j is the sum over all particles about the same point. Its SI unit is kg·m²/s.
+Q l⃗ = r⃗ × p⃗,   L⃗ = Σ l⃗_j
+N O Lang | Angular momentum | l⃗ = r⃗ × p⃗ |
+d Moment of momentum about a point; for a rigid body rotating about a symmetry axis, L = Iω.
+g angular momentum
+R[def] Lang <- r, p, cross : l⃗ = r⃗ × p⃗;  L⃗ = Σ l⃗_j | Cross product | Depends on the chosen origin.
+P For a [[rigid|rigid body]] turning about a fixed axis, each particle moves on a circle with speed r_j ω, perpendicular to its radius r_j from the axis. The component of its angular momentum along the axis is therefore r_j m_j r_j ω, and summing over the particles gives L = (Σ m_j r_j²)ω = Iω. The [[Lang|angular momentum]] about the axis is the [[I|moment of inertia]] times the [[angvel|angular velocity]], the analogue of p = mv. If the body is symmetric about the axis, the components of the l⃗_j perpendicular to the axis cancel in pairs, and L⃗ = Iω⃗ points along the axis. A *pulsar* is a rotating neutron star about 20 km across, the collapsed core of a massive star. Some pulsars turn hundreds of times per second, and their beamed radio emission sweeps past Earth once per turn.
+R[thm] Lang <- I, angvel : L = I ω | Rigid body | Summing r_j m_j v_j with v_j = r_{j}ω.
+P The rate of change of l⃗ = r⃗ × p⃗ follows from the product rule: dl⃗/dt = (dr⃗/dt) × p⃗ + r⃗ × (dp⃗/dt). The first term is v⃗ × mv⃗ = 0, since the vector product of parallel vectors vanishes. By [[n2|Newton's second law]] dp⃗/dt is the net force, so the second term is the net [[tau|torque]] r⃗ × F⃗ about O. This is the [[dLdt|torque law]]: the rate of change of [[Lang|angular momentum]] equals the net torque, both taken about the same point fixed in an inertial frame. For a system of particles, internal forces that act along the lines joining pairs of particles exert torques that cancel in pairs, so dL⃗/dt equals the net external torque. The torque law is the rotational counterpart of F⃗_{net} = dp⃗/dt. For a rigid body on a fixed axis, where L = Iω, it reduces to Στ = Iα.
+Q dL⃗/dt = Στ⃗
+N M dLdt | Torque law | dL⃗/dt = Στ⃗ |
+d The rate of change of angular momentum equals the net external torque.
+p rotational analogue of F = dp/dt; vector equation; internal torques cancel for central internal forces
+R[thm] dLdt <- n2, Lang, tau : d(r⃗ × p⃗)/dt = v⃗ × p⃗ + r⃗ × F⃗ = τ⃗ | Differentiate r⃗ × p⃗ | v⃗ × m v⃗ = 0.
+
+§ 1 11.3
+P If the net external torque on a system is zero, the [[dLdt|torque law]] gives dL⃗/dt = 0, and the total angular momentum stays constant in magnitude and direction. This is the [[Lcons|law of conservation of angular momentum]]. Internal forces cannot change the total: by [[n3|Newton's third law]] they come in equal and opposite pairs, and when each pair acts along the line joining the two particles, their torques about any point cancel. The law holds component by component. If only the torque about one fixed axis vanishes, the angular momentum about that axis is conserved even if other components change.
+Q Στ⃗_{ext} = 0  ⇒  L⃗ = const
+N M Lcons | Conservation of angular momentum | L⃗ = const |
+d With no net external torque, the total angular momentum is constant; a skater who pulls in her arms (smaller I) spins faster.
+p vector law; requires zero net external torque; I₁ω₁ = I₂ω₂ for a body changing shape
+g law of conservation of angular momentum
+R[thm] Lcons <- dLdt, n3 : Σ τ⃗_ext = 0 ⇒ dL⃗/dt = 0 | No external torque | Internal torques cancel in pairs.
+
+P A body that changes its shape changes its moment of inertia, and with its [[Lang|angular momentum]] Iω conserved, I₁ω₁ = I₂ω₂. A skater spinning with outstretched arms who pulls them in reduces I and turns faster. If I falls from 3.0 kg·m² to 1.0 kg·m², an angular velocity of 2.0 rad/s rises to 6.0 rad/s. The kinetic energy L²/(2I) rises from 6.0 J to 18 J; the extra 12 J is work done by the skater's muscles in pulling the arms inward. A diver tucks to spin faster, and a collapsing stellar core spins up into a pulsar. Gravity exerts no torque about Earth's centre, so a satellite on an elongated *Molniya orbit*, used for communications at high northern latitudes, moves slowly far from Earth and fast close to it, and spends most of its period of about 12 hours over the northern hemisphere.
+
+§ 1 11.4
+P A *gyroscope* is a wheel spinning rapidly about its symmetry axis, mounted so that the axis can turn freely. Rest one end of the horizontal axis on a pivot, with the centre of mass at distance r from it. The [[w|weight]] Mg then exerts a torque of magnitude rMg about the pivot, horizontal and perpendicular to the axis. By the [[dLdt|torque law]], in a time dt the spin [[Lang|angular momentum]] L = Iω changes by dL⃗ = τ⃗ dt, perpendicular to L⃗. A change perpendicular to a vector turns the vector without changing its length, so the axis swings around in a horizontal circle instead of falling. This motion is [[omegaP|precession]]. In the time dt the axis turns through dφ = dL/L = τ dt/L, so the precession rate is ω_P = τ/L = rMg/(Iω).
+Q ω_P = rMg/(Iω)
+N O omegaP | Precession rate | ω_P = rMg/(Iω) |
+d Slow turning of a spinning top's axis, because gravity's torque changes the direction of L⃗ rather than its size.
+g precession
+R[thm] omegaP <- dLdt, Lang, w : dL = τ dt with τ ⊥ L ⇒ ω_P = τ/L = rMg/(Iω) | Torque perpendicular to L | The angular momentum vector turns at rate τ/L.
+
+P The result assumes that the spin angular momentum is much larger than the angular momentum of the slow precession itself. Under that condition, the faster the wheel spins, the slower it precesses. As friction slows the spin, the precession speeds up until the simple picture fails and the gyroscope falls. A wheel with I = 2.0 × 10⁻⁴ kg·m² spinning at 300 rad/s, in a gyroscope of mass 0.15 kg whose centre of mass is 4.0 cm from the pivot, precesses at ω_P = (0.040 m × 0.15 kg × 9.80 m/s²)/(0.060 kg·m²/s) = 0.98 rad/s. Earth precesses in the same way: the Sun and the Moon exert torques on its equatorial bulge, and its axis traces a cone about once every 26 000 years.
+
+# ---------------------------------------------------------------- Chapter 12
+§ 1 12.0
+P A bridge, a bookshelf or a ladder leaning on a wall is meant to stay at rest. Its centre of mass must not accelerate and it must not start to rotate, so the [[n2sys|second law for a system]] and the [[dLdt|torque law]] both apply with zero on one side. This chapter turns them into conditions on the forces and torques that act on an extended body, and uses those conditions to find unknown support forces. It then asks what the forces do to the body itself. Real materials deform under load, and for small deformations they respond like the springs of [[hooke|Hooke's law]].
+
+§ 1 12.1
+P A body is in equilibrium when neither its translation nor its rotation changes: its centre of mass does not accelerate and its angular velocity stays constant. A [[rigid|rigid body]] is in [[staticeq|static equilibrium]] when, in addition, it is at rest, with v⃗_{CM} = 0 and ω⃗ = 0, and stays at rest. Buildings, bridges and furniture are designed to be in static equilibrium under every load they are expected to carry. The task of statics is to find the forces this requires and to check that the supports and materials can provide them.
+N S staticeq | Static equilibrium | v⃗_CM = 0, ω⃗ = 0 |
+d A rigid body at rest that stays at rest; it has no translational and no rotational acceleration.
+m configuration of a rigid body with ΣF⃗ = 0 and Στ⃗ = 0 about every point
+g equilibrium; static equilibrium
+P The conditions follow from two laws of motion. The [[n2sys|second law for a system]], Ma⃗_{CM} = ΣF⃗, requires the first equilibrium condition, zero net external force. The [[dLdt|torque law]], dL⃗/dt = Στ⃗, requires the second, zero net external torque. Together they are the [[eqcond|equilibrium conditions]]: six scalar equations in three dimensions, and three for forces in a plane, ΣF_x = 0, ΣF_y = 0 and Στ_z = 0. When the net force is zero, the net torque is the same about every point, so the torque condition may be applied about any *pivot point*. A good choice is a point through which unknown forces act, since their torques then vanish. For a [[rigid|rigid body]] at rest, solving these equations for the unknown forces solves the problem of [[staticeq|static equilibrium]].
+Q ΣF⃗ = 0,   Στ⃗ = 0
+N M eqcond | Equilibrium conditions | ΣF⃗ = 0,  Στ⃗ = 0 |
+d The first condition (zero net force) prevents translation; the second (zero net torque) prevents rotation.
+p six scalar equations in 3D; if both hold, the torque condition holds about any point; necessary for static equilibrium
+g first equilibrium condition; second equilibrium condition
+R[thm] eqcond <- n2sys, dLdt : M a⃗_CM = ΣF⃗ = 0,  dL⃗/dt = Στ⃗ = 0 | Translational and rotational laws at rest | The two dynamical laws with all accelerations zero.
+R[thm] staticeq <- eqcond, rigid : solve ΣF⃗ = 0, Στ⃗ = 0 for the unknown forces | Statics problem | The conditions determine the support forces.
+P Gravity acts on every particle of a body. In a uniform field g⃗ the [[tau|torques]] of the particle [[w|weights]] about a point O add up to Σ r⃗_j × m_j g⃗ = (Σ m_j r⃗_j) × g⃗ = r⃗_{CM} × Mg⃗, by the definition of the [[rcm|centre of mass]]. This *gravitational torque* is the same as if the whole weight Mg acted at a single point, the [[rcg|centre of gravity]]. In a uniform field the centre of gravity coincides with the centre of mass, and in statics problems the weight of each body is drawn there. A body hanging from a single pivot can be at rest only with its centre of gravity directly below or directly above the pivot; the equilibrium is stable below and unstable above.
+N O rcg | Center of gravity | r⃗_CG |
+d Point where the total weight can be taken to act; it coincides with the centre of mass in a uniform gravitational field.
+g center of gravity; gravitational torque
+R[thm] rcg <- rcm, w, tau : τ⃗_grav = r⃗_CM × M g⃗ | Gravitational torque | In uniform g⃗ the torques of the particle weights add up to the weight acting at the centre of mass.
+
+§ 1 12.2
+P Statics problems follow a routine. Choose the body, draw its [[fbd|free-body diagram]] with each external force at its point of application, and place each weight at its [[rcg|centre of gravity]]. Write the [[eqcond|equilibrium conditions]] in components, taking torques about a point where an unknown force acts. Solve, then check by taking torques about a second point. A uniform plank 4.0 m long and weighing 300 N rests on supports at its ends, and a person weighing 600 N stands 1.0 m from the left end. Torques about the left support give F_R × 4.0 m = 300 N × 2.0 m + 600 N × 1.0 m, so the right support pushes up with F_R = 300 N, and the force balance leaves 600 N for the left support.
+
+§ 1 12.3
+P Forces that keep a body in equilibrium also deform it. A *deformation* is described by quantities that do not depend on the size of the sample. [[stress|Stress]] is the [[F|force]] per unit area of the surface on which it acts, with the area A = ℓ² measured as a [[L|length]] squared. A *tensile stress* F⊥/A pulls perpendicular to a cross-section and stretches the body; a *compressive stress* pushes and shortens it. A *shear stress* F∥/A acts parallel to the surface. A *bulk stress*, or *volume stress*, presses inward on every face. A beam bent under load carries tensile stress on one side and compressive stress on the other, largest at its top and bottom faces, so *I-beams* put most of their material there.
+N O stress | Stress | F/A |
+d Force per unit area that deforms a body: tensile or compressive (perpendicular), bulk (from all sides), shear (parallel to the surface).
+g stress; tensile stress; compressive stress; bulk stress; shear stress
+R[def] stress <- F, L : stress = F⊥/A (tensile, compressive),  F∥/A (shear) | Force per area | Area A = ℓ² of the surface the force acts on.
+P [[strain|Strain]] is the fractional deformation that a stress produces: ΔL/L₀ for a tensile or compressive strain, ΔV/V₀ for a bulk or *volume strain*, and Δx/L₀ for a shear strain, where Δx is the sideways shift of a face relative to the opposite face at distance L₀. As a ratio of two [[L|lengths]], strain is dimensionless. For small deformations, experiment shows that strain is proportional to stress and disappears when the load is removed; the deformation is *elastic*. This is [[hooke|Hooke's law]] F = −kx stated per unit size: dividing force by area and extension by original length removes the dimensions of the sample. [[elin|Linear elasticity]] states that [[stress|stress]] = elastic *modulus* × strain, with one modulus for each kind of deformation, fixed by the material alone.
+Q stress = elastic modulus × strain
+N O strain | Strain | ΔL/L₀ |
+d Fractional deformation: change of length, volume or shear offset divided by the original size; dimensionless.
+g strain; tensile strain; compressive strain; bulk strain; shear strain
+R[def] strain <- L : ΔL/L₀ (tensile),  ΔV/V₀ (bulk),  Δx/L₀ (shear) | Fractional change | Ratios of lengths, so dimensionless.
+N M elin | Linear elasticity | stress = modulus × strain |
+d For small deformations stress is proportional to strain; the constant is the elastic modulus of the material for that kind of deformation.
+p Hooke's law for materials; linear; reversible below the elastic limit; one modulus per deformation type
+g elastic modulus
+R[gen] elin <- hooke, stress, strain : F = −kx  →  stress = modulus × strain | Hooke's law per unit size | Dividing by area and length removes the size of the sample.
+P For tension and compression the modulus is [[Ymod|Young's modulus]], the ratio of tensile stress to tensile strain in [[elin|linear elasticity]]: Y = (F⊥/A)/(ΔL/L₀). A rod of length L₀ and cross-section A therefore behaves as a spring of constant k = YA/L₀. Steel has Y ≈ 2.0 × 10¹¹ N/m². A steel wire 2.0 m long with a cross-section of 1.0 mm² that holds a load of 100 N stretches by ΔL = FL₀/(YA) = (100 N × 2.0 m)/(2.0 × 10¹¹ N/m² × 1.0 × 10⁻⁶ m²) = 1.0 mm. Its strain is 5.0 × 10⁻⁴, within the linear range.
+N O Ymod | Young's modulus | Y |
+d Elastic modulus for tension or compression along one direction.
+g Young’s modulus
+R[def] Ymod <- elin : Y = (F⊥/A)/(ΔL/L₀) | Tensile modulus | Ratio of tensile stress to tensile strain.
+P The [[Smod|shear modulus]] S = (F∥/A)/(Δx/L₀) is the modulus of [[elin|linear elasticity]] for *shear*, one face sliding sideways over the opposite one. Compression from all sides is set by the [[pres|pressure]] or normal pressure p = F⊥/A, the normal [[F|force]] per unit area of a surface, area being a [[L|length]] squared. Pressure is a scalar: at a point of a fluid at rest it is the same in all directions. Its unit is the pascal, 1 Pa = 1 N/m²; 1 atm = 1.013 × 10⁵ Pa. The bulk [[stress|stress]] is a change of pressure Δp, and the [[Bmod|bulk modulus]] is B = −Δp/(ΔV/V₀), positive since the volume falls as the pressure rises; 1/B is the *compressibility*. Water has B ≈ 2.2 × 10⁹ Pa, so an extra 100 atm reduces its volume by about 0.5 %. Fluids have no shear modulus: they cannot resist a steady shear.
+N O Bmod | Bulk modulus | B = −Δp/(ΔV/V₀) |
+d Elastic modulus for uniform compression; its inverse is the compressibility.
+g bulk modulus; compressibility
+R[def] Bmod <- elin, stress : B = −Δp V₀/ΔV | Volume modulus | Bulk stress is the change of pressure Δp.
+N O Smod | Shear modulus | S |
+d Elastic modulus for shear deformation.
+g shear modulus
+R[def] Smod <- elin : S = (F∥/A)/(Δx/L₀) | Shear modulus | Ratio of shear stress to shear strain.
+
+N O pres | Pressure | p = F⊥/A |
+d Perpendicular force per unit area; a scalar. SI unit the pascal, 1 Pa = 1 N/m².
+g pressure; normal pressure; pascal (Pa)
+R[def] pres <- F, L : p = F⊥/A | Normal force per area | Same in all directions at a point of a fluid at rest.
+§ 1 12.4
+P How far the linear law holds is found by testing. A sample is stretched in a machine while its [[stress|stress]] and [[strain|strain]] are recorded, and the plot of one against the other is the [[ssdiag|stress–strain diagram]]. It starts as a straight line, the region of [[elin|linear elasticity]], whose slope is [[Ymod|Young's modulus]]. The line ends at the *proportionality limit*, or linearity limit. Beyond it the curve bends, but the deformation remains *elastic* up to the *elastic limit*: the sample returns to its original length when unloaded. Past that point the sample shows *plastic behaviour*: unloading follows a line roughly parallel to the initial one and leaves a permanent strain. The highest point of the curve is the *ultimate stress*, the largest stress the material can sustain; beyond it the sample soon breaks.
+N M ssdiag | Stress–strain diagram | σ(ε) |
+d A material is linear up to the proportionality limit, elastic (returns to shape) up to the elastic limit, plastic beyond it, and breaks at the ultimate stress.
+p linear region = Hooke's law; elastic deformation reversible; plastic deformation permanent; fracture at breaking stress
+g stress-strain diagram; elastic; elastic limit; linearity limit (proportionality limit); plastic behavior; breaking stress (ultimate stress)
+R[meas] ssdiag <- stress, strain, elin : measured stress versus strain | Material test | Linear elasticity is the initial straight part.
+
+P Materials differ in the shape of the diagram. Brittle materials such as glass and cast iron break soon after the elastic limit, with little plastic deformation. Ductile materials such as copper and mild steel deform plastically far beyond it before they break, which is why they can be drawn into wire or bent into shape. Rubber stays elastic up to strains of several hundred percent, but its stress–strain curve is not a straight line. Structures are designed so that working stresses stay well below the elastic limit, usually by a safety factor of several, so that no expected load leaves a permanent deformation.
+
+# ---------------------------------------------------------------- Chapter 13
+§ 1 13.0
+P Until now gravity near Earth was a constant force, the [[w|weight]] mg, with g measured rather than explained. This chapter replaces it with a single force law between any two masses. Together with [[n2|Newton's second law]], that law accounts for the measured [[g|free-fall acceleration]], for the energy needed to leave Earth, for the orbits of satellites and planets, and for the tides. [[econs|Conservation of mechanical energy]] and [[Lcons|conservation of angular momentum]] do much of the work. The chapter ends with Einstein's general theory of relativity, in which gravity becomes a property of space and time.
+
+§ 1 13.1
+P The motions of the planets were among the first precise data of science. Ptolemy, in the second century, described them by combinations of circles around a fixed Earth. Copernicus, in a book published in 1543, put the Sun at the centre. The careful naked-eye measurements of Tycho Brahe allowed Kepler to find three empirical laws of planetary motion, published in 1609 and 1619, and in 1610 Galileo's telescope showed moons orbiting Jupiter. In 1687 Newton explained the fall of bodies on Earth and the orbits of the Moon and the planets with a single law of force.
+P [[ngrav|Newton's law of gravitation]] states that any two point particles attract each other along the line joining them, with a [[F|force]] proportional to the product of their [[m|masses]] and inversely proportional to the square of their separation. Let r⃗ be the [[r|position]] of particle 2 relative to particle 1, with r = |r⃗| and r̂₁₂ = r⃗/r. The force that particle 1 exerts on particle 2 is F⃗₁₂ = −Gm₁m₂/r² r̂₁₂; the minus sign makes it point back toward particle 1. Particle 2 pulls on particle 1 with the opposite force. The constant G = 6.674 × 10⁻¹¹ N·m²/kg² is the [[G|universal gravitational constant]], the same for all bodies. The law also holds for spherically symmetric bodies that do not overlap, with r the distance between their centres, and the forces of several bodies add as vectors.
+Q F = Gm₁m₂/r²
+N O G | Gravitational constant | G | prim
+d Strength of gravity between two masses, 6.674 × 10⁻¹¹ N·m²/kg², first measured with a torsion balance (Cavendish).
+g universal gravitational constant
+N M ngrav | Newton's law of gravitation | F = Gm₁m₂/r² | ax
+d Every pair of point masses attracts along the line joining them with a force proportional to both masses and inversely to the square of the distance.
+p inverse square; central and attractive; superposition holds; a spherical shell acts as a point mass at its centre
+g Newton’s law of gravitation
+R[law] F <- ngrav, G, m, r : F⃗₁₂ = −G m₁m₂/r² r̂₁₂ | Force between masses | A force law, used as the F⃗ in the second law.
+
+P Newton tested the law on the Moon. Its distance from Earth's centre is about 60 Earth radii, so the inverse square predicts an acceleration toward Earth of g/60² ≈ 2.7 × 10⁻³ m/s². This matches the centripetal acceleration 4π²r/T² of its orbit, with r = 3.84 × 10⁸ m and T = 27.3 days. Between laboratory masses the force is tiny: two 1.0 kg masses 1.0 m apart attract each other with 6.7 × 10⁻¹¹ N. Henry Cavendish measured such a force in 1798 with a torsion balance, in which the twist of a thin wire balanced the attraction between lead spheres; his result, stated as the mean density of Earth, is equivalent to a value of G. The same law holds the stars of the Milky Way together and draws it and the Andromeda galaxy toward each other.
+
+§ 1 13.2
+P Dividing the gravitational force on a small test mass m by m removes the test mass from [[ngrav|Newton's law of gravitation]] and leaves the [[gfield|gravitational field]] of the attracting body, g⃗(r⃗) = −GM/r² r̂. Here M is the mass of the body, r̂ points away from its centre, and G is the [[G|gravitational constant]]. The field is defined at every point, whether or not a mass is there, and a mass m placed at r⃗ feels the force mg⃗. At Earth's surface the field strength is the [[g|free-fall acceleration]], g = GM_E/R_E² = (6.674 × 10⁻¹¹ × 5.97 × 10²⁴)/(6.37 × 10⁶)² m/s² = 9.82 m/s², close to the measured value. Since g does not depend on m, all bodies fall alike. Read the other way, a measured g and radius give the mass of a planet, M = gR²/G.
+Q g = GM_E/R_E²
+N O gfield | Gravitational field | g⃗ = F⃗/m |
+d Gravitational force per unit mass at a point; it exists whether or not a test mass is there.
+g gravitational field
+R[def] gfield <- ngrav, G : g⃗(r⃗) = −GM/r² r̂ | Force per test mass | Removes the test mass from the force law.
+R[thm] g <- gfield : g = G M_E/R_E² | Free-fall acceleration explained | The measured g of Chapter 3 follows from Earth's mass and radius.
+P A scale does not measure gravity directly. It measures the [[Nf|normal force]] N with which it supports a body, and this is the [[wapp|apparent weight]]. For a person on a scale in an elevator whose acceleration a is directed downward, [[n2|Newton's second law]] gives mg − N = ma, so N = m(g − a). The scale reads less than the [[w|weight]] mg when the elevator accelerates downward, more when a < 0, that is, when it accelerates upward, and zero in free fall, a = g. In the elevator's own frame, a [[noninert|noninertial frame]], the same result appears as an inertial force −ma⃗ added to the weight. Earth's surface is such a frame: at the equator part of the gravitational pull supplies the centripetal acceleration ω²R_E ≈ 0.034 m/s², and a scale reads about 0.35 % less than the pull.
+Q w_{app} = N = m(g − a)
+N O wapp | Apparent weight | w_app |
+d What a scale reads: the normal force, which differs from mg in an accelerating or rotating frame (reduced at the equator by Earth's rotation).
+g apparent weight
+R[thm] wapp <- n2, w, noninert : w_app = N = m(g − a) | Scale in an accelerating frame | The scale measures the support force, not gravity alone.
+
+P Astronauts on the International Space Station, about 400 km above the surface, are not beyond the reach of gravity. There the field is still g = 9.82 m/s² × (6.37/6.77)² ≈ 8.7 m/s². They float because the station and everything in it fall freely together around Earth: their acceleration equals the local field, so their apparent weight is zero. What is called weightlessness is free fall, not the absence of weight. On Earth's surface g varies by about half a percent between the equator and the poles, because of Earth's rotation and its slightly flattened shape, and by smaller amounts with altitude and local density.
+
+§ 1 13.3
+P Near the surface the weight is nearly constant and the potential energy is mgy. Over large distances the force falls off as 1/r², and the potential energy must be obtained from [[ngrav|Newton's law of gravitation]] itself. Gravity is a [[cons|conservative force]]: it is central and its magnitude depends only on r, so its work depends only on the initial and final separations. Taking U = 0 at infinite separation, the [[U|potential energy]] at separation r is minus the work done by gravity while the bodies come in from infinity: U(r) = −∫_{∞}^{r} F_r dr′ with F_r = −GMm/r′². This gives the [[Ugr|gravitational potential energy]] U(r) = −GMm/r. It is negative at every finite separation and rises toward zero as the bodies move apart.
+Q U(r) = −GMm/r
+N O Ugr | Gravitational potential energy | U = −GMm/r |
+d Potential energy of two masses at any separation, with zero at infinite separation; near Earth's surface it reduces to mgy.
+R[thm] Ugr <- ngrav, U, cons : U(r) = −∫_∞^r F_r dr′ = −GMm/r, with F_r = −GMm/r′² | Work from infinity | Gravity is conservative.
+P Near Earth's surface the new expression reduces to the old one. Put r = R + y, where R is Earth's radius and y the height, with y ≪ R. To first order in y/R, U = −GMm/(R + y) = −(GMm/R)(1 + y/R)⁻¹ ≈ −GMm/R + (GMm/R²)y = −GMm/R + mgy, since GM/R² = g. The constant −GMm/R drops out of every energy difference, so the [[Ugrav|near-surface potential energy]] mgy is the limit of the [[Ugr|gravitational potential energy]] −GMm/r for heights much smaller than Earth's radius. At a height of 640 km, about a tenth of R, mgy already overestimates the change of potential energy by about 10 %.
+R[lim] Ugrav <- Ugr : −GMm/(R + y) ≈ −GMm/R + mgy for y ≪ R | Near the surface | Expanding to first order in y/R.
+P A body launched from the surface of a planet of mass M and radius R escapes if it can reach infinite distance. Without air resistance, [[econs|mechanical energy is conserved]]: ½mv² − GMm/R = ½mv_∞², where v_∞ is the speed left at infinity. The smallest launch speed leaves v_∞ = 0, so its [[K|kinetic energy]] exactly cancels the [[Ugr|gravitational potential energy]] at launch, ½mv_{esc}² = GMm/R. The [[vesc|escape velocity]] v_{esc} = √(2GM/R) does not depend on the mass of the body or on the direction of launch, as long as the path clears the planet. For Earth it is √(2 × 6.674 × 10⁻¹¹ × 5.97 × 10²⁴/(6.37 × 10⁶)) m/s = 1.12 × 10⁴ m/s, about 11.2 km/s, if Earth's rotation is ignored.
+Q v_{esc} = √(2GM/R)
+N O vesc | Escape velocity | v_esc = √(2GM/R) |
+d Minimum launch speed for a body to move off to infinite distance.
+g escape velocity
+R[thm] vesc <- econs, Ugr, K : ½mv² − GMm/R = 0 | Energy just zero | Kinetic energy that exactly cancels the potential energy.
+P The sign of the total [[Emech|mechanical energy]] E = ½mv² − GMm/r decides whether two bodies can separate. The kinetic energy is never negative, so the [[Ugr|potential energy]] −GMm/r can never exceed E. If E < 0, this requires r ≤ GMm/|E|: the separation has an upper bound, and the system is [[bound|gravitationally bound]]. If E ≥ 0, the bodies can move arbitrarily far apart. Earth and the Moon, and each planet with the Sun, form bound systems. A body that arrives from far away with E > 0 swings past once and leaves again, unless another interaction takes energy from it.
+N S bound | Gravitationally bound orbit | E = K + U < 0 |
+d A system whose total energy is negative cannot separate to infinity; the bodies stay within a maximum distance.
+m trajectory confined to r ≤ r_max; total energy E < 0 (E = −GMm/2r on a circle)
+g gravitationally bound
+R[thm] bound <- Ugr, Emech : E = ½mv² − GMm/r < 0 ⇒ r ≤ GMm/|E| | Negative energy | K ≥ 0 forces U ≤ E.
+
+§ 1 13.4
+P A satellite of mass m on a circular orbit of radius r about a planet of mass M ≫ m is pulled toward the centre by gravity alone. The force given by [[ngrav|Newton's law of gravitation]] must therefore supply the [[Fc|centripetal force]]: GMm/r² = mv²/r. Solving for v gives the [[vorb|orbital speed]] v = √(GM/r), the same for every satellite at that radius, whatever its mass. Its kinetic energy is then ½mv² = GMm/(2r), half the magnitude of the potential energy, so the total energy is E = −GMm/(2r), negative as for any [[bound|bound orbit]]. For Earth GM_E = 3.98 × 10¹⁴ m³/s². The International Space Station, about 400 km up, has r ≈ 6.77 × 10⁶ m and v ≈ 7.67 × 10³ m/s.
+Q v = √(GM/r)
+N O vorb | Orbital speed | v = √(GM/r) |
+d Speed of a circular orbit at radius r; independent of the satellite's mass.
+g orbital speed
+R[thm] vorb <- ngrav, Fc : GMm/r² = mv²/r | Gravity supplies the centripetal force | Solved for v.
+P The [[Torb|orbital period]] is the circumference divided by the [[vorb|orbital speed]]: T = 2πr/v = 2π√(r³/GM). For the space station T ≈ 5.55 × 10³ s, about 92 minutes. Higher orbits are slower and take longer. A *geosynchronous* orbit has a period of one sidereal day, 86 164 s, the time in which Earth turns once relative to the stars. Solving for the radius gives r = (GMT²/(4π²))^{1/3} ≈ 4.22 × 10⁷ m, about 35 800 km above the surface. A satellite on such an orbit above the equator stays over one point of the ground, which is why communication and weather satellites use it.
+Q T = 2π√(r³/GM)
+N O Torb | Orbital period | T = 2π√(r³/GM) |
+d Time for one circular orbit.
+g orbital period
+R[thm] Torb <- vorb : T = 2πr/v | Circumference over speed | With v = √(GM/r).
+
+§ 1 13.5
+P From Tycho Brahe's observations Kepler found that every planet moves on an ellipse with the Sun at one focus. This is [[kep1|Kepler's first law]]. Newton derived it. Solving [[n2|Newton's second law]] for a body attracted toward a much heavier one by the inverse-square force of [[ngrav|gravitation]] shows that the path is a conic section with the heavy body at a focus. Which conic it is depends on the energy. A [[bound|bound orbit]], with E < 0, is an ellipse, a circle being the special case of zero eccentricity. With E = 0 the path is a parabola, and with E > 0 a hyperbola; on these open paths the body passes once and escapes, as some comets and the spacecraft sent out of the solar system do.
+N M kep1 | Kepler's first law | orbit = ellipse, Sun at a focus |
+d Every planet moves on an ellipse with the Sun at one focus; derived by Newton from the inverse-square law.
+p conic sections α/r = 1 + e cos θ; e < 1 bound ellipse, e ≥ 1 unbound; empirical (Kepler) then derived (Newton)
+g Kepler’s first law
+R[thm] kep1 <- ngrav, n2, bound : inverse-square central force with E < 0 ⇒ ellipse | Solving the equation of motion | Bound inverse-square orbits are ellipses.
+P In polar coordinates centred on the Sun, the [[rt|trajectory]] that [[kep1|Kepler's first law]] describes is the [[orbit|elliptical orbit]] r(θ) = α/(1 + e cos θ). The eccentricity satisfies 0 ≤ e < 1, and the length α = L²/(GMm²) is set by the [[Lang|angular momentum]] L. The planet is closest to the Sun at the *perihelion*, θ = 0, where r = α/(1 + e), and farthest at the *aphelion*, θ = π, where r = α/(1 − e). The semimajor axis a, half the longest diameter, is the mean of these two distances, a = α/(1 − e²). Earth's orbit, with e ≈ 0.017, is nearly a circle. A *Hohmann transfer* takes a spacecraft from Earth's orbit to that of Mars along half an ellipse whose perihelion touches Earth's orbit and whose aphelion touches Mars's, with one engine burn at each end.
+Q r(θ) = α/(1 + e cos θ)
+N S orbit | Elliptical orbit | r(θ) = α/(1 + e cos θ) |
+d The orbital state: an ellipse traced periodically, closest to the Sun at perihelion and farthest at aphelion.
+m conic section with eccentricity e < 1, semimajor axis a; closed periodic curve
+g perihelion; aphelion
+R[read] orbit <- kep1, rt : r(θ) = α/(1 + e cos θ) | Trajectory shape | The trajectory of a bound planet.
+P [[kep2|Kepler's second law]] states that the line from the Sun to a planet sweeps out equal areas in equal times. In a time dt the planet moves by v⃗ dt, and the line sweeps a thin triangle of area dA = ½|r⃗ × v⃗| dt = (L/2m) dt, so dA/dt = L/(2m). The gravitational force on the planet points along r⃗, toward the Sun, so its torque about the Sun is zero and the [[Lcons|angular momentum is conserved]]. The area swept per unit time is therefore constant along the [[orbit|orbit]]. The planet moves fastest at perihelion and slowest at aphelion; at both points its velocity is perpendicular to r⃗, so r_p v_p = r_a v_a. The argument uses only the fact that the force is central, so the second law holds for any central force.
+N M kep2 | Kepler's second law | dA/dt = const |
+d The line from Sun to planet sweeps equal areas in equal times, so a planet moves fastest at perihelion.
+p equivalent to conservation of angular momentum for a central force; holds for any central force
+g Kepler’s second law
+R[thm] kep2 <- Lcons, orbit : dA/dt = L/(2m) | Central force ⇒ constant L | Area swept per time is proportional to angular momentum.
+P For a circular orbit, squaring the [[Torb|orbital period]] gives T² = 4π²r³/(GM). [[kep3|Kepler's third law]] extends this to an [[orbit|elliptical orbit]], with r replaced by the semimajor axis a. The constant 4π²/(GM) depends only on the mass of the central body, provided the orbiting mass is much smaller, so all planets of the Sun share it. With T in years and a in astronomical units (1 AU = 1.496 × 10¹¹ m, the semimajor axis of Earth's orbit), the law reads T² = a³ for the planets. Halley's comet, named after Edmond Halley, who predicted its return, has a period of about 76 years, so a ≈ 76^{2/3} AU ≈ 18 AU, and its aphelion lies beyond the orbit of Neptune.
+Q T² = 4π²a³/(GM)
+N M kep3 | Kepler's third law | T² = 4π²a³/(GM) |
+d The square of the orbital period is proportional to the cube of the semimajor axis.
+p same constant for all planets of one star; independent of planet mass (when m ≪ M)
+g Kepler’s third law
+R[gen] kep3 <- Torb, orbit : circular radius r → semimajor axis a | From circles to ellipses | The circular-orbit period generalised.
+
+§ 1 13.6
+P A body of finite size is not pulled uniformly. The gravitational force of a mass M falls off with distance, so a mass m at distance r and an equal mass a distance Δr farther away feel different pulls. Differentiating [[ngrav|Newton's law of gravitation]] gives dF/dr = −2GMm/r³, so to first order in Δr/r the difference is ΔF = 2GMmΔr/r³. This is the [[Ftide|tidal force]], and it falls off as 1/r³, faster than the force itself. The Moon pulls the near side of Earth more strongly than Earth's centre, and the far side more weakly. In the freely falling frame of Earth's centre both sides are therefore pulled outward along the Earth–Moon line, and in the simplest picture the oceans rise in two bulges, one facing the Moon and one opposite.
+Q ΔF ≈ 2GMmΔr/r³
+N O Ftide | Tidal force | ΔF ≈ 2GMmΔr/r³ |
+d Difference in the gravitational pull across a body; it stretches the body along the line to the attracting mass. Sun and Moon aligned give spring tides, at right angles neap tides.
+g tidal force; spring tide; neap tide
+R[thm] Ftide <- ngrav : ΔF = |dF/dr| Δr = 2GMmΔr/r³ | Gradient of the inverse-square force | First-order difference across the body.
+
+P Earth turns under the two bulges, so most coasts have two high tides a day, about 12 h 25 min apart, since the Moon moves along its orbit while Earth turns. The Sun is far more massive than the Moon but much farther away, and its tidal effect on Earth is about half as large. At new and full Moon, when Sun, Earth and Moon lie in a line, the two effects add and give large *spring tides*. At the quarter Moons, when the Sun and the Moon are at right angles as seen from Earth, they partly cancel and give small *neap tides*. Tidal forces also act in binary stars and on moons. Jupiter's moon Io is flexed continually by Jupiter's tides, and the heat dissipated drives the strongest volcanism in the solar system.
+
+§ 1 13.7
+P [[ngrav|Newton's law]] gives the force between two masses but no mechanism: each mass acts on the other instantly across empty space, an *action-at-a-distance force*. Yet no signal is observed to travel faster than the [[c|speed of light]] in vacuum, c = 299 792 458 m/s, about 3.00 × 10⁸ m/s; the value is exact because the metre is defined through it. Einstein's [[GR|theory of general relativity]], completed in 1915, removes the action at a distance. Mass and energy curve *space-time*, the four-dimensional union of space and time, and a body on which no other force acts follows the straightest possible path of the curved geometry. That geometry is a *non-Euclidean geometry*: the angles of a large triangle need not add up to 180°, and clocks at different heights run at different rates.
+N O c | Speed of light | c | prim
+d Speed of light in vacuum, exactly 299 792 458 m/s by the definition of the metre (≈ 2.998 × 10⁸ m/s).
+N M GR | General relativity | G_μν = 8πG T_μν / c⁴ | rel
+d Gravity is the curvature of space-time produced by mass and energy; free bodies follow the straightest paths of the curved geometry.
+p geometric (non-Euclidean) space-time; no action at a distance; reduces to Newton's law for weak fields and slow motion
+g theory of general relativity; space-time; non-Euclidean geometry; action-at-a-distance force
+P The theory starts from the [[equiv|principle of equivalence]]: no experiment in a small region of space and time can distinguish a uniform gravitational field from an acceleration of the frame. Objects released in a closed cabin at rest on Earth fall exactly as in a cabin accelerating at g far from all masses, and a freely falling cabin is locally an inertial frame. The principle extends the observed equality of gravitational and inertial mass, the reason all bodies fall alike. Applied everywhere, it makes gravity a property of space-time, and [[GR|general relativity]] ties the curvature to the density of energy and momentum. The coupling, 8πG/c⁴, contains the [[c|speed of light]] and is fixed by requiring that weak fields obey ∇²Φ = 4πGρ, the field form of [[ngrav|Newton's law of gravitation]]. For weak fields and speeds v ≪ c, as in the solar system, the theory reduces to Newton's law.
+N M equiv | Principle of equivalence | gravity ≡ acceleration (locally) | rel ax
+d No local experiment can distinguish a uniform gravitational field from an accelerated frame; a freely falling frame is locally inertial.
+p local statement; gravitational mass = inertial mass; free fall replaces the inertial frame
+g principle of equivalence
+R[gen] GR <- equiv, ngrav, c : curvature ↔ energy density;  weak field → ∇²Φ = 4πGρ | Gravity as geometry | Equivalence makes gravity a property of space-time; Newton's law fixes the weak-field limit.
+R[lim] ngrav <- GR : weak field, v ≪ c ⇒ F = GMm/r² | Newtonian limit | Newton's law is the slow, weak-field limit of general relativity.
+P In 1916 Karl Schwarzschild found the exact field outside a spherical mass in [[GR|general relativity]]. It contains a critical radius, the [[RS|Schwarzschild radius]] R_S = 2GM/c², built from the mass, the [[G|gravitational constant]] and the [[c|speed of light]]. It is also the radius at which the Newtonian [[vesc|escape velocity]] √(2GM/R) would equal c, although only general relativity describes what happens there. A body compressed inside its Schwarzschild radius becomes a [[bh|black hole]]. The sphere r = R_S is its *event horizon*: inside it every possible path, even that of light, leads inward, so nothing that crosses the horizon can return or send a signal out. For the Sun, with M = 1.99 × 10³⁰ kg, R_S = 2.95 km; for Earth it is 8.9 mm. The name black hole was popularised by John Wheeler.
+Q R_S = 2GM/c²
+N S bh | Black hole | r < R_S | rel
+d A mass compressed inside its Schwarzschild radius; nothing, not even light, escapes from inside the event horizon.
+m space-time region bounded by the event horizon r = R_S
+g black hole
+N O RS | Schwarzschild radius | R_S = 2GM/c² | rel
+d Radius at which the escape velocity from a mass M reaches the speed of light; it marks the event horizon.
+g Schwarzschild radius; event horizon
+R[thm] RS <- GR, G, c : R_S = 2GM/c² | Horizon of a point mass | From the Schwarzschild solution of general relativity.
+R[thm] bh <- RS, GR : collapse to r < R_S | Collapse inside the horizon | Light cones inside point inward.
+P The evidence for black holes is indirect but strong. A *neutron star*, the collapsed core left by some exploding stars, holds more than a solar mass within a radius of about 10 km, and no such star can be heavier than roughly two to three solar masses; compact objects that are heavier must be black holes. Gas falling onto a compact companion in a binary star system heats up and emits X-rays. Stars at the centre of the Milky Way orbit an unseen object of about four million solar masses. In 2015 detectors recorded gravitational waves from two merging black holes. The orbital speeds of stars in galaxies also reveal more mass than is seen; the nature of this *dark matter* is still unknown.
+X neutron star :: an astrophysical example (compact star) without a separate model in the chapter

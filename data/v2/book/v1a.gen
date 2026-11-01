@@ -1,0 +1,353 @@
+# University Physics Volume 1, chapters 1-4
+# Node and route descriptions are written for this network; the book supplies the
+# reading order (section of first introduction) and the key-term list.
+# Reading text (P paragraphs, Q display equations) written for this network.
+
+§ 1 1.0
+P Physics states its results as relations between measured quantities, so it starts with measurement. This chapter fixes what a measured value means: a number with a unit from an agreed system, scales compared by powers of ten, equations checked by their dimensions, and results reported with their uncertainty. Every later chapter relies on these tools.
+
+§ 1 1.1
+X physics; law; model; theory :: words about science itself; in this network their roles are played by the model nodes
+P Physics studies matter, energy, space and time, and looks for a small number of laws that cover a wide range of phenomena. In this text a *model* is a simplified description of a system that keeps only the features that matter for a given question; a *theory* is a tested explanation that links many observations; a *law* is a concise statement, usually an equation, of a regularity that has held in every test within its range of validity. That range is wide: lengths in physics run from about 10⁻¹⁵ m, the size of a proton, to nearly 10²⁷ m, the diameter of the observable universe.
+P Scales this different are compared by ratios rather than differences. The [[omag|order of magnitude]] of a quantity is the power of ten nearest to its value on a logarithmic scale, found by rounding the base-10 logarithm: n = round(log₁₀ Q), with Q expressed in a chosen unit. The mass of an electron, 9.11 × 10⁻³¹ kg, has order of magnitude 10⁻³⁰ kg; the age of the universe, about 4.4 × 10¹⁷ s, has order of magnitude 10¹⁸ s. Quantities one order of magnitude apart differ by a factor of about ten.
+N M omag | Order of magnitude | 10ⁿ | ax
+d Rounds a value to the nearest power of ten so that very different scales can be compared multiplicatively.
+p n = round(log₁₀ Q); scale-free comparison; multiplicative, not additive
+g order of magnitude
+
+§ 1 1.2
+P Every *physical quantity* is a number multiplied by a unit, and measuring it means comparing it with that unit. The [[si|SI system of units]] (Système International d'Unités) chooses seven *base quantities*: time, length, mass, electric current, temperature, amount of substance and luminous intensity, with base units the second, metre, kilogram, ampere, kelvin, mole and candela. All other units are *derived* as products of powers of base units: speed is measured in m/s, and force in newtons, 1 N = 1 kg·m/s². Prefixes scale a unit by powers of ten, for example kilo- (10³), mega- (10⁶), milli- (10⁻³), micro- (10⁻⁶) and nano- (10⁻⁹). Other unit systems, such as English units, remain in use; this text works in SI.
+N M si | SI system of units | SI | ax
+d The convention that fixes base quantities and their units and builds every other unit as a product of powers of them.
+p seven base units (s, m, kg, A, K, mol, cd); derived unit = product of powers of base units; decimal prefixes
+g physical quantity; units; SI units; base quantity; base unit; derived quantity; derived units; metric system
+X English units :: a second unit system; only the SI is used in the network
+P Mechanics uses three of these base quantities. [[t|Time]] is read from a clock; the second is defined by fixing the frequency of a hyperfine transition of the caesium-133 atom at exactly 9 192 631 770 Hz. [[L|Length]] is read from a ruler; the metre is the distance light travels in vacuum in 1/299 792 458 of a second. [[m|Mass]] is read from a balance; since 2019 the kilogram has been defined by fixing Planck's constant at exactly h = 6.626 070 15 × 10⁻³⁴ J·s. Together with the ampere, kelvin, mole and candela, these units are the base on which the [[si|SI]] builds every other unit.
+N O t | Time | t | prim
+d Read from a clock. SI unit the second, fixed by the caesium-133 hyperfine transition frequency.
+g second
+N O L | Length | ℓ | prim
+d Read from a ruler. SI unit the metre, fixed by the distance light travels in vacuum in 1/299 792 458 s.
+g meter
+N O m | Mass | m | prim
+d Inertial measure of the amount of matter, read from a balance. SI unit the kilogram, fixed since 2019 through Planck's constant.
+g kilogram
+R[def] si <- t, L, m : base units s, m, kg (with A, K, mol, cd) | Base quantities | The unit system is built on base quantities; time, length and mass are the three used throughout mechanics.
+
+§ 1 1.3
+P A quantity is expressed in other units by multiplying it by a [[conv|conversion factor]], a ratio of two equal quantities written in different units, such as (1000 m)/(1 km). Since the ratio equals one, the number changes but the quantity does not, and units cancel like algebraic factors: 80.0 km/h × (1000 m / 1 km) × (1 h / 3600 s) = 22.2 m/s. Each factor follows from the definitions of the [[si|SI]] units and prefixes. Unconverted units cause real failures: NASA's Mars Climate Orbiter was lost in 1999 because ground software supplied thruster impulse in pound-force seconds where newton seconds were expected.
+N M conv | Unit conversion | ×(1 km / 1000 m) |
+d Multiplies a quantity by a ratio equal to one, so the number changes and the quantity does not.
+p conversion factor equals 1; units cancel algebraically; preserves the physical quantity
+g conversion factor
+R[thm] conv <- si : 1 km/1000 m = 1 | From the unit definitions | Equalities between units in the SI give ratios equal to one.
+
+§ 1 1.4
+P [[dim|Dimensional analysis]] records which base quantities a unit is built from, and with what powers. Writing L, M and T for the dimensions of length, mass and time, a speed has dimension [v] = LT⁻¹ and a force has dimension MLT⁻². The dimension of a quantity follows from its unit in the [[si|SI]]. Only quantities of the same dimension can be added or equated, so in a *dimensionally consistent* equation every term has the same dimension: in x = x₀ + v₀t + ½at², each term has dimension L. Arguments of functions such as sin, exp and log must be *dimensionless*. A consistent equation can still be wrong, but an inconsistent one cannot be right.
+N M dim | Dimensional analysis | [Q] |
+d Tracks the powers of base dimensions in a quantity; an equation is admissible only if both sides carry the same dimension.
+p dimensions form a multiplicative group generated by L, M, T, …; [AB] = [A][B]; only like dimensions add or equate; arguments of exp, sin, log are dimensionless
+g dimension; dimensionless; dimensionally consistent
+R[def] dim <- si : [Q] = Lᵃ Mᵇ Tᶜ… | Dimension of a quantity | Each quantity is assigned the exponents of the base quantities in its unit.
+
+§ 1 1.5
+P An [[est|estimate]] aims at the right order of magnitude when precise inputs are not available. Rough values are combined so that the dimensions come out right, by [[dim|dimensional analysis]], and the result is rounded to its [[omag|order of magnitude]]. The number of heartbeats in a lifetime, for example, is about (1 beat/s) × (80 years) × (3.2 × 10⁷ s/year) ≈ 3 × 10⁹, of order 10⁹. Because only the power of ten is wanted, inputs that are uncertain by a factor of two are acceptable. Such estimates, often called Fermi calculations after Enrico Fermi, are used to check calculations and to judge whether an effect is large enough to matter.
+N M est | Estimation (Fermi) | Q ≈ 10ⁿ |
+d Obtains an order-of-magnitude answer from rough inputs combined in a dimensionally consistent way.
+p tolerant of factor-of-few errors; relies on dimensional consistency; multiplicative error budget
+g estimation
+R[thm] est <- omag, dim : Q ≈ Π (rough inputs)^(powers fixed by dimension) | Fermi estimate | Rough inputs combined so the dimensions match, rounded to a power of ten.
+
+§ 1 1.6
+P A measured value is useful only together with a statement of how good it is. *Accuracy* is closeness to the accepted value and is measured by the [[disc|discrepancy]], the measured value minus the accepted value, both in the same [[si|SI]] unit. *Precision* is the agreement of repeated measurements with each other and is described by the [[unc|uncertainty]] δA, so that a result is reported as A ± δA. The percent uncertainty compares the uncertainty with the value. A measurement can be precise but inaccurate, for example when a balance consistently reads high.
+Q percent uncertainty = (δA/A) × 100 %
+N O disc | Discrepancy | A − A_acc |
+d Difference between a measured value and the accepted value; a small discrepancy means high accuracy.
+g accuracy; discrepancy
+R[def] disc <- si : A_measured − A_accepted, in the units of A | Compare with the accepted value | Measures accuracy, i.e. closeness to the accepted value.
+N O unc | Uncertainty | δA |
+d The spread of a measured value; percent uncertainty δA/A·100 % compares it with the value itself. Small spread means high precision.
+g precision; uncertainty; percent uncertainty
+R[def] unc <- si : A ± δA;  % uncertainty = δA/A × 100 % | Stated with the value | A measured quantity is reported as a value with its uncertainty, in the units of the quantity.
+P Uncertainties carry over into quantities calculated from measured values. For a product, (A + δA)(B + δB) = AB(1 + δA/A + δB/B + δA·δB/(AB)). The last term is a product of two small fractions and can be dropped, so to first order the percent [[unc|uncertainties]] of the factors add; the same holds for a quotient. This rule of [[prop|uncertainty propagation]], the method of adding percents, gives a conservative bound. A rectangle measured as (2.00 ± 0.02) m by (3.00 ± 0.06) m has percent uncertainties 1 % and 2 %, so its area is 6.00 m² ± 3 %, that is, (6.00 ± 0.18) m².
+N M prop | Uncertainty propagation | δ(AB)/AB ≈ δA/A + δB/B |
+d For products and quotients the percent uncertainties add (to first order), which bounds the uncertainty of a result.
+p first-order (linearised); percent uncertainties add for × and ÷; conservative upper bound
+g method of adding percents
+R[thm] prop <- unc : (A+δA)(B+δB) ≈ AB(1 + δA/A + δB/B) | First-order expansion | Neglecting the product of two small uncertainties leaves the sum of percent uncertainties.
+P [[sigfig|Significant figures]] apply the same idea digit by digit: a result should not carry more digits than its inputs support. In multiplication and division, the result keeps as many significant figures as the least precise factor, so 2.5 m × 3.47 m = 8.7 m². In addition and subtraction, it keeps the decimal places of the least precise term, so 12.1 m + 0.523 m = 12.6 m. Zeros that only locate the decimal point, as in 0.0052, are not significant. Rounding is done once, at the end of a calculation; the rule is a coarse form of [[prop|uncertainty propagation]].
+N M sigfig | Significant figures | s.f.
+d Bookkeeping rule that keeps only the digits supported by the uncertainty of the inputs.
+p × and ÷ keep the fewest significant figures; + and − keep the fewest decimal places; a coarse form of propagation
+g significant figures
+R[approx] sigfig <- prop : result digits limited by the least precise input | Rounding rule | A coarse version of propagation that is applied digit by digit.
+
+§ 1 1.7
+P Problems in physics are solved in a stable sequence. Identify the physical principles involved and the system they apply to, draw a sketch, and list the known and unknown quantities with their units. Choose the equations that connect them and solve symbolically before substituting numbers, so that each step can be checked by [[dim|dimensional analysis]]. Then substitute values in [[si|SI]] units and keep the [[sigfig|significant figures]] the data support. Finally, judge the result: compare its [[omag|order of magnitude]] with an [[est|estimate]] and check that its sign, units and size are reasonable.
+
+# ---------------------------------------------------------------- Chapter 2
+§ 1 2.0
+P Chapter 1 treated a measured quantity as a number times a unit. Many quantities in mechanics also have a direction: a displacement of 5 m to the east differs from one of 5 m to the north, and two such quantities combine according to their directions as well as their sizes. This chapter develops the mathematics of directed quantities. It adds and scales them geometrically, writes them in components along the axes of a coordinate system, and defines two kinds of product. A relation between directed quantities then becomes one ordinary equation per axis, each checked by [[dim|dimensional analysis]] as before.
+
+§ 1 2.1
+P A [[scal|scalar quantity]], or scalar, is fixed by one real number and a unit, such as a mass of 2.0 kg, a time interval of 3.5 s or a temperature of 300 K. Scalars obey ordinary arithmetic, and an equation between scalars is a *scalar equation*. A [[vec|vector quantity]], or vector, has a *magnitude* and a direction. Its model case is *displacement*, the change of position from a starting point to an end point, drawn as an arrow from the one to the other whatever path was taken between them. The magnitude A = |A⃗| is the length of the arrow and is never negative. Vectors that point the same way are *parallel*, vectors that point in opposite directions are *antiparallel*, and perpendicular vectors are *orthogonal*. A *vector equation* such as A⃗ = B⃗ asserts equal magnitudes and the same direction at once.
+N M scal | Scalar | α | ax
+d A quantity fixed by one real number and a unit; scalars obey ordinary arithmetic.
+p real numbers ℝ; addition and multiplication commutative and associative; equations between scalars are scalar equations
+g scalar quantity; scalar; scalar equation
+N M vec | Vector | A⃗ | ax
+d A quantity with magnitude and direction; displacement is the model case. Two vectors can be parallel, antiparallel or orthogonal.
+p element of Euclidean space ℝ³; magnitude A = |A⃗| ≥ 0; a vector equation fixes magnitude and direction at once
+g vector quantity; vector; magnitude; vector equation; parallel vectors; antiparallel vectors; orthogonal vectors
+X displacement :: = dr
+P Two [[vec|vectors]] are added by the *tail-to-head geometric construction*: place the tail of B⃗ at the head of A⃗, and their [[vadd|vector sum]], the *resultant vector* R⃗ = A⃗ + B⃗, runs from the tail of A⃗ to the head of B⃗. Successive displacements combine in exactly this way. Drawn from a common point, A⃗ and B⃗ span a parallelogram whose diagonal is the same R⃗; this is the *parallelogram rule*. The sum is *commutative*, A⃗ + B⃗ = B⃗ + A⃗, and *associative*, (A⃗ + B⃗) + C⃗ = A⃗ + (B⃗ + C⃗), and its magnitude is at most A + B, with equality only for parallel vectors. The *difference of two vectors* adds the antiparallel vector: A⃗ − B⃗ = A⃗ + (−B⃗). Along one line, vectors add like signed numbers: 4.0 m east followed by 6.0 m west gives 2.0 m west.
+N M vadd | Vector addition | A⃗ + B⃗ |
+d Combines vectors head to tail (or by the parallelogram) into a resultant; subtraction adds the antiparallel vector.
+p commutative; associative; identity: null vector; inverse −A⃗; abelian group
+g vector sum; resultant vector; difference of two vectors; commutative; associative; parallelogram rule; tail-to-head geometric construction; null vector
+R[def] vadd <- vec : R⃗ = A⃗ + B⃗ (tail-to-head) | Geometric sum | Defined by placing vectors tail to head; the order and grouping do not change the resultant.
+P [[vscale|Multiplication by a scalar]] turns a [[vec|vector]] A⃗ and a [[scal|scalar]] α into the vector B⃗ = αA⃗, of magnitude B = |α|A. For α > 0 the direction is kept and for α < 0 it is reversed; either way B⃗ lies along the line of A⃗, and α = −1 gives the antiparallel vector −A⃗. The operation is *distributive* over both kinds of sum: α(A⃗ + B⃗) = αA⃗ + αB⃗ and (α₁ + α₂)A⃗ = α₁A⃗ + α₂A⃗. Dividing a vector by its own magnitude gives the *unit vector* Â = A⃗/A, which has magnitude 1, carries no unit and only marks a direction. Every vector is therefore its magnitude times its unit vector, A⃗ = AÂ.
+N M vscale | Multiplication by a scalar | αA⃗ |
+d Stretches a vector by |α| and reverses it if α < 0; dividing a vector by its magnitude gives a unit vector.
+p distributive over vector and scalar sums; (αβ)A⃗ = α(βA⃗); Â = A⃗/A has unit length
+g distributive; unit vector
+R[def] vscale <- vec, scal : B⃗ = αA⃗, B = |α|A | Scaling | A scalar changes the length (and possibly the sense) of a vector but not its line.
+
+§ 1 2.2
+P A Cartesian *coordinate system* has an origin and three mutually perpendicular axes, with *unit vectors of the axes* î, ĵ and k̂. Every [[vec|vector]] A⃗ is the [[vadd|sum]] of three vectors parallel to the axes, each a unit vector [[vscale|multiplied by a scalar]]. This gives the *component form* A⃗ = A_x î + A_y ĵ + A_z k̂. The terms A_x î, A_y ĵ and A_z k̂ are the [[comp|vector components]] of A⃗, and the signed numbers A_x, A_y and A_z are its *scalar components*. A vector drawn from a point b to a point e has A_x = x_e − x_b, and likewise for y and z. By the Pythagorean theorem its magnitude is A = √(A_x² + A_y² + A_z²). Two vectors are equal exactly when all their components are equal, so one vector equation stands for three scalar equations, one per axis.
+Q A⃗ = A_x î + A_y ĵ + A_z k̂,   A = √(A_x² + A_y² + A_z²)
+N M comp | Vector components | A⃗ = A_x î + A_y ĵ + A_z k̂ |
+d Writes a vector in the orthonormal basis of a Cartesian coordinate system; vector equations become one scalar equation per axis.
+p linear isomorphism ℝ³ ↔ vectors; components add independently; A = √(A_x² + A_y² + A_z²); equal vectors ⇔ equal components
+g vector components; unit vectors of the axes; scalar component; component form of a vector; direction angle; equal vectors
+R[thm] comp <- vadd, vscale : A⃗ = A_x î + A_y ĵ + A_z k̂ | Decomposition along axes | Every vector is a sum of scaled unit vectors of the axes; the scale factors are the scalar components.
+P A vector in a plane is also fixed by its magnitude A and its *direction angle* θ_A, measured counterclockwise from the positive x-axis: A_x = A cos θ_A, A_y = A sin θ_A and tan θ_A = A_y/A_x. With A_x = 3.00 m and A_y = 4.00 m, A = 5.00 m and θ_A = 53.1°. The inverse tangent returns only angles between −90° and +90°, so the signs of the components fix the quadrant: reversing both components gives θ_A = 233.1°, not 53.1°. For the vector from the origin to a point, magnitude and direction angle are the [[polar|polar coordinates]] (r, φ), related to the [[comp|Cartesian components]] by x = r cos φ and y = r sin φ. In this *polar coordinate system* the *radial coordinate* r is never negative, φ is fixed only up to whole turns, and φ is undefined at r = 0.
+N M polar | Polar coordinates | (r, φ) |
+d Locates a point in a plane by its distance from the origin and an angle from the x-axis.
+p x = r cos φ, y = r sin φ; r ≥ 0, φ defined modulo 2π; nonlinear map, singular at r = 0
+g polar coordinate system; polar coordinates; radial coordinate
+R[thm] polar <- comp : x = r cos φ, y = r sin φ | From Cartesian components | The magnitude and direction angle of the position vector in the plane.
+
+§ 1 2.3
+P [[comp|Components]] turn vector algebra into arithmetic done axis by axis. A resultant's x-component is the sum of the x-components of the vectors added, R_x = A_x + B_x + C_x + …, and likewise for y and z. Subtraction and [[vscale|multiplication by a scalar]] also act component by component. *Equal vectors* have equal components; the *null vector* 0⃗ has all its components zero and is the [[vadd|sum]] of any vector and its antiparallel vector. Vector equations are solved like ordinary ones. If three displacements return a walker to her start, A⃗ + B⃗ + C⃗ = 0⃗, so C⃗ = −(A⃗ + B⃗); with A⃗ = (2.0 î + 3.0 ĵ) m and B⃗ = (1.0 î − 5.0 ĵ) m, C⃗ = (−3.0 î + 2.0 ĵ) m.
+
+§ 1 2.4
+P Two vectors can be multiplied together in two ways. The [[dot|scalar product]], or *dot product*, of A⃗ and B⃗ is the scalar A⃗·B⃗ = AB cos φ, where φ is the *angle between the two vectors*, from 0° to 180°, measured with their tails together. It equals A times the projection of B⃗ on the direction of A⃗: positive for an acute angle, zero for orthogonal vectors, negative for an obtuse one. The product is commutative and distributive, and A⃗·A⃗ = A². Because î·î = ĵ·ĵ = k̂·k̂ = 1 and î·ĵ = ĵ·k̂ = k̂·î = 0, expanding A⃗·B⃗ in [[comp|components]] leaves only products of matching components. Then cos φ = A⃗·B⃗/(AB) gives the angle between two vectors from their components: for A⃗ = î + 2ĵ + 2k̂ and B⃗ = 2î + k̂, A⃗·B⃗ = 4, A = 3 and B = √5, so φ = 53.4°.
+Q A⃗·B⃗ = AB cos φ = A_{x}B_{x} + A_{y}B_{y} + A_{z}B_{z}
+N M dot | Scalar product | A⃗·B⃗ |
+d Multiplies two vectors into a scalar, AB cos φ; it projects one vector on another and vanishes for orthogonal vectors.
+p commutative; distributive; bilinear; A⃗·A⃗ = A²; î·ĵ = 0
+g scalar product; dot product
+R[thm] dot <- comp : A⃗·B⃗ = A_{x}B_{x} + A_{y}B_{y} + A_{z}B_{z} = AB cos φ | Component formula | The geometric definition evaluated with orthonormal unit vectors.
+P The [[cross|vector product]], or *cross product*, A⃗×B⃗ is a vector perpendicular to both A⃗ and B⃗ with magnitude AB sin φ, the area of the parallelogram the two vectors span. It vanishes for parallel and antiparallel vectors, so A⃗×A⃗ = 0⃗. The *corkscrew right-hand rule* fixes its sense: turn A⃗ toward B⃗ through the smaller angle, and A⃗×B⃗ points the way a right-handed screw advances under that turn. Reversing the order reverses the turn, which is the *anticommutative property* A⃗×B⃗ = −B⃗×A⃗. The product is distributive but not associative: î×(î×ĵ) = −ĵ, while (î×î)×ĵ = 0⃗. Using î×ĵ = k̂, ĵ×k̂ = î and k̂×î = ĵ and distributing over the [[comp|components]] gives the component formula. For the two vectors above, A⃗×B⃗ = 2î + 3ĵ − 4k̂, whose magnitude √29 ≈ 5.39 equals AB sin φ.
+Q A⃗×B⃗ = (A_{y}B_{z} − A_{z}B_{y}) î + (A_{z}B_{x} − A_{x}B_{z}) ĵ + (A_{x}B_{y} − A_{y}B_{x}) k̂
+N M cross | Vector product | A⃗×B⃗ |
+d Multiplies two vectors into a vector perpendicular to both, of magnitude AB sin φ, oriented by the right-hand rule.
+p anticommutative; distributive; not associative (obeys the Jacobi identity instead); A⃗×A⃗ = 0⃗; î×ĵ = k̂
+g vector product; cross product; anticommutative property; corkscrew right-hand rule
+R[thm] cross <- comp : A⃗×B⃗ = (A_{y}B_{z} − A_{z}B_{y}) î + (A_{z}B_{x} − A_{x}B_{z}) ĵ + (A_{x}B_{y} − A_{y}B_{x}) k̂ | Component formula | Follows from the products of the unit vectors and distributivity.
+
+# ---------------------------------------------------------------- Chapter 3
+§ 1 3.0
+P *Kinematics* describes how bodies move, without asking why. This chapter treats the simplest case: a body whose size and orientation do not matter, so that it can be treated as a point, moving along a straight line. Its position is a signed [[L|length]] from a chosen origin, and following that position in [[t|time]] gives the motion. Velocity and acceleration are rates of change of the motion. Along one line a [[vec|vector]] has a single [[comp|component]], so each vector quantity of the chapter is a signed number. The chapter ends with constant acceleration, free fall near Earth's surface, and the recovery of a motion from its acceleration by integration.
+
+§ 1 3.1
+X kinematics :: names the subject of the chapter
+P A position is always stated relative to something. A [[frame|frame of reference]] supplies an origin, a set of axes along which [[comp|components]] are taken, and a clock that reads the [[t|time]]. The origin and the directions of the axes are free choices, and in classical mechanics all frames share the same time. For motion along a line one axis is enough. The [[x|position]] x of a body is then its signed distance from the origin: a [[L|length]] measured along the axis, positive on one side of the origin and negative on the other. With the origin at a lamppost and east chosen positive, a car 25 m east of the post has x = +25 m and one 10 m west of it has x = −10 m. Moving the origin shifts every position by the same amount.
+N O x | Position | x |
+d Coordinate of the body on an axis of the frame at a given instant.
+g position
+N M frame | Reference frame | (O; x, y, z; t) |
+d An origin and axes against which positions are measured, together with a clock.
+p choice of origin and axes arbitrary; coordinates relative to the frame; time common to all frames (Galilean)
+g frame of reference
+R[def] frame <- comp, t : origin + Cartesian axes + clock | Coordinates and clock | Positions are components along the frame's axes; instants are read from its clock.
+R[meas] x <- frame, L : x = signed distance from the origin | Read on the axis | A length measured along the axis from the origin, with a sign for the side.
+P Recording the [[x|position]] at every instant of [[t|time]] gives the [[xt|motion on a line]], the function x(t); its graph against t is a complete record of the motion. The [[dx|displacement]] over an interval is the change of position, Δx = x_f − x_i, read from the motion at the end and at the start of the interval. It is signed: positive for a net move toward larger x, negative for a net move back. For a motion in several stages, the *total displacement* is the sum of the displacements of the stages, Δx_{total} = ΣΔx_i, which reduces to the last position minus the first. A runner who goes from x = 2.0 m to x = 9.0 m and then back to x = 5.0 m has displacements of +7.0 m and −4.0 m, and a total displacement of +3.0 m.
+N S xt | Motion on a line | x(t) |
+d The kinematic state of a body on a line: its position at every instant.
+m function t ↦ x(t), ℝ → ℝ
+R[def] xt <- x, t : x(t) | Position as a function of time | Recording the position at each instant gives the motion.
+N O dx | Displacement | Δx |
+d Change of position between two instants; signed. A total displacement is the sum of successive displacements.
+g displacement; total displacement
+R[def] dx <- xt : Δx = x_f − x_i;  Δx_total = Σ Δx_i | Difference of positions | Taken from the motion at the end and start of the interval.
+P Opposite displacements cancel in that sum, so the total displacement does not show how far a body went. The [[dist|distance traveled]] adds the magnitudes of the [[dx|displacements]] instead, d = Σ|Δx_i|, with the stages taken between the points where the body reverses. It is never negative and never smaller than the magnitude of the total displacement; the two are equal only if the body never turns back. The runner above traveled 7.0 m + 4.0 m = 11.0 m, although her total displacement was 3.0 m.
+N O dist | Distance traveled | d |
+d Total length of path covered, never negative; it can exceed the magnitude of the displacement.
+g distance traveled
+R[def] dist <- dx : d = Σ |Δx_i| | Sum of magnitudes | Adds the magnitudes of the displacements of each leg.
+P The [[dtm|elapsed time]] of an interval is the difference between two readings of the same clock, Δt = t_f − t_i, where t_i and t_f are the [[t|times]] at its start and end. The [[vavg|average velocity]] over the interval is the [[dx|displacement]] divided by the elapsed time, in metres per second. It has the sign of the displacement and depends only on the end points: every motion with the same start, end and duration has the same average velocity. On the graph of x(t) it is the slope of the straight line joining the two end points. If the runner's trip took 5.0 s, her average velocity was (+3.0 m)/(5.0 s) = +0.60 m/s, although she covered 11.0 m and spent part of the time moving backwards.
+Q v̄ = Δx/Δt = (x_f − x_i)/(t_f − t_i)
+N O vavg | Average velocity | v̄ |
+d Displacement divided by the elapsed time; it depends only on the end points of the interval.
+g average velocity
+N O dtm | Elapsed time | Δt |
+d Duration of an interval between two clock readings.
+g elapsed time
+R[def] dtm <- t : Δt = t_f − t_i | Difference of clock readings | Two readings of the same clock.
+R[def] vavg <- dx, dtm : v̄ = Δx/Δt | Ratio | Signed, like the displacement.
+
+§ 1 3.2
+P As the interval shrinks, the average velocity approaches a limit, the velocity at one instant. Such a limit is the [[ddt|time derivative]]: for a quantity f known at every instant, df/dt = lim_{Δt→0} [f(t + Δt) − f(t)]/Δt. The derivative is linear, obeys the product rule, gives zero for a constant and turns tⁿ into ntⁿ⁻¹. Applied to the [[xt|motion]] x(t), it defines the [[v|instantaneous velocity]] v(t) = dx/dt, the slope of the tangent to the x(t) graph at time t. For x(t) = (4.0 m/s)t − (1.0 m/s²)t², the velocity is v(t) = 4.0 m/s − (2.0 m/s²)t. It is +2.0 m/s at t = 1.0 s, zero at t = 2.0 s, where the body turns around, and −2.0 m/s at t = 3.0 s.
+Q v(t) = dx/dt = lim_{Δt→0} Δx/Δt
+N M ddt | Time derivative | d/dt | ax
+d The limit of a difference quotient as the interval shrinks; turns a quantity known at every instant into its rate of change.
+p linear; Leibniz (product) rule; d/dt of a constant is 0; d²/dt² = d/dt ∘ d/dt
+N O v | Instantaneous velocity | v |
+d Rate of change of position at an instant: the slope of x(t).
+g instantaneous velocity
+R[def] v <- xt, ddt : v(t) = dx/dt = lim_{Δt→0} Δx/Δt | Derivative of the motion | The average velocity over a shrinking interval.
+P Speed ignores direction. The [[savg|average speed]] is the [[dist|distance traveled]] divided by the [[dtm|elapsed time]], s̄ = d/Δt, and is never negative. It is not in general the magnitude of the average velocity: the runner of the previous section had s̄ = (11.0 m)/(5.0 s) = 2.2 m/s but v̄ = +0.60 m/s. Over an interval short enough that the body does not reverse, however, the distance traveled equals the magnitude of the displacement, so the [[speed|instantaneous speed]] is the magnitude of the [[v|instantaneous velocity]], |v(t)|. In the example above, at t = 3.0 s the velocity is −2.0 m/s and the speed is 2.0 m/s. A speedometer shows instantaneous speed.
+N O savg | Average speed | s̄ |
+d Distance traveled divided by elapsed time.
+g average speed
+R[def] savg <- dist, dtm : s̄ = d/Δt | Ratio | Uses path length, so it is never negative.
+N O speed | Speed | |v| |
+d Magnitude of the instantaneous velocity.
+g instantaneous speed
+R[def] speed <- v : |v(t)| | Magnitude | Drops the direction (sign) of the velocity.
+
+§ 1 3.3
+P A changing velocity is described by acceleration. The [[aavg|average acceleration]] over an interval is the change of [[v|instantaneous velocity]] divided by the [[dtm|elapsed time]], ā = Δv/Δt = (v_f − v₀)/(t_f − t₀), in (m/s)/s = m/s². A car that goes from rest to 27 m/s in 9.0 s has an average acceleration of 3.0 m/s². Along a line, acceleration is signed like velocity. When the two have the same sign the speed grows, and when their signs are opposite it falls. A negative acceleration therefore does not by itself mean slowing down: a body moving in the negative direction with a negative acceleration speeds up.
+N O aavg | Average acceleration | ā |
+d Change of velocity divided by elapsed time.
+g average acceleration
+R[def] aavg <- v, dtm : ā = Δv/Δt | Ratio | Uses velocities at the ends of the interval.
+P Letting the interval shrink gives the [[a|instantaneous acceleration]], the [[ddt|time derivative]] of the [[v|velocity]]. On a graph of v against t it is the slope of the tangent at time t. On the graph of x against t it is the second derivative, which sets how the curve bends: concave up where a > 0 and concave down where a < 0. For the motion x(t) = (4.0 m/s)t − (1.0 m/s²)t² of the previous section, v(t) = 4.0 m/s − (2.0 m/s²)t and a = −2.0 m/s² at every instant. The body slows until t = 2.0 s and then speeds up in the negative direction, with the same acceleration throughout, including the instant at which v = 0.
+Q a(t) = dv/dt = d²x/dt²
+N O a | Instantaneous acceleration | a |
+d Rate of change of velocity: the slope of v(t) and the second derivative of x(t), which sets the concavity of its graph.
+g instantaneous acceleration
+R[def] a <- v, ddt : a(t) = dv/dt = d²x/dt² | Derivative of velocity | The average acceleration over a shrinking interval.
+
+§ 1 3.4
+P If the acceleration a is constant, the [[aavg|average acceleration]] over every interval equals a. Starting the clock at t = 0 with velocity v₀ then gives v = v₀ + at, a velocity linear in time. For a linear velocity the [[vavg|average velocity]] is the mean of the end values, v̄ = (v₀ + v)/2, so the position is x = x₀ + v̄t = x₀ + ½(v₀ + v)t. Substituting v = v₀ + at gives x = x₀ + v₀t + ½at², and eliminating t gives v² = v₀² + 2a(x − x₀). These are the equations of [[kin|constant-acceleration kinematics]]. They hold only while a stays constant: a car that accelerates and then brakes is treated in stages, the final values of one stage serving as the initial values of the next.
+Q v = v₀ + at,   x = x₀ + v₀t + ½at²
+Q v² = v₀² + 2a(x − x₀)
+N M kin | Constant-acceleration kinematics | x = x₀ + v₀t + ½at² |
+d The motion when acceleration does not change: velocity linear and position quadratic in time.
+p valid only for constant a; v = v₀ + at; v² = v₀² + 2a(x − x₀) eliminates t; polynomial of degree two in t
+R[thm] kin <- aavg, vavg : a constant ⇒ ā = a and v̄ = (v₀ + v)/2 | Algebraic derivation | With constant acceleration, the averages fix v(t) and x(t).
+X two-body pursuit problem :: a worked application of the kinematic equations
+P Each of the four [[kin|kinematic equations]] leaves out one quantity: v = v₀ + at contains no position, x = x₀ + v₀t + ½at² no final velocity, v² = v₀² + 2a(x − x₀) no time, and x = x₀ + ½(v₀ + v)t no acceleration. The equation to use contains the unknown and otherwise only known quantities. A car braking from 30.0 m/s at 6.00 m/s² stops in (30.0 m/s)²/(2 × 6.00 m/s²) = 75.0 m. In a *two-body pursuit problem* both bodies are described in one [[frame|frame of reference]] with one clock, and they meet when x₁(t) = x₂(t). A car that starts from rest at 2.0 m/s² just as a truck passes it at a constant 20 m/s draws level when (1.0 m/s²)t² = (20 m/s)t, at t = 20 s and x = 400 m, when the car is moving at 40 m/s.
+
+§ 1 3.5
+P Near Earth's surface, when *air resistance* is negligible, all bodies fall with the same constant acceleration whatever their mass, as Galileo argued. Its magnitude is the [[g|acceleration due to gravity]], g = 9.80 m/s², which varies by about half a percent with latitude and altitude. Motion with this acceleration alone is [[ffall|free fall]], whether the body is dropped, thrown down or thrown up. With y positive upward the acceleration is a = −g, and substituting it into the [[kin|constant-acceleration equations]] gives v = v₀ − gt, y = y₀ + v₀t − ½gt² and v² = v₀² − 2g(y − y₀). These equations assume heights small compared with Earth's radius, so that g stays constant, and speeds low enough for the drag of the air to be ignored.
+Q y = y₀ + v₀t − ½gt²,   v = v₀ − gt
+N M ffall | Free fall | y = y₀ + v₀t − ½gt² |
+d Vertical motion with acceleration −g; Galileo's result that the motion does not depend on the mass.
+p special case a = −g of constant-acceleration kinematics; mass-independent; air resistance neglected
+g free fall
+N O g | Free-fall acceleration | g | prim
+d Acceleration of a body falling near Earth's surface without air resistance: about 9.80 m/s², the same for all bodies at one place.
+g acceleration due to gravity
+R[thm] ffall <- kin, g : a = −g (y positive upward) | Constant acceleration g | Substituting a = −g into the kinematic equations.
+P A ball thrown straight up at 14.7 m/s is in [[ffall|free fall]] from the moment it leaves the hand and loses 9.80 m/s of upward velocity each second. It reaches the top at t = v₀/g = 1.50 s, at a height v₀²/(2g) = 11.0 m above the launch point, and is back at the launch point at t = 3.00 s with velocity −14.7 m/s: the same speed, reversed. The acceleration is −g throughout. At the top the velocity is momentarily zero, but it is still changing at 9.80 m/s per second, which is why the ball does not stay there. A body dropped from rest falls ½gt²: 4.90 m in the first second and 19.6 m in the first two.
+
+§ 1 3.6
+P Integration reverses differentiation. The [[integ|time integral]] accumulates a rate over an interval, and by the fundamental theorem of calculus the integral of df/dt from 0 to t equals f(t) − f(0). Applied first to the [[a|acceleration]] and then to the velocity, it gives the velocity and position at time t from their initial values v₀ and x₀. For constant a the first integral is at, so v = v₀ + at; integrating again gives x = x₀ + v₀t + ½at². The [[kin|constant-acceleration equations]] thus follow without the argument about averages. Geometrically, the displacement over an interval is the signed area under the v(t) graph, and the change of velocity is the area under the a(t) graph.
+Q v(t) = v₀ + ∫₀ᵗ a(t′) dt′,   x(t) = x₀ + ∫₀ᵗ v(t′) dt′
+N M integ | Time integral | ∫ dt | ax
+d Accumulates a rate over time; undoes the derivative up to a constant fixed by initial conditions.
+p linear; ∫ (d f/dt) dt = f + C (fundamental theorem of calculus); additive over intervals
+R[thm] kin <- a, integ : v = v₀ + ∫₀ᵗ a dt′,  x = x₀ + ∫₀ᵗ v dt′ | Integral derivation | Integrating a constant acceleration twice gives the kinematic equations.
+P The same two integrations work for any acceleration known as a function of time. An indefinite integral is fixed only up to a constant, v(t) = ∫a(t) dt + C₁ and x(t) = ∫v(t) dt + C₂, and the two constants are set by the initial velocity and the initial position. The [[a|acceleration]] at all times, together with these two initial values, therefore determines the whole [[xt|motion]] x(t) through the [[integ|time integral]]. For a(t) = (2.0 m/s³)t, starting from rest at the origin, v(t) = (1.0 m/s³)t² and x(t) = (1.0 m/s³)t³/3. At t = 3.0 s the body moves at 9.0 m/s and has covered 9.0 m.
+R[thm] xt <- a, integ : v(t) = ∫ a(t) dt + C₁,  x(t) = ∫ v(t) dt + C₂ | Motion from acceleration | Any acceleration history plus initial position and velocity fixes the motion.
+
+# ---------------------------------------------------------------- Chapter 4
+§ 1 4.0
+P Chapter 3 followed a body along a line with a single coordinate. In a plane or in space, position, displacement, velocity and acceleration become [[vec|vectors]]. This chapter defines them and shows that, in [[comp|components]], a motion in three dimensions is three motions along perpendicular axes, each obeying the rules of Chapter 3 and all sharing one clock. Two motions are treated in detail: projectile flight, in which gravity acts on the vertical motion only, and motion on a circle, in which the acceleration has a part directed toward the centre. The chapter ends by relating the descriptions of one motion in two [[frame|frames of reference]] moving relative to each other.
+
+§ 1 4.1
+P In space, a body is located by its [[r|position vector]] r⃗ = x î + y ĵ + z k̂, the arrow from the origin of the frame to the body. Its [[comp|components]] are three coordinates, each a [[x|position]] measured along one axis exactly as in Chapter 3. As the body moves, the tip of r⃗ traces a curve, the [[rt|trajectory]] r⃗(t). Each coordinate is a function of time, so the trajectory is made of three [[xt|motions on a line]], one per axis: r⃗(t) = x(t) î + y(t) ĵ + z(t) k̂. Results about motion on a line therefore apply to each component separately.
+N O r | Position vector | r⃗ |
+d Vector from the origin of the frame to the body: r⃗ = x î + y ĵ + z k̂.
+g position vector
+R[def] r <- x, comp : r⃗ = x î + y ĵ + z k̂ | Three coordinates | One position coordinate per axis of the frame.
+N S rt | Trajectory | r⃗(t) |
+d The kinematic state in space: the curve traced by the position vector, made of three independent motions along the axes.
+m curve t ↦ r⃗(t) in ℝ³
+g trajectory
+R[gen] rt <- xt, r : r⃗(t) = x(t) î + y(t) ĵ + z(t) k̂ | Three line motions | The motion on a line, once per axis.
+P The [[dr|displacement vector]] between two instants is the change of the position vector along the [[rt|trajectory]], Δr⃗ = r⃗(t₂) − r⃗(t₁). Like a displacement on a line, it depends only on the two end positions. A particle that moves from r⃗(t₁) = (1.0 î + 2.0 ĵ) m to r⃗(t₂) = (4.0 î − 2.0 ĵ) m has Δr⃗ = (3.0 î − 4.0 ĵ) m, of magnitude 5.0 m, whatever path it took. The difference between path and displacement is large in *Brownian motion*: a small particle suspended in a liquid is knocked about by molecular impacts and follows an erratic path of many short steps, yet its net displacement, the [[vadd|vector sum]] of the steps, stays far shorter than the path.
+N O dr | Displacement vector | Δr⃗ |
+d Change of the position vector between two instants.
+g displacement vector
+R[def] dr <- rt : Δr⃗ = r⃗(t₂) − r⃗(t₁) | Difference of positions | Taken from the trajectory at two instants.
+P The [[vvec|velocity vector]] is the [[ddt|time derivative]] of the position vector, v⃗ = dr⃗/dt = lim_{Δt→0} Δr⃗/Δt. As Δt shrinks, the chord Δr⃗ lines up with the path, so v⃗ is tangent to the [[rt|trajectory]]. The unit vectors of the frame are constant, so differentiating r⃗(t) means differentiating its components: v⃗ = v_x î + v_y ĵ + v_z k̂, with v_x = dx/dt, v_y = dy/dt and v_z = dz/dt. Each [[comp|component]] is thus a one-dimensional [[v|instantaneous velocity]], and the [[vavg|average velocity]] over an interval becomes the vector Δr⃗/Δt. For r⃗(t) = (2.0 m/s)t î + (1.0 m/s²)t² ĵ, the velocity is v⃗(t) = (2.0 m/s) î + (2.0 m/s²)t ĵ; at t = 1.5 s it is (2.0 î + 3.0 ĵ) m/s, of magnitude 3.6 m/s.
+Q v⃗ = dr⃗/dt = v_x î + v_y ĵ + v_z k̂
+N O vvec | Velocity vector | v⃗ |
+d Rate of change of the position vector; tangent to the trajectory.
+g velocity vector
+R[def] vvec <- rt, ddt : v⃗ = dr⃗/dt | Derivative of the trajectory | Differentiates each component.
+R[gen] vvec <- v, comp : v⃗ = v_x î + v_y ĵ + v_z k̂, v_x = dx/dt | Componentwise | Each component is a one-dimensional velocity.
+
+§ 1 4.2
+P The [[avec|acceleration vector]] is the [[ddt|time derivative]] of the [[vvec|velocity vector]], a⃗ = dv⃗/dt = d²r⃗/dt². In [[comp|components]], a⃗ = a_x î + a_y ĵ + a_z k̂ with a_x = dv_x/dt = d²x/dt², and likewise for y and z, so each component is a one-dimensional [[a|instantaneous acceleration]]. A velocity vector can change in magnitude, in direction, or in both, and a⃗ records either change. A car rounding a bend at constant speed is therefore accelerating. For the velocity v⃗(t) = (2.0 m/s) î + (2.0 m/s²)t ĵ of the previous section, a⃗ = (2.0 m/s²) ĵ, constant and directed along the y-axis.
+N O avec | Acceleration vector | a⃗ |
+d Rate of change of the velocity vector; in curved motion it has parts across and along the path (total acceleration).
+g acceleration vector; total acceleration
+R[def] avec <- vvec, ddt : a⃗ = dv⃗/dt = d²r⃗/dt² | Derivative of velocity | Differentiates each component.
+R[gen] avec <- a, comp : a⃗ = a_x î + a_y ĵ + a_z k̂ | Componentwise | Each component is a one-dimensional acceleration.
+P When a⃗ is constant, each of its components is constant, and the [[kin|constant-acceleration equations]] hold along each axis separately: x = x₀ + v_{0x}t + ½a_{x}t² and y = y₀ + v_{0y}t + ½a_{y}t², and likewise for z, all with the same t. The motions along perpendicular axes are independent and share only the clock. In the example above, x = (2.0 m/s)t is uniform and y = (1.0 m/s²)t² is uniformly accelerated; eliminating t gives y = x²/(4.0 m), a parabola. Whenever a constant acceleration is neither parallel nor antiparallel to a nonzero initial velocity, the [[rt|trajectory]] is a parabola in the plane of the two vectors.
+
+§ 1 4.3
+P [[proj|Projectile motion]] is the motion of a body launched into the air and then acted on by gravity alone, with air resistance neglected. With x horizontal and y vertically up, the acceleration is constant, a⃗ = −g ĵ, where g is the [[g|free-fall acceleration]]. Applying the [[kin|constant-acceleration equations]] to each [[comp|component]] splits the motion in two: uniform motion horizontally and free fall vertically, independent of each other and linked only by the common time. For a launch from the origin at speed v₀ and angle θ₀ above the horizontal, x = (v₀ cos θ₀)t and y = (v₀ sin θ₀)t − ½gt². Eliminating t gives the [[rt|trajectory]], a parabola.
+Q y = (tan θ₀)x − g x²/(2v₀² cos²θ₀)
+N M proj | Projectile motion | a⃗ = −g ĵ |
+d Motion under gravity alone: uniform horizontally, free fall vertically, the two independent.
+p horizontal and vertical motions independent; parabolic trajectory y = (tan θ₀)x − g x²/(2v₀² cos²θ₀); air resistance neglected
+g projectile motion
+R[thm] proj <- kin, g, comp : x = v₀cos θ₀ t,  y = v₀sin θ₀ t − ½gt² | Kinematics per axis | Constant acceleration (0, −g) in components.
+R[read] rt <- proj : parabola y(x) | Trajectory of a projectile | Eliminating t between x(t) and y(t).
+P On level ground the [[proj|projectile]] lands when y returns to zero. Writing y = t(v₀ sin θ₀ − ½gt) shows the nonzero root, the [[tof|time of flight]] T_{tof} = 2v₀ sin θ₀/g. The horizontal distance covered in that time is the [[rng|range]], R = (v₀ cos θ₀)T_{tof} = v₀² sin 2θ₀/g, since 2 sin θ₀ cos θ₀ = sin 2θ₀. For a given launch speed the range is largest at θ₀ = 45°, and complementary angles such as 30° and 60° give equal ranges. At the top of the path the vertical velocity is zero, which gives the maximum height H = v₀² sin²θ₀/(2g). A ball launched at 20.0 m/s and 30.0° stays in the air for 2.04 s, rises 5.10 m and lands 35.3 m away.
+Q T_{tof} = 2v₀ sin θ₀/g,   R = v₀² sin 2θ₀/g
+N O tof | Time of flight | T_tof |
+d Time a projectile spends in the air.
+g time of flight
+R[thm] tof <- proj : T_tof = 2v₀ sin θ₀ / g (level ground) | Return to launch height | Solve y(t) = 0 for the nonzero root.
+N O rng | Range | R |
+d Horizontal distance traveled by a projectile landing at its launch height.
+g range
+R[thm] rng <- proj, tof : R = v₀² sin 2θ₀ / g | Horizontal motion over the flight | x evaluated at the time of flight; largest at θ₀ = 45°.
+P If the landing point is at a different height, the [[tof|time of flight]] is the later root of y(t) = h, where h is the height of the landing point relative to the launch point, and the horizontal distance is v₀ cos θ₀ times that time. At impact the horizontal velocity is still v₀ cos θ₀ and the vertical velocity is v₀ sin θ₀ − gt. A stone thrown horizontally at 15.0 m/s from a cliff 20.0 m high reaches h = −20.0 m after t = √(2 × 20.0 m / 9.80 m/s²) = 2.02 s and lands 30.3 m from the foot of the cliff. Its vertical velocity is then −19.8 m/s, so it strikes the ground at 24.8 m/s, 52.9° below the horizontal.
+
+§ 1 4.4
+P A body moving on a circle of radius r about the origin follows a special [[rt|trajectory]]: in [[polar|polar coordinates]] its radial coordinate stays fixed and only the angle changes. Its position is r⃗(t) = r cos φ(t) î + r sin φ(t) ĵ, so the [[circ|circular motion]] is described completely by the one function φ(t). With φ in radians, the arc length covered from φ = 0 is s = rφ. When the body covers equal arcs in equal times, its speed is constant and the motion is uniform circular motion; otherwise the motion is nonuniform.
+N S circ | Circular motion | φ(t) on a circle |
+d The state of a body moving on a circle of radius r: its angle at every instant.
+m curve on a circle S¹ ⊂ ℝ²: r⃗(t) = r(cos φ(t), sin φ(t))
+R[thm] circ <- rt, polar : r⃗(t) = r cos φ î + r sin φ ĵ, r fixed | Trajectory with constant radius | Polar coordinates with r held fixed.
+P Even at constant [[speed|speed]] v, the velocity in [[circ|circular motion]] keeps turning, so the body accelerates. With constant speed and φ = 0 at t = 0, the angle grows as φ = vt/r. Differentiating r⃗(t) once gives v⃗ = −v sin φ î + v cos φ ĵ, tangent to the circle; differentiating again gives a⃗ = −(v²/r)(cos φ î + sin φ ĵ). This vector points from the body toward the centre and has magnitude a_C = v²/r, the [[ac|centripetal acceleration]]. A car taking a curve of radius 50 m at 20 m/s has a_C = 8.0 m/s², about 0.8g. At a fixed speed, halving the radius doubles a_C; at a fixed radius, doubling the speed quadruples it.
+N O ac | Centripetal acceleration | a_C |
+d Acceleration toward the centre needed to keep a body on a circle.
+g centripetal acceleration
+R[thm] ac <- circ, speed : a_C = v²/r | From the circular trajectory | Differentiating r⃗(t) twice at constant speed.
+P The rate at which the angle of a [[circ|circular motion]] advances is the [[omega|angular frequency]] ω = dφ/dt, the [[ddt|time derivative]] of φ, measured in radians per second. In uniform circular motion ω is constant, φ = ωt, and one turn takes 2π/ω. Since the arc length is s = rφ, the speed is v = rω, and the [[ac|centripetal acceleration]] becomes a_C = v²/r = rω². Earth turns once in about 8.6 × 10⁴ s, so ω ≈ 7.3 × 10⁻⁵ rad/s, and a point on the equator, at r = 6.37 × 10⁶ m, has a_C ≈ 0.034 m/s², about 0.35 % of g.
+Q a_C = v²/r = rω²
+N O omega | Angular frequency | ω |
+d Rate at which the angle advances, in rad/s; constant in uniform circular motion.
+g angular frequency
+R[def] omega <- circ, ddt : ω = dφ/dt | Rate of the angle | Derivative of the polar angle.
+R[thm] ac <- circ, omega : a_C = rω² | In terms of ω | Same result with v = rω.
+P If the speed changes as well, the circular motion is nonuniform and the acceleration gains a second part. The [[at|tangential acceleration]] a_T = d|v⃗|/dt, the [[ddt|time derivative]] of the [[speed|speed]], points along the path and is zero in uniform circular motion. The *total acceleration* a⃗ = a⃗_C + a⃗_T is the [[vadd|vector sum]] of this part and the [[ac|centripetal acceleration]], which is still v²/r at each instant. The two parts are perpendicular, so the [[avec|acceleration vector]] has magnitude √(a_C² + a_T²). The same split applies to any curved path, with r the radius of the circle that best fits the path at that point. A car at 10 m/s on a curve of radius 50 m, speeding up at 2.0 m/s², has a_C = a_T = 2.0 m/s² and a total acceleration of 2.8 m/s², directed 45° ahead of the inward radius.
+N O at | Tangential acceleration | a_T |
+d Rate of change of speed; directed along the path.
+g tangential acceleration
+R[def] at <- speed, ddt : a_T = d|v⃗|/dt | Change of speed | Zero in uniform circular motion.
+R[thm] avec <- ac, at, vadd : a⃗ = a⃗_C + a⃗_T | Normal and tangential parts | The acceleration of a curved motion splits into a part across the path and a part along it.
+
+§ 1 4.5
+P The same motion is described differently in different [[frame|reference frames]]. Let a frame S′ move relative to a frame S, with r⃗_{S′S} the position of the origin of S′ in S. A particle P has the [[r|position vector]] r⃗_{PS′} in S′ and r⃗_{PS} in S, and the [[vadd|vector sum]] of the arrows gives r⃗_{PS} = r⃗_{PS′} + r⃗_{S′S}. Differentiating with respect to the time common to both frames gives the rule of [[galrel|relative motion]] for velocities, v⃗_{PS} = v⃗_{PS′} + v⃗_{S′S}, and the same rule for accelerations. If S′ moves at constant velocity relative to S, then a⃗_{S′S} = 0⃗ and both frames measure the same acceleration. The rules rest on one time for all frames; for speeds approaching the speed of light they fail, and special relativity replaces them.
+Q v⃗_{PS} = v⃗_{PS′} + v⃗_{S′S}
+N M galrel | Relative motion | v⃗_PS = v⃗_PS′ + v⃗_S′S |
+d Converts positions and velocities between two reference frames in relative motion by adding the frames' relative position and velocity.
+p vector addition of relative positions, velocities and accelerations; time is the same in all frames; acceleration is frame-independent for frames moving uniformly
+g reference frame
+R[thm] galrel <- frame, vadd, r : r⃗_PS = r⃗_PS′ + r⃗_S′S | Composition of position vectors | Differentiating with a common time gives the velocity and acceleration rules.
+P Solved for the velocity in the moving frame, the rule of [[galrel|relative motion]] gives the [[vrel|relative velocity]] v⃗_{PS′} = v⃗_{PS} − v⃗_{S′S}: the [[vvec|velocity vector]] measured in S minus the velocity of S′. Rain falling vertically at 8.00 m/s relative to the ground, seen from a car driving at 15.0 m/s, moves at 17.0 m/s relative to the car, slanting backward at 61.9° from the vertical. A boat heading straight across a river at 4.00 m/s relative to the water, in a current of 3.00 m/s, moves relative to the shore at 5.00 m/s, at 36.9° downstream from its heading. With more than two frames, relative velocities chain: v⃗_{PC} = v⃗_{PA} + v⃗_{AB} + v⃗_{BC}.
+N O vrel | Relative velocity | v⃗_PS′ |
+d Velocity of a body measured in a frame that itself moves.
+g relative velocity
+R[thm] vrel <- galrel, vvec : v⃗_PS′ = v⃗_PS − v⃗_S′S | Subtract the frame's velocity | Velocities measured in two frames differ by the frames' relative velocity.

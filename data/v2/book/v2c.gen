@@ -1,0 +1,413 @@
+# University Physics Volume 2, chapters 11-16 (magnetism, induction, ac circuits, electromagnetic waves)
+
+§ 2 11.0
+P Chapters 5 to 10 described [[q|charges]] at rest, the [[Efield|electric field]] they produce and the steady [[curr|currents]] that flow in circuits. Moving charges show a second interaction, magnetism. A compass needle turns near a current, and two wires carrying currents pull on or push each other. This chapter defines the magnetic field through the force it exerts on a moving charge, follows charged particles through such a field, and finds the force and torque on wires and current loops. It ends with the Hall effect and with instruments that sort charged particles. The sources of magnetic fields are the subject of Chapter 12.
+§ 2 11.1
+P A magnetized needle that can turn freely, a *compass needle*, settles along a north–south line. The end that points north is its *north magnetic pole*, and the other end its *south magnetic pole*. When two magnets are brought together, the [[F|forces]] between their [[magnet|magnetic poles]] follow a simple rule: like poles repel and unlike poles attract, more strongly the closer the poles are. Poles differ from electric charges in one essential way: they always come in pairs. A bar magnet cut in two gives two shorter magnets, each with its own north and south pole. Earth also acts as a magnet. Its magnetic pole near the geographic North Pole is in fact a south pole, which is why it attracts the north end of a compass needle.
+N S magnet | Magnetic poles | N, S |
+d Every magnet has a north and a south pole; like poles repel, unlike attract, and cutting a magnet never isolates a single pole.
+m pair of poles of a magnetic dipole; no isolated monopoles observed
+g north magnetic pole; south magnetic pole
+R[meas] magnet <- F : forces between magnets; a compass needle aligns north–south | Observed attraction and repulsion | The oldest magnetic observations.
+P Magnetism and electricity were long treated as separate subjects. In 1820 Hans Christian Oersted found that a current in a wire deflects a nearby compass needle, so currents have magnetic effects. Soon afterwards Jean-Baptiste Biot and Félix Savart measured how this effect falls off with distance from a wire, André-Marie Ampère showed that two [[curr|currents]] exert [[F|forces]] on each other, and François Arago and Humphry Davy magnetized iron with a current. In 1831 Michael Faraday found the converse effect: a changing magnetic influence drives a current in a closed circuit. These results underlie motors, generators and transformers, and also modern devices such as the read heads of hard drives, which use *giant magnetoresistance*, a large change in the resistance of layered metal films in a magnetic field.
+
+§ 2 11.2
+P A charge at rest near a magnet feels no magnetic force, but a moving charge does. Experiments fix the properties of this [[lorentzF|magnetic force]]. It is proportional to the charge q and to the speed v. It vanishes for motion along the direction in which a compass needle would point, is largest for motion perpendicular to it, and always acts perpendicular both to the [[vvec|velocity]] and to that direction. The [[cross|vector product]] F⃗ = q v⃗ × B⃗ summarizes all of this, with the vector B⃗ describing the magnet's influence at the position of the charge. For a positive charge the direction follows *right-hand rule-1*: point the fingers of the right hand along v⃗ and curl them toward B⃗; the thumb gives F⃗. A negative charge feels the opposite force. Since F⃗ is perpendicular to v⃗, the magnetic force does no work: it changes the direction of motion, never the speed.
+N M lorentzF | Magnetic force on a moving charge | F⃗ = q v⃗ × B⃗ | ax
+d A charge moving through a magnetic field feels a force perpendicular to both its velocity and the field (right-hand rule); the force does no work.
+p velocity-dependent; ⟂ to v⃗ and B⃗; magnitude qvB sin θ; does no work, changes only direction
+g magnetic force; right-hand rule-1
+P The vector B⃗ defines the [[Bfield|magnetic field]]. Around a [[magnet|magnet]] its direction is mapped with a small compass, whose needle lines up with B⃗ at each point. Its magnitude is defined, as the electric field was, by the [[F|force]] on a test charge, here a moving one: B⃗ is the field for which a charge q moving at v⃗ feels the [[lorentzF|magnetic force]] q v⃗ × B⃗. The SI unit is the *tesla*, 1 T = 1 N/(A·m); the older *gauss* is 1 G = 10⁻⁴ T. Earth's field at the surface is about 5 × 10⁻⁵ T. *Magnetic field lines* are drawn tangent to B⃗ and crowded where the field is strong. Outside a magnet they run from the north pole to the south pole, and inside they continue back, so every line closes on itself. Field lines never start or end, because no isolated poles, *magnetic monopoles*, have been found.
+N S Bfield | Magnetic field | B⃗(r⃗) |
+d The field around magnets and currents, mapped by a compass; its field lines form closed loops. SI unit the tesla (1 G = 10⁻⁴ T).
+m divergence-free vector field on ℝ³: field lines close on themselves
+g magnetic field lines; tesla; gauss
+R[meas] Bfield <- magnet : direction mapped with a compass needle | Field around a magnet | The needle aligns with B⃗.
+R[def] Bfield <- lorentzF, F : B⃗ is the field for which F⃗ = q v⃗ × B⃗ | Defined by the force on a moving charge | Measured with a moving test charge, as E⃗ is with a charge at rest.
+P The [[Bval|value of the field]] at one point is found by sending a test charge through that point. If a charge q moving at speed v at angle θ to the [[Bfield|field]] feels a force of magnitude F, then B = F/(qv sin θ). Conversely, a [[q|charge]] in a known field feels a magnetic [[F|force]] of magnitude qvB sin θ, directed along the [[cross|vector product]] of its [[vvec|velocity]] with B⃗. This [[lorentzF|magnetic force]] enters [[n2|Newton's second law]] like any other force, and when an electric field is also present the total force is q(E⃗ + v⃗ × B⃗). A proton moving at 2.0 × 10⁶ m/s perpendicular to a 0.50 T field, for example, feels F = (1.602 × 10⁻¹⁹ C)(2.0 × 10⁶ m/s)(0.50 T) = 1.6 × 10⁻¹³ N, about 10¹³ times its weight.
+Q F⃗ = q v⃗ × B⃗,  F = qvB sin θ
+N O Bval | Magnetic field value | B⃗ |
+d Field at one point, defined through the force on a moving test charge: B = F/(qv sin θ).
+R[read] Bval <- Bfield : B⃗ at one point | Value of the field | Where the moving charge is.
+R[law] F <- lorentzF, q, vvec, Bval, cross : F⃗ = q v⃗ × B⃗ | Force on a moving charge | Enters the second law like any force.
+
+§ 2 11.3
+P In a uniform field, a charge moving perpendicular to B⃗ feels a [[lorentzF|magnetic force]] of constant size qvB, always perpendicular to its velocity. This is the condition for [[circ|uniform circular motion]], with the magnetic force acting as the [[Fc|centripetal force]]: qvB = mv²/r. The charge therefore moves on a [[helix|circular orbit]] of radius r = mv/(qB), with period T = 2πr/v = 2πm/(qB). The period does not depend on the speed: a faster particle moves on a larger circle and returns in the same time. An electron moving at 1.0 × 10⁶ m/s in a field of 1.0 × 10⁻³ T has r = 5.7 mm and T = 3.6 × 10⁻⁸ s. A velocity component along B⃗ feels no force and stays constant, so in general the orbit is a helix wound around a field line, *helical motion*. These results assume speeds well below c.
+Q r = mv/(qB),  T = 2πm/(qB)
+N S helix | Circular and helical orbits | r = mv/(qB) |
+d A charge in a uniform field moves on a circle of radius mv/(qB) with period 2πm/(qB); a velocity component along B⃗ turns the circle into a helix.
+m helix around a field line: uniform circular motion in the plane ⟂ B⃗ plus uniform motion along B⃗
+g helical motion
+R[thm] helix <- lorentzF, Fc, circ : qvB = mv²/r ⇒ r = mv/(qB),  T = 2πm/(qB) | Magnetic force as centripetal force | The period does not depend on speed.
+X cosmic rays :: charged particles from space, an example of motion along field lines
+P Earth's magnetic field guides charged particles in the same way. Fast protons and electrons from the Sun, and *cosmic rays* from beyond the solar system, move along [[helix|helical paths]] around the field lines. Many are trapped in two doughnut-shaped regions around Earth, the *Van Allen radiation belts*, where they spiral back and forth between the polar regions. Near the poles the field lines bend down into the atmosphere, so particles that follow them reach low altitudes there. Their collisions with oxygen and nitrogen make the gases emit light, the *aurorae*. Particles that arrive across the field lines are deflected instead, so the [[Bfield|magnetic field]] also shields the surface from part of this radiation.
+
+§ 2 11.4
+P A current in a wire is a flow of charge carriers, so a wire in a magnetic field feels the sum of the forces on its carriers. Take a straight segment of length l and cross-sectional area A, with n carriers of charge q per unit volume moving at the [[vd|drift velocity]] v⃗_d. Each carrier feels the [[lorentzF|magnetic force]] q v⃗_d × B⃗, and the segment holds nAl carriers. Since the [[curr|current]] is I = nqAv_d, the total [[F|force]] is F⃗ = I l⃗ × B⃗, where l⃗ has the length of the segment and points along the current, and the direction follows from the [[cross|vector product]]. For a curved wire or a nonuniform field, the forces dF⃗ = I dl⃗ × B⃗ on the elements are summed along the wire. A 0.50 m wire carrying 2.0 A at right angles to a 0.30 T field feels a force of 0.30 N.
+Q F⃗ = I l⃗ × B⃗
+R[thm] F <- lorentzF, curr, cross : F⃗ = I l⃗ × B⃗ | Force on a current-carrying wire | Sum of the forces on the moving carriers.
+
+§ 2 11.5
+P A closed current loop in a uniform field feels no net force, because the forces on opposite parts cancel: the sum of I dl⃗ × B⃗ around a closed path is zero. The loop can still turn. How strongly it turns is set by its [[mu|magnetic dipole moment]], defined for a flat coil of N turns, each carrying [[curr|current]] I around an area A, as μ⃗ = NIA n̂. The area follows from the coil's [[L|lengths]], for example A = ab for a rectangle with sides a and b. The unit normal n̂ points along the thumb of the right hand when the fingers curl with the current. A coil of 50 turns and radius 2.0 cm carrying 0.40 A has μ = 50 × 0.40 A × π(0.020 m)² = 2.5 × 10⁻² A·m². A current loop is a *magnetic dipole*: it acts like a small bar magnet whose north pole lies on the side n̂ points to.
+N O mu | Magnetic dipole moment | μ⃗ = NIA n̂ |
+d Current times area of a loop (times the number of turns), along the loop's normal; a current loop is a magnetic dipole.
+g magnetic dipole; magnetic dipole moment
+R[def] mu <- curr, L : μ⃗ = N I A n̂ | Current times area | Direction by the right-hand rule.
+P Take a rectangular loop with sides a and b in a uniform field B⃗, free to turn about an axis parallel to the sides a and perpendicular to B⃗. Those two sides feel equal and opposite forces IaB, a couple. When n̂ makes angle θ with B⃗, their lines of action are b sin θ apart, so the [[tau|torque]] is IabB sin θ = μB sin θ; the forces on the other two sides lie along the axis. In vector form the torque is the [[cross|vector product]] of the [[mu|dipole moment]] with the [[Bval|field]], and it turns μ⃗ toward B⃗. The work done against this torque gives the loop a [[U|potential energy]] U = −μ⃗·B⃗, a [[dot|scalar product]] chosen to be zero at θ = 90°. It is lowest, −μB, when μ⃗ points along B⃗, and highest, +μB, when it points against it. Both results hold for a flat loop of any shape.
+Q τ⃗ = μ⃗ × B⃗,  U = −μ⃗·B⃗
+R[thm] tau <- mu, Bval, cross : τ⃗ = μ⃗ × B⃗ | Torque on a current loop | Forces on opposite sides form a couple.
+R[thm] U <- mu, Bval, dot : U = −μ⃗·B⃗ | Energy of a dipole in a field | Lowest when aligned with the field.
+X motor (dc) :: an application of the torque on a current loop
+P The [[tau|torque]] on a current loop drives the dc electric motor. A coil turns between the poles of a magnet, and the torque μB sin θ pulls its [[mu|dipole moment]] toward the field. Once μ⃗ passes the field direction, the torque would reverse and swing the coil back. A *commutator*, a split ring with sliding contacts, reverses the current in the coil every half turn, so the torque keeps the same sense and the coil keeps turning. Practical *motors* use many turns and iron cores to raise μ and B. The coil described above, with μ = 2.5 × 10⁻² A·m², feels a maximum torque of 5.0 × 10⁻³ N·m in a 0.20 T field.
+
+§ 2 11.6
+P In 1879 Edwin Hall found that a current-carrying strip in a magnetic field develops a voltage across its width, the *Hall effect*. Let the strip have width l and cross-sectional area A, with the [[Bval|field]] B perpendicular to its face. Carriers moving at the [[vd|drift velocity]] v_d feel a sideways [[lorentzF|magnetic force]] qv_{d}B and collect on one edge. The charge separation sets up a transverse electric field E, which grows until qE = qv_{d}B. The [[VH|Hall voltage]] is then V = El = Blv_d, or V = IBl/(neA), since I = neAv_d. Its sign shows whether the carriers are positive or negative, and its size gives their density n. In copper (n = 8.5 × 10²⁸ m⁻³) a strip 1.0 mm thick carrying 10 A in 1.0 T gives only 0.7 μV. Semiconductors have far fewer carriers and larger Hall voltages, so the Hall probes used to measure B are made from them.
+Q V = Blv_d = IBl/(neA)
+N O VH | Hall voltage | V = Blv_d |
+d Voltage across a current-carrying strip in a magnetic field, from carriers pushed to one side; its sign reveals the sign of the carriers.
+g Hall effect
+R[thm] VH <- lorentzF, vd, Bval : qE = qv_{d}B ⇒ V = Blv_{d} = IBl/(neA) | Balance of electric and magnetic forces | Steady state when the transverse field cancels the magnetic force.
+P The balance in the Hall effect is one case of a general arrangement. When a uniform [[Eval|electric field]] and a uniform magnetic field are perpendicular to each other and to the velocity of a charged particle, and oriented so that their forces oppose, the net force qE⃗ + qv⃗ × B⃗ vanishes at exactly one speed, v = E/B. Particles with that speed pass straight through. Faster ones are pushed aside by the larger [[lorentzF|magnetic force]], and slower ones by the electric force. The device is a [[vsel|velocity selector]], and the speed it passes depends on neither the charge nor the mass. Fields of 2.0 × 10⁴ V/m and 0.10 T, for instance, select particles moving at 2.0 × 10⁵ m/s.
+Q v = E/B
+N M vsel | Velocity selector | v = E/B |
+d Crossed electric and magnetic fields pass undeflected only particles with speed E/B.
+p force balance qE = qvB; independent of charge and mass
+g velocity selector
+R[thm] vsel <- lorentzF, Eval : qE⃗ + qv⃗ × B⃗ = 0 | Crossed fields | Electric and magnetic forces cancel at one speed.
+
+§ 2 11.7
+X cyclotron; dees; mass spectrometer :: instruments built on circular orbits in a magnetic field
+P Circular orbits in a magnetic field are the basis of two instruments. In a *mass spectrometer*, ions first pass a [[vsel|velocity selector]], so all have the speed v = E/B. They then enter a second uniform field B₀, travel on a semicircle of radius R = mv/(qB₀), and strike a detector. Ions with different charge-to-mass ratios land at different places, and q/m = E/(BB₀R). In a *cyclotron*, charged particles circle in a uniform field inside two hollow D-shaped electrodes, the *dees*. An alternating voltage across the gap between the dees accelerates the particles twice per turn. Because the period 2πm/(qB) of a [[helix|circular orbit]] does not depend on speed, a fixed frequency stays in step as the orbit grows. Particles leave at the rim radius R with speed v_{max} = qBR/m, valid while v is well below c.
+
+# ---------------------------------------------------------------- Chapter 12
+§ 2 12.0
+P Chapter 11 took the magnetic field as given and found its effect on moving charges and currents. This chapter asks where the field comes from. The answer is [[curr|currents]], and moving charges in general. Two laws give the field. The Biot–Savart law adds up the contributions of small current elements, much as [[coul|Coulomb's law]] adds up point charges. Ampère's law relates the field around a closed path to the current through it, much as [[gauss|Gauss's law]] relates the electric field to the enclosed charge. Applied to wires, loops, solenoids and toroids, they give the [[Bfield|magnetic field]] of each and the force between parallel wires, and lead finally to magnetism in matter.
+§ 2 12.1
+P The [[bs|Biot–Savart law]] gives the magnetic field of a steady current. Divide a wire into elements dl⃗ that point along the [[curr|current]] I. An element contributes, at a field point a distance r away in the direction of the unit vector r̂, the field dB⃗ = (μ₀/4π) I dl⃗ × r̂/r². Like Coulomb's law it falls as the inverse square of the distance. Unlike it, the contribution is perpendicular to both dl⃗ and r̂, as the [[cross|vector product]] requires, with magnitude (μ₀/4π) I dl sin θ/r², zero along the line of the element. The constant μ₀ is the [[mu0|permeability of free space]], 4π × 10⁻⁷ T·m/A; since 2019 it is a measured constant, equal to this value within about one part in 10⁹. Because contributions add as vectors, the [[Bfield|magnetic field]] of a whole circuit is an [[integ|integral]] along it. The law summarizes measurements on many current shapes.
+Q B⃗ = (μ₀/4π) ∫ I dl⃗ × r̂/r²
+N M bs | Biot–Savart law | dB⃗ = (μ₀/4π) I dl⃗ × r̂/r² | ax
+d Each element of a current contributes to the magnetic field in proportion to the current and inversely to the square of the distance, perpendicular to both element and line of sight.
+p inverse square per element; perpendicular to dl⃗ and r̂; linear (superposition of elements)
+g Biot-Savart law
+N O mu0 | Permeability of free space | μ₀ | prim
+d Constant in the magnetic field laws, 4π × 10⁻⁷ T·m/A.
+g permeability of free space
+R[law] Bfield <- bs, curr, mu0, cross, integ : B⃗ = (μ₀/4π) ∫ I dl⃗ × r̂/r² | Field from currents | Integrate over the wire.
+
+§ 2 12.2
+P Apply the [[bs|Biot–Savart law]] to a long straight wire carrying [[curr|current]] I along the x-axis, at a point a perpendicular distance R from it. An element dx at position x is a distance r = √(x² + R²) from the point, and sin θ = R/r. All elements contribute in the same direction, so the magnitudes add: B = (μ₀I/4π) ∫ R dx/(x² + R²)^{3/2}. From −∞ to ∞ the integral equals 2/R, so the [[Bwire|field of a long straight wire]] is B = μ₀I/(2πR), with [[mu0|μ₀]] the permeability of free space. The field lines are circles centred on the wire. Their sense follows a *right-hand rule*: with the thumb along the current, the fingers curl in the direction of B⃗. A wire carrying 10 A produces 4.0 × 10⁻⁵ T at 5.0 cm, comparable to Earth's field. A real wire fits the result when its length is much greater than R.
+Q B = μ₀I/(2πR)
+N O Bwire | Field of a long straight wire | B = μ₀I/(2πR) |
+d Circles around the wire, falling inversely with distance (right-hand rule for its direction).
+R[thm] Bwire <- bs, curr, mu0 : ∫_{−∞}^{∞} μ₀I dx sin θ/(4πr²) = μ₀I/(2πR) | Biot–Savart for a line | Integrate along the infinite wire.
+
+§ 2 12.3
+P Two long parallel wires a distance r apart carry currents I₁ and I₂. Wire 1 produces at the position of wire 2 the [[Bwire|field]] B₁ = μ₀I₁/(2πr), perpendicular to wire 2. Adding the [[lorentzF|magnetic forces]] on the moving carriers of wire 2, as in Section 11.4, gives a force F = I₂lB₁ on a length l of it. The [[Fpar|force between parallel currents]] per unit length is therefore μ₀I₁I₂/(2πr). By [[n3|Newton's third law]], wire 1 feels an equal and opposite force. The right-hand rules show that [[curr|currents]] in the same direction attract and currents in opposite directions repel. Two wires 1.0 cm apart, each carrying 10 A, attract with 2.0 × 10⁻³ N per metre.
+Q F/l = μ₀I₁I₂/(2πr)
+N O Fpar | Force between parallel currents | F/l = μ₀I₁I₂/(2πr) |
+d Parallel currents attract and antiparallel currents repel; this force once defined the ampere.
+R[thm] Fpar <- Bwire, lorentzF, curr : F = I₂ l B₁ with B₁ = μ₀I₁/(2πr) | One wire in the other's field | Third-law pair of magnetic forces.
+P The same attraction acts between parallel streams of charge within one conductor. A large current through a plasma or a liquid metal is squeezed inward by it, the *pinch effect*. Because the [[Fpar|force]] depends only on currents and distance, it once served to define the *ampere*: 1 A was the steady current that, in two long, thin parallel wires 1 m apart in vacuum, produced a force of 2 × 10⁻⁷ N per metre of length. Since 2019 the ampere has been fixed instead by giving the elementary charge the exact value 1.602 176 634 × 10⁻¹⁹ C, and the *coulomb* is the [[q|charge]] carried by 1 A in 1 s.
+
+§ 2 12.4
+P The [[bs|Biot–Savart law]] also gives the field of a circular loop of radius R carrying [[curr|current]] I, at a point on its axis a distance z from the centre. Every element is perpendicular to the line to that point, at distance √(z² + R²). The components perpendicular to the axis cancel in pairs from opposite sides, and the axial components add to the result below. At the centre it is μ₀I/(2R). An arc of angle θ contributes the fraction θ/2π of this, μ₀Iθ/(4πR). Far along the axis, z ≫ R, the field approaches μ₀μ/(2πz³), with μ = IπR² the [[mu|magnetic dipole moment]]. This inverse-cube fall-off is that of a dipole, like the field on the axis of an [[pdip|electric dipole]].
+Q B = μ₀IR²/[2(z² + R²)^{3/2}]
+§ 2 12.5
+P [[ampere|Ampère's law]] states the field of steady currents in another form. For any closed path, the line integral of B⃗ around it equals μ₀ times the net current I_{enc} through any surface bounded by the path. A current counts as positive if it passes in the direction of the thumb when the fingers of the right hand curl along the path. The [[Bwire|field of a long wire]] shows how this works: on a circle of radius r centred on the wire, B = μ₀I/(2πr) is tangent and constant, so the [[integ|integral]] is (μ₀I/2πr)(2πr) = μ₀I for every radius. For a path that does not enclose the wire, the contributions cancel. The general statement follows from the [[bs|Biot–Savart law]] for any steady current. It holds for every path, but it yields B only when symmetry makes B constant along a suitable path. Chapter 16 adds a term needed when electric fields change in time.
+Q ∮B⃗·dl⃗ = μ₀I_{enc}
+N M ampere | Ampère's law | ∮B⃗·dl⃗ = μ₀ I_enc |
+d The line integral of the magnetic field around any closed loop equals μ₀ times the current through it.
+p steady currents only; any closed loop; useful with symmetry; incomplete for changing fields (Maxwell's correction)
+g Ampère’s law
+R[thm] ampere <- bs, Bwire, integ : ∮ (μ₀I/2πr) r dθ = μ₀I | Generalises the wire result | Consistent with Biot–Savart for steady currents.
+P With [[symm|symmetry]], [[ampere|Ampère's law]] gives fields quickly. Inside a long straight wire of radius a whose current I is spread uniformly over its cross section, a circular path of radius r < a encloses the current Ir²/a². Then B·2πr = μ₀Ir²/a², so B = μ₀Ir/(2πa²): the field grows linearly from zero at the axis to μ₀I/(2πa) at the surface, and falls as 1/r outside. In a *coaxial cable*, a central wire and a surrounding cylindrical conductor carry equal currents in opposite directions. A path outside the cable encloses zero net current, so the field there is zero, and the cable's field stays between its conductors.
+
+§ 2 12.6
+P A [[solen|solenoid]] is a long wire wound into a tight helical coil, with n turns per unit length. When it is long compared with its radius, the field inside is nearly uniform and along the axis, and the field outside is nearly zero. Choose a rectangular path with one side of length l inside along the axis and the opposite side outside. Only the inside side contributes to the line integral, and the path encloses nl turns, each carrying [[curr|current]] I. [[ampere|Ampère's law]] gives Bl = μ₀nlI, so B = μ₀nI anywhere inside. Adding the axial fields of the individual turns gives the same result. A *toroid* is a solenoid bent into a ring of N turns; by [[symm|symmetry]] its field lines are circles, and a circular path of radius r inside gives B = μ₀NI/(2πr), with zero field outside. *Magnetic resonance imaging* uses large solenoids with fields of 1.5 to 3 T.
+Q B = μ₀nI
+N S solen | Solenoid and toroid | B = μ₀nI |
+d A long coil has a nearly uniform field inside, B = μ₀nI, and almost none outside; a toroid confines its field, B = μ₀NI/(2πr).
+m uniform axial field inside a long solenoid; azimuthal field inside a toroid, zero outside
+g solenoid; toroid
+R[thm] solen <- ampere, curr, symm : B l = μ₀ n l I | Ampère loop through the coil | Symmetry makes B uniform inside.
+
+§ 2 12.7
+P Matter responds to a magnetic field because its atoms carry [[mu|magnetic dipole moments]], from the orbital motion and the spin of their [[atom|electrons]]. If a solenoid is filled with a material, the field inside becomes B = μnI, where μ = (1 + χ)μ₀ is the permeability of the material and χ its *magnetic susceptibility*. The sum of the atomic moments in a volume decides how [[magmat|magnetic materials]] behave. In a *paramagnetic material*, such as aluminium, the atoms have permanent moments that the [[Bfield|field]] partly aligns against thermal agitation; χ is small and positive, about 2 × 10⁻⁵ for aluminium, and decreases as the temperature rises. In a *diamagnetic material*, such as copper or water, the atoms have no net moment; the applied field induces weak moments that oppose it, so χ is small and negative, about −1 × 10⁻⁵ for copper. Both responses are linear in the applied field.
+Q μ = (1 + χ)μ₀
+N M magmat | Magnetism in matter | μ = (1 + χ) μ₀ |
+d Atomic magnetic dipoles respond to a field: weakly along it (paramagnetic, χ > 0), weakly against it (diamagnetic, χ < 0), or strongly with domains and hysteresis (ferromagnetic).
+p paramagnetic and diamagnetic linear with small χ; ferromagnetic nonlinear, history-dependent (hysteresis), domains
+g paramagnetic materials; ferromagnetic materials; diamagnetic materials; magnetic susceptibility; magnetic domains; hysteresis
+R[thm] magmat <- mu, atom, Bfield : atomic dipoles μ⃗ align or oppose B⃗ | Atomic dipoles | Sum of atomic magnetic moments per volume.
+P In a *ferromagnetic material*, such as iron, nickel or cobalt, neighbouring atomic moments line up with each other spontaneously over regions called *magnetic domains*. In an unmagnetized sample the domains point in random directions. An applied field makes the domains aligned with it grow, so the material adds a field hundreds or thousands of times larger than the applied one; in effect χ is very large and depends on the field. The response is nonlinear and depends on history. When the applied field is removed, much of the alignment remains, which is how permanent magnets are made. A plot of magnetization against applied field traces a loop, called *hysteresis*. Above a temperature characteristic of each [[magmat|ferromagnetic material]], 1043 K for iron, thermal agitation destroys the domains and the material becomes paramagnetic.
+
+# ---------------------------------------------------------------- Chapter 13
+§ 2 13.0
+P [[curr|Currents]] produce magnetic fields, as Chapter 12 showed. The reverse question is whether a [[Bfield|magnetic field]] can produce a current. A steady field cannot: a magnet resting beside a closed wire loop drives no current. A changing field does. This is electromagnetic induction, discovered by Faraday. This chapter defines magnetic flux, states Faraday's law for the induced [[emf|emf]] and Lenz's rule for its direction, and then treats the emf of moving conductors, the electric field created by a changing magnetic field, eddy currents in bulk metal and the electric generator, the source of nearly all electric power.
+§ 2 13.1
+P Induction depends on how much field passes through a circuit. The [[PhiB|magnetic flux]] through a surface S is the [[integ|integral]] over S of the normal component of the [[Bfield|magnetic field]], Φ_m = ∫_S B⃗·n̂ dA, a sum of [[dot|scalar products]] of B⃗ with the unit normal n̂ of each area element. For a flat area A in a uniform field it reduces to Φ_m = BA cos θ, with θ the angle between B⃗ and n̂. The SI unit is the *weber*, 1 Wb = 1 T·m². The sign of the flux depends on which way n̂ is chosen. A field of 0.40 T crossing a 0.010 m² loop at 60° to its normal gives a flux of 2.0 × 10⁻³ Wb. Magnetic flux is defined like the [[PhiE|electric flux]] of Chapter 6, but through a closed surface it is always zero, since magnetic field lines close on themselves.
+N O PhiB | Magnetic flux | Φ_m = ∫B⃗·n̂ dA |
+d Amount of magnetic field through a surface; SI unit the weber.
+g magnetic flux
+R[def] PhiB <- Bfield, dot, integ : Φ_m = ∫_S B⃗·n̂ dA | Surface integral | Uniform field: BA cos θ.
+P Faraday found in 1831 that a current appears in a closed coil while a magnet moves near it, or while the current in a nearby coil is switched on or off, but not while everything is steady. What matters is a change of flux. [[faraday|Faraday's law]] states that the *induced emf* in a circuit equals minus the [[ddt|rate of change]] of the [[PhiB|magnetic flux]] through it; for a coil of N turns, each with flux Φ_m, ε = −N dΦ_m/dt. The flux may change because B changes, because the area changes or because the circuit turns. The induced [[emf|emf]] drives a current as the emf of a battery does, but no battery is present. A 200-turn coil of area 0.010 m², in a perpendicular field that falls steadily from 0.50 T to zero in 0.10 s, has |ε| = 200 × (0.50 T × 0.010 m²)/(0.10 s) = 10 V. The minus sign gives the direction of the emf.
+Q ε = −N dΦ_m/dt
+N M faraday | Faraday's law | ε = −N dΦ_m/dt | ax
+d A changing magnetic flux through a circuit induces an emf in it, whether the field, the area or the orientation changes.
+p linear; any cause of flux change; minus sign = Lenz's law; an induced emf without batteries
+g Faraday’s law; induced emf
+R[law] emf <- faraday, PhiB, ddt : ε = −N dΦ_m/dt | Induced emf | Rate of change of flux.
+
+§ 2 13.2
+P The direction of the induced emf is given by [[lenz|Lenz's law]]: the induced current flows so that its own magnetic field opposes the change in flux that produces it. Push the north pole of a magnet toward a loop, and the flux through the loop, directed away from the magnet, grows. The induced current makes a field toward the magnet, so the near face of the loop acts as a north pole and repels the magnet; pulling the magnet away reverses the current. This rule is the minus sign in [[faraday|Faraday's law]], and conservation of energy, as in the [[flaw|first law of thermodynamics]], requires it. If the induced current aided the change, the magnet would be drawn in faster, the current would grow further, and energy would grow without limit. Instead, the work done against the repulsion becomes electrical energy dissipated in the loop. For a loop or a solenoid, *right-hand rule 2* then gives the current: with the thumb along the induced field, the fingers curl along the current.
+N M lenz | Lenz's law | induced current opposes the change |
+d The induced emf drives a current whose magnetic field opposes the change of flux that produced it.
+p sign rule of Faraday's law; required by energy conservation
+g Lenz’s law
+R[thm] lenz <- faraday, flaw : an aiding current would grow without limit | Energy argument | The minus sign keeps energy conserved.
+
+§ 2 13.3
+P When a conductor moves through a magnetic field, the field acts on the charges it carries along. A metal rod of length l slides at [[speed|speed]] v along two rails, perpendicular to a uniform [[Bval|field]] B. Each carrier in the rod moves with it and feels a [[lorentzF|magnetic force]] qvB along the rod. The force per unit charge, vB, acts along the whole rod, so the work per unit charge from one end to the other is Blv. This is the [[emfmot|motional emf]], ε = Blv. If the rails are joined through a resistor R, a current ε/R flows. A rod 0.20 m long moving at 4.0 m/s in a 0.50 T field has ε = 0.40 V; with R = 2.0 Ω the current is 0.20 A.
+Q ε = Blv
+N O emfmot | Motional emf | ε = Blv |
+d Emf in a conductor moving through a magnetic field.
+g motionally induced emf
+R[thm] emfmot <- lorentzF, Bval, speed : F/q = vB along the rod of length l | Magnetic force on the carriers | Work per charge along the moving rod.
+P The same result follows from [[faraday|Faraday's law]]. The rod and rails form a circuit whose area lx grows at the rate lv, so the [[PhiB|magnetic flux]] changes at dΦ_m/dt = Bl dx/dt = Blv, and the [[emfmot|motional emf]] is again Blv. By [[lenz|Lenz's law]] the current makes the field push back on the rod with a force IlB that opposes the motion. Keeping the rod at constant speed takes a force IlB = B²l²v/R, and the mechanical power supplied, B²l²v²/R, equals the electrical power ε²/R dissipated in the resistor; in the example above both are 0.080 W. A *rail gun* reverses the process: a large current through the rails and a sliding conductor produces a force IlB that accelerates the conductor. A conducting tether several kilometres long, orbiting with a satellite at about 7.7 km/s through Earth's field, develops a motional emf of the order of a kilovolt.
+R[thm] emfmot <- faraday, PhiB : dΦ_m/dt = B l dx/dt | Same result from flux | The circuit's area grows at lv.
+
+§ 2 13.4
+P A loop at rest in a changing magnetic field also has an induced emf, yet no magnetic force acts on charges at rest. The force on them must be electric: a changing magnetic field creates an [[Eind|induced electric field]]. Since emf is work per unit charge around the loop, [[faraday|Faraday's law]] becomes a statement about the line [[integ|integral]] of E⃗ around any closed path, shown below. The field exists whether or not a wire is present. It is an [[Efield|electric field]] in every respect, but its circulation is not zero: its lines close on themselves, it is not conservative, and no electric potential can describe it. Inside a long solenoid of radius R whose field changes at the rate dB/dt, symmetry gives E·2πr = πr² dB/dt in magnitude at radius r < R, so E = (r/2) dB/dt. With dB/dt = 0.050 T/s, E = 1.0 × 10⁻³ V/m at r = 4.0 cm.
+Q ∮E⃗·dl⃗ = −dΦ_m/dt
+N S Eind | Induced electric field | ∮E⃗·dl⃗ = −dΦ_m/dt |
+d A changing magnetic field creates an electric field whose lines close on themselves; it is not conservative.
+m nonconservative electric vector field with closed field lines
+g induced electric field
+R[thm] Eind <- faraday, Efield, integ : ε = ∮E⃗·dl⃗ | Emf as circulation of E⃗ | The induced emf is the work of an electric field around the loop.
+
+§ 2 13.5
+P Faraday's law applies inside bulk metal as well as in wires. When a [[cond|conductor]] moves through a nonuniform field, or sits in a changing one, the flux through closed paths inside it changes and drives loops of current, [[eddy|eddy currents]]. By [[lenz|Lenz's law]] their fields oppose the change, so they oppose the motion that causes them. A metal plate swinging between the poles of a magnet stops within a few swings, while a plate with slots cut across it, which break the current loops, swings almost freely. This *magnetic damping* turns kinetic energy into heat in the resistance of the metal, as [[faraday|Faraday's law]] and [[ohm|Ohm's law]] together imply.
+N O eddy | Eddy currents | loops induced in bulk conductors |
+d Currents induced in a conductor moving in, or exposed to, a changing magnetic field; by Lenz's law they oppose the motion (magnetic damping).
+g eddy current; magnetic damping
+R[thm] eddy <- faraday, lenz, cond : changing flux through loops inside the conductor | Induction in bulk metal | Dissipated as heat.
+P Eddy currents are useful in some devices and wasteful in others. *Braking systems* on some trains and amusement rides use them: magnets near a moving metal rail or fin produce a drag force that grows with speed and needs no contact. *Metal detectors* send an alternating or pulsed field into the ground or through a doorway; [[eddy|eddy currents]] induced in a metal object produce their own field, which a receiving coil detects. Induction cooktops heat a pan by eddy currents in its base. In transformers and motors, eddy currents waste energy as heat, so their iron cores are made of thin insulated sheets that interrupt the current loops.
+
+§ 2 13.6
+P An *electric generator* turns mechanical work into emf by rotating a coil in a magnetic field. Let a coil of N turns and area A turn with constant [[angvel|angular velocity]] ω in a uniform field B, about an axis perpendicular to B⃗. If its normal points along B⃗ at t = 0, the angle between them is ωt and the [[PhiB|flux]] through each turn is Φ_m = BA cos ωt. [[faraday|Faraday's law]] then gives the emf of the [[gen|generator]], ε = NBAω sin ωt, a sinusoid with *peak emf* ε₀ = NBAω. The emf is largest when the plane of the coil is parallel to the field, where the flux is zero but changes fastest. A coil of 100 turns and area 0.020 m², turning 60 times per second in a 0.20 T field, has ω = 377 rad/s and a peak emf of 151 V. Power stations apply the same principle with turbines driven by steam, water or wind.
+Q ε = NBAω sin ωt
+N M gen | Electric generator | ε = NBAω sin ωt |
+d A coil turning in a magnetic field produces a sinusoidal emf with peak NBAω; a motor's coil produces the same, called back emf.
+p sinusoidal output; peak emf ∝ ω; motors and generators are the same device run in reverse
+g electric generator; peak emf; back emf
+R[thm] gen <- faraday, PhiB, angvel : Φ_m = BA cos ωt ⇒ ε = NBAω sin ωt | Rotating coil | The flux changes as the coil turns.
+P A motor is a generator run in reverse, and its rotating coil also produces an emf. By [[lenz|Lenz's law]] this emf opposes the applied voltage that drives the current, so it is called *back emf*. With applied voltage V, back emf ε_b and coil resistance R, the current is I = (V − ε_b)/R. When a motor starts, the coil is at rest, ε_b = 0, and the current is large. As the motor speeds up, the back emf grows in proportion to ω, and the current falls to the value needed to drive the load. A jammed or overloaded motor draws a large current and can overheat. The [[gen|generator]] and the motor are thus one device, converting energy in opposite directions.
+
+§ 2 13.7
+P Induction is at work in many everyday devices. In *hard drives*, a small coil in the write head magnetizes tiny regions of the spinning disk; older read heads detected the [[faraday|induced emf]] as these regions passed, while modern ones sense their field through giant magnetoresistance. Graphics tablets and some *tablet computers* locate a pen that contains a coil through induction between that coil and a grid of wires. Swiping a *credit card* moves its magnetic stripe past a pickup coil and induces a signal. *Hybrid vehicles* and electric cars brake by running their motors as [[gen|generators]], which returns energy to the battery. In *transcranial magnetic stimulation* (TMS), a brief, strong current pulse in a coil held near the head creates an [[Eind|induced electric field]] that drives currents in brain tissue and excites neurons.
+# ---------------------------------------------------------------- Chapter 14
+§ 2 14.0
+P Chapter 13 showed that a changing [[PhiB|magnetic flux]] induces an [[emf|emf]]. When that flux comes from a current in a circuit, a changing current induces an emf in a nearby circuit or in the circuit itself. This chapter measures the effect by inductance, finds the energy stored in a magnetic field, and adds coils to circuits with [[Rres|resistors]] and [[Cap|capacitors]]. The currents then grow and decay exponentially, as in the [[rc|RC circuit]], or oscillate like a mass on a spring. Wireless charging of a *smartphone* is one example: an alternating current in a coil in the charging pad induces an emf in a coil inside the phone.
+§ 2 14.1
+P Two coils placed near each other are coupled by their fields. A [[curr|current]] I₁ in coil 1 sends a [[PhiB|magnetic flux]] Φ₂₁ through each of the N₂ turns of coil 2, and without iron nearby this flux is proportional to I₁. The ratio M = N₂Φ₂₁/I₁ is the [[Mind|mutual inductance]] of the pair. When I₁ changes, [[faraday|Faraday's law]] gives an emf in coil 2, ε₂ = −N₂ dΦ₂₁/dt = −M dI₁/dt. The same M gives the emf in coil 1 when the current in coil 2 changes. M depends on the sizes, shapes, positions and turns of the coils, and on any magnetic material nearby. Its SI unit is the *henry*, named after Joseph Henry: 1 H = 1 Wb/A = 1 V·s/A. Coils with M = 5.0 mH and a current changing at 200 A/s have an induced emf of 1.0 V. Mutual *inductance* is used in transformers and chargers, and is a nuisance between neighbouring wires in fast electronics, such as *digital signal processing* circuits.
+Q ε₂ = −M dI₁/dt
+N O Mind | Mutual inductance | M = N₂Φ₂₁/I₁ |
+d Flux through one circuit per current in another; a changing current in one induces emf ε₂ = −M dI₁/dt in the other. SI unit the henry.
+g inductance; mutual inductance; henry (H)
+R[def] Mind <- faraday, PhiB, curr : M = N₂Φ₂₁/I₁,  ε₂ = −M dI₁/dt | Flux linkage | Fixed by the geometry of the coils and any magnetic material near them; M₁₂ = M₂₁.
+
+§ 2 14.2
+P A coil's own field also passes through its turns. If N turns each carry flux Φ_m when the current is I, the [[Lind|self-inductance]] L is defined by NΦ_m = LI. Since the [[PhiB|flux]] changes with the [[curr|current]], [[faraday|Faraday's law]] gives an emf in the coil itself, ε = −L dI/dt. By [[lenz|Lenz's law]] this emf opposes the change: it acts against a rising current and keeps a falling one going. An *inductor* is a coil built to have a large L, and it resists sudden changes of current. If the current through a 50 mH inductor falls from 2.0 A to zero in 1.0 ms, the induced emf is 0.050 H × 2000 A/s = 100 V. This is why opening a switch in a circuit with a large inductance can draw a spark.
+Q ε = −L dI/dt
+N O Lind | Self-inductance | L = NΦ_m/I |
+d A coil's own flux per unit of its current; a changing current induces ε = −L dI/dt that opposes the change. An inductor is a coil built for this.
+g self-inductance; inductor
+R[def] Lind <- faraday, PhiB, curr : ε = −L dI/dt | Induction on itself | Flux linkage of the coil with its own field.
+P For a long [[solen|solenoid]] of N turns, length l and cross-sectional area A, the field B = μ₀nI with n = N/l gives a flux μ₀NIA/l through each turn. Then NΦ_m = μ₀N²AI/l, so the [[Lind|self-inductance]] is L = μ₀N²A/l, with end effects neglected. It depends only on geometry and grows as the square of the number of turns. A coil of 500 turns, 0.25 m long, with A = 1.0 × 10⁻³ m², has L = 1.26 mH; an iron core raises this greatly. Inductors have many uses. Wire loops under a road change their inductance when a car stops above them, which triggers *traffic signals*; *metal detectors* sense the change of a coil's inductance near metal; and *camera flashes* use inductors in the circuits that raise a battery's voltage.
+Q L = μ₀N²A/l
+R[thm] Lind <- solen : L = μ₀N²A/l | Solenoid | From B = μ₀nI inside.
+
+§ 2 14.3
+P Building up a current in an inductor takes work, because the source must push charge against the induced emf. When the [[curr|current]] is I and changes at the rate dI/dt, the source does [[W|work]] on the inductor at the rate LI dI/dt. Integrating from zero to the final current gives the [[UL|energy stored in an inductor]], U = ∫₀^{I} LI′ dI′ = ½LI², with L the [[Lind|self-inductance]]. The energy is returned when the current falls. A 0.50 H inductor carrying 4.0 A stores 4.0 J. A capacitor's energy is tied to a separation of charge; this energy is stored in the magnetic field of the current, as the next calculation shows.
+Q U = ½LI²
+N O UL | Energy in an inductor | U = ½LI² |
+d Work done against the back emf while the current builds up, stored in the magnetic field.
+R[thm] UL <- Lind, curr, W : U = ∫ L I dI = ½LI² | Work against the induced emf | Power LI dI/dt integrated.
+P Apply this to a long [[solen|solenoid]] with n turns per unit length, length l and area A. Its inductance is L = μ₀n²Al, and its field is B = μ₀nI. The stored [[UL|energy]] is then ½μ₀n²AlI² = (B²/2μ₀)Al. Dividing by the volume Al gives the [[uB|magnetic energy density]] below, with [[mu0|μ₀]] the permeability of free space. The result holds for any magnetic field in vacuum, just as the [[uE|electric energy density]] ε₀E²/2 holds for any electric field. A field of 1.0 T stores 4.0 × 10⁵ J/m³. Integrating u_B over a volume gives the energy, and through U = ½LI² the inductance. For a *coaxial cable* with inner radius R₁, outer radius R₂ and length l, the field μ₀I/(2πr) between the conductors gives U = (μ₀I²l/4π) ln(R₂/R₁), so L = (μ₀l/2π) ln(R₂/R₁).
+Q u_B = B²/(2μ₀)
+N O uB | Magnetic energy density | u_B = B²/(2μ₀) |
+d Energy per unit volume stored in a magnetic field.
+g magnetic energy density
+R[thm] uB <- UL, solen, mu0 : ½LI²/(Al) with L = μ₀n²Al, B = μ₀nI | Energy per volume | The energy belongs to the field.
+
+§ 2 14.4
+P An [[rl|RL circuit]] is a resistor R and an inductor L in series with a source of emf ε. When the switch is closed at t = 0, [[kirch|Kirchhoff's loop rule]] gives ε − IR − L dI/dt = 0, where the drop across the resistor follows [[ohm|Ohm's law]] and the [[Lind|inductor]] contributes L dI/dt. This first-order equation, with I(0) = 0, has the solution below. The current cannot jump, so it starts at zero and rises toward ε/R. The *inductive time constant* τ_L = L/R is the time to reach 1 − 1/e ≈ 63 % of the final current. If the source is then removed and the circuit closed through R alone, the current decays as I = I₀e^{−t/τ_L}. With L = 0.30 H, R = 15 Ω and ε = 12 V, τ_L = 20 ms and the final current is 0.80 A. The behaviour mirrors the [[rc|RC circuit]].
+Q I = (ε/R)(1 − e^{−t/τ_L}),  τ_L = L/R
+N M rl | RL circuit | I = (ε/R)(1 − e^{−t/τ_L}) |
+d Current in a resistor–inductor circuit rises or decays exponentially with time constant τ_L = L/R.
+p first-order linear equation; τ_L = L/R
+g inductive time constant
+R[thm] rl <- kirch, Lind, ohm : ε − IR − L dI/dt = 0 | Loop rule with an inductor | First-order equation for I(t).
+
+§ 2 14.5
+P Connect a charged capacitor to an inductor, with negligible resistance. The capacitor discharges through the inductor, but the inductor keeps the current going after the capacitor is empty, so the capacitor charges again with the opposite sign, and the process repeats. [[kirch|Kirchhoff's loop rule]] for the [[Lind|inductor]] and the [[Cap|capacitance]] C gives L dI/dt + q/C = 0, and with I = dq/dt this is the equation below. Its solution is q = q₀ cos(ωt + φ) with ω = 1/√(LC), and the current is i = −ωq₀ sin(ωt + φ). This is the [[lc|LC circuit]]. Its energy q²/(2C) + Li²/2 stays equal to q₀²/(2C) and passes back and forth between the electric field of the capacitor and the magnetic field of the inductor twice each period. With L = 10 mH and C = 1.0 μF, ω = 1.0 × 10⁴ rad/s and f = 1.59 kHz.
+Q L d²q/dt² + q/C = 0,  ω = 1/√(LC)
+N M lc | LC circuit | q = q₀ cos(ωt + φ),  ω = 1/√(LC) |
+d Charge sloshes between a capacitor and an inductor; energy passes between electric and magnetic fields.
+p undamped harmonic oscillation; ω = 1/√(LC); total energy q²/2C + LI²/2 constant
+g LC circuit
+R[thm] lc <- kirch, Lind, Cap : L d²q/dt² + q/C = 0 | Loop rule | A harmonic oscillator equation for q.
+P The [[lc|LC circuit]] obeys the same equation as a mass on a spring, m d²x/dt² + kx = 0, the [[sho|simple harmonic oscillator]]. The correspondence is L ↔ m, 1/C ↔ k, q ↔ x and i ↔ v. The inductor plays the role of inertia, opposing changes of current as mass opposes changes of velocity, and the capacitor plays the role of the spring. The magnetic energy Li²/2 corresponds to the kinetic energy mv²/2, the electric energy q²/(2C) to the elastic energy kx²/2, and ω = 1/√(LC) to ω = √(k/m). Every result for the mechanical oscillator carries over.
+R[analog] lc <- sho : L ↔ m,  1/C ↔ k,  q ↔ x | Same equation as a spring | Electrical and mechanical oscillators share their mathematics.
+
+§ 2 14.6
+P Every real circuit has resistance, which removes energy as heat. With a resistor R added in series to the [[lc|LC circuit]], [[kirch|Kirchhoff's loop rule]] gives L q̈ + R q̇ + q/C = 0, where dots denote time derivatives and the [[Rres|resistance]] contributes the drop IR. For small resistance, R² < 4L/C, the charge still oscillates but with decaying amplitude, q = q₀e^{−Rt/2L} cos(ω′t + φ), with ω′ = √(1/LC − (R/2L)²) a little below the LC frequency. This is the underdamped [[rlc|RLC circuit]]. At R² = 4L/C the circuit is critically damped and returns to zero charge fastest without oscillating. For R² > 4L/C it is overdamped, and the charge decays more slowly, again without oscillation.
+Q q = q₀e^{−Rt/2L} cos(ω′t + φ)
+N M rlc | RLC circuit | q = q₀ e^{−Rt/2L} cos(ω′t + φ) |
+d Adding resistance damps the LC oscillation: underdamped, critically damped or overdamped as for a mechanical oscillator.
+p damped oscillation; ω′ = √(1/LC − (R/2L)²); energy dissipated in R
+g RLC circuit
+R[thm] rlc <- lc, Rres, kirch : L q̈ + R q̇ + q/C = 0 | Loop rule with R | Damped oscillator equation.
+P The comparison with mechanics extends to damping. A [[damp|damped oscillator]], m ẍ + bẋ + kx = 0, has the same form as the [[rlc|RLC circuit]], with the resistance R in the place of the damping coefficient b. Both amplitudes decay as e^{−t/τ}, with τ = 2m/b in one case and τ = 2L/R in the other, and both show the same three damping regimes. Take L = 10 mH, C = 1.0 μF and R = 20 Ω. Then R/2L = 1.0 × 10³ s⁻¹, so ω′ = √(1.0 × 10⁸ − 1.0 × 10⁶) s⁻¹ = 9.95 × 10³ rad/s, only 0.5 % below 1/√(LC). Critical damping would need R = √(4L/C) = 200 Ω.
+R[analog] rlc <- damp : R ↔ b | Damped spring analogue | Resistance plays the role of the drag coefficient.
+
+# ---------------------------------------------------------------- Chapter 15
+§ 2 15.0
+P A rotating coil gives a sinusoidal emf, as the [[gen|generator]] showed, and nearly all electric power is generated and distributed in this form. This chapter studies circuits driven by such sources. Resistors, capacitors and inductors respond differently to a sinusoidal voltage: capacitors and inductors shift the current in time relative to the voltage and oppose it by amounts that depend on frequency. Rotating vectors handle these shifts. The [[rlc|RLC circuit]] of Chapter 14, now driven, shows resonance like a [[forced|driven oscillator]]. The chapter ends with power in ac circuits and with transformers, which make long-distance transmission practical.
+§ 2 15.1
+P A battery drives *direct current* (dc), which flows in one direction only. A generator produces a voltage v = V₀ sin ωt that reverses its sign periodically; V₀ is the peak voltage, or amplitude, and ω = 2πf is the [[omega|angular frequency]] for the [[freq|frequency]] f. Power grids use f = 50 Hz in most of the world and 60 Hz in North America. The sinusoid comes directly from the [[gen|generator]], whose coil turns at constant ω, and such a source is an [[acsrc|alternating source]]. Connected across a resistor R, this *ac voltage* drives an *ac current* i = I₀ sin ωt with I₀ = V₀/R. In a resistor, current and voltage reach their peaks together: they are in phase. A current whose direction reverses periodically is called *alternating current* (ac).
+Q v = V₀ sin ωt
+N S acsrc | Alternating source | v = V₀ sin ωt |
+d A source whose voltage (and current) reverses periodically; direct current (dc) flows one way only.
+m sinusoidal function of time with amplitude V₀ and angular frequency ω
+g direct current (dc); alternating current (ac); ac voltage; ac current
+R[thm] acsrc <- gen : generator output V₀ sin ωt | From the generator | Power stations supply sinusoidal voltage.
+
+§ 2 15.2
+P Sinusoids of one frequency are handled with [[phasor|phasors]]. A phasor is a vector of length A that rotates counterclockwise at angular frequency ω; its projection on the vertical axis is A sin(ωt + φ), where φ is its angle at t = 0. This is the reference circle that related simple harmonic motion to [[circ|uniform circular motion]]. Two sinusoids of the same frequency keep a fixed angle between their phasors, and their sum is the projection of the [[vadd|vector sum]] of the phasors. Adding voltages that differ in phase thus becomes vector addition in a *phasor diagram*. For a [[Rres|resistor]], the current and voltage phasors point in the same direction: they are in phase, and V₀ = I₀R.
+N M phasor | Phasors | rotating vectors |
+d Represents a sinusoid A sin(ωt + φ) as a vector of length A rotating at ω; sinusoids of one frequency add as vectors.
+p projection of uniform circular motion; same-frequency sums = vector sums; phase = angle
+g phasor diagrams
+R[analog] phasor <- circ, vadd : A sin(ωt + φ) = projection of a rotating vector | Reference circle again | Same idea as relating SHM to circular motion.
+P For a capacitor C across the source v = V₀ sin ωt, the charge is q = Cv, so the current is i = dq/dt = ωCV₀ cos ωt = I₀ sin(ωt + π/2). The current leads the voltage by 90°: it peaks a quarter cycle earlier, when the capacitor is uncharged and charging fastest. The ratio of peak voltage to peak current is the [[XC|capacitive reactance]], X_C = V₀/I₀ = 1/(ωC), measured in ohms. It depends on the frequency of the [[acsrc|ac source]] and on the [[Cap|capacitance]]: a capacitor blocks dc (X_C → ∞ as ω → 0) and passes high frequencies easily. A 10 μF capacitor at 60 Hz has X_C = 265 Ω.
+Q X_C = 1/(ωC)
+N O XC | Capacitive reactance | X_C = 1/(ωC) |
+d Opposition of a capacitor to alternating current; current leads voltage by 90°.
+g capacitive reactance
+R[thm] XC <- Cap, acsrc : i = C dv/dt = ωCV₀ cos ωt ⇒ V₀/I₀ = 1/(ωC) | Capacitor in an ac circuit | Large at low frequency.
+P Meters for alternating current read root-mean-square values. The power dissipated in a resistor is i²R = I₀²R sin²ωt, and since sin²ωt averages to ½ over a cycle, the average power is ½I₀²R. A steady current I_{rms} = I₀/√2 would deliver the same power; this is the *rms current*. In the same way the *rms voltage* of an [[acsrc|ac source]] is V_{rms} = V₀/√2, the square root of the mean of v². With these [[rms|rms values]], the average power in a resistor is I_{rms}²R = V_{rms}²/R, of the same form as the dc [[Pel|electric power]]. Mains voltage is quoted as an rms value: 230 V rms has a peak of 325 V.
+Q I_{rms} = I₀/√2,  V_{rms} = V₀/√2
+N O rms | rms current and voltage | V_rms = V₀/√2 |
+d Effective values of a sinusoid: the dc values that deliver the same average power.
+g rms current; rms voltage
+R[def] rms <- acsrc : V_rms = √⟨v²⟩ = V₀/√2 | Root mean square | Average of sin² is ½.
+P For an [[Lind|inductor]] L across the [[acsrc|ac source]], the voltage is v = L di/dt. With v = V₀ sin ωt, integration gives i = −(V₀/ωL) cos ωt = I₀ sin(ωt − π/2). The current lags the voltage by 90°: it peaks a quarter cycle later, because the emf of the inductor opposes each change of current. The ratio of peak voltage to peak current is the [[XL|inductive reactance]], X_L = V₀/I₀ = ωL, also in ohms. It grows with frequency, so an inductor passes dc and low frequencies and opposes high ones. A 0.10 H inductor at 60 Hz has X_L = 37.7 Ω. Reactances relate peak values only; since current and voltage are out of phase, they do not relate v and i at each instant as a resistance does.
+Q X_L = ωL
+N O XL | Inductive reactance | X_L = ωL |
+d Opposition of an inductor to alternating current; current lags voltage by 90°.
+g inductive reactance
+R[thm] XL <- Lind, acsrc : v = L di/dt ⇒ V₀/I₀ = ωL | Inductor in an ac circuit | Large at high frequency.
+
+§ 2 15.3
+P In an *RLC series circuit* driven by v = V₀ sin ωt, the same current i = I₀ sin(ωt − φ) flows through the resistor, the inductor and the capacitor. The voltage across the [[Rres|resistance]] has amplitude I₀R and is in phase with i. The voltage across the inductor has amplitude I₀X_L, set by the [[XL|inductive reactance]], and leads i by 90°; the voltage across the capacitor has amplitude I₀X_C, set by the [[XC|capacitive reactance]], and lags i by 90°. These voltages add as [[phasor|phasors]]. The inductor and capacitor phasors point in opposite directions and combine to I₀(X_L − X_C), at right angles to I₀R. The source amplitude is therefore V₀ = I₀√(R² + (X_L − X_C)²) = I₀Z, which defines the [[Zimp|impedance]] Z. The *phase angle* φ by which the current lags the source voltage satisfies tan φ = (X_L − X_C)/R.
+Q Z = √(R² + (X_L − X_C)²),  φ = tan⁻¹[(X_L − X_C)/R]
+N O Zimp | Impedance and phase angle | Z = √(R² + (X_L − X_C)²) |
+d Total opposition of a series RLC circuit to ac, I₀ = V₀/Z; the phase angle φ = tan⁻¹((X_L − X_C)/R) is how far current lags voltage.
+g impedance; phase angle
+R[thm] Zimp <- phasor, XL, XC, Rres : V₀ = I₀ √(R² + (X_L − X_C)²) | Phasor sum of the voltages | Voltages across R, L, C differ in phase.
+P The relation I₀ = V₀/Z is the ac form of Ohm's law; it holds for peak values and equally for rms values. Take R = 40 Ω, X_L = 80 Ω and X_C = 50 Ω. Then Z = √(40² + 30²) Ω = 50 Ω and φ = tan⁻¹(30/40) = 36.9°. A source of amplitude 100 V drives a current of amplitude 2.0 A that lags the voltage by 36.9°. When X_L > X_C the circuit is mainly inductive and φ is positive; when X_C > X_L it is mainly capacitive, φ is negative, and the current leads. Because the reactances depend on ω, the [[Zimp|impedance]] and the phase angle change with the source frequency.
+
+§ 2 15.4
+P The instantaneous power delivered by the source is p = iv = I₀V₀ sin(ωt − φ) sin ωt. Expanding sin(ωt − φ) = sin ωt cos φ − cos ωt sin φ and averaging over a cycle, the term in sin²ωt gives ½ and the term in sin ωt cos ωt gives zero. The [[Pac|average power]] is therefore ½I₀V₀ cos φ, or I_{rms} V_{rms} cos φ in [[rms|rms values]]. The factor cos φ is the *power factor*. From the phasor diagram of the [[Zimp|impedance]], cos φ = R/Z, so the average power equals I_{rms}²R, the [[Pel|electric power]] dissipated in the resistor alone. The inductor and capacitor store energy during part of each cycle and return it to the source during another. For the circuit above, cos φ = 0.80 and the average power is 80 W. A low power factor means a larger current, and larger losses in supply lines, for the same power delivered.
+Q P_{ave} = I_{rms} V_{rms} cos φ
+N O Pac | Average ac power | P_ave = I_rms V_rms cos φ |
+d Power averaged over a cycle; only the resistor dissipates, and cos φ is the power factor.
+g average power; power factor
+R[thm] Pac <- Pel, rms, Zimp : ⟨iv⟩ = ½I₀V₀ cos φ | Average of a product of sinusoids | Reactive elements store and return energy.
+
+§ 2 15.5
+P Since I_{rms} = V_{rms}/Z, the current in a driven [[rlc|RLC circuit]] is largest when the [[Zimp|impedance]] is smallest. Z = √(R² + (X_L − X_C)²) has its minimum, R, when X_L = X_C, that is, when ωL = 1/(ωC). This defines the *resonant frequency* ω₀ = 1/√(LC), the frequency at which the undamped [[lc|LC circuit]] oscillates on its own. At [[acres|resonance]] the reactances cancel, the circuit behaves as a pure resistance, the current is in phase with the voltage, and the average power reaches its maximum, V_{rms}²/R. Tuning a radio means adjusting a capacitor until ω₀ matches the frequency of the wanted station.
+Q ω₀ = 1/√(LC)
+N M acres | AC resonance | ω₀ = 1/√(LC),  Q = ω₀L/R |
+d Current in a series RLC circuit peaks when X_L = X_C; the quality factor measures how sharp the peak is (bandwidth Δω = ω₀/Q).
+p resonance at ω₀ = 1/√(LC); Q = ω₀/Δω; narrow peak for small R
+g resonant frequency; quality factor; bandwidth
+R[thm] acres <- Zimp, rlc : Z minimal when ωL = 1/(ωC) | Minimum impedance | Purely resistive at resonance.
+P A plot of average power against ω has a peak at ω₀. Its *bandwidth* Δω is the full width of the peak at half the maximum power, and the *quality factor* Q = ω₀/Δω measures its sharpness. For a series circuit Δω = R/L, so Q = ω₀L/R: a small resistance gives a tall, narrow peak. With L = 10 mH, C = 1.0 μF and R = 20 Ω, ω₀ = 1.0 × 10⁴ rad/s, Q = 5.0 and Δω = 2.0 × 10³ rad/s. The same curve describes a [[forced|driven oscillator]] with damping. The circuit equation L q̈ + R q̇ + q/C = V₀ sin ωt has the form of m ẍ + bẋ + kx = F₀ sin ωt, so electrical and mechanical [[acres|resonance]] are one phenomenon.
+Q Q = ω₀/Δω = ω₀L/R
+R[analog] acres <- forced : driven damped oscillator | Same resonance curve | Mechanical and electrical resonance obey the same equation.
+
+§ 2 15.6
+P A [[transf|transformer]] changes the amplitude of an alternating voltage. Two coils, a primary of N_P turns and a secondary of N_S turns, are wound on a common iron core that guides nearly all the flux of one coil through the other, so their [[Mind|mutual inductance]] is large. An [[acsrc|alternating current]] in the primary produces a changing flux Φ in the core, and by [[faraday|Faraday's law]] every turn of either coil has the same emf, −dΦ/dt. Hence V_P = −N_P dΦ/dt and V_S = −N_S dΦ/dt, which gives the *transformer equation* below. In an ideal transformer, without resistance or flux leakage, the power taken by the primary equals the power delivered by the secondary, so I_S/I_P = N_P/N_S. A *step-up transformer* has N_S > N_P and raises the voltage; a *step-down transformer* lowers it. A steady current gives no changing flux, so transformers work only with ac.
+Q V_S/V_P = N_S/N_P,  I_S/I_P = N_P/N_S
+N M transf | Transformer | V_S/V_P = N_S/N_P |
+d Two coils on one iron core: the voltage ratio equals the turns ratio, and the current ratio its inverse, so power is transmitted at high voltage and low current.
+p ideal: P_in = P_out; I_S/I_P = N_P/N_S; works only with ac
+g transformer; transformer equation; step-up transformer; step-down transformer
+R[thm] transf <- Mind, faraday, acsrc : same dΦ/dt per turn in both coils | Shared flux | Each turn has the same induced emf.
+P Transformers make long-distance power transmission efficient. To deliver power P at voltage V, *transmission lines* must carry the current I = P/V, and they lose I²R_{line} = P²R_{line}/V² as heat. Raising V by a factor of 20 reduces the loss by a factor of 400. Delivering 10 MW through lines of total resistance 5.0 Ω at 10 kV would need 1000 A and lose 5.0 MW, half the [[Pel|power]]. At 200 kV the current is 50 A and the loss is 12.5 kW, about 0.1 %. Power stations therefore use step-up [[transf|transformers]] to raise the voltage to hundreds of kilovolts, and step-down transformers near the users reduce it to the mains voltage.
+
+# ---------------------------------------------------------------- Chapter 16
+§ 2 16.0
+P The field laws so far are [[gauss|Gauss's law]] for the electric field, [[faraday|Faraday's law]] and [[ampere|Ampère's law]]. Ampère's law, however, fails when electric fields change in time. This chapter presents the correction made by James Clerk Maxwell, which completes the laws of electromagnetism. The completed laws predict [[wave|waves]] of electric and magnetic field that travel through empty space at the [[c|speed of light]], and light is such a wave. These waves carry energy and momentum, and their momentum exerts a pressure; it pushes the dust tails of comets, such as Comet McNaught in 2007, away from the Sun. The chapter ends with the full spectrum of electromagnetic waves.
+§ 2 16.1
+P [[ampere|Ampère's law]] relates the field around a closed path to the current through any surface bounded by the path. Apply it to a path around the wire leading to a charging capacitor. A flat surface is crossed by the wire and gives μ₀I. A surface that bulges between the plates is crossed by no conduction current and gives zero, although the path is the same. Between the plates, however, the [[PhiE|electric flux]] Φ_E = q/ε₀ grows, and the [[eps0|permittivity of free space]] ε₀ times its [[ddt|rate of change]] equals dq/dt = I. Maxwell therefore added the [[Id|displacement current]] I_d = ε₀ dΦ_E/dt to the conduction current in Ampère's law. With this term every surface gives the same answer, in agreement with [[qcons|conservation of charge]]. A changing electric field now produces a magnetic field, as a changing magnetic field produces an electric field. The corrected law completes [[maxwell|Maxwell's equations]].
+Q I_d = ε₀ dΦ_E/dt
+N M maxwell | Maxwell's equations | four field laws |
+d Gauss's law for E⃗, Gauss's law for B⃗ (no monopoles), Faraday's law, and Ampère's law with Maxwell's displacement current; with the Lorentz force they complete classical electromagnetism.
+p linear in E⃗ and B⃗; a changing E⃗ makes B⃗ as a changing B⃗ makes E⃗; predict waves travelling at 1/√(ε₀μ₀)
+g Maxwell’s equations
+N O Id | Displacement current | I_d = ε₀ dΦ_E/dt |
+d Maxwell's term: a changing electric flux acts like a current in Ampère's law, needed where a capacitor interrupts the conduction current.
+g displacement current
+R[thm] Id <- PhiE, eps0, ddt, ampere : Ampère's law fails across a charging capacitor unless I → I + ε₀ dΦ_E/dt | Consistency with charge conservation | The same loop bounded by two surfaces must give one answer.
+P With this correction the field laws take their complete form. [[gauss|Gauss's law]] states that the electric flux through a closed surface equals the enclosed charge divided by ε₀. Gauss's law for magnetism states that the flux of the [[Bfield|magnetic field]] through any closed surface is zero, because field lines close and there are no monopoles. [[faraday|Faraday's law]] relates the circulation of E⃗ to the changing magnetic flux. The Ampère–Maxwell law relates the circulation of B⃗ to the current plus the [[Id|displacement current]], correcting [[ampere|Ampère's law]]. These four laws are [[maxwell|Maxwell's equations]]. Together with the *Lorentz force* F⃗ = q(E⃗ + v⃗ × B⃗), which the fields exert on charges, they contain all of classical electromagnetism.
+Q ∮E⃗·dA⃗ = q_{in}/ε₀,  ∮B⃗·dA⃗ = 0
+Q ∮E⃗·dl⃗ = −dΦ_m/dt,  ∮B⃗·dl⃗ = μ₀I + μ₀ε₀ dΦ_E/dt
+R[thm] maxwell <- gauss, faraday, ampere, Id, Bfield : ∮E⃗·dA⃗ = q/ε₀;  ∮B⃗·dA⃗ = 0;  ∮E⃗·dl⃗ = −dΦ_m/dt;  ∮B⃗·dl⃗ = μ₀I + μ₀ε₀ dΦ_E/dt | Assembled and corrected | Gauss for B⃗ records that field lines close.
+P Maxwell's equations treat the electric and magnetic fields as one system, the [[EB|electromagnetic field]]. Its state at a given time is the pair of fields E⃗ and B⃗ at every point, and [[maxwell|Maxwell's equations]] give how that state evolves: a changing [[Bfield|magnetic field]] produces a circulating [[Efield|electric field]], and a changing electric field produces a circulating magnetic field. The static fields of earlier chapters are special cases in which nothing changes and the two fields separate. Maxwell saw that this mutual production allows a self-sustaining disturbance to travel through empty space. Thomas Young's interference experiments had already shown light to be a wave. In the late 1880s Heinrich Hertz produced electromagnetic waves with spark circuits, detected them across a room, and showed that they reflect, refract and interfere like light.
+N S EB | Electromagnetic field | (E⃗, B⃗)(r⃗, t) |
+d The dynamical state of classical electromagnetism: electric and magnetic fields at every point and time, evolving by Maxwell's equations.
+m pair of vector fields on space-time satisfying Maxwell's equations
+R[law] EB <- maxwell, Efield, Bfield : E⃗, B⃗ evolve together | Fields as one system | Static fields are special cases.
+
+§ 2 16.2
+P Consider empty space, with no charges or currents, and look for fields that depend only on x and t. Gauss's laws then require any field component along x to be uniform, so it carries no wave: the wave is transverse. Take E⃗ along y and B⃗ along z. Faraday's law applied to a thin rectangle in the xy-plane gives ∂E_y/∂x = −∂B_z/∂t, and the Ampère–Maxwell law applied to a rectangle in the xz-plane gives −∂B_z/∂x = ε₀μ₀ ∂E_y/∂t. Differentiating the first with respect to x and using the second yields the [[waveeq|linear wave equation]] below, so [[maxwell|Maxwell's equations]] let the [[EB|electromagnetic field]] carry waves. The [[emwave|plane electromagnetic wave]] E_y = E₀ sin(kx − ωt), B_z = B₀ sin(kx − ωt) solves both equations if B₀ = E₀/c. The fields are in phase, perpendicular to each other and to the direction of travel, and E⃗ × B⃗ points along that direction.
+Q ∂²E_y/∂x² = ε₀μ₀ ∂²E_y/∂t²
+N S emwave | Plane electromagnetic wave | E = cB,  E⃗ ⟂ B⃗ ⟂ k⃗ |
+d A solution of Maxwell's equations in empty space: transverse electric and magnetic fields in phase, travelling at c = 1/√(ε₀μ₀).
+m E_y = E₀ sin(kx − ωt), B_z = (E₀/c) sin(kx − ωt); transverse, in phase
+R[thm] emwave <- maxwell, waveeq, EB : ∂²E_y/∂x² = ε₀μ₀ ∂²E_y/∂t² | Wave equation from the field laws | The same equation as for waves on a string.
+P Comparing this equation with the wave equation for a string, ∂²y/∂x² = (1/v²) ∂²y/∂t², gives the speed of the [[emwave|electromagnetic wave]] in terms of two constants measured in electric and magnetic experiments, [[eps0|ε₀]] and [[mu0|μ₀]]: c = 1/√(ε₀μ₀). With ε₀ = 8.854 × 10⁻¹² C²/(N·m²) and μ₀ = 4π × 10⁻⁷ T·m/A, this is 3.00 × 10⁸ m/s, the measured [[c|speed of light]]. Maxwell concluded that light is an electromagnetic wave. At every point and time the fields of the wave satisfy E = cB. Such waves are produced by accelerated charges, for instance by an oscillating current in a *dipole antenna*, two straight conductors fed at the centre. A *half-wave antenna*, of total length λ/2, resonates at the wavelength λ. A receiving antenna works in reverse: the electric field of the wave drives currents along a rod parallel to it.
+Q c = 1/√(ε₀μ₀) = 3.00 × 10⁸ m/s
+R[thm] c <- eps0, mu0, emwave : c = 1/√(ε₀μ₀) | Speed of light predicted | Two electrical constants give the measured speed of light: light is an electromagnetic wave.
+
+§ 2 16.3
+P An electromagnetic wave carries energy in its fields. The *energy density* is the sum of the [[uE|electric energy density]] ε₀E²/2 and the [[uB|magnetic energy density]] B²/(2μ₀). In the [[emwave|wave]], B = E/c and c² = 1/(ε₀μ₀), so B²/(2μ₀) = ε₀E²/2: the two parts are equal and the total is u = ε₀E². This energy moves at the speed c. In a time dt, the energy in a box of cross-section A and length c dt crosses A, so the *energy flux*, the power per unit area, is S = cu = cε₀E² = EB/μ₀. Its direction is that of propagation, given by the [[cross|vector product]] E⃗ × B⃗, so the flux is the [[Spoynt|Poynting vector]] S⃗ = E⃗ × B⃗/μ₀, measured in W/m². It oscillates in time with the fields.
+Q S⃗ = E⃗ × B⃗/μ₀
+N O Spoynt | Poynting vector | S⃗ = E⃗ × B⃗/μ₀ |
+d Energy flux of the electromagnetic field: energy per unit area per unit time, along the direction of propagation.
+g Poynting vector
+R[thm] Spoynt <- emwave, uE, uB, cross : u = ε₀E² (equal electric and magnetic parts);  S = cu | Energy carried at c | Field energy density moving at the wave speed.
+P The fields oscillate far too fast for an instrument to follow, so what is measured is the [[Iint|intensity]], the time average of the magnitude of the [[Spoynt|Poynting vector]]. Since the average of sin² is ½, I = S_{avg} = cε₀E₀²/2 = cB₀²/(2μ₀) = E₀B₀/(2μ₀). Sunlight above the atmosphere has an intensity of about 1.36 kW/m², which corresponds to E₀ = √(2I/(cε₀)) = 1.01 × 10³ V/m and B₀ = E₀/c = 3.37 × 10⁻⁶ T. In this wave picture the energy depends on the field amplitude and not on the frequency. Volume 3 shows that light is also absorbed in quanta whose energy is proportional to the frequency, which the wave picture does not explain.
+Q I = S_{avg} = cε₀E₀²/2
+R[thm] Iint <- Spoynt : I = S_avg = cε₀E₀²/2 | Intensity of light | Time-averaged Poynting flux.
+
+§ 2 16.4
+P Electromagnetic waves also carry momentum. When a wave falls on an absorber, its electric field sets charges moving along E⃗, and the magnetic force qv⃗ × B⃗ on these moving charges points along the direction of propagation. Maxwell's theory shows that absorbed energy U brings [[p|momentum]] U/c. Momentum delivered per unit area per unit time is a pressure, so with the energy flux given by the [[Spoynt|Poynting vector]], the [[prad|radiation pressure]] on a full absorber is p = I/c, where c is the [[c|speed of light]]. A perfect reflector reverses the momentum and feels twice this, 2I/c. For sunlight at Earth, I/c = (1360 W/m²)/(3.00 × 10⁸ m/s) = 4.5 × 10⁻⁶ Pa. This is small, but in space it acts continuously: it pushes the dust of *comets* into tails pointing away from the Sun, and it can propel a *light sail*. A perfectly reflecting sail of 1.0 × 10⁴ m² facing the Sun near Earth feels a force of 0.091 N.
+Q p = I/c (absorbed),  p = 2I/c (reflected)
+N O prad | Radiation pressure | p = I/c (absorbed), 2I/c (reflected) |
+d Pressure exerted by light because electromagnetic waves carry momentum U/c.
+g radiation pressure
+R[thm] prad <- Spoynt, c, p : momentum per area per time = I/c | Momentum of the field | Reflection doubles the momentum change.
+
+§ 2 16.5
+P [[maxwell|Maxwell's equations]] place no limit on the frequency of a wave. [[emwave|Electromagnetic waves]] of every frequency travel in vacuum at the [[c|speed of light]], and the relation v = fλ between [[vwave|wave speed]], frequency and wavelength gives λ = c/f. The [[spectrum|electromagnetic spectrum]] is the whole range of these waves, divided into named bands that differ in how the waves are produced and detected, not in their nature. *Radio waves*, with wavelengths from about a metre up to kilometres, are emitted by oscillating currents in antennas and carry radio and *television* broadcasts; FM radio at 100 MHz has λ = 3.00 m. *Microwaves*, from about 1 mm to 1 m, come from electronic oscillators. They carry *cell phone*, *WiFi* and *Bluetooth* signals and are used in *radar* and in microwave ovens, which work at 2.45 GHz with λ = 12.2 cm.
+N S spectrum | Electromagnetic spectrum | c = fλ |
+d Electromagnetic waves of all wavelengths: radio, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays, distinguished only by frequency.
+m one-parameter family of plane waves labelled by frequency f (wavelength λ = c/f)
+g radio waves; microwaves; infrared radiation; visible light; ultraviolet radiation; X-ray; gamma ray (γ ray)
+R[thm] spectrum <- emwave, vwave, c : λ = c/f | Same wave, any frequency | Maxwell's equations allow every frequency.
+P Shorter wavelengths give the bands most familiar from heat and light. *Infrared radiation*, from about 760 nm to 1 mm, is emitted through the *thermal agitation* of molecules; every object emits it, and a body near room [[temp|temperature]] emits most strongly near 10 μm. *Visible light*, from about 380 nm (violet) to 760 nm (red), is emitted by hot objects such as the Sun and by electrons changing their state in atoms, and is the narrow band the eye detects. *Ultraviolet radiation*, from about 10 nm to 380 nm, causes sunburn and is largely absorbed by ozone in the upper atmosphere. *X-rays*, roughly 0.01 nm to 10 nm, are produced when fast electrons strike a target and are used in medical imaging. *Gamma rays* (γ rays), the shortest, come from nuclear processes. All of these bands make up one continuous [[spectrum|electromagnetic spectrum]].
+X radar; thermal agitation :: an application, and the thermal motion of charges named as a source of infrared

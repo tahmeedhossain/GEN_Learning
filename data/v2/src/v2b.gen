@@ -1,0 +1,298 @@
+# University Physics Volume 2, chapters 5-10 (electrostatics, potential, capacitance, circuits)
+
+§ 2 5.1
+N O q | Electric charge | q | prim
+d A property of matter that comes in two signs: like charges repel, unlike attract. Additive; SI unit the coulomb.
+g static electricity; electric charge; coulomb; electrostatic repulsion; electrostatic attraction
+X electric force :: = coul
+N M qcons | Conservation of charge | Σ q = const | ax
+d The total charge of an isolated system never changes; charging a body only moves charge from one body to another.
+p charge additive with sign; conserved in every process observed; local form is the continuity equation
+g law of conservation of charge
+R[law] qcons <- q : Σ q_i constant in an isolated system | Charge moves, total stays | Rubbing transfers electrons, it does not create charge.
+N S atom | Charge carriers | e⁻, p⁺, n |
+d Ordinary charge is carried by electrons (−e) and protons (+e); neutrons are neutral. An ion has more or fewer electrons than protons.
+m composition of matter: numbers of electrons, protons, neutrons; net charge (N_p − N_e)e, e = 1.602 × 10⁻¹⁹ C
+g electron; proton; neutron; ion
+R[def] atom <- q : q = (N_p − N_e) e | Charge in units of e | Charges of ordinary bodies are integer multiples of e.
+
+§ 2 5.2
+N S cond | Conductor | free charges |
+d A material in which some electrons (conduction electrons) move freely; charge placed on it spreads out, and nearby charges can induce a separation (charging by induction).
+m bulk with mobile charge density that rearranges in response to fields
+g conduction electron; conductor; charging by induction
+R[def] cond <- atom : outer electrons detached from their atoms | Free electrons | The mobile electrons carry charge through the material.
+N S insul | Insulator | bound charges |
+d A material whose charges are bound to atoms; a field can only shift them slightly, polarizing the material into small dipoles.
+m bulk with bound charges; response = polarization (displacement of bound charges)
+g insulator; polarization; dipole
+R[def] insul <- atom : electrons bound to their atoms | Bound electrons | Charges move only within each atom or molecule.
+
+§ 2 5.3
+N M coul | Coulomb's law | F = q₁q₂/(4πε₀ r²) | ax
+d Two point charges exert forces on each other along the line joining them, proportional to the product of the charges and inversely to the square of the distance.
+p inverse square; central; sign of q₁q₂ gives repulsion or attraction; one law of electrostatics
+g Coulomb force; electrostatics; electrostatic force; Coulomb’s law
+N O eps0 | Permittivity of vacuum | ε₀ | prim
+d Constant in Coulomb's law, 8.85 × 10⁻¹² C²/(N·m²); k = 1/(4πε₀) ≈ 8.99 × 10⁹ N·m²/C².
+g permittivity of vacuum
+R[law] F <- coul, q, eps0, r : F⃗₁₂ = (1/4πε₀) q₁q₂/r² r̂₁₂ | Force between charges | Another force law, entered in the second law.
+R[analog] coul <- ngrav : both inverse square and central; charge has two signs, mass one | Same form as gravitation | Coulomb's law has the mathematical form of Newton's law of gravitation.
+N M esup | Superposition of electric forces | F⃗ = Σ F⃗_i |
+d The force from several charges is the vector sum of the forces each would exert alone.
+p linear in the source charges; pairwise forces unaffected by other charges; vector addition
+g principle of superposition
+R[law] esup <- coul, vadd : F⃗ = (Q/4πε₀) Σ q_i/r_i² r̂_i | Forces add as vectors | An experimental fact about electric forces.
+N S pts | Point-charge configuration | {q_i, r⃗_i} |
+d The simplest electrostatic state: which charges there are and where they sit.
+m N points of ℝ³, each with a charge label q_i
+R[def] pts <- q, r : {(q_i, r⃗_i)} | Charges at positions | Positions as position vectors.
+
+§ 2 5.4
+N S Efield | Electric field | E⃗(r⃗) |
+d The field produced by source charges, defined at every point of space; a test charge there feels qE⃗.
+m vector field on ℝ³ (away from point charges)
+g electric field; superposition
+R[thm] Efield <- pts, coul, esup, eps0 : E⃗(P) = (1/4πε₀) Σ q_i/r_i² r̂_i | Superposed Coulomb fields | Removes the test charge from the force law.
+N O Eval | Field value | E⃗ = F⃗/q |
+d Force per unit test charge at a point; measured with a small test charge.
+R[read] Eval <- Efield : E⃗ at one point | Value of the field | The field evaluated where the test charge sits.
+R[law] F <- Eval, q : F⃗ = qE⃗ | Force from the field | The field acts locally on a charge placed in it.
+
+§ 2 5.5
+N S chdist | Continuous charge distribution | λ, σ, ρ |
+d Charge spread along a line, over a surface or through a volume, described by a charge density; an infinite straight wire and an infinite plane are idealised cases.
+m density function on a curve (λ), surface (σ) or region (ρ); dq = λ dl, σ dA, ρ dV
+g continuous charge distribution; linear charge density; surface charge density; volume charge density; infinite straight wire; infinite plane
+R[def] chdist <- q, integ : Q = ∫ λ dl = ∫ σ dA = ∫ ρ dV | Densities of charge | Smooth limit of many point charges.
+R[thm] Efield <- chdist, coul, esup, integ : E⃗ = (1/4πε₀) ∫ dq/r² r̂;  wire 2kλ/r, plane σ/2ε₀ | Integrate the superposition | The sum over charges becomes an integral.
+
+§ 2 5.6
+N M flines | Field lines | tangent to E⃗ |
+d Curves drawn tangent to the field, starting on positive and ending on negative charges, more crowded where the field is stronger.
+p never cross; line density ∝ |E⃗|; number leaving a charge ∝ q
+g field line; field line density
+R[def] flines <- Efield : dr⃗ × E⃗ = 0 | Integral curves of the field | A picture of the vector field.
+
+§ 2 5.7
+N O pdip | Electric dipole moment | p⃗ = q d⃗ |
+d Charge times separation of a ± charge pair; molecules can have a permanent dipole or one induced by a field.
+g permanent dipole; dipole moment; induced dipole
+R[def] pdip <- q, r : p⃗ = q d⃗ | Charge times separation | Points from − to +.
+R[thm] tau <- pdip, Eval, cross : τ⃗ = p⃗ × E⃗ | Torque on a dipole | A uniform field turns a dipole without net force.
+
+# ---------------------------------------------------------------- Chapter 6
+§ 2 6.1
+N O PhiE | Electric flux | Φ = ∫ E⃗·dA⃗ |
+d The amount of field passing through a surface: field component along the area vector (normal to the surface) times area, summed over the surface.
+g flux; electric flux; area vector
+R[def] PhiE <- Efield, dot, integ : Φ = ∫_S E⃗·n̂ dA | Surface integral | For a uniform field, EA cos θ.
+
+§ 2 6.2
+N M gauss | Gauss's law | ∮E⃗·dA⃗ = q_enc/ε₀ |
+d The electric flux through any closed (Gaussian) surface equals the enclosed charge divided by ε₀.
+p holds for every closed surface; follows from Coulomb's law and superposition; charge outside contributes zero net flux
+g Gaussian surface
+R[thm] gauss <- PhiE, coul, esup, eps0 : flux of a point charge through any closed surface = q/ε₀ | Inverse square ⇒ flux law | Field lines from a charge cross every enclosing surface; superposition sums the charges.
+
+§ 2 6.3
+N M symm | Symmetry method | E constant on the surface |
+d With spherical, cylindrical or planar symmetry the field is constant on a well-chosen Gaussian surface, and Gauss's law gives it directly.
+p spherical E = q/(4πε₀r²); cylindrical E = λ/(2πε₀r); planar E = σ/(2ε₀)
+g spherical symmetry; cylindrical symmetry; planar symmetry
+R[thm] symm <- gauss : Φ = E∮dA = EA = q_enc/ε₀ | Field pulled out of the integral | Symmetry fixes direction and constancy of E⃗.
+R[thm] Efield <- gauss, symm : E = q_enc/(ε₀ A) | Fields of symmetric distributions | A second route to the field.
+
+§ 2 6.4
+N S condeq | Conductor in electrostatic equilibrium | E = 0 inside |
+d With charges at rest, the field inside a conductor is zero, excess charge sits on the surface, and just outside E = σ/ε₀ perpendicular to the surface.
+m E⃗ = 0 in the bulk; surface charge σ; E⃗ ⟂ surface outside with magnitude σ/ε₀
+R[thm] condeq <- cond, gauss : free charges move until E = 0 inside; Gauss ⇒ no interior charge | Equilibrium of free charges | A nonzero interior field would keep moving charge.
+X free electrons :: = cond
+
+# ---------------------------------------------------------------- Chapter 7
+§ 2 7.1
+N O Ue | Electric potential energy | U = kqQ/r |
+d Potential energy of a system of charges; the Coulomb force is conservative, so it exists.
+g electric potential energy
+R[thm] Ue <- coul, U, cons : U(r) = −∫_∞^r F_r dr′ = qQ/(4πε₀ r), with F_r = qQ/(4πε₀ r′²) | Work of the Coulomb force | Same calculation as for gravity, with a sign set by qQ.
+
+§ 2 7.2
+N S Vfield | Electric potential | V(r⃗) |
+d Potential energy per unit charge at each point; a scalar field defined up to an additive constant.
+m scalar field on ℝ³ modulo constants
+g electric potential
+R[def] Vfield <- Ue, q : V = U/q | Energy per charge | Independent of the test charge.
+R[thm] Vfield <- Efield, integ, dot : V_B − V_A = −∫_A^B E⃗·dl⃗ | Line integral of the field | Path-independent because the field is conservative.
+N O dV | Voltage | ΔV |
+d Potential difference between two points, measured with a voltmeter; SI unit the volt. qΔV is an energy (electron-volt for q = e).
+g electric potential difference; voltage; electron-volt
+R[def] dV <- Vfield : ΔV_AB = V_B − V_A,  ΔU = qΔV | Difference of potentials | The constant drops out.
+
+§ 2 7.3
+X electric dipole; electric dipole moment :: = pdip
+R[thm] Vfield <- pts, eps0 : V_P = (1/4πε₀) Σ q_i/r_i;  dipole kp⃗·r̂/r² | Superposed point potentials | Scalars add, an easier sum than for fields.
+
+§ 2 7.4
+N M grad | Gradient | ∇V |
+d The vector of partial derivatives of a scalar field; points toward steepest increase.
+p linear; ∇ = î ∂/∂x + ĵ ∂/∂y + k̂ ∂/∂z; ∇V ⟂ level surfaces
+g gradient
+R[gen] grad <- ddt, comp : ∂/∂x, ∂/∂y, ∂/∂z along the unit vectors | Derivatives along each axis | The derivative taken with respect to position.
+R[thm] Efield <- Vfield, grad : E⃗ = −∇V | Field from potential | The inverse of the line integral.
+
+§ 2 7.5
+N M equipot | Equipotential surfaces | V = const |
+d Surfaces of constant potential; the field is perpendicular to them and no work is done moving a charge along one. A conductor's surface is one; grounding sets it to zero.
+p E⃗ ⟂ equipotentials; ΔV = 0 along them; conductors in equilibrium are equipotentials
+g equipotential surface; equipotential line; grounding
+R[thm] equipot <- Vfield, Efield, grad : E⃗ = −∇V ⟂ {V = const} | Level sets of V | The gradient is normal to level surfaces.
+
+§ 2 7.6
+X electrostatic precipitators; ink jet printer; photoconductor; Van de Graaff generator; xerography :: applications of electrostatics
+
+# ---------------------------------------------------------------- Chapter 8
+§ 2 8.1
+N S capst | Capacitor | ±Q on two conductors |
+d Two conductors carrying equal and opposite charges, often separated by a dielectric; the parallel-plate capacitor is the standard example.
+m pair of conductors in electrostatic equilibrium with charges +Q, −Q; field confined mainly between them
+g capacitor; parallel-plate capacitor; dielectric
+R[def] capst <- condeq : two equipotential conductors with charges ±Q | Charged conductor pair | Each conductor is an equipotential.
+N O Cap | Capacitance | C = Q/V |
+d Charge stored per volt of potential difference; depends only on geometry and the material between the conductors. SI unit the farad.
+g capacitance
+R[def] Cap <- capst, dV : C = Q/ΔV | Charge per voltage | Q and ΔV are proportional.
+R[thm] Cap <- symm, eps0 : C = ε₀A/d (parallel plates) | From the field between plates | E = σ/ε₀, ΔV = Ed.
+
+§ 2 8.2
+N M capnet | Capacitors in series and parallel | 1/C_S = Σ 1/C_i,  C_P = Σ C_i |
+d Capacitors in parallel share a voltage and their capacitances add; in series they share a charge and the inverses add.
+p series: same Q; parallel: same ΔV; follows from charge conservation and additivity of potential differences
+g series combination; parallel combination
+R[thm] capnet <- Cap, qcons, dV : parallel: Q = ΣQ_i at common ΔV;  series: ΔV = ΣΔV_i at common Q | Combine | Charge conservation on the connecting wires.
+
+§ 2 8.3
+N O UC | Energy stored in a capacitor | U = ½CV² |
+d Work needed to charge a capacitor, stored in its electric field.
+R[thm] UC <- Cap, dV, W : U = ∫₀^Q (q/C) dq = Q²/2C = ½CV² | Work to move charge | Each dq is moved across the current voltage q/C.
+N O uE | Electric energy density | u_E = ½ε₀E² |
+d Energy per unit volume stored in an electric field.
+g energy density
+R[thm] uE <- UC, Eval, eps0 : U/(Ad) with C = ε₀A/d, V = Ed | Energy per volume | The energy belongs to the field.
+
+§ 2 8.4
+N O kappa | Dielectric constant | κ = C/C₀ = E₀/E |
+d Factor by which an insulating material between the plates raises the capacitance and lowers the field.
+g dielectric constant
+R[meas] kappa <- Cap, insul : κ = C/C₀ | Capacitance with and without dielectric | Measured, always ≥ 1.
+
+§ 2 8.5
+N M dielmod | Molecular model of a dielectric | E⃗_i = (1/κ − 1)E⃗₀ |
+d The applied field induces or aligns molecular dipoles; the induced surface charges create an induced field that partly cancels the applied one.
+p linear for weak fields; induced field opposite to the applied field; explains κ > 1
+g induced electric-dipole moment; induced electrical field; induced surface charges
+R[thm] dielmod <- insul, pdip, Efield : aligned dipoles ⇒ surface charge ±σ_i ⇒ E = E₀ − σ_i/ε₀ | Polarization | Dipoles inside cancel; only surface charges remain.
+R[thm] kappa <- dielmod : κ = E₀/(E₀ + E_i) | Dielectric constant explained | From the induced field.
+N O Ebreak | Dielectric strength | E_max |
+d Largest field an insulator withstands before it breaks down and conducts.
+g dielectric breakdown; dielectric strength
+R[meas] Ebreak <- insul, Eval : field at which bound electrons are torn free | Breakdown | Sets the maximum voltage of a capacitor.
+
+# ---------------------------------------------------------------- Chapter 9
+§ 2 9.1
+N O curr | Electric current | I = dQ/dt |
+d Rate at which charge passes a cross section; SI unit the ampere (1 A = 1 C/s). Conventional current points the way positive charge would move.
+g ampere (amp); electrical current; conventional current
+R[def] curr <- q, ddt : I = dQ/dt;  I_ave = ΔQ/Δt | Charge per time | Counted at a cross section.
+N S circuit | Electric circuit | closed path |
+d A closed conducting path through sources and elements, drawn as a schematic; charge flows steadily only around closed paths.
+m graph of elements joined at junctions; state = branch currents and capacitor charges
+g circuit; schematic
+R[def] circuit <- cond, curr : conducting loop carrying current | Closed path for charge | Current needs a closed path.
+
+§ 2 9.2
+N O vd | Drift velocity | v_d = I/(nqA) |
+d Small average velocity of the charge carriers along a wire, superposed on their fast random motion.
+g drift velocity
+R[thm] vd <- curr, cond, q : I = nqAv_d | Carriers crossing the area | n carriers per volume, each of charge q.
+N S Jcur | Current density | J⃗ = nqv⃗_d |
+d Current per unit area at each point of a conductor; integrated over a cross section it gives the current.
+m vector field on the conductor; I = ∫ J⃗·dA⃗
+g current density
+R[def] Jcur <- vd, q : J⃗ = n q v⃗_d | Local current | Points along the motion of positive carriers.
+
+§ 2 9.3
+N O resist | Resistivity | ρ = E/J |
+d Material property: field needed per unit current density; its inverse is the electrical conductivity. It grows roughly linearly with temperature in metals.
+g electrical conductivity; resistivity
+R[def] resist <- Eval, Jcur : ρ = E/J,  σ = 1/ρ | Field per current density | ρ = ρ₀[1 + α(T − T₀)].
+N O Rres | Resistance | R = V/I |
+d Voltage per current of a component; for a uniform wire R = ρL/A. SI unit the ohm.
+g resistance; ohm
+R[def] Rres <- dV, curr : R ≡ ΔV/I | Voltage per current | Defined for any element.
+R[thm] Rres <- resist : R = ρL/A | Geometry and material | Integrating E = ρJ along the wire.
+
+§ 2 9.4
+N M ohm | Ohm's law | V = IR |
+d For many materials current is proportional to voltage with R independent of V (ohmic); devices such as diodes are nonohmic.
+p linear current–voltage relation; J⃗ = σE⃗ locally; empirical, not universal
+g Ohm’s law; ohmic; nonohmic; diode
+R[law] ohm <- Rres, resist : R independent of V and I | Empirical linearity | A property of the material, not a definition.
+R[law] curr <- ohm, dV, Rres : I = V/R | Current from voltage | The source sets V, the element sets R.
+
+§ 2 9.5
+N O Pel | Electric power | P = IV |
+d Rate at which electrical energy is delivered to an element; in a resistor it becomes heat at I²R = V²/R.
+g electrical power
+R[thm] Pel <- curr, dV, P : P = dW/dt = (dq/dt)ΔV = IV | Power from charge and voltage | Energy qΔV delivered at rate I.
+
+§ 2 9.6
+N S supercond | Superconducting state | R = 0 below T_c | q
+d Below a critical temperature some materials lose all resistance and expel magnetic fields (Meissner effect); a quantum effect of electron pairs.
+m macroscopic phase below T_c with ρ = 0 and B = 0 in the bulk
+g superconductivity; critical temperature; Meissner effect
+R[meas] supercond <- resist, temp : ρ → 0 abruptly at T_c | Measured transition | Classical conduction theory cannot explain it.
+X Josephson junction; SQUID :: devices built on superconductivity
+
+# ---------------------------------------------------------------- Chapter 10
+§ 2 10.1
+X potential difference :: = dV
+N O emf | Electromotive force | ε |
+d Work per unit charge done by a source (battery, generator) in moving charge around a circuit; the voltage of the source with no current.
+g electromotive force (emf)
+R[def] emf <- W, q : ε = dW/dq | Work per charge by the source | Not a force; a potential difference maintained by nonelectrostatic work.
+N O Vterm | Terminal voltage | V = ε − Ir |
+d Voltage across a source's terminals; below its emf by the potential drop on its internal resistance.
+g potential drop; terminal voltage; internal resistance
+R[thm] Vterm <- emf, curr, ohm : V_terminal = ε − I r | Internal resistance | Ohm's law inside the source.
+
+§ 2 10.2
+N M Req | Resistors in series and parallel | R_s = Σ R_i,  1/R_p = Σ 1/R_i |
+d Resistors in series carry the same current and their resistances add; in parallel they share the voltage and the inverses add.
+p series: same I; parallel: same V; equivalent resistance replaces a network
+g equivalent resistance
+R[thm] Req <- ohm, qcons, dV : series V = ΣIR_i;  parallel I = ΣV/R_i | Combine with Ohm's law | Charge conservation at junctions.
+
+§ 2 10.3
+N M kirch | Kirchhoff's rules | ΣI_in = ΣI_out;  ΣV = 0 |
+d Junction rule: current into a junction equals current out. Loop rule: the potential differences around any closed loop sum to zero.
+p junction rule = charge conservation; loop rule = potential is single-valued; linear equations for branch currents
+g Kirchhoff’s rules; junction rule; loop rule
+R[thm] kirch <- qcons, Vfield, circuit : charge does not accumulate at junctions;  V returns to its value around a loop | Conservation and conservative field | Both rules follow from earlier laws.
+
+§ 2 10.4
+N M meters | Ammeter and voltmeter | series, small R / parallel, large R |
+d An ammeter is placed in series and has very small resistance; a voltmeter is placed in parallel and has very large resistance, so neither disturbs the circuit much.
+p ammeter R → 0; voltmeter R → ∞; loading error otherwise
+g ammeter; voltmeter
+R[thm] meters <- Req, circuit : inserting a meter changes R_eq by a negligible amount | Minimal disturbance | Follows from the series and parallel rules.
+
+§ 2 10.5
+N M rc | RC circuit | q = Cε(1 − e^{−t/RC}) |
+d A capacitor charging or discharging through a resistor: charge and current change exponentially with time constant τ = RC.
+p first-order linear differential equation; τ = RC; charging q → Cε, discharging q = Q e^{−t/RC}
+g RC circuit
+R[thm] rc <- kirch, Cap, ohm : ε − IR − q/C = 0,  I = dq/dt | Loop rule with a capacitor | A first-order equation for q(t).
+
+§ 2 10.6
+X shock hazard; thermal hazard; three-wire system :: electrical safety (applications)

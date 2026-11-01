@@ -1,0 +1,268 @@
+# University Physics Volume 1, chapters 10-13
+
+§ 1 10.0
+N S rigid | Rigid body on a fixed axis | θ(t) |
+d A body whose particles keep their mutual distances, turning about a fixed axis: every particle moves on a circle and one angle describes them all.
+m one angle θ(t) ∈ S¹ (one degree of freedom); each particle on a circle of fixed radius r_j
+g rigid body
+R[def] rigid <- sys, circ : |r⃗_i − r⃗_j| fixed;  each particle on a circle about the axis | Constrained system of particles | Rigidity reduces N trajectories to one rotation angle.
+
+§ 1 10.1
+N O theta | Angular position | θ = s/r |
+d Angle of a reference line of the body from a fixed direction, in radians: arc length over radius.
+g angular position
+R[read] theta <- rigid : θ = s/r | Angle of the body | The single coordinate of the rotation.
+N O angvel | Angular velocity | ω⃗ = dθ/dt |
+d Rate of change of angular position; as a vector it points along the axis by the right-hand rule. Tangential speed v_t = rω.
+g angular velocity; instantaneous angular velocity
+R[def] angvel <- theta, ddt : ω = dθ/dt | Rate of rotation | Same for every point of the rigid body.
+R[gen] angvel <- omega, cross : ω⃗ along the axis, v⃗ = ω⃗ × r⃗ | Angular frequency as a vector | The angular frequency of circular motion, given a direction.
+R[thm] speed <- angvel : v_t = r ω | Tangential speed | Points farther from the axis move faster.
+N O alpha | Angular acceleration | α = dω/dt |
+d Rate of change of angular velocity; tangential acceleration of a point is a_t = rα.
+g angular acceleration; instantaneous angular acceleration
+R[def] alpha <- angvel, ddt : α = dω/dt = d²θ/dt² | Rate of change of ω | The rotational analogue of acceleration.
+R[thm] at <- alpha : a_t = r α | Tangential acceleration | A point at distance r speeds up along its circle at rα.
+
+§ 1 10.2
+N M rotkin | Rotational kinematics | θ = θ₀ + ω₀t + ½αt² |
+d Equations for rotation at constant angular acceleration, the same form as the linear ones with θ, ω, α in place of x, v, a.
+p valid for constant α; ω = ω₀ + αt; ω² = ω₀² + 2αΔθ; direct analogue of linear kinematics
+g kinematics of rotational motion
+R[analog] rotkin <- kin, alpha : x → θ, v → ω, a → α | Same mathematics | The derivation of the linear case applies line by line.
+
+§ 1 10.3
+X total linear acceleration :: = avec
+R[thm] ac <- angvel : a_c = r ω² | Centripetal part for a rotating body | Each point of a rigid body has a centripetal acceleration rω².
+
+§ 1 10.4
+N O Krot | Rotational kinetic energy | K = ½Iω² |
+d Kinetic energy of a rotating rigid body, the sum of ½m_j v_j² with v_j = r_jω.
+g rotational kinetic energy
+R[thm] Krot <- K, angvel, rigid : K = Σ ½ m_j (r_j ω)² = ½(Σ m_j r_j²) ω² | Sum over particles | The mass distribution enters only through Σ m_j r_j².
+N O I | Moment of inertia | I = Σ m_j r_j² |
+d Rotational inertia: how mass is distributed about the axis. Depends on the axis chosen.
+g moment of inertia
+R[def] I <- rigid, m : I = Σ m_j r_j²;  I = ∫ r² dm | Mass-weighted squared distance | Read off the rotational kinetic energy.
+R[def] Krot <- I, angvel : K = ½ I ω² | Compact form | Kinetic energy in terms of I.
+
+§ 1 10.5
+X linear mass density :: = lmd
+R[thm] I <- lmd, integ : I = ∫ r² λ dr | Continuous rod | e.g. ML²/12 about the centre of a thin rod.
+N M paxis | Parallel-axis theorem | I = I_CM + Md² |
+d The moment of inertia about any axis equals that about the parallel axis through the centre of mass plus Md².
+p d = distance between the axes; I_CM is the minimum over parallel axes; moments of a compound body add
+g parallel axis; parallel-axis theorem
+R[thm] paxis <- I, rcm : Σ m_j |r⃗′_j + d⃗|² with Σ m_j r⃗′_j = 0 | Expand about the centre of mass | The cross term vanishes by the definition of the centre of mass.
+N O smd | Surface mass density | σ = dm/dA |
+d Mass per unit area of a thin sheet or disk.
+g surface mass density
+R[def] smd <- m, L : σ = dm/dA | Mass per area | Uniform disk: σ = M/(πR²).
+R[thm] I <- smd, integ : I = ∫ r² σ dA | Continuous sheet | e.g. MR²/2 for a uniform disk.
+
+§ 1 10.6
+N O tau | Torque | τ⃗ = r⃗ × F⃗ |
+d The turning effect of a force about a point or axis: force times lever arm, |τ| = r⊥F, signed by the right-hand rule.
+g torque; lever arm
+R[def] tau <- r, F, cross : τ⃗ = r⃗ × F⃗,  |τ| = r F sin θ = r⊥ F | Cross product | Only the force component perpendicular to r⃗ turns the body.
+
+§ 1 10.7
+N M n2rot | Second law for rotation | Στ = Iα |
+d Net torque about a fixed axis equals moment of inertia times angular acceleration.
+p analogue of F = ma; I depends on the axis; linear in the torques
+g Newton’s second law for rotation; rotational dynamics
+R[thm] n2rot <- n2, tau, I, rigid : Σ r_j F_j,⊥ = Σ m_j r_j² α | Second law for each particle | Multiply the tangential second law by r_j and sum.
+
+§ 1 10.8
+N O Wrot | Rotational work | W = ∫ τ dθ |
+d Work done by a torque as the body turns.
+g rotational work
+R[thm] Wrot <- tau, theta, W, integ : dW = F⃗·dr⃗ = τ dθ | Work in angular variables | With dr = r dθ along the circle.
+R[gen] wet <- Wrot, Krot : W_AB = K_B − K_A with W = ∫τ dθ, K = ½Iω² | Work–energy theorem for rotation | The same theorem in rotational variables.
+R[thm] P <- tau, angvel : P = τ ω | Rotational power | dW/dt = τ dθ/dt.
+
+# ---------------------------------------------------------------- Chapter 11
+§ 1 11.1
+N M roll | Rolling without slipping | v_CM = Rω |
+d A wheel rolls without slipping when its contact point is instantaneously at rest; translation and rotation are then locked together.
+p constraint v_CM = Rω, a_CM = Rα; static friction does no work; K = ½Mv_CM² + ½I_CMω²
+g rolling motion
+R[thm] roll <- rigid, rcm, angvel, fs : v_contact = v_CM − Rω = 0 | Contact point at rest | Static friction supplies the torque without sliding.
+
+§ 1 11.2
+N O Lang | Angular momentum | l⃗ = r⃗ × p⃗ |
+d Moment of momentum about a point; for a rigid body rotating about a symmetry axis, L = Iω.
+g angular momentum
+R[def] Lang <- r, p, cross : l⃗ = r⃗ × p⃗;  L⃗ = Σ l⃗_j | Cross product | Depends on the chosen origin.
+R[thm] Lang <- I, angvel : L = I ω | Rigid body | Summing r_j m_j v_j with v_j = r_jω.
+N M dLdt | Torque law | dL⃗/dt = Στ⃗ |
+d The rate of change of angular momentum equals the net external torque.
+p rotational analogue of F = dp/dt; vector equation; internal torques cancel for central internal forces
+R[thm] dLdt <- n2, Lang, tau : d(r⃗ × p⃗)/dt = v⃗ × p⃗ + r⃗ × F⃗ = τ⃗ | Differentiate r⃗ × p⃗ | v⃗ × m v⃗ = 0.
+
+§ 1 11.3
+N M Lcons | Conservation of angular momentum | L⃗ = const |
+d With no net external torque, the total angular momentum is constant; a skater who pulls in her arms (smaller I) spins faster.
+p vector law; requires zero net external torque; I₁ω₁ = I₂ω₂ for a body changing shape
+g law of conservation of angular momentum
+R[thm] Lcons <- dLdt, n3 : Σ τ⃗_ext = 0 ⇒ dL⃗/dt = 0 | No external torque | Internal torques cancel in pairs.
+
+§ 1 11.4
+N O omegaP | Precession rate | ω_P = rMg/(Iω) |
+d Slow turning of a spinning top's axis, because gravity's torque changes the direction of L⃗ rather than its size.
+g precession
+R[thm] omegaP <- dLdt, Lang, w : dL = τ dt with τ ⊥ L ⇒ ω_P = τ/L = rMg/(Iω) | Torque perpendicular to L | The angular momentum vector turns at rate τ/L.
+
+# ---------------------------------------------------------------- Chapter 12
+§ 1 12.1
+N S staticeq | Static equilibrium | v⃗_CM = 0, ω⃗ = 0 |
+d A rigid body at rest that stays at rest; it has no translational and no rotational acceleration.
+m configuration of a rigid body with ΣF⃗ = 0 and Στ⃗ = 0 about every point
+g equilibrium; static equilibrium
+N M eqcond | Equilibrium conditions | ΣF⃗ = 0,  Στ⃗ = 0 |
+d The first condition (zero net force) prevents translation; the second (zero net torque) prevents rotation.
+p six scalar equations in 3D; if both hold, the torque condition holds about any point; necessary for static equilibrium
+g first equilibrium condition; second equilibrium condition
+R[thm] eqcond <- n2sys, dLdt : M a⃗_CM = ΣF⃗ = 0,  dL⃗/dt = Στ⃗ = 0 | Translational and rotational laws at rest | The two dynamical laws with all accelerations zero.
+R[thm] staticeq <- eqcond, rigid : solve ΣF⃗ = 0, Στ⃗ = 0 for the unknown forces | Statics problem | The conditions determine the support forces.
+N O rcg | Center of gravity | r⃗_CG |
+d Point where the total weight can be taken to act; it coincides with the centre of mass in a uniform gravitational field.
+g center of gravity; gravitational torque
+R[thm] rcg <- rcm, w, tau : τ⃗_grav = r⃗_CM × M g⃗ | Gravitational torque | In uniform g⃗ the torques of the particle weights add up to the weight acting at the centre of mass.
+
+§ 1 12.3
+N O stress | Stress | F/A |
+d Force per unit area that deforms a body: tensile or compressive (perpendicular), bulk (from all sides), shear (parallel to the surface).
+g stress; tensile stress; compressive stress; bulk stress; shear stress
+R[def] stress <- F, L : stress = F⊥/A (tensile, compressive),  F∥/A (shear) | Force per area | Area A = ℓ² of the surface the force acts on.
+N O strain | Strain | ΔL/L₀ |
+d Fractional deformation: change of length, volume or shear offset divided by the original size; dimensionless.
+g strain; tensile strain; compressive strain; bulk strain; shear strain
+R[def] strain <- L : ΔL/L₀ (tensile),  ΔV/V₀ (bulk),  Δx/L₀ (shear) | Fractional change | Ratios of lengths, so dimensionless.
+N M elin | Linear elasticity | stress = modulus × strain |
+d For small deformations stress is proportional to strain; the constant is the elastic modulus of the material for that kind of deformation.
+p Hooke's law for materials; linear; reversible below the elastic limit; one modulus per deformation type
+g elastic modulus
+R[gen] elin <- hooke, stress, strain : F = −kx  →  stress = modulus × strain | Hooke's law per unit size | Dividing by area and length removes the size of the sample.
+N O Ymod | Young's modulus | Y |
+d Elastic modulus for tension or compression along one direction.
+g Young’s modulus
+R[def] Ymod <- elin : Y = (F⊥/A)/(ΔL/L₀) | Tensile modulus | Ratio of tensile stress to tensile strain.
+N O Bmod | Bulk modulus | B = −Δp/(ΔV/V₀) |
+d Elastic modulus for uniform compression; its inverse is the compressibility.
+g bulk modulus; compressibility
+R[def] Bmod <- elin, stress : B = −Δp V₀/ΔV | Volume modulus | Bulk stress is the change of pressure Δp.
+N O Smod | Shear modulus | S |
+d Elastic modulus for shear deformation.
+g shear modulus
+R[def] Smod <- elin : S = (F∥/A)/(Δx/L₀) | Shear modulus | Ratio of shear stress to shear strain.
+
+N O pres | Pressure | p = F⊥/A |
+d Perpendicular force per unit area; a scalar. SI unit the pascal, 1 Pa = 1 N/m².
+g pressure; normal pressure; pascal (Pa)
+R[def] pres <- F, L : p = F⊥/A | Normal force per area | Same in all directions at a point of a fluid at rest.
+§ 1 12.4
+N M ssdiag | Stress–strain diagram | σ(ε) |
+d A material is linear up to the proportionality limit, elastic (returns to shape) up to the elastic limit, plastic beyond it, and breaks at the ultimate stress.
+p linear region = Hooke's law; elastic deformation reversible; plastic deformation permanent; fracture at breaking stress
+g stress-strain diagram; elastic; elastic limit; linearity limit (proportionality limit); plastic behavior; breaking stress (ultimate stress)
+R[meas] ssdiag <- stress, strain, elin : measured stress versus strain | Material test | Linear elasticity is the initial straight part.
+
+# ---------------------------------------------------------------- Chapter 13
+§ 1 13.1
+N O G | Gravitational constant | G | prim
+d Strength of gravity between two masses, 6.674 × 10⁻¹¹ N·m²/kg², first measured with a torsion balance (Cavendish).
+g universal gravitational constant
+N M ngrav | Newton's law of gravitation | F = Gm₁m₂/r² | ax
+d Every pair of point masses attracts along the line joining them with a force proportional to both masses and inversely to the square of the distance.
+p inverse square; central and attractive; superposition holds; a spherical shell acts as a point mass at its centre
+g Newton’s law of gravitation
+R[law] F <- ngrav, G, m, r : F⃗₁₂ = −G m₁m₂/r² r̂₁₂ | Force between masses | A force law, used as the F⃗ in the second law.
+
+§ 1 13.2
+N O gfield | Gravitational field | g⃗ = F⃗/m |
+d Gravitational force per unit mass at a point; it exists whether or not a test mass is there.
+g gravitational field
+R[def] gfield <- ngrav, G : g⃗(r⃗) = −GM/r² r̂ | Force per test mass | Removes the test mass from the force law.
+R[thm] g <- gfield : g = G M_E/R_E² | Free-fall acceleration explained | The measured g of Chapter 3 follows from Earth's mass and radius.
+N O wapp | Apparent weight | w_app |
+d What a scale reads: the normal force, which differs from mg in an accelerating or rotating frame (reduced at the equator by Earth's rotation).
+g apparent weight
+R[thm] wapp <- n2, w, noninert : w_app = N = m(g − a) | Scale in an accelerating frame | The scale measures the support force, not gravity alone.
+
+§ 1 13.3
+N O Ugr | Gravitational potential energy | U = −GMm/r |
+d Potential energy of two masses at any separation, with zero at infinite separation; near Earth's surface it reduces to mgy.
+R[thm] Ugr <- ngrav, U, cons : U(r) = −∫_∞^r F_r dr′ = −GMm/r, with F_r = −GMm/r′² | Work from infinity | Gravity is conservative.
+R[lim] Ugrav <- Ugr : −GMm/(R + y) ≈ −GMm/R + mgy for y ≪ R | Near the surface | Expanding to first order in y/R.
+N O vesc | Escape velocity | v_esc = √(2GM/R) |
+d Minimum launch speed for a body to move off to infinite distance.
+g escape velocity
+R[thm] vesc <- econs, Ugr, K : ½mv² − GMm/R = 0 | Energy just zero | Kinetic energy that exactly cancels the potential energy.
+N S bound | Gravitationally bound orbit | E = K + U < 0 |
+d A system whose total energy is negative cannot separate to infinity; the bodies stay within a maximum distance.
+m trajectory confined to r ≤ r_max; total energy E < 0 (E = −GMm/2r on a circle)
+g gravitationally bound
+R[thm] bound <- Ugr, Emech : E = ½mv² − GMm/r < 0 ⇒ r ≤ GMm/|E| | Negative energy | K ≥ 0 forces U ≤ E.
+
+§ 1 13.4
+N O vorb | Orbital speed | v = √(GM/r) |
+d Speed of a circular orbit at radius r; independent of the satellite's mass.
+g orbital speed
+R[thm] vorb <- ngrav, Fc : GMm/r² = mv²/r | Gravity supplies the centripetal force | Solved for v.
+N O Torb | Orbital period | T = 2π√(r³/GM) |
+d Time for one circular orbit.
+g orbital period
+R[thm] Torb <- vorb : T = 2πr/v | Circumference over speed | With v = √(GM/r).
+
+§ 1 13.5
+N M kep1 | Kepler's first law | orbit = ellipse, Sun at a focus |
+d Every planet moves on an ellipse with the Sun at one focus; derived by Newton from the inverse-square law.
+p conic sections α/r = 1 + e cos θ; e < 1 bound ellipse, e ≥ 1 unbound; empirical (Kepler) then derived (Newton)
+g Kepler’s first law
+R[thm] kep1 <- ngrav, n2, bound : inverse-square central force with E < 0 ⇒ ellipse | Solving the equation of motion | Bound inverse-square orbits are ellipses.
+N S orbit | Elliptical orbit | r(θ) = α/(1 + e cos θ) |
+d The orbital state: an ellipse traced periodically, closest to the Sun at perihelion and farthest at aphelion.
+m conic section with eccentricity e < 1, semimajor axis a; closed periodic curve
+g perihelion; aphelion
+R[read] orbit <- kep1, rt : r(θ) = α/(1 + e cos θ) | Trajectory shape | The trajectory of a bound planet.
+N M kep2 | Kepler's second law | dA/dt = const |
+d The line from Sun to planet sweeps equal areas in equal times, so a planet moves fastest at perihelion.
+p equivalent to conservation of angular momentum for a central force; holds for any central force
+g Kepler’s second law
+R[thm] kep2 <- Lcons, orbit : dA/dt = L/(2m) | Central force ⇒ constant L | Area swept per time is proportional to angular momentum.
+N M kep3 | Kepler's third law | T² = 4π²a³/(GM) |
+d The square of the orbital period is proportional to the cube of the semimajor axis.
+p same constant for all planets of one star; independent of planet mass (when m ≪ M)
+g Kepler’s third law
+R[gen] kep3 <- Torb, orbit : circular radius r → semimajor axis a | From circles to ellipses | The circular-orbit period generalised.
+
+§ 1 13.6
+N O Ftide | Tidal force | ΔF ≈ 2GMmΔr/r³ |
+d Difference in the gravitational pull across a body; it stretches the body along the line to the attracting mass. Sun and Moon aligned give spring tides, at right angles neap tides.
+g tidal force; spring tide; neap tide
+R[thm] Ftide <- ngrav : ΔF = |dF/dr| Δr = 2GMmΔr/r³ | Gradient of the inverse-square force | First-order difference across the body.
+
+§ 1 13.7
+N O c | Speed of light | c | prim
+d Speed of light in vacuum, 2.998 × 10⁸ m/s (exact by the definition of the metre).
+N M GR | General relativity | G_μν = 8πG T_μν / c⁴ | rel
+d Gravity is the curvature of space-time produced by mass and energy; free bodies follow the straightest paths of the curved geometry.
+p geometric (non-Euclidean) space-time; no action at a distance; reduces to Newton's law for weak fields and slow motion
+g theory of general relativity; space-time; non-Euclidean geometry; action-at-a-distance force
+N M equiv | Principle of equivalence | gravity ≡ acceleration (locally) | rel ax
+d No local experiment can distinguish a uniform gravitational field from an accelerated frame; a freely falling frame is locally inertial.
+p local statement; gravitational mass = inertial mass; free fall replaces the inertial frame
+g principle of equivalence
+R[gen] GR <- equiv, ngrav, c : curvature ↔ energy density;  weak field → ∇²Φ = 4πGρ | Gravity as geometry | Equivalence makes gravity a property of space-time; Newton's law fixes the weak-field limit.
+R[lim] ngrav <- GR : weak field, v ≪ c ⇒ F = GMm/r² | Newtonian limit | Newton's law is the slow, weak-field limit of general relativity.
+N S bh | Black hole | r < R_S | rel
+d A mass compressed inside its Schwarzschild radius; nothing, not even light, escapes from inside the event horizon.
+m space-time region bounded by the event horizon r = R_S
+g black hole
+N O RS | Schwarzschild radius | R_S = 2GM/c² | rel
+d Radius at which the escape velocity from a mass M reaches the speed of light; it marks the event horizon.
+g Schwarzschild radius; event horizon
+R[thm] RS <- GR, G, c : R_S = 2GM/c² | Horizon of a point mass | From the Schwarzschild solution of general relativity.
+R[thm] bh <- RS, GR : collapse to r < R_S | Collapse inside the horizon | Light cones inside point inward.
+X neutron star :: an astrophysical example (compact star) without a separate model in the chapter

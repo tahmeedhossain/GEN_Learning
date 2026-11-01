@@ -1,0 +1,399 @@
+# University Physics Volume 2, chapters 1-4 (thermodynamics)
+# Reading text (P paragraphs, Q display equations) written for this network.
+
+§ 2 1.0
+P Mechanics described bodies by positions, velocities and forces, and tracked energy through [[W|work]] and the [[econs|conservation of mechanical energy]]. It left out a property everyone can feel: how hot a body is. When friction stops a sliding block, the lost mechanical energy is not destroyed; the block and the floor become warmer. This chapter defines temperature and the energy transfer called heat. It describes what heating does to matter: most materials expand, their temperature rises by an amount that depends on the material, and they can melt or boil. The chapter ends with the three ways heat travels: conduction, convection and radiation.
+
+§ 2 1.1
+P A thermometer reading tells how hot a body is, and the quantity it reads is [[temp|temperature]]. Before such readings can be compared, it must be clear what it means for two bodies to be equally hot. Consider a [[sys|system]] of two bodies that can exchange energy through a wall or by touching, but are otherwise isolated. Such bodies change: the hotter one cools and the colder one warms, through *heat transfer*. After a while the changes stop, and every measurable property of each body stays constant. The bodies are then in [[theq|thermal equilibrium]]. This state is defined by the absence of further change, so it can be recognised without any thermometer.
+N O temp | Temperature | T |
+d How hot a body is, read from a thermometer; bodies in thermal equilibrium share one temperature. SI unit the kelvin.
+g temperature
+N S theq | Thermal equilibrium | A ~ B |
+d The state reached by bodies in thermal contact when heat transfer between them has stopped.
+m equivalence relation on equilibrium states of bodies in contact; its classes are labelled by temperature
+g thermal equilibrium
+R[def] theq <- sys : bodies in thermal contact settle into a state that no longer changes | Approach to equilibrium | Defined by the absence of further change, before any temperature is defined.
+P Experiments with many bodies show a simple regularity. If body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with C, then A and B are in thermal equilibrium with each other. This is the [[zeroth|zeroth law of thermodynamics]]. It was named after the first and second laws, but it is logically prior to them. The law makes [[theq|thermal equilibrium]] an equivalence relation, so bodies fall into classes whose members are all in equilibrium with one another. [[temp|Temperature]] is the label of these classes: two bodies have equal temperatures exactly when they are in thermal equilibrium. A thermometer plays the part of body C. It is brought to equilibrium with a sample, and one of its properties, such as the length of a liquid column, is read.
+N M zeroth | Zeroth law | A ~ C, B ~ C ⇒ A ~ B | ax
+d Two bodies each in thermal equilibrium with a third are in equilibrium with each other.
+p transitivity: thermal equilibrium is an equivalence relation; justifies thermometers
+g zeroth law of thermodynamics
+R[def] temp <- zeroth, theq : T labels the equivalence classes of thermal equilibrium | Temperature from the zeroth law | Transitivity lets one number, read on a thermometer, decide equilibrium.
+
+§ 2 1.2
+P A *thermometer* can use any property that changes steadily with temperature: the volume of a liquid in a glass tube, the bending of a bimetallic strip, the electrical resistance of a platinum wire, the voltage of a thermocouple, or the infrared radiation from a surface. Numbers are attached to [[temp|temperature]] by a [[tscale|temperature scale]], fixed by reproducible states. The *Celsius scale* was built on the freezing point (0 °C) and boiling point (100 °C) of water at 1 atm. The *Fahrenheit scale* puts the same points at 32 °F and 212 °F, so a *degree Fahrenheit* is 5/9 of a *degree Celsius*. The *Kelvin scale* has the same unit size as the Celsius scale, but its zero is *absolute zero*, the lowest possible temperature, −273.15 °C. A scale with a non-arbitrary zero is an *absolute temperature scale*. Laws that contain T itself, not only differences ΔT, require kelvins.
+Q T_K = T_C + 273.15,   T_F = (9/5)T_C + 32
+N M tscale | Temperature scales | T_K = T_C + 273.15 |
+d Celsius and Fahrenheit are relative scales; the Kelvin scale is absolute, with zero at absolute zero and the triple point of water at 273.16 K.
+p linear maps between scales: T_F = (9/5)T_C + 32; absolute zero is the lowest possible temperature; the kelvin and the degree Celsius have equal size
+g absolute temperature scale; absolute zero; Celsius scale; degree Celsius; degree Fahrenheit; Fahrenheit scale; Kelvin scale (K); triple point
+R[def] tscale <- temp : T_K = T_C + 273.15,  T_F = 1.8 T_C + 32 | Fixed points and unit size | Scales differ by an offset and a unit.
+P Absolute zero is located with a *constant-volume gas thermometer*. A fixed amount of gas is held at constant volume, and its pressure is measured at several known temperatures. At low density the points lie on a straight line. Extended to zero pressure, the line reaches −273.15 °C for every gas, and the Kelvin scale puts its zero there. The other reference point is the *triple point* of water, the single temperature and pressure (611.7 Pa) at which ice, liquid water and water vapor coexist; its temperature is 273.16 K, or 0.01 °C. Body temperature, 37.0 °C, is 310.15 K or 98.6 °F, and the Celsius and Fahrenheit scales agree at −40. A temperature difference of 1 K equals a difference of 1 °C and of 1.8 °F.
+
+§ 2 1.3
+P Most materials expand when heated. A rod of [[L|length]] L whose [[temp|temperature]] rises by ΔT grows by an amount proportional to both, ΔL = αLΔT. This empirical law of [[texp|thermal expansion]] holds for small changes, αΔT ≪ 1. The *coefficient of linear expansion* α is a property of the material; for steel α ≈ 12 × 10⁻⁶ K⁻¹. A 100 m steel bridge that warms by 40 K grows by (12 × 10⁻⁶ K⁻¹)(100 m)(40 K) = 0.048 m, so bridges are built with *expansion joints*. To first order, areas grow by ΔA = 2αAΔT, and volumes by ΔV = βVΔT, with *coefficient of volume expansion* β = 3α for an isotropic solid; a liquid has only a volume coefficient. On the atomic scale, a hotter solid vibrates with larger amplitude in an asymmetric potential well, so the mean spacing of its atoms increases.
+Q ΔL = αLΔT,   ΔV = βVΔT
+N M texp | Thermal expansion | ΔL = αLΔT,  ΔV = βVΔT |
+d Most materials grow when heated: linearly in the temperature change for small changes; β ≈ 3α for isotropic solids. Water below 4 °C is an exception.
+p linear in ΔT; coefficients material-dependent; β = 3α for isotropic solids
+g thermal expansion; coefficient of linear expansion; coefficient of volume expansion
+R[law] texp <- temp, L : ΔL = αLΔT | Expansion law | Empirical; atoms vibrate with larger mean separation when hotter.
+P Water is an important exception. Between 0 °C and 4 °C liquid water contracts as it warms, so the *density of water* is greatest, about 1000 kg/m³, near 4 °C. The *freezing of water* increases its volume by about 9 %, so ice floats. In a lake that cools in winter, water near 4 °C sinks to the bottom while colder water stays on top and freezes first. The lake therefore freezes from the surface down. The ice insulates the water beneath it, and the water at the bottom stays near 4 °C.
+P A body that cannot expand freely develops [[tstress|thermal stress]] instead. Picture the free [[texp|thermal expansion]] of a rod, ΔL = αLΔT, followed by a compression that pushes it back to its original length. That compression is a strain ΔL/L = αΔT. In the linear elastic range, the [[stress|stress]] that produces it is [[Ymod|Young's modulus]] times the strain, so σ = YαΔT, independent of the rod's length. For a steel rail with Y = 2.0 × 10¹¹ Pa and α = 12 × 10⁻⁶ K⁻¹, fixed between rigid supports and warmed by 30 K, σ = (2.0 × 10¹¹ Pa)(12 × 10⁻⁶ K⁻¹)(30 K) = 7.2 × 10⁷ Pa. That is about 30 % of the stress at which structural steel begins to yield, roughly 250 MPa. A clamped body that cools is put under tension in the same way.
+Q σ = YαΔT
+N O tstress | Thermal stress | σ = YαΔT |
+d Stress that appears when a body is prevented from expanding or contracting.
+g thermal stress
+R[thm] tstress <- texp, Ymod, stress : σ = Y(ΔL/L) = YαΔT | Expansion held back | The stress needed to undo the free expansion.
+
+§ 2 1.4
+P Bodies at different [[temp|temperatures]] in contact exchange energy until they reach [[theq|thermal equilibrium]], and the energy passes from the hotter body to the colder one. Energy transferred because of a temperature difference is [[heat|heat]], Q. Heat is energy in transit, not something a body contains. What a body contains is its *internal energy*, the kinetic and potential energy of its molecules, which depends only on the body's present state; it is a *state variable*. The traditional unit of heat, the *calorie*, raises the temperature of 1 g of water by 1 °C, and the *kilocalorie*, 1000 cal, is the food Calorie. In the 1840s James Joule let falling weights turn a paddle wheel in insulated water. The [[W|work]] done by the weights warmed the water just as heating would, and equal work always gave equal warming. Such measurements fix the *mechanical equivalent of heat*, 1 cal = 4.186 J, so heat is measured in joules.
+N O heat | Heat | Q |
+d Energy transferred between bodies because of their temperature difference. 1 cal = 4.186 J (mechanical equivalent of heat).
+g heat; heat transfer; calorie (cal); kilocalorie (kcal); mechanical equivalent of heat
+R[def] heat <- temp, theq : energy that flows from hot to cold until equilibrium | Energy in transit | Not a property of a body; it is a transfer.
+R[meas] heat <- W : 1 cal = 4.186 J (Joule's paddle wheel) | Mechanical equivalent of heat | Work and heat change a body's temperature in the same way, so heat is energy.
+P The [[heat|heat]] needed to change a body's [[temp|temperature]] by ΔT without a change of phase is proportional to its [[m|mass]] m and to ΔT: Q = mcΔT. The constant c is the [[cspec|specific heat]], c = Q/(mΔT), the heat per unit mass per kelvin, in J/(kg·K). It is a property of the material and varies only slowly with temperature over ordinary ranges. Water has an unusually large specific heat, 4186 J/(kg·K); aluminium has 900 J/(kg·K) and copper 386 J/(kg·K). Heating 2.00 kg of water from 20.0 °C to 80.0 °C takes (2.00 kg)(4186 J/(kg·K))(60.0 K) = 5.02 × 10⁵ J. Since a temperature difference is the same in kelvins and in Celsius degrees, either may be used for ΔT.
+Q Q = mcΔT
+N O cspec | Specific heat | Q = mcΔT |
+d Heat needed per unit mass to raise the temperature by one kelvin.
+g specific heat
+R[def] cspec <- heat, m, temp : c = Q/(mΔT) | Heat per mass per degree | Material property; water has an unusually large value.
+P [[calor|Calorimetry]] measures heat through an energy balance. Bodies at different temperatures are placed together in a *calorimeter*, an insulated container that exchanges negligible energy with its surroundings. Its contents then form an isolated system, and by [[econs|conservation of energy]] the [[heat|heat]] lost by the hot bodies equals the heat gained by the cold ones. With each Q counted positive when it enters a body, Q_{hot} + Q_{cold} = 0. Writing each heat with its [[cspec|specific heat]] gives Σ mᵢcᵢΔTᵢ = 0, which fixes the common final temperature or an unknown specific heat. Suppose 0.500 kg of aluminium at 100 °C is dropped into 1.00 kg of water at 20.0 °C. In SI units, with T in °C, 0.500 × 900 × (T − 100) + 1.00 × 4186 × (T − 20.0) = 0, so the final temperature is T = 27.8 °C. The water's large specific heat keeps its temperature change small.
+Q Q_{hot} + Q_{cold} = 0,   Σ mᵢcᵢΔTᵢ = 0
+N M calor | Calorimetry | Q_hot + Q_cold = 0 |
+d Heat lost by the hot bodies in an insulated container equals heat gained by the cold ones.
+p energy conservation for heat exchange; requires an isolated container (calorimeter)
+g calorimetry; calorimeter
+R[thm] calor <- cspec, heat, econs : Σ m_i c_i ΔT_i = 0 | Energy balance | Total energy of an isolated system is constant.
+P Specific heats are not constant at low temperature. A solid keeps nearly its high-temperature specific heat down to a temperature characteristic of the material, the *Debye temperature*, named after Peter Debye; well below it the specific heat falls steeply toward zero. The Debye temperature is about 105 K for lead, 343 K for copper and 2230 K for diamond. At room temperature lead and copper therefore have nearly their high-temperature values, while diamond, far below its Debye temperature, has only about a quarter of its own. Classical physics cannot account for this fall. Its explanation needs quantum mechanics and is taken up with the heat capacities of gases in the next chapter.
+
+§ 2 1.5
+P Heating can also change the phase of a substance. *Melting* and *freezing*, *evaporation* and *condensation*, and *sublimation*, the direct change from solid to gas, are *phase transitions*. Which phase is stable depends on [[pres|pressure]] and [[temp|temperature]]. Measurements are summarised in a [[phase|phase diagram]], a map of the (p, T) plane divided into solid, liquid and gas regions. On the curves between the regions, two phases coexist in equilibrium. The liquid–gas curve gives the *vapor pressure*, the pressure of the *vapor* in equilibrium with its liquid at each temperature. A liquid boils when its vapor pressure equals the pressure around it, so where the air pressure is low, as on a high mountain, water boils below 100 °C. The three curves meet at the *triple point*, where solid, liquid and gas coexist.
+N S phase | Phase diagram | regions in the (p, T) plane |
+d Which phase (solid, liquid, gas) is stable at each pressure and temperature; the coexistence lines meet at the triple point and the liquid–vapor line ends at the critical point.
+m partition of the (p, T) plane by coexistence curves; triple point; critical point (T_c, p_c); vapor pressure curve
+g phase diagram; critical point; critical temperature; critical pressure; sublimation; vapor; vapor pressure
+R[meas] phase <- temp, pres : equilibrium phase at each (p, T) | Mapped by experiment | Coexistence curves are where two phases are in equilibrium.
+P The liquid–gas curve ends at the *critical point*, at the *critical temperature* T_c and *critical pressure* p_c; for water T_c = 647 K and p_c = 22.1 MPa. Above T_c, compression never produces a separate liquid phase, and the substance is a *supercritical fluid*. Below T_c the gas phase is usually called a vapor. For carbon dioxide the triple point lies at 5.11 atm and −56.6 °C, so at atmospheric pressure CO₂ has no liquid phase. Solid CO₂, *dry ice*, turns directly into gas at −78.5 °C by sublimation. Water is unusual in another way: its solid–liquid curve has a negative slope, so raising the pressure lowers the melting point of ice.
+P During a phase change at constant pressure, [[heat|heat]] flows in or out while the temperature stays fixed: ice in a drink stays at 0 °C until it has melted. The heat breaks or forms bonds between molecules, changing their potential energy rather than their kinetic energy. For a [[m|mass]] m the heat is Q = mL, where the [[Lheat|latent heat coefficient]] L is the *heat of fusion* L_f for melting, the *heat of vaporization* L_v for boiling and the *heat of sublimation* L_s for sublimation. Each is measured along the matching coexistence curve of the [[phase|phase diagram]]. For water at 1 atm, L_f = 334 kJ/kg and L_v = 2256 kJ/kg. Melting 0.250 kg of ice takes (0.250 kg)(334 kJ/kg) = 83.5 kJ, enough to warm the same mass of liquid water by 79.8 K. In calorimetry with phase changes, the mL terms join the mcΔT terms in the energy balance.
+Q Q = mL_f,   Q = mL_v
+N O Lheat | Latent heat | Q = mL |
+d Heat absorbed or released at constant temperature during a phase change: heat of fusion, vaporization or sublimation.
+g latent heat coefficient; heat of fusion; heat of vaporization; heat of sublimation
+R[def] Lheat <- heat, phase, m : Q = m L_f,  Q = m L_v | Heat at a phase boundary | Breaks or forms bonds without changing T.
+
+§ 2 1.6
+X radiation :: = sbl
+P [[heat|Heat]] travels by three mechanisms: conduction, convection and radiation. In [[fourier|conduction]], energy passes through a material from each molecule to its neighbours in collisions, and in metals also by free electrons, while the material as a whole stays at rest. Experiment shows that in a steady state the *rate of conductive heat transfer* P through a slab is proportional to its area A and to the [[temp|temperature]] difference T_h − T_c between its faces, and inversely proportional to its thickness d. The constant of proportionality k is the *thermal conductivity* of the material: about 390 W/(m·K) for copper, 0.84 W/(m·K) for glass and 0.023 W/(m·K) for still air. Metals, which conduct electricity well, also conduct heat well.
+Q P = kA(T_h − T_c)/d
+N M fourier | Heat conduction | P = kA(T_h − T_c)/d |
+d Heat flows through a material at a rate proportional to area and temperature difference and inversely to thickness.
+p linear in ΔT; k = thermal conductivity (material); layers add like resistances
+g conduction; rate of conductive heat transfer; thermal conductivity
+R[law] fourier <- heat, temp : dQ/dt = kA ΔT/d | Conduction law | Empirical, from molecular collisions.
+P Good *insulation* has a small conductivity, usually because it traps air in small pockets where it cannot circulate. A layer is described by its *R factor*, R = d/k, so that P = A(T_h − T_c)/R. In a steady state the same heat current passes through every layer of a wall, so the temperature drops across the layers add, and so do their R factors, as for resistances in series. A glass pane 5.00 mm thick has R = (0.00500 m)/(0.84 W/(m·K)) = 0.0060 m²·K/W, and each square metre of it conducts 168 W for every kelvin of temperature difference between its faces. A 10 cm layer of fibreglass, with k ≈ 0.04 W/(m·K), has R = 2.5 m²·K/W and conducts about 400 times less.
+P In [[convect|convection]], [[heat|heat]] is carried by the bulk motion of a fluid, a [[flow|fluid flow]] that moves warm matter from place to place. In *natural convection* the temperature difference drives the flow itself. Fluid heated from below expands and becomes less dense, so by [[archi|Archimedes' principle]] the cooler, denser fluid around it pushes it upward, while cool fluid sinks to take its place. This circulation heats a pot of water from the bottom and stirs the lower atmosphere. In *forced convection* a pump or fan drives the flow, as in a car's cooling system or a fan heater. Convection usually moves heat much faster than conduction through the same fluid at rest; air insulates well only when it is kept still.
+N M convect | Convection | heat carried by flow |
+d Heat transported by bulk motion of a fluid, driven by buoyancy (natural) or by pumps and fans (forced).
+p requires fluid motion; natural convection driven by density differences
+g convection
+R[thm] convect <- heat, flow, archi : warm fluid is less dense and rises | Heat moved with matter | Buoyancy turns a temperature difference into flow.
+P The third mechanism, radiation, needs no medium; sunlight crosses empty space. Every body emits electromagnetic radiation, mostly infrared at everyday temperatures, at the rate given by the [[sbl|Stefan–Boltzmann law of radiation]], P = σeAT⁴. Here T is the absolute [[temp|temperature]], σ = 5.67 × 10⁻⁸ W/(m²·K⁴), and the *emissivity* e lies between 0 and 1. A blackbody, a perfect absorber, has e = 1, and good absorbers are good emitters. A body at T₁ also absorbs radiation from surroundings at T₂, so its *net rate of heat transfer by radiation* is P_{net} = σeA(T₂⁴ − T₁⁴), positive when it gains [[heat|heat]]. Skin at 306 K, with area 1.50 m² and e = 0.97, loses about 99 W this way in a room at 295 K. *Thermographs* are images of this infrared emission. In the *greenhouse effect*, water vapor and carbon dioxide in the atmosphere absorb infrared from Earth's surface and send part of it back, which keeps the surface warmer.
+Q P_{net} = σeA(T₂⁴ − T₁⁴)
+N M sbl | Stefan–Boltzmann law | P = σeAT⁴ | ax
+d Every body radiates energy at a rate proportional to the fourth power of its absolute temperature; the net rate is σeA(T₂⁴ − T₁⁴).
+p ∝ T⁴ in kelvin; emissivity 0 ≤ e ≤ 1 (1 for a blackbody); good emitters are good absorbers
+g Stefan-Boltzmann law of radiation; emissivity; net rate of heat transfer by radiation
+R[law] heat <- sbl, temp : P_net = σeA(T₂⁴ − T₁⁴) | Radiative transfer | Heat transfer that needs no medium.
+X greenhouse effect :: an application of radiative balance to the atmosphere
+
+# ---------------------------------------------------------------- Chapter 2
+§ 2 2.0
+P Chapter 1 described matter through measured quantities such as [[temp|temperature]], [[pres|pressure]] and volume, without asking what matter is made of. This chapter treats a gas as a very large number of molecules that move between collisions according to [[n2|Newton's second law]]. Averaging their motion explains the gas laws: pressure is the [[p|momentum]] that molecules deliver to the walls per unit time and area, and temperature measures their mean [[K|kinetic energy]]. The same picture predicts heat capacities by counting the ways a molecule can store energy, and it gives the distribution of molecular speeds. Its clearest failure, the heat capacity of hydrogen at low temperature, points to quantum physics.
+
+§ 2 2.1
+P Dilute gases obey simple laws. For a fixed amount of gas at constant temperature, the [[pres|pressure]] is inversely proportional to the volume: *Boyle's law*, published by Robert Boyle in 1662. At constant pressure the volume is proportional to the absolute [[temp|temperature]] (*Charles's law*), and at constant volume the pressure is proportional to the absolute temperature (*Gay-Lussac's law*). At fixed pressure and temperature, the volume is proportional to the amount of gas. Together these give the [[igl|ideal gas law]]: pV is proportional to the amount of gas times T, where p is the absolute pressure and T is in kelvins. An *ideal gas* obeys this law exactly. Real gases approach it as their density goes to zero; air at room temperature and atmospheric pressure deviates from it by less than 0.1 %.
+N M igl | Ideal gas law | pV = N k_B T = nRT |
+d For a dilute gas, pressure times volume is proportional to the number of molecules and the absolute temperature (Boyle, Charles and Gay-Lussac combined).
+p equation of state; valid at low density; isotherms are hyperbolas pV = const
+g ideal gas; ideal gas law
+P Counting molecules turns the proportionality into an equation. For N molecules, pV = Nk_{B}T, where [[kB|Boltzmann's constant]] k_B = 1.381 × 10⁻²³ J/K converts temperature into energy per molecule. Chemists count in moles instead. A *mole* is the amount of substance that contains [[NA|Avogadro's number]] N_A = 6.022 × 10²³ particles, and n = N/N_A is the number of moles. Per mole, the [[igl|ideal gas law]] relating [[pres|pressure]], volume and [[temp|temperature]] reads pV = nRT, with the [[Rgas|universal gas constant]] R = N_A k_B = 8.314 J/(mol·K). Since 2019 the SI has fixed exact values of k_B and N_A, which define the kelvin and the mole. Molecular masses are given in *unified atomic mass units* (u), also called *daltons*: 1 u = 1.661 × 10⁻²⁷ kg, one twelfth of the mass of a carbon-12 atom. A molecule of 28.0 u, such as N₂, has a molar mass of 28.0 g/mol.
+Q pV = Nk_{B}T = nRT
+N O kB | Boltzmann constant | k_B | prim
+d Converts temperature to energy per molecule: 1.38 × 10⁻²³ J/K.
+g Boltzmann constant
+N O NA | Avogadro's number | N_A | prim
+d Number of molecules in one mole, 6.02 × 10²³ mol⁻¹; the mole counts amount of substance.
+g mole; Avogadro’s number
+N O Rgas | Gas constant | R = N_A k_B |
+d Boltzmann's constant per mole: 8.31 J/(mol·K).
+g universal gas constant
+R[def] Rgas <- NA, kB : R = N_A k_B | Per-mole constant | pV = nRT with n = N/N_A.
+R[law] igl <- pres, temp, kB, Rgas : pV = N k_B T = nRT | Empirical gas laws | Equation of state of a dilute gas.
+P At high density real gases depart from the [[igl|ideal gas law]]. The [[vdw|van der Waals equation of state]], proposed by Johannes van der Waals in 1873, corrects it with two constants for each gas. Molecules attract one another at short range, which lowers the pressure they exert on the walls; to account for this, p is replaced by p + a(n/V)². Molecules also occupy space, so the volume free for their motion is V − nb rather than V. The equation reduces to pV = nRT when n/V is small. Unlike the ideal gas law, it describes a *phase transition*. Below a *critical temperature* T_c, compressing the gas eventually condenses it into liquid. Above T_c no compression does, and the fluid is *supercritical*.
+Q [p + a(n/V)²](V − nb) = nRT
+N M vdw | Van der Waals equation | [p + a(n/V)²](V − nb) = nRT |
+d Corrects the ideal gas law for attraction between molecules (a) and their own volume (b); predicts liquefaction below a critical temperature.
+p reduces to the ideal gas law at low density; critical point where an isotherm has an inflection; above T_c no liquid–gas transition (supercritical)
+g van der Waals equation of state; critical temperature; supercritical
+R[gen] vdw <- igl : p → p + a(n/V)², V → V − nb | Real-gas corrections | Two constants per gas.
+
+P For a fixed amount of gas, the [[igl|ideal gas law]] ties three variables together, so any two of [[pres|pressure]], volume and [[temp|temperature]] fix the third: T = pV/(Nk_B). The [[pV|equilibrium state of a gas]] is therefore a point on a *pV diagram*, which plots pressure against volume. The states at one temperature form an isotherm, the hyperbola pV = constant, and hotter isotherms lie farther from the axes. For a fixed sample the constants cancel between two states, p₁V₁/T₁ = p₂V₂/T₂. Gas at 1.00 atm and 20 °C (293 K) that is compressed to half its volume while warming to 40 °C (313 K) ends at (1.00 atm)(2)(313/293) = 2.14 atm. At *standard temperature and pressure* (STP), 0 °C and 1.00 atm, one mole of any ideal gas occupies 22.4 L.
+N S pV | Equilibrium state of a gas | point (p, V) |
+d A gas in equilibrium is fixed by two of p, V, T; the third follows from the equation of state, so the state is a point on a pV diagram.
+m point of the surface f(p, V, T) = 0; two coordinates suffice (a point of the pV plane)
+g pV diagram
+R[thm] pV <- igl, pres, temp : T = pV/(Nk_B) | Two variables suffice | The equation of state removes one variable.
+§ 2 2.2
+P The [[kinth|kinetic theory of gases]] explains the ideal gas law by mechanics, an idea proposed by Daniel Bernoulli in 1738. Model a gas as a [[sys|system]] of N identical molecules of mass m in a cubical box of side L. The molecules are points in random motion; they collide elastically with the walls and exert no forces on one another except in collisions. A molecule with velocity component v_x that strikes the wall at x = L reverses v_x, so its [[p|momentum]] changes by −2mv_x, and it returns to that wall after a time 2L/v_x. By [[n2|Newton's second law]] and the [[n3|third law]], it exerts an average force 2mv_x/(2L/v_x) = mv_x²/L on the wall. Summing over molecules gives F = Nm⟨v_x²⟩/L. Random motion makes ⟨v_x²⟩ = ⟨v²⟩/3, and dividing F by the wall area L² gives the [[pres|pressure]], p = Nm⟨v²⟩/(3V).
+Q pV = ⅓Nm⟨v²⟩
+N M kinth | Kinetic theory of gases | pV = ⅓ N m ⟨v²⟩ |
+d A gas is many point molecules in random motion; pressure is the momentum they transfer to the walls in collisions.
+p statistical (averages over molecules); molecules point-like, elastic collisions; Newton's laws for each molecule
+g kinetic theory of gases
+R[thm] kinth <- n2, p, sys, pres : F_wall = Σ Δp/Δt = (N m⟨v_x²⟩/L),  p = F/A | Momentum transfer to the walls | Newton's second law for molecules bouncing off a wall.
+P Comparing this with the [[igl|ideal gas law]], pV = Nk_{B}T, and writing ⅓Nm⟨v²⟩ = ⅔N⟨½mv²⟩, gives the mean translational [[K|kinetic energy]] of a molecule, ⟨K⟩ = (3/2)k_{B}T. The [[kinth|kinetic theory]] thus gives [[temp|temperature]] a mechanical meaning: absolute temperature measures the average translational kinetic energy per molecule, the same for every gas. The [[Eint|internal energy]] of a gas is the total kinetic and potential energy of its molecules. A monatomic ideal gas has no forces between molecules and no motion besides translation, so E_{int} = (3/2)Nk_{B}T = (3/2)nRT, a function of temperature alone. The [[vrms|root-mean-square (rms) speed]] v_{rms} = √⟨v²⟩ follows from E_{int}/N = ½m v_{rms}²: v_{rms} = √(3k_{B}T/m) = √(3RT/M), with [[kB|Boltzmann's constant]] k_B, the molecular [[m|mass]] m, and the molar mass M in kg/mol.
+Q ⟨K⟩ = ½m⟨v²⟩ = (3/2)k_{B}T
+N O Eint | Internal energy | E_int = (3/2) N k_B T |
+d Total kinetic and potential energy of the molecules; for a monatomic ideal gas only kinetic, (3/2)Nk_BT.
+g internal energy
+R[thm] Eint <- kinth, igl, K : ⟨½mv²⟩ = (3/2) k_B T | Compare with pV = Nk_BT | Average kinetic energy per molecule set by temperature.
+R[thm] temp <- kinth, K : ⟨K⟩ = (3/2) k_B T | Kinetic meaning of temperature | Temperature measures the average translational kinetic energy.
+N O vrms | rms speed | v_rms = √(3k_BT/m) |
+d Square root of the mean square molecular speed.
+g root-mean-square (rms) speed
+R[thm] vrms <- Eint, kB, m : v_rms = √(3k_BT/m) = √(3RT/M) | From the mean kinetic energy | Lighter molecules move faster at the same T.
+P Since every species in a gas at one temperature has the same mean kinetic energy, lighter molecules move faster. At 300 K the [[vrms|rms speed]] of nitrogen (M = 0.0280 kg/mol) is 517 m/s, and that of hydrogen (M = 0.00202 kg/mol) is 1.92 km/s. In the hot upper atmosphere the fastest hydrogen and helium atoms exceed Earth's [[vesc|escape velocity]], 11.2 km/s, and are lost to space. In a mixture of ideal gases each species also strikes the walls independently of the others. By the [[kinth|kinetic theory]] it exerts the *partial pressure* pᵢ = Nᵢk_{B}T/V that the [[igl|ideal gas law]] gives for it alone, and the total pressure is the sum of the partial pressures. This is [[dalton|Dalton's law of partial pressures]]. The *relative humidity* of air is the partial pressure of water vapor as a percentage of the *vapor pressure* of water at the same temperature, which is 2.34 kPa at 20 °C.
+Q p = Σ pᵢ
+N M dalton | Dalton's law | p = Σ p_i |
+d In a mixture each gas exerts its own partial pressure as if alone; the total pressure is their sum.
+p additive in partial pressures; molecules of ideal gases do not interact
+g partial pressure; Dalton’s law of partial pressures; vapor pressure
+R[thm] dalton <- igl, kinth : p_i = N_i k_B T/V | Independent molecules | Pressure counts molecules regardless of kind.
+P Collisions between molecules do not change the pressure in the [[kinth|kinetic theory]], but they end each straight flight. Model the molecules as spheres of radius r. A molecule hits every other molecule whose centre comes within 2r of its path, so in a distance ℓ it sweeps a cylinder of volume π(2r)²ℓ = 4πr²ℓ. With N/V molecules per unit volume, it meets one molecule, on average, in a distance V/(4πr²N). The motion of the other molecules shortens this by a factor √2, which gives the [[mfp|mean free path]] λ. The [[igl|ideal gas law]], N/V = p/(k_{B}T), expresses it through temperature and pressure. For nitrogen at 0 °C and 1.00 atm, with r ≈ 0.19 nm, λ ≈ 58 nm. Dividing λ by the mean molecular speed, about 450 m/s, gives the *mean free time* between collisions, about 1.3 × 10⁻¹⁰ s.
+Q λ = V/(4√2 πr²N) = k_{B}T/(4√2 πr²p)
+N O mfp | Mean free path | λ = k_BT/(4√2 π r² p) |
+d Average distance a molecule travels between collisions; divided by the mean speed it gives the mean free time.
+g mean free path; mean free time
+R[thm] mfp <- kinth, igl : λ = V/(4√2 π r² N) | Collision cylinder | Volume swept per collision for molecules of radius r.
+
+§ 2 2.3
+P The heat that raises the temperature of a gas by one kelvin depends on what else happens to the gas, so a gas's heat capacity is stated per mole and for a definite process. The [[CV|molar heat capacity at constant volume]] is C_V = Q/(nΔT) with the volume held fixed. The gas then does no work, and all the [[heat|heat]] it absorbs becomes [[Eint|internal energy]]. For a monatomic ideal gas E_{int} = (3/2)nRT, so Q = (3/2)nRΔT and C_V = (3/2)R = 12.5 J/(mol·K). Helium, neon and argon have very nearly this value over a wide range of temperatures. Nitrogen and oxygen have about 21 J/(mol·K), and polyatomic gases more, so their molecules must store energy in ways other than moving from place to place.
+N O CV | Molar heat capacity at constant volume | C_V = (d/2)R |
+d Heat per mole per kelvin at fixed volume.
+g molar heat capacity at constant volume
+
+P The [[kinth|kinetic theory]] result ⟨½mv²⟩ = (3/2)k_{B}T is the sum of three equal parts, ½k_{B}T for each direction of motion. Each independent term in a molecule's energy that is quadratic in a velocity or a coordinate is a *degree of freedom*. The [[equip|equipartition theorem]], due to Maxwell and Boltzmann, extends the translational result: in thermal equilibrium every degree of freedom has an average energy ½k_{B}T. A diatomic molecule has three translational terms and two rotational terms ½Iω², for rotation about the two axes perpendicular to its bond, so d = 5. Vibration along the bond adds a kinetic and a potential term, giving d = 7. The [[Eint|internal energy]] is then E_{int} = (d/2)nRT, and the [[heat|heat]] at constant volume is Q = nC_{V}ΔT with [[CV|C_V]] = (d/2)R, in units of the [[Rgas|gas constant]]. For d = 5 this gives 20.8 J/(mol·K), as measured for nitrogen.
+Q C_V = (d/2)R
+N M equip | Equipartition theorem | ½ k_B T per degree of freedom |
+d In thermal equilibrium each quadratic term in a molecule's energy (degree of freedom) carries an average energy ½k_BT.
+p classical result; d = 3 (monatomic), 5 (rigid diatomic), 7 with vibration; fails at low temperature where quantum effects freeze degrees of freedom
+g degree of freedom; equipartition theorem
+R[gen] equip <- Eint, kinth : (3/2)k_BT = 3 × ½k_BT | One half k_BT per direction | Extends the translational result to rotation and vibration.
+R[thm] CV <- equip, Rgas, heat : Q = nC_{V}ΔT,  C_V = (d/2)R | From equipartition | E_int = (d/2)nRT.
+P The theorem applies to solids as well. An atom in a crystal vibrates about its equilibrium position in three directions, and each direction contributes a kinetic and a potential quadratic term, as for a [[sho|simple harmonic oscillator]]. With d = 6, the internal energy is 3nRT and the molar heat capacity is 3R = 24.9 J/(mol·K). This is the *law of Dulong and Petit*, found by experiment in 1819. Copper, iron, silver and gold all have molar heat capacities within 2 % of this value at room temperature. Diamond, with light atoms and stiff bonds, has only about 6 J/(mol·K), one of several signs that equipartition is not the whole story.
+P For hydrogen the failure is clearest. Classical [[equip|equipartition]] gives H₂ three translational, two rotational and two vibrational degrees of freedom, so it predicts d = 7 and [[CV|C_V]] = (7/2)R = 29.1 J/(mol·K) at every temperature. The measured C_V instead shows plateaus. Below about 60 K it is (3/2)R, as if the molecules could only translate; near room temperature it is (5/2)R; it approaches (7/2)R only above a few thousand kelvin. Classical physics lets any amount of energy go into any motion and cannot explain these steps. Quantum mechanics can: rotational and vibrational energies take only discrete values. When k_{B}T is much smaller than the energy of a mode's first excited level, collisions almost never excite it, and the mode is frozen out. For H₂ the first vibrational level lies about 0.5 eV up, equal to k_{B}T near 6000 K. Equipartition holds in the limit where k_{B}T is large compared with the level spacings.
+R[fail] CV <- equip : classical d = 7 for H₂ at all T; measured C_V shows plateaus: d = 3 below about 60 K, d ≈ 5 near room temperature, d = 7 only at high T | Equipartition fails at low temperature | Quantum mechanics restricts which degrees of freedom are active.
+§ 2 2.4
+P The molecules of a gas do not all move at the rms speed. Collisions keep exchanging energy among them, but in equilibrium the fraction of molecules with speeds between v and v + dv is fixed, f(v) dv. Maxwell derived this distribution for the [[kinth|kinetic theory]] in 1860, and Boltzmann later generalised it. Each velocity component has a Gaussian distribution, proportional to exp[−mv_x²/(2k_{B}T)]. The number of velocity vectors with speeds near v also grows with the area 4πv² of a sphere of radius v in velocity space. Together these give the [[mbd|Maxwell–Boltzmann distribution]], which rises as v² at low speed, falls off exponentially at high speed, and has total area 1. It depends only on the molecular mass and the [[temp|temperature]], through m/(2k_{B}T) with [[kB|Boltzmann's constant]] k_B. A hotter or lighter gas has a broader distribution, shifted to higher speeds.
+Q f(v) = (4/√π)[m/(2k_{B}T)]^{3/2} v² exp[−mv²/(2k_{B}T)]
+N S mbd | Maxwell–Boltzmann distribution | f(v) ∝ v² e^{−mv²/2k_BT} |
+d The equilibrium distribution of molecular speeds in an ideal gas.
+m probability density on speeds v ≥ 0: f(v) = (4/√π)(m/2k_BT)^{3/2} v² e^{−mv²/2k_BT}
+g Maxwell-Boltzmann distribution
+R[thm] mbd <- kinth, kB, temp : f(v) ∝ v² e^{−mv²/2k_BT} | Equilibrium statistics | Gaussian in each velocity component, times the shell area 4πv².
+P Three speeds summarise the [[mbd|distribution]]. The [[vp|most probable speed]], or *peak speed*, is where f(v) is largest; setting df/dv = 0 gives v_p = √(2k_{B}T/m). The mean speed is v̄ = √(8k_{B}T/πm). The second moment, ⟨v²⟩ = ∫₀^{∞} v² f(v) dv = 3k_{B}T/m, reproduces the [[vrms|rms speed]] √(3k_{B}T/m) of kinetic theory. The three stand in the ratio v_p : v̄ : v_{rms} = 1 : 1.128 : 1.225. For nitrogen at 300 K they are 422 m/s, 476 m/s and 517 m/s. The high-speed tail matters for processes that need much more energy than the average. The fastest molecules are the first to escape from the surface of a liquid, which is why evaporation cools the liquid left behind.
+Q v_p = √(2k_{B}T/m),   v̄ = √(8k_{B}T/πm),   v_{rms} = √(3k_{B}T/m)
+N O vp | Most probable speed | v_p = √(2k_BT/m) |
+d Speed at the peak of the Maxwell–Boltzmann distribution; below the mean and rms speeds.
+g most probable speed; peak speed
+R[thm] vp <- mbd : df/dv = 0 ⇒ v_p = √(2k_BT/m) | Maximum of f(v) | The mean speed is √(8k_BT/πm).
+R[thm] vrms <- mbd : ⟨v²⟩ = ∫ v² f(v) dv = 3k_BT/m | Second moment | Agrees with kinetic theory.
+
+# ---------------------------------------------------------------- Chapter 3
+§ 2 3.0
+P Chapter 1 described [[heat|heat]] as energy that flows because of a temperature difference, and Chapter 2 traced the [[Eint|internal energy]] of a gas to the motion of its molecules. This chapter joins the two in the first law of thermodynamics: energy is conserved when heat is counted along with [[W|work]]. The law extends the [[econs|conservation of mechanical energy]] to every process. It is applied here to gases that expand or are compressed slowly enough to pass through equilibrium states, to the heat capacities of an ideal gas, and to adiabatic processes, in which no heat is exchanged.
+
+§ 2 3.1
+P Thermodynamics begins by choosing what to study. A [[tsys|thermodynamic system]] is a definite part of the world, such as the gas in a cylinder, separated by a *boundary* from everything else, its *surroundings* or *environment*. In a *closed system* no matter crosses the boundary, although energy can; in an *open system* matter crosses as well. A [[sys|system of particles]] with 10²³ molecules cannot be followed molecule by molecule. In *equilibrium*, however, nothing changes in time, and a few macroscopic variables describe the system completely. A system in [[theq|thermal equilibrium]] with its surroundings shares their temperature, as the [[zeroth|zeroth law]] ensures. An *extensive variable*, such as volume, mass or internal energy, is proportional to the size of the system. An *intensive variable*, such as pressure, temperature or density, is not: halving a uniform system halves its volume but leaves its temperature unchanged.
+N S tsys | Thermodynamic system | system / surroundings |
+d A part of the world separated by a boundary from its surroundings (environment); closed if no matter crosses, open otherwise. In equilibrium a few variables describe it.
+m macroscopic state given by intensive variables (p, T) and extensive variables (V, E_int, N); equilibrium = no change in time
+g thermodynamic system; boundary; surroundings; environment; closed system; open system; equilibrium; extensive variable; intensive variable
+R[def] tsys <- sys, theq : ~10²³ particles described by a few macroscopic variables | Macroscopic description | Microscopic detail is replaced by equilibrium variables.
+P In equilibrium the variables of a [[tsys|system]] are not independent. For a fixed amount of a simple substance they obey an [[eos|equation of state]], f(p, V, T) = 0, so any two of them fix the third. The [[igl|ideal gas law]], pV − nRT = 0, and the [[vdw|van der Waals equation]] are equations of state of gases. Solids and liquids have equations of state too, rarely in closed form; near a given state, the coefficient of volume [[texp|expansion]] and the [[Bmod|bulk modulus]] give how the volume changes with temperature and with pressure. An equation of state holds only in equilibrium. While a gas is being stirred, or is rushing into an empty container, its pressure and temperature are not uniform, and no single p and T describe it.
+Q f(p, V, T) = 0
+N M eos | Equation of state | f(p, V, T) = 0 |
+d A relation among the state variables of a system in equilibrium.
+p one relation, so two variables fix the state; examples: ideal gas, van der Waals
+g equation of state
+R[gen] eos <- igl, vdw, tsys : f(p, V, T) = 0 | General form | The gas laws are examples.
+
+§ 2 3.2
+P A process carries a system from one equilibrium state to another. If it is so slow that the system is arbitrarily close to equilibrium at every moment, it is a [[qsproc|quasi-static process]]. Pressure and temperature are then defined throughout, the [[eos|equation of state]] holds at each step, and the process is a curve of [[pV|equilibrium states]] on the pV diagram. A gas behind a piston that is withdrawn slowly expands quasi-statically. A gas released suddenly into a vacuum does not: during the rush it has no single pressure, and only its initial and final states can be drawn. A real process is quasi-static to a good approximation when it is slow compared with the time the system needs to settle into equilibrium.
+N S qsproc | Quasi-static process | path in the pV plane |
+d A process slow enough that the system passes through a sequence of equilibrium states, so it is a curve on the pV diagram.
+m continuous curve of equilibrium states in the state space
+g quasi-static process
+R[def] qsproc <- pV, eos : curve of equilibrium states | Slow change | Only quasi-static processes can be drawn as paths.
+P A gas pushing on a piston of area A exerts the force pA, by the definition of [[pres|pressure]]. When the piston moves out by dx in a [[qsproc|quasi-static]] expansion, the gas does [[W|work]] dW = pA dx = p dV. Over a finite change from V₁ to V₂, the [[Wpv|work done by the gas]] is the integral of p dV, the area under the path on the pV diagram. It is positive in expansion and negative in compression. Different paths between the same two states have different areas beneath them, so the work depends on the path. In an *isothermal expansion* of an ideal gas, p = nRT/V, and W = nRT ln(V₂/V₁). One mole at 300 K that doubles its volume this way does (1.00 mol)(8.314 J/(mol·K))(300 K)(ln 2) = 1.73 kJ of work.
+Q W = ∫_{V₁}^{V₂} p dV
+N O Wpv | Work done by a gas | W = ∫ p dV |
+d Work done by a system that changes volume; the area under the path on the pV diagram, so it depends on the path.
+R[thm] Wpv <- W, pres, qsproc : dW = F dx = pA dx = p dV | Pressure force on a moving wall | Path-dependent.
+X internal energy :: = Eint
+P The [[Eint|internal energy]] behaves differently. It is the sum of the kinetic and potential energies of all the molecules, measured in the frame in which the system as a whole is at rest, and it depends only on the state. For an ideal gas it depends on temperature alone. For a *van der Waals gas*, the attraction between molecules adds a negative potential energy: E_{int} = (3/2)nRT − an²/V for a monatomic gas, so expanding it at constant temperature raises E_{int}. [[heat|Heat]], like [[Wpv|work]], is a transfer, and it too depends on the path. A gas can reach a given final state by absorbing heat, by having work done on it, or by a combination of both, and nothing in the final state records which. The next section turns this observation into a law.
+
+§ 2 3.3
+P In mechanics, the [[econs|conservation of mechanical energy]] fails when nonconservative forces such as friction do work. Joule's experiments showed where the energy goes: into the internal energy of the bodies involved, which can also be changed by [[heat|heat]]. The [[flaw|first law of thermodynamics]] states the full balance. For any process of a closed system, the change of [[Eint|internal energy]] equals the heat Q added to the system minus the [[Wpv|work]] W done by the system on its surroundings. Q is positive when heat enters the system, and W is positive when the system expands against an external pressure. The law is *energy conservation* with heat counted as a second way, besides work, to transfer energy. A gas that absorbs 500 J of heat while doing 200 J of work gains 300 J of internal energy.
+Q ΔE_{int} = Q − W
+N M flaw | First law of thermodynamics | ΔE_int = Q − W |
+d The change of internal energy equals the heat added to the system minus the work done by the system.
+p energy conservation with heat; E_int is a state function, Q and W are path-dependent; generalises conservation of mechanical energy
+g first law of thermodynamics
+R[gen] flaw <- econs, heat, Wpv, Eint : ΔE_int = Q − W | Energy conservation with heat | Heat is added as a second mode of energy transfer.
+P Q and W each depend on the path between two states, but experiments always find the same difference Q − W along every path. This is why the [[Eint|internal energy]] is a *state function*, like p, V and T. It also lets the [[flaw|first law]] apply to processes that are not quasi-static, provided they begin and end in equilibrium. Boiling water shows the bookkeeping. At 1.00 atm, 1.00 kg of water at 100 °C absorbs its [[Lheat|latent heat]], 2.256 × 10⁶ J, and becomes steam, expanding from about 0.001 m³ to 1.67 m³. The work done against the atmosphere is pΔV = (1.013 × 10⁵ Pa)(1.67 m³) = 1.69 × 10⁵ J. The internal energy therefore rises by 2.256 × 10⁶ J − 0.169 × 10⁶ J = 2.09 × 10⁶ J. Most of the heat separates the molecules; less than a tenth pushes back the air.
+
+§ 2 3.4
+P A *thermodynamic process* changes the *thermodynamic variables* of a system, such as p, V, T and E_{int}. A [[qsproc|quasi-static process]] is a path on the pV diagram; *non-quasi-static processes*, such as a sudden expansion into a vacuum, are not. The simplest [[tproc|thermodynamic processes]] hold one quantity fixed, and in each the [[flaw|first law]] ΔE_{int} = Q − W loses a term. In an *isochoric process* the volume is fixed, so W = 0 and ΔE_{int} = Q. In an *isobaric process* the pressure is fixed and W = pΔV. In an *isothermal process* the temperature is fixed. For an ideal gas E_{int} is then constant, so Q = W = nRT ln(V₂/V₁): all the heat absorbed leaves as work.
+N S tproc | Thermodynamic processes | isothermal, isobaric, isochoric, adiabatic, cyclic |
+d Paths with one quantity held fixed: T (isothermal), p (isobaric), V (isochoric), or no heat exchanged (adiabatic); a cyclic process returns to its start. A reversible process can be run backward through the same states.
+m constrained curves in state space; cyclic = closed curve (ΔE_int = 0, W = enclosed area); reversible = quasi-static with no dissipation
+g thermodynamic process; isothermal process; isobaric process; isochoric process; adiabatic process; cyclic process; reversible process
+R[thm] tproc <- qsproc, flaw : isothermal ideal gas: Q = W = nRT ln(V₂/V₁); adiabatic: ΔE_int = −W | First law along each path | The constraint fixes which terms vanish.
+P In an *adiabatic process* no heat crosses the boundary, because the system is insulated or because the process is too quick for heat to flow. Then Q = 0 and ΔE_{int} = −W. A gas that expands adiabatically does work at the expense of its internal energy and cools; one that is compressed adiabatically warms. In a *cyclic process* the system returns to its initial state, so ΔE_{int} = 0, and the net heat absorbed equals the net work done, the area enclosed by the loop on the pV diagram. A [[tproc|reversible process]] is a quasi-static process with no friction and no heat flow across a finite temperature difference. It can be run backward through the same states, restoring both the system and its surroundings. Real processes are at best nearly reversible.
+
+§ 2 3.5
+P The internal energy of an ideal gas depends only on its temperature, so ΔE_{int} = nC_{V}ΔT in every process, not only at constant volume; here [[CV|C_V]] is the molar heat capacity at constant volume. At constant pressure the gas also does work as it expands. The [[flaw|first law]] then gives Q = ΔE_{int} + W = nC_{V}ΔT + pΔV, and the [[igl|ideal gas law]] at constant pressure gives pΔV = nRΔT. Hence Q = n(C_V + R)ΔT, and the [[Cp|molar heat capacity at constant pressure]] is C_p = C_V + R. The extra R pays for the work of expansion. For a monatomic ideal gas C_p = (5/2)R = 20.8 J/(mol·K), and for a diatomic gas near room temperature C_p = (7/2)R = 29.1 J/(mol·K). The ratio γ = C_p/C_V is 5/3 and 7/5 in these two cases.
+Q C_p = C_V + R,   γ = C_p/C_V
+N O Cp | Molar heat capacity at constant pressure | C_p = C_V + R |
+d Heat per mole per kelvin at fixed pressure; larger than C_V because the gas also does work.
+g molar heat capacity at constant pressure
+R[thm] Cp <- flaw, CV, igl : Q = nC_{V}ΔT + pΔV = n(C_V + R)ΔT | Extra work at constant p | The ideal gas law gives pΔV = nRΔT.
+X molar heat capacity at constant volume :: = CV
+P Measured heat capacities confirm these relations. For real gases at moderate pressure, C_p − C_V lies within a few percent of R = 8.31 J/(mol·K), even for polyatomic gases whose C_V is far from (3/2)R. The [[CV|molar heat capacity at constant volume]] itself changes with temperature, because rotational and vibrational degrees of freedom freeze out at low temperature, as the failure of [[equip|equipartition]] for hydrogen showed. A value of C_V measured at one temperature therefore applies at another only if no degree of freedom freezes out or becomes active in between. For solids, which expand very little when heated, C_p exceeds C_V by only a few percent.
+
+§ 2 3.6
+P For a quasi-static adiabatic process in an ideal gas, Q = 0, and the [[flaw|first law]] gives nC_{V} dT = −p dV for each small step. The differential of the [[igl|ideal gas law]] is p dV + V dp = nR dT. Eliminating n dT and writing R = C_p − C_V, with the molar heat capacities [[Cp|C_p]] and [[CV|C_V]], gives γ dV/V + dp/p = 0, where γ = C_p/C_V. Integration gives the law of an [[adiab|adiabatic process]], pV^γ = constant, or equivalently TV^{γ−1} = constant. In an *adiabatic expansion* the gas cools, since it does work while no heat comes in. On a pV diagram the adiabat through any state is steeper than the isotherm: its slope is −γp/V instead of −p/V. *Adiabatic compressions* heat a gas. Air with γ = 1.40 at 300 K, compressed adiabatically to 1/20 of its volume, reaches (300 K)(20^{0.40}) = 994 K, hot enough to ignite diesel fuel without a spark.
+Q pV^γ = constant,   TV^{γ−1} = constant
+N M adiab | Adiabatic process of an ideal gas | pV^γ = const |
+d In a quasi-static adiabatic expansion the gas cools; pressure and volume follow pV^γ = constant with γ = C_p/C_V.
+p no heat exchange; steeper than the isotherm on a pV diagram; γ = 5/3 monatomic, 7/5 diatomic
+g adiabatic expansion
+R[thm] adiab <- flaw, igl, Cp, CV : nC_V dT = −p dV ⇒ pV^γ = const | First law with Q = 0 | Combined with the differential of pV = nRT.
+P Sound in a gas tests this result. The compressions and rarefactions of a sound wave alternate too quickly for heat to flow between them, so each parcel of gas is compressed and expanded adiabatically. From pV^γ = constant, dp/p = −γ dV/V, so the [[Bmod|bulk modulus]] is B = −V dp/dV = γp rather than p. The [[vsound|speed of sound]] is then v = √(B/ρ) = √(γp/ρ). The [[igl|ideal gas law]] gives p/ρ = RT/M, so v = √(γRT/M), which depends on temperature but not on pressure. For air at 20 °C, with γ = 1.40 and M = 0.0290 kg/mol, v = 343 m/s, in agreement with measurement. Newton had assumed isothermal compressions, B = p, and obtained a value about 15 % too low. The [[adiab|adiabatic]] relation supplies the missing factor √γ.
+Q v = √(γRT/M)
+R[thm] vsound <- adiab, igl : v = √(γRT/M) | Speed of sound in a gas | Compressions in a sound wave are adiabatic, so B = γp.
+
+# ---------------------------------------------------------------- Chapter 4
+§ 2 4.0
+P The [[flaw|first law]] allows any process that conserves energy, yet many such processes never occur. A hot drink cools in a room but never grows hotter by drawing [[heat|heat]] from the cooler air. A block slides to rest by friction, but a block at rest never starts moving by cooling down. This chapter states the law that sets the direction of natural processes, the second law of thermodynamics, in several equivalent forms. The law limits the efficiency of engines and refrigerators and leads to entropy, which never decreases in an isolated system. In a 1959 lecture, C. P. Snow treated knowing the second law as the scientific equivalent of having read Shakespeare.
+
+§ 2 4.1
+X reversible process :: = tproc
+P A [[tproc|reversible process]] can be run backward so that the system and its surroundings both return exactly to their initial states. It must be quasi-static, free of friction, and exchange heat only between bodies at equal temperatures. Real processes break these conditions and are [[irrev|irreversible processes]]: they cannot be undone without leaving a change somewhere else. A block stopped by friction is left warmer. A gas released into an evacuated chamber fills it. Heat flows from a hot body into a cold one. Each reverse process would conserve energy, but none is ever observed. *Irreversibility* is the rule, and reversible processes are limits that real ones approach when they are slow and free of dissipation.
+N S irrev | Irreversible process | real process |
+d A process that cannot be undone without leaving a change in the surroundings: friction, free expansion, heat flow across a finite temperature difference.
+m path not made of equilibrium states, or with dissipation; its reverse is never observed spontaneously
+g irreversible process; irreversibility
+R[def] irrev <- tproc : not reversible | Real processes | Every natural process is irreversible to some degree.
+P The direction of [[heat|heat]] flow is the clearest case of an [[irrev|irreversible process]], and Rudolf Clausius made it a law. The [[clausius|Clausius statement of the second law of thermodynamics]] is that heat never flows spontaneously from a colder body to a hotter one. More precisely, no process is possible whose only result is the transfer of heat from a colder body to a hotter body. A refrigerator does move heat from its cold interior into the warmer kitchen, but only while a motor does work on it, so the transfer is not its only result. The statement does not follow from the first law or from mechanics. It summarises experience with heat, and no exception to it has been found. It also distinguishes past from future: a film of heat flowing from a cold body to a hot one would be seen to run backward.
+N M clausius | Clausius statement | no spontaneous heat flow cold → hot | ax
+d Heat never flows spontaneously from a colder to a hotter body; doing so requires work.
+p one form of the second law; equivalent to the Kelvin statement; picks a direction of time
+g Clausius statement of the second law of thermodynamics
+R[law] clausius <- heat, irrev : heat flow from cold to hot is never the only effect | Direction of heat flow | An empirical law about irreversible processes.
+
+§ 2 4.2
+P A [[engine|heat engine]] turns heat into work by taking a *working substance*, such as steam or a gas, around a cycle of [[tproc|thermodynamic processes]]. In each cycle it absorbs [[heat|heat]] Q_h from a *hot reservoir*, rejects heat Q_c to a *cold reservoir* and delivers net work W. A reservoir is a body so large that these exchanges do not change its temperature. The working substance returns to its initial state, so ΔE_{int} = 0 over a cycle, and the [[flaw|first law]] gives W = Q_h − Q_c, with Q_h and Q_c taken as positive. In steam *power plants* the hot reservoir is a furnace or a nuclear reactor, and the cold reservoir is a river, the sea or the air through a cooling tower. In an *internal combustion engine* the fuel burns inside the cylinders, and the exhaust gases carry Q_c away.
+Q W = Q_h − Q_c
+N M engine | Heat engine | W = Q_h − Q_c |
+d A device run in a cycle that takes heat Q_h from a hot reservoir, rejects Q_c to a cold reservoir and delivers the difference as work.
+p cyclic: ΔE_int = 0 per cycle; needs two reservoirs; first law fixes W = Q_h − Q_c
+g heat engine; hot reservoir; cold reservoir
+R[thm] engine <- flaw, tproc, heat : cycle: ΔE_int = 0 ⇒ W = Q_h − Q_c | First law over a cycle | The working substance returns to its initial state.
+P The [[eff|efficiency]] e of an [[engine|engine]] is the work it delivers per unit of heat absorbed. For an ideal-gas cycle the heats follow from the heat capacities. Take a monatomic ideal gas around a rectangle on the pV diagram, between pressures p₀ and 2p₀ and volumes V₀ and 2V₀. The net work is the enclosed area, p₀V₀. Heat enters during the pressure rise at constant volume V₀, nC_{V}ΔT = (3/2)p₀V₀, and during the expansion at constant pressure 2p₀, nC_{p}ΔT = (5/2)(2p₀)(V₀) = 5p₀V₀. So Q_h = 6.5p₀V₀ and e = 1/6.5 = 0.15. Real engines also lose work to friction and heat through their walls. Car engines reach efficiencies of about 0.2 to 0.4, and large power plants about 0.3 to 0.6.
+Q e = W/Q_h = 1 − Q_c/Q_h
+N O eff | Efficiency | e = W/Q_h = 1 − Q_c/Q_h |
+d Fraction of the heat taken in that is turned into work.
+g efficiency (e)
+R[def] eff <- engine : e = W/Q_h | Work out per heat in | Always less than 1.
+
+§ 2 4.3
+P Run an [[engine|engine]] cycle backward and every transfer reverses. Work W is done on the working substance, heat Q_c is drawn from the cold reservoir, and heat Q_h = Q_c + W is delivered to the hot reservoir. This is the cycle of a [[fridge|refrigerator or heat pump]]. A *refrigerator* uses it to keep the cold side cold. A *heat pump* uses it to warm the hot side, for example a house in winter, drawing Q_c from the outside air or the ground. In a typical device a fluid evaporates at low pressure in coils on the cold side, absorbing heat. A compressor raises its pressure and temperature; the fluid condenses in coils on the hot side, releasing heat, and returns through an expansion valve. Heat moves from cold to hot only because work is supplied.
+Q Q_h = Q_c + W
+N M fridge | Refrigerator and heat pump | Q_c + W = Q_h |
+d An engine run backward: work moves heat from a cold reservoir to a hot one, to cool the cold side (refrigerator) or heat the hot side (heat pump).
+p reversed cycle; requires work input (Clausius); same energy balance as an engine
+g refrigerator; heat pump
+R[thm] fridge <- engine : reverse every step of the cycle | Engine in reverse | Heat flows uphill only with work.
+P A [[fridge|refrigerator or heat pump]] is rated by its [[cop|coefficient of performance]], the useful heat moved per unit of work. For a refrigerator the useful heat is Q_c, so K_R = Q_c/W. For a heat pump it is Q_h, so K_P = Q_h/W = K_R + 1. Unlike an efficiency, a coefficient of performance can exceed 1, because most of the heat is moved by the work rather than produced from it. A heat pump that uses 1.0 kJ of electrical work to deliver 3.5 kJ of heat to a house has K_P = 3.5; the other 2.5 kJ comes from outside. An electric heater turns the same 1.0 kJ into only 1.0 kJ of heat.
+Q K_R = Q_c/W,   K_P = Q_h/W
+N O cop | Coefficient of performance | K_R = Q_c/W,  K_P = Q_h/W |
+d Heat moved per work supplied; can exceed 1.
+g coefficient of performance
+R[def] cop <- fridge : K_R = Q_c/W,  K_P = Q_h/W | Heat per work | The useful heat depends on which side is wanted.
+
+§ 2 4.4
+P A second form of the second law concerns engines. The [[kelvin|Kelvin statement of the second law of thermodynamics]], named for William Thomson, Lord Kelvin, is that no cyclic process can take heat from a single reservoir and convert all of it into work. A *perfect engine*, with Q_c = 0 and efficiency 1, is therefore impossible: every [[engine|heat engine]] must reject some heat to a colder reservoir. In the same terms, the [[clausius|Clausius statement]] forbids a *perfect refrigerator*, one that moves heat from cold to hot with W = 0. Like the Clausius statement, the Kelvin statement summarises experience. A ship cannot propel itself by extracting heat from the sea and turning it into work, although energy conservation alone would allow it.
+N M kelvin | Kelvin statement | no perfect engine | ax
+d No cyclic process can convert heat from one reservoir entirely into work; equivalently there is no perfect engine (and, by the Clausius form, no perfect refrigerator).
+p equivalent to the Clausius statement; forbids e = 1
+g Kelvin statement of the second law of thermodynamics; perfect engine; perfect refrigerator (heat pump)
+P The two statements are equivalent. Suppose a perfect engine existed. Let it take heat Q from the hot reservoir and turn all of it into work W = Q. Let that work drive an ordinary [[fridge|refrigerator]], which takes Q_c from the cold reservoir and delivers Q_c + Q to the hot one. Together they move Q_c from the cold reservoir to the hot one with no outside work, a perfect refrigerator that the [[clausius|Clausius statement]] forbids. Conversely, a perfect refrigerator could return the heat Q_c rejected by an ordinary [[engine|engine]] to the hot reservoir at no cost. The pair would then turn the net heat Q_h − Q_c taken from the hot reservoir entirely into work, a perfect engine that the [[kelvin|Kelvin statement]] forbids. Violating either statement violates the other, so both are forms of one second law.
+R[thm] kelvin <- clausius, engine, fridge : perfect engine + refrigerator = perfect refrigerator | Equivalence proof | Violating either statement violates the other.
+
+§ 2 4.5
+P In 1824 Sadi Carnot asked how efficient an engine working between two reservoirs can be. His analysis rests on a reversible cycle, the [[carnot|Carnot cycle]], made of four [[tproc|thermodynamic processes]]: an isothermal expansion at T_h, an adiabatic expansion that cools the working substance to T_c, an isothermal compression at T_c, and an adiabatic compression back to T_h. Heat is exchanged only on the isotherms, where the substance has the temperature of the reservoir it touches, so no heat crosses a finite temperature difference. An engine run on this cycle is a *Carnot engine*. For an [[igl|ideal gas]] the isotherms give Q_h = nRT_h ln(V₂/V₁) and Q_c = nRT_c ln(V₃/V₄). The two [[adiab|adiabatic]] steps obey TV^{γ−1} = constant, which makes V₂/V₁ = V₃/V₄. The logarithms cancel, and Q_c/Q_h = T_c/T_h.
+Q Q_c/Q_h = T_c/T_h
+N S carnot | Carnot cycle | 2 isotherms + 2 adiabats |
+d A reversible cycle of two isothermal and two adiabatic steps between two reservoirs; an engine run on it is a Carnot engine.
+m closed curve in the pV plane: isotherm at T_h, adiabat, isotherm at T_c, adiabat
+g Carnot cycle; Carnot engine
+R[thm] carnot <- tproc, adiab, igl : Q_c/Q_h = T_c/T_h for an ideal gas | Ideal-gas Carnot cycle | The adiabats make the two volume ratios equal.
+P The [[carnotp|Carnot principle]] states that no engine working between two reservoirs is more efficient than a reversible engine between the same reservoirs, and that all reversible engines between them are equally efficient. The proof uses the [[kelvin|Kelvin statement]]. Suppose an engine X were more efficient than a [[carnot|Carnot engine]]. Let both exchange the same heat Q_h with the hot reservoir, X running forward and the Carnot engine backward as a refrigerator. X produces more work than the refrigerator needs. The hot reservoir is left unchanged, so the surplus work comes from heat taken from the cold reservoir alone: a perfect engine. Hence no engine beats a reversible one, and two reversible engines, neither able to beat the other, are equally efficient. The ideal-gas Carnot cycle then gives the maximum [[eff|efficiency]] for any working substance. Between 600 K and 300 K, no engine can exceed 0.50.
+Q e_{max} = 1 − T_c/T_h
+N M carnotp | Carnot principle | e ≤ 1 − T_c/T_h |
+d No engine between two reservoirs beats a reversible one, and all reversible engines between them have e = 1 − T_c/T_h.
+p consequence of the second law; efficiency depends only on reservoir temperatures; defines absolute temperature
+g Carnot principle
+R[thm] carnotp <- kelvin, carnot : a better engine driving a reversed Carnot engine would be a perfect engine | From the second law | Proof by combining engines.
+R[thm] eff <- carnotp : e_max = 1 − T_c/T_h | Upper bound | Real engines fall below it.
+P Because every reversible engine between two reservoirs has the same ratio Q_c/Q_h, the ratio depends only on the reservoirs and not on any material. Kelvin used it to define thermodynamic temperature: T_c/T_h = Q_c/Q_h for a reversible cycle. With the triple point of water at 273.16 K, this definition agrees with the ideal-gas Kelvin scale, as the [[carnotp|Carnot principle]] and the ideal-gas Carnot cycle together require, so the [[tscale|absolute temperature scale]] needs no particular thermometric substance. Reversible devices also set the best [[cop|coefficients of performance]]: K_R = T_c/(T_h − T_c) and K_P = T_h/(T_h − T_c). A *heat pump* keeping a house at 293 K while the outside is at 273 K could at best reach K_P = 293/20 ≈ 15; real heat pumps reach about 3.
+Q K_R = T_c/(T_h − T_c),   K_P = T_h/(T_h − T_c)
+R[thm] tscale <- carnotp : Q_c/Q_h = T_c/T_h | Thermodynamic temperature | Ratios of heats in a reversible cycle define the absolute (Kelvin) scale independently of any material.
+
+§ 2 4.6
+P For a Carnot cycle, Q_h/T_h = Q_c/T_c. With heat counted positive when it enters the working substance, this says that the sum of Q/T around the cycle is zero. Any reversible cycle can be approximated by many thin Carnot cycles side by side; their shared adiabatic segments are traversed in opposite directions and cancel. By the [[carnotp|Carnot principle]], then, ∮ dQ_{rev}/T = 0 for every reversible cycle. The integral of dQ_{rev}/T between two states is therefore the same along every reversible path, and it defines a state function, the [[S|entropy]] S, a name Clausius introduced in 1865. Here dQ_{rev} is the [[heat|heat]] added reversibly at absolute [[temp|temperature]] T. Entropy is measured in J/K. Melting 1.00 kg of ice at 273 K adds 3.34 × 10⁵ J reversibly, so the entropy of the water rises by 1.22 × 10³ J/K.
+Q dS = dQ_{rev}/T,   ΔS = S_B − S_A = ∫_{A}^{B} dQ_{rev}/T
+N O S | Entropy | dS = dQ_rev/T |
+d A state function whose change is the heat added reversibly divided by the absolute temperature.
+g entropy
+R[thm] S <- carnotp, heat, temp : ∮ dQ_rev/T = 0 for every reversible cycle | Carnot cycles tile any cycle | A path-independent integral defines a state function.
+P Entropy turns the second law into a statement about a number. Let heat Q flow from a hot reservoir at T_h to a cold one at T_c. The hot reservoir loses [[S|entropy]] Q/T_h and the cold one gains Q/T_c, so the total change, ΔS = Q/T_c − Q/T_h, is positive because T_c < T_h. Moving 1000 J from 400 K to 300 K raises the total entropy by 3.33 J/K − 2.50 J/K = 0.83 J/K. The reverse flow, which the [[clausius|Clausius statement]] forbids, would lower it. In general the [[slaw|entropy statement of the second law of thermodynamics]] holds: the entropy of an isolated system never decreases. It stays constant in a reversible process and increases in every irreversible one. The entropy of part of the system can fall, as when a hot body cools, but the rest then gains at least as much.
+Q ΔS ≥ 0   (isolated system)
+N M slaw | Second law (entropy statement) | ΔS_universe ≥ 0 |
+d The entropy of an isolated system never decreases; it stays constant only for reversible processes.
+p equivalent to the Kelvin and Clausius statements; distinguishes past from future; equality only for reversible processes
+g entropy statement of the second law of thermodynamics
+R[thm] slaw <- S, clausius : heat Q from T_h to T_c: ΔS = Q/T_c − Q/T_h > 0 | Heat flow raises total entropy | Any irreversible step adds entropy.
+P Applied to an engine, the entropy statement gives back Carnot's limit. Over one cycle the working substance returns to its initial state, so its entropy does not change. The hot reservoir loses Q_h/T_h and the cold reservoir gains Q_c/T_c, and the total cannot be negative, so Q_c/Q_h ≥ T_c/T_h and the [[eff|efficiency]] e = 1 − Q_c/Q_h is at most 1 − T_c/T_h. A *Stirling engine* shows how the limit can be reached in principle. Its gas follows two isotherms, at T_h and T_c, joined by two constant-volume steps. A regenerator stores the heat released in one constant-volume step and returns it in the other, so the gas exchanges heat with the reservoirs only on the isotherms. For an ideal gas this gives Q_c/Q_h = T_c/T_h, the Carnot ratio.
+
+§ 2 4.7
+X disorder :: an interpretation of entropy given in words; no separate model in the section
+X isentropic :: = adiab
+P Because entropy is a state function, its change in an [[irrev|irreversible process]] can be found along any reversible path between the same end states. In a free expansion, n moles of an [[igl|ideal gas]] rush from a volume V₁ into an evacuated, insulated container, filling a total volume V₂. No heat enters and no work is done, so the internal energy and the temperature stay the same. A reversible isothermal expansion at that temperature joins the same two states. Along it the gas absorbs Q = nRT ln(V₂/V₁), so ΔS = Q/T = nR ln(V₂/V₁). The free expansion has the same [[S|entropy]] change although no heat flowed, and the surroundings do not change, so the total entropy grows, as the [[slaw|second law]] requires. Doubling the volume of 1.00 mol gives ΔS = (8.314 J/K)(ln 2) = 5.76 J/K.
+Q ΔS = nR ln(V₂/V₁)
+R[thm] slaw <- irrev, S, igl : free expansion: ΔS = nR ln(V₂/V₁) > 0 | Entropy of an irreversible process | Computed along a reversible path between the same end states.
+P The microscopic picture explains why. After the expansion each molecule has twice the volume to move in, so the number Ω of microscopic arrangements compatible with the macroscopic state is multiplied by 2^N. Boltzmann related entropy to this number by S = k_B ln Ω, which gives ΔS = Nk_B ln 2 = nR ln 2, the thermodynamic result. Entropy is therefore often described as a measure of *disorder*: a high-entropy state can be realised in vastly more ways than a low-entropy one. Spontaneous processes move toward such states because they are overwhelmingly more probable. For just 100 molecules, the chance of finding all of them in one half of the container at a given moment is 2⁻¹⁰⁰ ≈ 8 × 10⁻³¹. For a mole of gas such an event is never observed.
+P As the temperature approaches absolute zero, a system settles into its state of lowest energy, which can usually be realised in essentially one way. The [[third|third law of thermodynamics]], first stated by Walther Nernst in 1906, expresses the macroscopic consequence: the entropy change in any isothermal process tends to zero as T → 0. All equilibrium states of a system then approach the same [[S|entropy]] at absolute zero, and this common value can be taken as zero, which fixes the zero of entropy. The entropy at temperature T, reached by heating without phase changes, is then S(T) = ∫₀^{T} C dT′/T′, where C is the heat capacity at temperature T′. For this integral to be finite, C must vanish as T → 0, as measured for solids and as the freezing of degrees of freedom explains. A further consequence is that no finite sequence of steps can cool a system to absolute zero.
+Q lim_{T→0} (ΔS)_T = 0
+N M third | Third law | ΔS → 0 as T → 0 | ax
+d Entropy changes along an isotherm vanish as the temperature approaches absolute zero; absolute zero cannot be reached in a finite number of steps.
+p limiting law; fixes the zero of entropy; unattainability of absolute zero
+g third law of thermodynamics
+R[law] S <- third : lim_{T→0} (ΔS)_T = 0 | Zero of entropy | Entropy differences between states vanish at absolute zero.
+P The ideal cycles of car engines combine these results. The *Otto cycle*, the model of a gasoline engine, consists of an adiabatic compression of the fuel–air mixture, heating at constant volume when the spark fires, an adiabatic power stroke, and cooling at constant volume when the exhaust valve opens. The adiabatic strokes are taken as reversible, so they are [[adiab|isentropic]]. Using TV^{γ−1} = constant on both, the efficiency is e = 1 − 1/r^{γ−1}, where r = V_{max}/V_{min} is the compression ratio. For r = 8.0 and γ = 1.40, e = 1 − 8.0^{−0.40} = 0.56. The *diesel cycle* replaces the constant-volume heating by heating at constant pressure, as fuel sprayed into the hot compressed air burns. Diesel engines use higher compression ratios, about 15 to 20, and reach higher efficiencies. Real engines fall well short of these ideal values because of friction, heat loss and rapid, irreversible combustion.
+Q e = 1 − 1/r^{γ−1}

@@ -1,0 +1,288 @@
+# University Physics Volume 2, chapters 1-4 (thermodynamics)
+
+§ 2 1.1
+N O temp | Temperature | T |
+d How hot a body is, read from a thermometer; bodies in thermal equilibrium share one temperature. SI unit the kelvin.
+g temperature
+N S theq | Thermal equilibrium | A ~ B |
+d The state reached by bodies in thermal contact when heat transfer between them has stopped.
+m equivalence relation on equilibrium states of bodies in contact; its classes are labelled by temperature
+g thermal equilibrium
+R[def] theq <- sys : bodies in thermal contact settle into a state that no longer changes | Approach to equilibrium | Defined by the absence of further change, before any temperature is defined.
+N M zeroth | Zeroth law | A ~ C, B ~ C ⇒ A ~ B | ax
+d Two bodies each in thermal equilibrium with a third are in equilibrium with each other.
+p transitivity: thermal equilibrium is an equivalence relation; justifies thermometers
+g zeroth law of thermodynamics
+R[def] temp <- zeroth, theq : T labels the equivalence classes of thermal equilibrium | Temperature from the zeroth law | Transitivity lets one number, read on a thermometer, decide equilibrium.
+
+§ 2 1.2
+N M tscale | Temperature scales | T_K = T_C + 273.15 |
+d Celsius and Fahrenheit are relative scales; the Kelvin scale is absolute, with zero at absolute zero and the triple point of water at 273.16 K.
+p linear maps between scales: T_F = (9/5)T_C + 32; absolute zero is the lowest possible temperature; the kelvin and the degree Celsius have equal size
+g absolute temperature scale; absolute zero; Celsius scale; degree Celsius; degree Fahrenheit; Fahrenheit scale; Kelvin scale (K); triple point
+R[def] tscale <- temp : T_K = T_C + 273.15,  T_F = 1.8 T_C + 32 | Fixed points and unit size | Scales differ by an offset and a unit.
+
+§ 2 1.3
+N M texp | Thermal expansion | ΔL = αLΔT,  ΔV = βVΔT |
+d Most materials grow when heated: linearly in the temperature change for small changes; β ≈ 3α for isotropic solids. Water below 4 °C is an exception.
+p linear in ΔT; coefficients material-dependent; β = 3α for isotropic solids
+g thermal expansion; coefficient of linear expansion; coefficient of volume expansion
+R[law] texp <- temp, L : ΔL = αLΔT | Expansion law | Empirical; atoms vibrate with larger mean separation when hotter.
+N O tstress | Thermal stress | σ = YαΔT |
+d Stress that appears when a body is prevented from expanding or contracting.
+g thermal stress
+R[thm] tstress <- texp, Ymod, stress : σ = Y(ΔL/L) = YαΔT | Expansion held back | The stress needed to undo the free expansion.
+
+§ 2 1.4
+N O heat | Heat | Q |
+d Energy transferred between bodies because of their temperature difference. 1 cal = 4.186 J (mechanical equivalent of heat).
+g heat; heat transfer; calorie (cal); kilocalorie (kcal); mechanical equivalent of heat
+R[def] heat <- temp, theq : energy that flows from hot to cold until equilibrium | Energy in transit | Not a property of a body; it is a transfer.
+R[meas] heat <- W : 1 cal = 4.186 J (Joule's paddle wheel) | Mechanical equivalent of heat | Work and heat change a body's temperature in the same way, so heat is energy.
+N O cspec | Specific heat | Q = mcΔT |
+d Heat needed per unit mass to raise the temperature by one kelvin.
+g specific heat
+R[def] cspec <- heat, m, temp : c = Q/(mΔT) | Heat per mass per degree | Material property; water has an unusually large value.
+N M calor | Calorimetry | Q_hot + Q_cold = 0 |
+d Heat lost by the hot bodies in an insulated container equals heat gained by the cold ones.
+p energy conservation for heat exchange; requires an isolated container (calorimeter)
+g calorimetry; calorimeter
+R[thm] calor <- cspec, heat, econs : Σ m_i c_i ΔT_i = 0 | Energy balance | Total energy of an isolated system is constant.
+
+§ 2 1.5
+N S phase | Phase diagram | regions in the (p, T) plane |
+d Which phase (solid, liquid, gas) is stable at each pressure and temperature; the coexistence lines meet at the triple point and the liquid–vapor line ends at the critical point.
+m partition of the (p, T) plane by coexistence curves; triple point; critical point (T_c, p_c); vapor pressure curve
+g phase diagram; critical point; critical temperature; critical pressure; sublimation; vapor; vapor pressure
+R[meas] phase <- temp, pres : equilibrium phase at each (p, T) | Mapped by experiment | Coexistence curves are where two phases are in equilibrium.
+N O Lheat | Latent heat | Q = mL |
+d Heat absorbed or released at constant temperature during a phase change: heat of fusion, vaporization or sublimation.
+g latent heat coefficient; heat of fusion; heat of vaporization; heat of sublimation
+R[def] Lheat <- heat, phase, m : Q = m L_f,  Q = m L_v | Heat at a phase boundary | Breaks or forms bonds without changing T.
+
+§ 2 1.6
+X radiation :: = sbl
+N M fourier | Heat conduction | P = kA(T_h − T_c)/d |
+d Heat flows through a material at a rate proportional to area and temperature difference and inversely to thickness.
+p linear in ΔT; k = thermal conductivity (material); layers add like resistances
+g conduction; rate of conductive heat transfer; thermal conductivity
+R[law] fourier <- heat, temp : dQ/dt = kA ΔT/d | Conduction law | Empirical, from molecular collisions.
+N M convect | Convection | heat carried by flow |
+d Heat transported by bulk motion of a fluid, driven by buoyancy (natural) or by pumps and fans (forced).
+p requires fluid motion; natural convection driven by density differences
+g convection
+R[thm] convect <- heat, flow, archi : warm fluid is less dense and rises | Heat moved with matter | Buoyancy turns a temperature difference into flow.
+N M sbl | Stefan–Boltzmann law | P = σeAT⁴ | ax
+d Every body radiates energy at a rate proportional to the fourth power of its absolute temperature; the net rate is σeA(T₂⁴ − T₁⁴).
+p ∝ T⁴ in kelvin; emissivity 0 ≤ e ≤ 1 (1 for a blackbody); good emitters are good absorbers
+g Stefan-Boltzmann law of radiation; emissivity; net rate of heat transfer by radiation
+R[law] heat <- sbl, temp : P_net = σeA(T₂⁴ − T₁⁴) | Radiative transfer | Heat transfer that needs no medium.
+X greenhouse effect :: an application of radiative balance to the atmosphere
+
+# ---------------------------------------------------------------- Chapter 2
+§ 2 2.1
+N M igl | Ideal gas law | pV = N k_B T = nRT |
+d For a dilute gas, pressure times volume is proportional to the number of molecules and the absolute temperature (Boyle, Charles and Gay-Lussac combined).
+p equation of state; valid at low density; isotherms are hyperbolas pV = const
+g ideal gas; ideal gas law
+N O kB | Boltzmann constant | k_B | prim
+d Converts temperature to energy per molecule: 1.38 × 10⁻²³ J/K.
+g Boltzmann constant
+N O NA | Avogadro's number | N_A | prim
+d Number of molecules in one mole, 6.02 × 10²³ mol⁻¹; the mole counts amount of substance.
+g mole; Avogadro’s number
+N O Rgas | Gas constant | R = N_A k_B |
+d Boltzmann's constant per mole: 8.31 J/(mol·K).
+g universal gas constant
+R[def] Rgas <- NA, kB : R = N_A k_B | Per-mole constant | pV = nRT with n = N/N_A.
+R[law] igl <- pres, temp, kB, Rgas : pV = N k_B T = nRT | Empirical gas laws | Equation of state of a dilute gas.
+N M vdw | Van der Waals equation | [p + a(n/V)²](V − nb) = nRT |
+d Corrects the ideal gas law for attraction between molecules (a) and their own volume (b); predicts liquefaction below a critical temperature.
+p reduces to the ideal gas law at low density; critical point where an isotherm has an inflection; above T_c no liquid–gas transition (supercritical)
+g van der Waals equation of state; critical temperature; supercritical
+R[gen] vdw <- igl : p → p + a(n/V)², V → V − nb | Real-gas corrections | Two constants per gas.
+
+N S pV | Equilibrium state of a gas | point (p, V) |
+d A gas in equilibrium is fixed by two of p, V, T; the third follows from the equation of state, so the state is a point on a pV diagram.
+m point of the surface f(p, V, T) = 0; two coordinates suffice (a point of the pV plane)
+g pV diagram
+R[thm] pV <- igl, pres, temp : T = pV/(Nk_B) | Two variables suffice | The equation of state removes one variable.
+§ 2 2.2
+N M kinth | Kinetic theory of gases | pV = ⅓ N m ⟨v²⟩ |
+d A gas is many point molecules in random motion; pressure is the momentum they transfer to the walls in collisions.
+p statistical (averages over molecules); molecules point-like, elastic collisions; Newton's laws for each molecule
+g kinetic theory of gases
+R[thm] kinth <- n2, p, sys, pres : F_wall = Σ Δp/Δt = (N m⟨v_x²⟩/L),  p = F/A | Momentum transfer to the walls | Newton's second law for molecules bouncing off a wall.
+N O Eint | Internal energy | E_int = (3/2) N k_B T |
+d Total kinetic and potential energy of the molecules; for a monatomic ideal gas only kinetic, (3/2)Nk_BT.
+g internal energy
+R[thm] Eint <- kinth, igl, K : ⟨½mv²⟩ = (3/2) k_B T | Compare with pV = Nk_BT | Average kinetic energy per molecule set by temperature.
+R[thm] temp <- kinth, K : ⟨K⟩ = (3/2) k_B T | Kinetic meaning of temperature | Temperature measures the average translational kinetic energy.
+N O vrms | rms speed | v_rms = √(3k_BT/m) |
+d Square root of the mean square molecular speed.
+g root-mean-square (rms) speed
+R[thm] vrms <- Eint, kB, m : v_rms = √(3k_BT/m) = √(3RT/M) | From the mean kinetic energy | Lighter molecules move faster at the same T.
+N M dalton | Dalton's law | p = Σ p_i |
+d In a mixture each gas exerts its own partial pressure as if alone; the total pressure is their sum.
+p additive in partial pressures; molecules of ideal gases do not interact
+g partial pressure; Dalton’s law of partial pressures; vapor pressure
+R[thm] dalton <- igl, kinth : p_i = N_i k_B T/V | Independent molecules | Pressure counts molecules regardless of kind.
+N O mfp | Mean free path | λ = k_BT/(4√2 π r² p) |
+d Average distance a molecule travels between collisions; divided by the mean speed it gives the mean free time.
+g mean free path; mean free time
+R[thm] mfp <- kinth, igl : λ = V/(4√2 π r² N) | Collision cylinder | Volume swept per collision for molecules of radius r.
+
+§ 2 2.3
+N O CV | Molar heat capacity at constant volume | C_V = (d/2)R |
+d Heat per mole per kelvin at fixed volume.
+g molar heat capacity at constant volume
+
+N M equip | Equipartition theorem | ½ k_B T per degree of freedom |
+d In thermal equilibrium each quadratic term in a molecule's energy (degree of freedom) carries an average energy ½k_BT.
+p classical result; d = 3 (monatomic), 5 (rigid diatomic), 7 with vibration; fails at low temperature where quantum effects freeze degrees of freedom
+g degree of freedom; equipartition theorem
+R[gen] equip <- Eint, kinth : (3/2)k_BT = 3 × ½k_BT | One half k_BT per direction | Extends the translational result to rotation and vibration.
+R[thm] CV <- equip, Rgas, heat : Q = nC_VΔT,  C_V = (d/2)R | From equipartition | E_int = (d/2)nRT.
+R[fail] CV <- equip : classical d = 7 for H₂ at all T; measured C_V shows plateaus: d = 3 below about 60 K, d ≈ 5 near room temperature, d = 7 only at high T | Equipartition fails at low temperature | Quantum mechanics restricts which degrees of freedom are active.
+§ 2 2.4
+N S mbd | Maxwell–Boltzmann distribution | f(v) ∝ v² e^{−mv²/2k_BT} |
+d The equilibrium distribution of molecular speeds in an ideal gas.
+m probability density on speeds v ≥ 0: f(v) = (4/√π)(m/2k_BT)^{3/2} v² e^{−mv²/2k_BT}
+g Maxwell-Boltzmann distribution
+R[thm] mbd <- kinth, kB, temp : f(v) ∝ v² e^{−mv²/2k_BT} | Equilibrium statistics | Gaussian in each velocity component, times the shell area 4πv².
+N O vp | Most probable speed | v_p = √(2k_BT/m) |
+d Speed at the peak of the Maxwell–Boltzmann distribution; below the mean and rms speeds.
+g most probable speed; peak speed
+R[thm] vp <- mbd : df/dv = 0 ⇒ v_p = √(2k_BT/m) | Maximum of f(v) | The mean speed is √(8k_BT/πm).
+R[thm] vrms <- mbd : ⟨v²⟩ = ∫ v² f(v) dv = 3k_BT/m | Second moment | Agrees with kinetic theory.
+
+# ---------------------------------------------------------------- Chapter 3
+§ 2 3.1
+N S tsys | Thermodynamic system | system / surroundings |
+d A part of the world separated by a boundary from its surroundings (environment); closed if no matter crosses, open otherwise. In equilibrium a few variables describe it.
+m macroscopic state given by intensive variables (p, T) and extensive variables (V, E_int, N); equilibrium = no change in time
+g thermodynamic system; boundary; surroundings; environment; closed system; open system; equilibrium; extensive variable; intensive variable
+R[def] tsys <- sys, theq : ~10²³ particles described by a few macroscopic variables | Macroscopic description | Microscopic detail is replaced by equilibrium variables.
+N M eos | Equation of state | f(p, V, T) = 0 |
+d A relation among the state variables of a system in equilibrium.
+p one relation, so two variables fix the state; examples: ideal gas, van der Waals
+g equation of state
+R[gen] eos <- igl, vdw, tsys : f(p, V, T) = 0 | General form | The gas laws are examples.
+
+§ 2 3.2
+N S qsproc | Quasi-static process | path in the pV plane |
+d A process slow enough that the system passes through a sequence of equilibrium states, so it is a curve on the pV diagram.
+m continuous curve of equilibrium states in the state space
+g quasi-static process
+R[def] qsproc <- pV, eos : curve of equilibrium states | Slow change | Only quasi-static processes can be drawn as paths.
+N O Wpv | Work done by a gas | W = ∫ p dV |
+d Work done by a system that changes volume; the area under the path on the pV diagram, so it depends on the path.
+R[thm] Wpv <- W, pres, qsproc : dW = F dx = pA dx = p dV | Pressure force on a moving wall | Path-dependent.
+X internal energy :: = Eint
+
+§ 2 3.3
+N M flaw | First law of thermodynamics | ΔE_int = Q − W |
+d The change of internal energy equals the heat added to the system minus the work done by the system.
+p energy conservation with heat; E_int is a state function, Q and W are path-dependent; generalises conservation of mechanical energy
+g first law of thermodynamics
+R[gen] flaw <- econs, heat, Wpv, Eint : ΔE_int = Q − W | Energy conservation with heat | Heat is added as a second mode of energy transfer.
+
+§ 2 3.4
+N S tproc | Thermodynamic processes | isothermal, isobaric, isochoric, adiabatic, cyclic |
+d Paths with one quantity held fixed: T (isothermal), p (isobaric), V (isochoric), or no heat exchanged (adiabatic); a cyclic process returns to its start. A reversible process can be run backward through the same states.
+m constrained curves in state space; cyclic = closed curve (ΔE_int = 0, W = enclosed area); reversible = quasi-static with no dissipation
+g thermodynamic process; isothermal process; isobaric process; isochoric process; adiabatic process; cyclic process; reversible process
+R[thm] tproc <- qsproc, flaw : isothermal ideal gas: Q = W = nRT ln(V₂/V₁); adiabatic: ΔE_int = −W | First law along each path | The constraint fixes which terms vanish.
+
+§ 2 3.5
+N O Cp | Molar heat capacity at constant pressure | C_p = C_V + R |
+d Heat per mole per kelvin at fixed pressure; larger than C_V because the gas also does work.
+g molar heat capacity at constant pressure
+R[thm] Cp <- flaw, CV, igl : Q = nC_VΔT + pΔV = n(C_V + R)ΔT | Extra work at constant p | The ideal gas law gives pΔV = nRΔT.
+X molar heat capacity at constant volume :: = CV
+
+§ 2 3.6
+N M adiab | Adiabatic process of an ideal gas | pV^γ = const |
+d In a quasi-static adiabatic expansion the gas cools; pressure and volume follow pV^γ = constant with γ = C_p/C_V.
+p no heat exchange; steeper than the isotherm on a pV diagram; γ = 5/3 monatomic, 7/5 diatomic
+g adiabatic expansion
+R[thm] adiab <- flaw, igl, Cp, CV : nC_V dT = −p dV ⇒ pV^γ = const | First law with Q = 0 | Combined with the differential of pV = nRT.
+R[thm] vsound <- adiab, igl : v = √(γRT/M) | Speed of sound in a gas | Compressions in a sound wave are adiabatic, so B = γp.
+
+# ---------------------------------------------------------------- Chapter 4
+§ 2 4.1
+X reversible process :: = tproc
+N S irrev | Irreversible process | real process |
+d A process that cannot be undone without leaving a change in the surroundings: friction, free expansion, heat flow across a finite temperature difference.
+m path not made of equilibrium states, or with dissipation; its reverse is never observed spontaneously
+g irreversible process; irreversibility
+R[def] irrev <- tproc : not reversible | Real processes | Every natural process is irreversible to some degree.
+N M clausius | Clausius statement | no spontaneous heat flow cold → hot | ax
+d Heat never flows spontaneously from a colder to a hotter body; doing so requires work.
+p one form of the second law; equivalent to the Kelvin statement; picks a direction of time
+g Clausius statement of the second law of thermodynamics
+R[law] clausius <- heat, irrev : heat flow from cold to hot is never the only effect | Direction of heat flow | An empirical law about irreversible processes.
+
+§ 2 4.2
+N M engine | Heat engine | W = Q_h − Q_c |
+d A device run in a cycle that takes heat Q_h from a hot reservoir, rejects Q_c to a cold reservoir and delivers the difference as work.
+p cyclic: ΔE_int = 0 per cycle; needs two reservoirs; first law fixes W = Q_h − Q_c
+g heat engine; hot reservoir; cold reservoir
+R[thm] engine <- flaw, tproc, heat : cycle: ΔE_int = 0 ⇒ W = Q_h − Q_c | First law over a cycle | The working substance returns to its initial state.
+N O eff | Efficiency | e = W/Q_h = 1 − Q_c/Q_h |
+d Fraction of the heat taken in that is turned into work.
+g efficiency (e)
+R[def] eff <- engine : e = W/Q_h | Work out per heat in | Always less than 1.
+
+§ 2 4.3
+N M fridge | Refrigerator and heat pump | Q_c + W = Q_h |
+d An engine run backward: work moves heat from a cold reservoir to a hot one, to cool the cold side (refrigerator) or heat the hot side (heat pump).
+p reversed cycle; requires work input (Clausius); same energy balance as an engine
+g refrigerator; heat pump
+R[thm] fridge <- engine : reverse every step of the cycle | Engine in reverse | Heat flows uphill only with work.
+N O cop | Coefficient of performance | K_R = Q_c/W,  K_P = Q_h/W |
+d Heat moved per work supplied; can exceed 1.
+g coefficient of performance
+R[def] cop <- fridge : K_R = Q_c/W,  K_P = Q_h/W | Heat per work | The useful heat depends on which side is wanted.
+
+§ 2 4.4
+N M kelvin | Kelvin statement | no perfect engine | ax
+d No cyclic process can convert heat from one reservoir entirely into work; equivalently there is no perfect engine (and, by the Clausius form, no perfect refrigerator).
+p equivalent to the Clausius statement; forbids e = 1
+g Kelvin statement of the second law of thermodynamics; perfect engine; perfect refrigerator (heat pump)
+R[thm] kelvin <- clausius, engine, fridge : perfect engine + refrigerator = perfect refrigerator | Equivalence proof | Violating either statement violates the other.
+
+§ 2 4.5
+N S carnot | Carnot cycle | 2 isotherms + 2 adiabats |
+d A reversible cycle of two isothermal and two adiabatic steps between two reservoirs; an engine run on it is a Carnot engine.
+m closed curve in the pV plane: isotherm at T_h, adiabat, isotherm at T_c, adiabat
+g Carnot cycle; Carnot engine
+R[thm] carnot <- tproc, adiab, igl : Q_c/Q_h = T_c/T_h for an ideal gas | Ideal-gas Carnot cycle | The adiabats make the two volume ratios equal.
+N M carnotp | Carnot principle | e ≤ 1 − T_c/T_h |
+d No engine between two reservoirs beats a reversible one, and all reversible engines between them have e = 1 − T_c/T_h.
+p consequence of the second law; efficiency depends only on reservoir temperatures; defines absolute temperature
+g Carnot principle
+R[thm] carnotp <- kelvin, carnot : a better engine driving a reversed Carnot engine would be a perfect engine | From the second law | Proof by combining engines.
+R[thm] eff <- carnotp : e_max = 1 − T_c/T_h | Upper bound | Real engines fall below it.
+R[thm] tscale <- carnotp : Q_c/Q_h = T_c/T_h | Thermodynamic temperature | Ratios of heats in a reversible cycle define the absolute (Kelvin) scale independently of any material.
+
+§ 2 4.6
+N O S | Entropy | dS = dQ_rev/T |
+d A state function whose change is the heat added reversibly divided by the absolute temperature.
+g entropy
+R[thm] S <- carnotp, heat, temp : ∮ dQ_rev/T = 0 for every reversible cycle | Carnot cycles tile any cycle | A path-independent integral defines a state function.
+N M slaw | Second law (entropy statement) | ΔS_universe ≥ 0 |
+d The entropy of an isolated system never decreases; it stays constant only for reversible processes.
+p equivalent to the Kelvin and Clausius statements; distinguishes past from future; equality only for reversible processes
+g entropy statement of the second law of thermodynamics
+R[thm] slaw <- S, clausius : heat Q from T_h to T_c: ΔS = Q/T_c − Q/T_h > 0 | Heat flow raises total entropy | Any irreversible step adds entropy.
+
+§ 2 4.7
+X disorder :: an interpretation of entropy given in words; no separate model in the section
+X isentropic :: = adiab
+R[thm] slaw <- irrev, S, igl : free expansion: ΔS = nR ln(V₂/V₁) > 0 | Entropy of an irreversible process | Computed along a reversible path between the same end states.
+N M third | Third law | ΔS → 0 as T → 0 | ax
+d Entropy changes along an isotherm vanish as the temperature approaches absolute zero; absolute zero cannot be reached in a finite number of steps.
+p limiting law; fixes the zero of entropy; unattainability of absolute zero
+g third law of thermodynamics
+R[law] S <- third : lim_{T→0} (ΔS)_T = 0 | Zero of entropy | Entropy differences between states vanish at absolute zero.

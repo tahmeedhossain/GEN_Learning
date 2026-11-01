@@ -1,0 +1,245 @@
+# University Physics Volume 3, chapters 6-8 (photons and matter waves, quantum mechanics, atoms)
+
+§ 3 6.1
+N S bbrad | Blackbody radiation | I(λ, T) |
+d Radiation in equilibrium with a perfect absorber and emitter at temperature T; its spectrum depends only on T, peaking at λ_max with λ_max T = 2.898 × 10⁻³ m·K (Wien).
+m spectral power intensity I(λ, T) on λ > 0, one curve per temperature
+g emitter; absorber; blackbody; blackbody radiation; power intensity
+R[meas] bbrad <- temp, spectrum : I(λ, T) measured for cavity radiation | Measured spectra | Peak shifts to shorter λ as T rises (Wien's displacement law).
+X Stefan–Boltzmann constant :: = sbl
+R[read] sbl <- bbrad : ∫ I(λ, T) dλ = σT⁴ | Stefan's law from the spectrum | Total power is the area under the curve.
+R[fail] bbrad <- equip, emwave, kB : Rayleigh–Jeans: I = 2πckT/λ⁴ → ∞ as λ → 0 | Ultraviolet catastrophe | Equipartition over the electromagnetic modes of a cavity predicts infinite power.
+N O hbar | Planck's constant | h,  ħ = h/2π | prim q
+d The quantum of action, 6.626 × 10⁻³⁴ J·s; it sets the scale at which energy comes in discrete amounts.
+N M planck | Planck's hypothesis | E_n = nhf | q
+d The oscillators exchanging energy with cavity radiation can only have energies that are whole multiples of hf.
+p energy quantized in steps hf; quantum number n = 0, 1, 2, …; reduces to equipartition when hf ≪ k_BT
+g quantized energies; quantum state of a Planck’s oscillator; Planck’s hypothesis of energy quanta
+R[law] planck <- hbar, freq, sho : E_n = n h f | Quantized oscillators | A hypothesis fitted to the measured spectrum (1900).
+R[thm] bbrad <- planck, kB, c : I(λ, T) = (2πhc²/λ⁵) / (e^{hc/λk_BT} − 1) | Planck's radiation law | Average energy of a quantized oscillator replaces k_BT.
+R[thm] sbl <- planck, kB, c : σ = 2π⁵k_B⁴/(15c²h³) | Stefan–Boltzmann constant derived | Integrating Planck's law over all wavelengths.
+
+§ 3 6.2
+N O Kmax | Photoelectron energy | K_max = eΔV_s |
+d Light on a metal ejects photoelectrons (photocurrent from the photoelectrode); their maximum kinetic energy is measured by the stopping potential.
+g photoelectric effect; photoelectron; photoelectrode; photocurrent; stopping potential
+R[meas] Kmax <- dV, q : K_max = e ΔV_s | Stopping potential | The retarding voltage that stops the photocurrent.
+N O fc | Cut-off frequency | f_c |
+d Below a cut-off frequency (above a cut-off wavelength) no electrons are emitted, however intense the light.
+g cut-off frequency; cut-off wavelength
+R[meas] fc <- Kmax, freq : photocurrent only for f > f_c | Threshold | Found by varying the frequency of the light.
+R[fail] Kmax <- emwave, Iint : wave theory: K_max grows with intensity, no threshold, a time lag | Classical prediction fails | Observed: K_max independent of intensity, linear in f, no lag.
+N S photon | Photon | E = hf,  p⃗ = ħk⃗ | q
+d A quantum of the electromagnetic field: energy hf, momentum h/λ along the propagation vector, zero rest mass. The photoelectric effect is a quantum phenomenon.
+m particle of electromagnetic radiation: energy hf, momentum ħk⃗, E = pc
+g photon; energy of a photon; quantum phenomenon; propagation vector
+R[law] photon <- hbar, freq, emwave : E_f = hf | Einstein's light quanta (1905) | Light is absorbed and emitted in quanta.
+R[thm] photon <- Erel : m₀ = 0 ⇒ E = pc ⇒ p = h/λ | Massless particle | The relativistic energy–momentum relation for zero rest mass.
+N O phiw | Work function | ϕ |
+d Minimum energy needed to free an electron from a metal's surface.
+g work function
+R[meas] phiw <- Kmax, freq : intercept of K_max(f) | Read from the photoelectric line | Property of the metal surface.
+R[thm] Kmax <- photon, phiw : K_max = hf − ϕ | Einstein's equation | One photon, one electron.
+R[thm] fc <- phiw, hbar : f_c = ϕ/h | Threshold explained | A photon below f_c lacks the energy to free an electron.
+
+§ 3 6.3
+X reduced Planck’s constant :: = hbar
+X wave number :: = kwave
+N O compton | Compton shift | Δλ = λ_c(1 − cos θ) |
+d X-rays scattered by electrons come out with longer wavelength, by an amount fixed by the scattering angle; λ_c = h/(m₀c) = 0.00243 nm is the Compton wavelength.
+g Compton effect; scattering angle; Compton shift; Compton wavelength; inelastic scattering
+R[thm] compton <- photon, prel, Erel, pcons : energy and momentum conserved in photon–electron collision | Relativistic collision with a photon | Treats light as particles with momentum h/λ.
+
+§ 3 6.4
+N O Hspec | Hydrogen line spectrum | 1/λ = R_H(1/n_f² − 1/n_i²) |
+d Hydrogen emits and absorbs only at discrete wavelengths (Fraunhofer lines in sunlight), in series named Lyman, Balmer, Paschen, Brackett, Pfund and Humphreys.
+g Fraunhofer lines; emission spectrum; absorption spectrum; Balmer formula; Rydberg constant for hydrogen; Balmer series; Rydberg formula; Lyman series; Paschen series; Brackett series; Pfund series; Humphreys series
+R[meas] Hspec <- spectrum, lam : discrete lines fitted by the Rydberg formula | Measured spectra | Empirical formula (Balmer 1885, Rydberg 1888).
+X β-ray; α-ray; γ-ray; α-particle :: = decay
+N S nucatom | Nuclear model of the atom | nucleus + electrons |
+d Rutherford's gold-foil experiment showed that nearly all of an atom's mass and its positive charge sit in a tiny nucleus, with electrons far outside.
+m point-like positive nucleus (radius ~10⁻¹⁵ m) with electrons at ~10⁻¹⁰ m
+g Rutherford’s gold foil experiment; nuclear model of the atom
+R[thm] nucatom <- atom, coul, coll : rare large-angle α scattering needs a tiny massive positive nucleus | Rutherford scattering | Coulomb repulsion from a point charge.
+R[fail] Hspec <- nucatom, emwave, ac : orbiting electron radiates, spirals into the nucleus: continuous spectrum, no stable atom | Planetary atom fails | An accelerated charge radiates its energy.
+N M bohr | Bohr's model | L = nħ,  hf = |E_n − E_m| | q
+d Postulates for hydrogen: the electron moves only on orbits with angular momentum nħ, does not radiate on them, and emits or absorbs a photon when it jumps between them.
+p quantization of angular momentum (quantum number n); stationary orbits do not radiate; transitions emit hf = ΔE
+g Bohr’s model of the hydrogen atom; postulates of Bohr’s model; quantum number
+R[law] bohr <- nucatom, coul, Lang, hbar, photon : L_n = nħ;  hf = |E_n − E_m| | Bohr's postulates (1913) | Classical orbits restricted by a quantum condition.
+N S bohrlev | Hydrogen energy levels | E_n = −13.6 eV/n² | q
+d The allowed states of Bohr's atom: radii r_n = a₀n² (Bohr radius a₀ = 0.529 Å) and energies −E₀/n²; ground state −13.6 eV, ionization energy 13.6 eV. Hydrogen-like ions scale with Z.
+m discrete levels n = 1, 2, …; E_n = −Z²E₀/n², r_n = a₀n²/Z
+g Bohr radius of hydrogen; energy spectrum of hydrogen; ground state energy of the hydrogen atom; excited energy states of the H atom; ionization energy; ionization limit of the hydrogen atom; hydrogen-like atom
+R[thm] bohrlev <- bohr, coul, Fc : mv²/r = ke²/r² with mvr = nħ | Circular orbits with quantized L | Coulomb force as centripetal force.
+R[thm] Hspec <- bohrlev, photon : 1/λ = (E₀/hc)(1/n_f² − 1/n_i²) | Spectrum explained | Rydberg's constant from e, m_e, h and ε₀.
+
+§ 3 6.5
+N M debrog | de Broglie's hypothesis | λ = h/p,  f = E/h | q
+d Every particle has an associated matter wave (de Broglie wave) with wavelength h/p; the wave packet moves at the group velocity, which equals the particle's velocity.
+p same relations as for photons; wavelength significant only at atomic scales; leads to wave quantum mechanics
+g de Broglie’s hypothesis of matter waves; wave quantum mechanics; de Broglie wave; group velocity
+R[analog] debrog <- photon, p : p = h/λ applied to particles | Matter waves (1924) | The photon's relations read in reverse.
+R[thm] bohr <- debrog, standw : 2πr_n = nλ ⇒ L = nħ | Bohr's orbits as standing waves | A whole number of wavelengths fits the orbit.
+N O DG | Electron diffraction | λ = h/p measured | q
+d Davisson and Germer saw electrons diffracted by a nickel crystal with the angles of Bragg's law, confirming λ = h/p.
+g Davisson–Germer experiment
+R[thm] DG <- debrog, bragg : mλ = 2d sin θ with λ = h/p | Bragg diffraction of electrons | Crystal planes act as for X-rays.
+
+§ 3 6.6
+N M duality | Wave–particle duality | both pictures required | q
+d Light and matter both show wave behaviour (interference in the double-slit interference experiment) and particle behaviour (single detections); neither picture alone suffices.
+p complementary descriptions; single quanta build up an interference pattern; which-path information destroys interference
+g wave-particle duality; double-slit interference experiment
+R[thm] duality <- photon, debrog, dslit : one-at-a-time particles build up two-slit fringes | Double slit with single quanta | Detection is particle-like, distribution wave-like.
+N M uncert | Uncertainty principle | Δx Δp ≥ ħ/2 | q
+d Position and momentum cannot both be sharp: the product of their uncertainties is at least ħ/2.
+p a property of waves (Fourier pairs), not of measuring apparatus; limits trajectories at atomic scales
+g Heisenberg uncertainty principle
+R[thm] uncert <- duality, debrog : a wave localised in Δx has a spread Δk ≥ 1/(2Δx) | Matter waves are Fourier pairs | Multiply by ħ.
+X electron microscopy :: an application of short de Broglie wavelengths
+
+# ---------------------------------------------------------------- Chapter 7
+§ 3 7.1
+N S psi | Wave function | Ψ(x, t) | q
+d The quantum state of a particle: a complex function of position and time; its symmetry under x → −x may be even or odd.
+m complex square-integrable function on configuration space (element of L²), defined up to a global phase
+g wave function; complex function; even function; odd function; anti-symmetric function
+R[gen] psi <- debrog, trav : complex matter wave A e^{i(kx − ωt)} | Matter wave as state | The de Broglie wave becomes the state itself.
+N M born | Born rule | P = |Ψ|² dx | q ax
+d |Ψ(x, t)|² is the probability density for finding the particle at x; the total probability is one (normalization condition).
+p probabilities from |Ψ|²; ∫|Ψ|² dx = 1; global phase unobservable
+g probability density; Born interpretation; normalization condition
+N M collapse | Measurement and state reduction | Ψ → outcome state | q ax
+d A measurement gives one definite outcome, and the wave function is then replaced by one consistent with it (wave function collapse, Copenhagen interpretation).
+p probabilistic outcomes; discontinuous change of state on measurement; interpretation debated
+g state reduction; wave function collapse; Copenhagen interpretation
+R[law] collapse <- born, psi : after the outcome, Ψ → state with that outcome | Postulate | Repeated measurement gives the same result.
+N O expval | Expectation value | ⟨x⟩ = ∫Ψ* x Ψ dx | q
+d Average of many measurements on identically prepared systems; position and momentum act as operators x and −iħ ∂/∂x.
+g expectation value; position operator; momentum operator
+R[thm] expval <- psi, born : ⟨x⟩ = ∫Ψ* x Ψ dx,  ⟨p⟩ = ∫Ψ*(−iħ ∂/∂x)Ψ dx | Weighted average | Weighted by the probability density.
+N M corresp | Correspondence principle | quantum → classical at large n | q ax
+d In the limit of large energies (large quantum numbers) quantum predictions agree with classical mechanics.
+p limiting principle; links the two theories; guides construction of quantum theories
+g correspondence principle
+
+§ 3 7.2
+X Heisenberg’s uncertainty principle :: = uncert
+N S wpack | Wave packet | ∫ A(k) e^{i(kx − ωt)} dk | q
+d A localised wave made by superposing plane waves of nearby wave numbers; the narrower it is in x, the broader in k.
+m superposition of plane waves with amplitude A(k); Δx Δk ≥ ½
+g wave packet
+R[thm] wpack <- psi, superp, kwave : sum of plane waves | Superposition | The free-particle state with finite extent.
+R[thm] uncert <- wpack : Δx Δk ≥ ½ and p = ħk | Uncertainty from Fourier analysis | Narrow packets need many wave numbers.
+N M uncertE | Energy–time uncertainty | ΔE Δt ≥ ħ/2 | q
+d A state that lasts only Δt has an energy spread at least ħ/(2Δt); short-lived states have broad lines.
+p E = ħω and Δω Δt ≥ ½; sets natural line widths
+g energy-time uncertainty principle
+R[thm] uncertE <- uncert, photon : Δω Δt ≥ ½ with E = ħω | Time–frequency pair | The same Fourier relation in time.
+
+§ 3 7.3
+N M tdse | Schrödinger equation | iħ ∂Ψ/∂t = −(ħ²/2m) ∂²Ψ/∂x² + UΨ | q ax
+d The equation of motion of the wave function: given Ψ at one time and the potential energy U, it fixes Ψ at all times.
+p linear (superposition); first order in time; complex; preserves normalization
+g Schrödinger’s time-dependent equation
+R[thm] tdse <- Emech, debrog, psi : E = p²/2m + U with E → iħ∂/∂t, p → −iħ∂/∂x | From the energy of a particle | Written to reproduce E = ħω and p = ħk for free particles.
+N M tise | Time-independent Schrödinger equation | −(ħ²/2m)ψ″ + Uψ = Eψ | q
+d For a potential that does not change in time, Ψ = ψ(x)e^{−iωt}; ψ satisfies an eigenvalue equation for the energy, and e^{−iωt} is the time-modulation factor.
+p separation of variables; eigenvalue problem for E; real potential gives real energies
+g Schrödinger’s time-independent equation; time-modulation factor
+R[thm] tise <- tdse : Ψ(x, t) = ψ(x) e^{−iEt/ħ} | Separation of variables | Valid when U does not depend on t.
+
+§ 3 7.4
+N S pib | Particle in a box | E_n = n²π²ħ²/(2mL²) | q
+d A particle confined to an infinite square well: ψ_n = √(2/L) sin(nπx/L), standing matter waves; only discrete energy levels with quantum number n ≥ 1 are allowed, so even the ground state energy is nonzero.
+m discrete set of states ψ_n, n = 1, 2, 3, …; energies ∝ n²
+g infinite square well; ground state energy; energy quantum number; principal quantum number; energy levels
+R[thm] pib <- tise, bc, standw : ψ(0) = ψ(L) = 0 ⇒ k = nπ/L | Boundary-value problem | The string's standing-wave condition for a matter wave.
+N S stat | Stationary state | |Ψ|² constant in time | q
+d A solution with one definite energy; its probability density does not change, so it is a standing wave state.
+m Ψ_n = ψ_n(x) e^{−iE_nt/ħ}
+g stationary state; standing wave state
+R[thm] stat <- tise, pib : Ψ_n = ψ_n e^{−iE_nt/ħ} ⇒ |Ψ_n|² = |ψ_n|² | Phase factor drops out | Energy eigenstates do not evolve observably.
+R[lim] xt <- pib, corresp : n → ∞: |ψ_n|² averages to the uniform classical density | Classical limit in a box | A ball bouncing between walls spends equal time everywhere.
+
+§ 3 7.5
+N S qho | Quantum harmonic oscillator | E_n = (n + ½)ħω | q
+d The Schrödinger equation with U = ½mω²x²: equally spaced levels, a zero-point energy ħω/2, and wave functions built from Hermite polynomials.
+m states ψ_n = N_n e^{−β²x²/2} H_n(βx), n = 0, 1, 2, …
+g Hermite polynomial
+R[thm] qho <- tise, sho : −(ħ²/2m)ψ″ + ½mω²x²ψ = Eψ | Oscillator potential | The classical oscillator's potential energy in the quantum equation.
+R[lim] shm <- qho, corresp : large n: |ψ_n|² peaks near the classical turning points | Classical limit of the oscillator | Quantum and classical probability densities agree on average.
+
+§ 3 7.6
+N O Ttun | Tunneling probability | T ≈ 16(E/U₀)(1 − E/U₀) e^{−2βL} | q
+d A particle can cross a potential barrier higher than its energy; the transmission probability falls exponentially with barrier width and with √(U₀ − E).
+g quantum tunneling; potential barrier; transmission probability; tunneling probability
+R[thm] Ttun <- tise, stat : ψ decays as e^{−βx} inside, β² = 2m(U₀ − E)/ħ² | Evanescent wave in the barrier | Matching ψ and ψ′ at both edges.
+R[fail] Ttun <- pediag : E < U₀ ⇒ turning point, T = 0 | Classical barrier is impenetrable | Observed in α decay, field emission and the scanning tunneling microscope.
+X field emission; nanotechnology; quantum dot; resonant tunneling; resonant-tunneling diode; scanning tunneling microscope (STM); tunnel diode :: devices and phenomena that apply tunneling
+
+# ---------------------------------------------------------------- Chapter 8
+§ 3 8.1
+N S hatom | Hydrogen atom | ψ_nlm, E_n = −13.6 eV/n² | q
+d Solutions of the Schrödinger equation for the Coulomb potential: atomic orbitals labelled by n, l (0 … n − 1) and m (−l … l). Energies depend only on n and agree with Bohr's; electrons have no definite orbits.
+m eigenfunctions ψ_nlm(r, θ, φ); n ≥ 1, 0 ≤ l < n, |m| ≤ l; radial probability density P(r) = r²|R_{nl}(r)|², equal to 4πr²|ψ|² for l = 0
+g principal quantum number (n); angular momentum orbital quantum number (l); angular momentum projection quantum number (m); radial probability density function; atomic orbital
+R[thm] hatom <- tise, coul : U(r) = −ke²/r in three dimensions | Coulomb potential | Separable in spherical coordinates.
+R[thm] bohrlev <- hatom : E_n = −13.6 eV/n² | Bohr's energies recovered | Without Bohr's orbits.
+N O Lq | Quantized angular momentum | L = √(l(l+1)) ħ,  L_z = mħ | q
+d Magnitude and one component of orbital angular momentum take only discrete values.
+R[thm] Lq <- hatom, Lang : L = √(l(l+1))ħ, L_z = mħ | Angular part of the solution | Operators for r⃗ × p⃗ on ψ_nlm.
+
+§ 3 8.2
+N O muorb | Orbital magnetic moment | μ⃗ = −(e/2m_e) L⃗ | q
+d The orbiting electron is a current loop; its moment comes in units of the Bohr magneton μ_B = eħ/2m_e.
+g orbital magnetic dipole moment; Bohr magneton; magnetic orbital quantum number
+R[thm] muorb <- mu, Lq, curr : μ = IA with I = ev/2πr, L = m_e v r | Current loop of an orbit | Moment proportional to angular momentum.
+N O zeeman | Zeeman effect | ΔE = m μ_B B | q
+d In a magnetic field, levels with different m split, and spectral lines split into several components.
+g Zeeman effect
+R[thm] zeeman <- muorb, Bval, U : U = −μ⃗·B⃗ = m μ_B B | Dipole energy in a field | 2l + 1 equally spaced sublevels.
+X magnetogram :: an application: maps of the Sun's field from Zeeman splitting
+
+§ 3 8.3
+N O spin | Electron spin | S = √(s(s+1)) ħ,  S_z = m_s ħ | q
+d Intrinsic angular momentum of the electron, s = ½ with m_s = ±½, shown by the two beams of the Stern–Gerlach experiment; it carries a magnetic moment μ⃗_s ≈ −(e/m_e)S⃗, antiparallel to the spin because the electron's charge is negative.
+g spin quantum number (s); spin projection quantum number (ms)
+R[meas] spin <- mu, Bfield, Lang : atomic beam splits in two in a nonuniform field | Stern–Gerlach | Only two orientations, not 2l + 1.
+N M soc | Spin–orbit and hyperfine coupling | U ∝ S⃗·L⃗ | q
+d The electron's spin moment interacts with the field of its orbital motion (fine structure) and with the nuclear spin (hyperfine structure, spin-flip transitions such as hydrogen's 21-cm line).
+p splits levels of equal n and l; small compared with the Coulomb energy; spin-flip emits a photon
+g spin-orbit coupling; fine structure; hyperfine structure; spin-flip transitions
+R[thm] soc <- spin, Lq, muorb : U = −μ⃗_s·B⃗_orbit ∝ S⃗·L⃗ | Magnetic energy of spin | Internal magnetic field of the orbital motion.
+
+§ 3 8.4
+N M pauli | Pauli exclusion principle | one electron per state | q ax
+d No two electrons in an atom can have the same set of quantum numbers (n, l, m, m_s).
+p applies to electrons (fermions); subshell holds at most 4l + 2 electrons; builds the periodic table
+g Pauli’s exclusion principle
+N S econf | Electron configuration | 1s² 2s² 2p⁶ … | q
+d Electrons fill subshells in order of energy, each with at most 4l + 2; the outermost (valence) electrons fix chemical groups and the transition metals.
+m occupation numbers of subshells (n, l) consistent with the exclusion principle
+g electron configuration; valence electron; chemical group; transition metal
+R[thm] econf <- hatom, spin, pauli : fill states (n, l, m, m_s) once each, lowest energy first | Building up the periodic table | Shells and subshells from the hydrogen labels.
+X ionic bond; covalent bond :: = bonds
+
+§ 3 8.5
+N M selrule | Selection rules | Δl = ±1 | q
+d Atomic transitions that emit or absorb a photon change l by one, because the photon carries one unit of angular momentum.
+p Δl = ±1 for electric dipole transitions; other transitions strongly suppressed
+g selection rules
+R[thm] selrule <- photon, Lq, Lcons : photon carries angular momentum ħ | Angular momentum conservation | Atom plus photon conserve angular momentum.
+N O xray | Atomic X-rays | √f ∝ (Z − 1) | q
+d Heavy atoms emit characteristic X-ray lines when an inner vacancy is filled, with frequencies following Moseley's law; a continuous braking-radiation spectrum accompanies them.
+g braking radiation; Moseley’s law; Moseley plot
+R[thm] xray <- econf, bohrlev, photon : hf = (Z − 1)²E₀(1 − 1/4) for the Kα line | Hydrogen-like inner electron | The remaining 1s electron screens one unit of nuclear charge.
+X fluorescence :: re-emission of light at lower frequency after excitation, described qualitatively
+
+§ 3 8.6
+N M laser | Laser | stimulated emission, population inversion | q
+d An incoming photon stimulates an excited atom to emit an identical photon; with more atoms in an excited metastable state than below it (population inversion) the light is amplified into coherent, monochromatic light.
+p stimulated photon has same frequency, phase, direction; needs population inversion; output coherent and monochromatic
+g laser; stimulated emission; population inversion; metastable state; coherent light; monochromatic
+R[thm] laser <- bohrlev, photon, coh : stimulated emission outpaces absorption when N_upper > N_lower | Light amplification | Two-level transitions with an inverted population.

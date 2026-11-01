@@ -1,0 +1,285 @@
+# University Physics Volume 1, chapters 14-17
+
+§ 1 14.1
+N S fluid | Fluid | ρ(r⃗), p(r⃗) |
+d A liquid or gas: matter that flows because it cannot resist a shear stress when at rest; described by fields such as density and pressure.
+m continuum: scalar fields ρ(r⃗, t), p(r⃗, t) on a region of ℝ³
+g fluids
+R[def] fluid <- stress, pres : at rest only normal stress (pressure), no shear stress | Matter that flows | Shear stress makes a fluid flow instead of deform elastically.
+N O rho | Density | ρ = m/V |
+d Mass per unit volume.
+g density
+R[def] rho <- m, L : ρ = m/V,  V ∼ ℓ³ | Mass per volume | For a nonuniform body ρ = dm/dV.
+N O sg | Specific gravity | ρ/ρ_water |
+d Density relative to that of water; dimensionless.
+g specific gravity
+R[def] sg <- rho : ρ/ρ_water | Ratio of densities | Above 1 the material sinks in water.
+X pressure :: = pres
+
+§ 1 14.2
+N O pabs | Gauge and absolute pressure | p_abs = p_g + p_atm |
+d Gauges read pressure relative to the atmosphere; absolute pressure adds atmospheric pressure.
+g gauge pressure; absolute pressure
+R[def] pabs <- pres : p_abs = p_g + p_atm | Relative to the atmosphere | Gauge pressure can be negative, absolute cannot.
+
+§ 1 14.3
+N M hydro | Hydrostatic equilibrium | dp/dy = −ρg |
+d In a fluid at rest pressure grows with depth so that each fluid element is balanced: p = p₀ + ρgh for constant density.
+p ρ constant ⇒ p linear in depth; pressure depends only on depth, not container shape; static
+g hydrostatic equilibrium
+R[thm] hydro <- n2, rho, g, pres, fluid : (p + dp)A − pA = −ρgA dy | Forces on a fluid layer | Net force on a thin layer is zero.
+N M pascal | Pascal's principle | Δp transmitted undiminished |
+d A pressure change applied to an enclosed fluid reaches every part of it; a hydraulic jack multiplies force by the area ratio.
+p consequence of hydrostatic equilibrium; F₁/A₁ = F₂/A₂ in hydraulics; work is still conserved
+g Pascal’s principle; hydraulic jack
+R[thm] pascal <- hydro : p(y) = p₀ + ρg(y₀ − y);  Δp₀ shifts p everywhere | Additive constant | The pressure profile is fixed up to the pressure at one point.
+
+§ 1 14.4
+N O FB | Buoyant force | F_B = ρ_fl V g |
+d Net upward force of a fluid on an immersed body.
+g buoyant force
+
+N M archi | Archimedes' principle | F_B = weight of displaced fluid |
+d A body immersed in a fluid is pushed up by a force equal to the weight of the fluid it displaces.
+p consequence of hydrostatic pressure; independent of the body's material; body floats if its mean density < fluid density
+g Archimedes’ principle
+R[thm] archi <- hydro, w : F⃗_B = −∮ p n̂ dA = weight of the displaced fluid | Pressure difference top to bottom | The same pressure would hold up the fluid that fills the space.
+R[thm] FB <- archi, rho, g : F_B = ρ_fluid V_displaced g | Weight of displaced fluid | Uses the fluid's density, not the body's.
+§ 1 14.5
+N M ideal | Ideal fluid | incompressible, nonviscous |
+d A model fluid with constant density and no internal friction; its steady flow is laminar.
+p ρ constant; no viscosity; flow steady and laminar
+g ideal fluid
+R[approx] ideal <- fluid : ρ = const,  η = 0 | Idealisation | Neglects compressibility and viscosity.
+N O eta | Viscosity | η = FL/(vA) |
+d Internal friction of a fluid: the shear stress needed per velocity gradient.
+g viscosity
+R[def] eta <- stress, speed : η = (F/A)/(v/L) | Shear stress per velocity gradient | Measured by shearing a fluid layer between plates.
+N S flow | Fluid flow | v⃗(r⃗, t) |
+d The motion of a fluid: a velocity at every point. In laminar flow the layers slide smoothly; in turbulent flow eddies mix them.
+m vector field v⃗(r⃗, t) on the fluid region; streamlines tangent to v⃗
+g laminar flow; turbulent flow
+R[def] flow <- fluid, vvec : v⃗(r⃗, t) | Velocity field | Each fluid element has a velocity.
+N O Q | Flow rate | Q = dV/dt = Av |
+d Volume of fluid passing a cross section per unit time.
+g flow rate
+R[def] Q <- flow : Q = dV/dt = A v̄ | Volume per time | Area times mean speed.
+N M contin | Continuity equation | ρ₁A₁v₁ = ρ₂A₂v₂ |
+d Mass entering a flow tube equals mass leaving; for an incompressible fluid A₁v₁ = A₂v₂, so the flow speeds up where the tube narrows.
+p local mass conservation; Av constant for incompressible flow; steady flow assumed
+R[thm] contin <- Q, rho, flow : ρAv constant along a flow tube | Mass conservation | No mass is created or stored in steady flow.
+
+§ 1 14.6
+N M bern | Bernoulli's equation | p + ½ρv² + ρgy = const |
+d Along a streamline of an ideal fluid, pressure plus kinetic and potential energy per volume is constant; faster flow means lower pressure (Bernoulli's principle).
+p work–energy theorem per volume; valid for steady, incompressible, nonviscous flow; along a streamline
+g Bernoulli’s equation; Bernoulli’s principle
+R[thm] bern <- wet, ideal, contin, pres : W_pressure = (p₁ − p₂)ΔV = Δ(½ρv² + ρgy)ΔV | Work–energy for a fluid parcel | Pressure does the work that changes kinetic and potential energy.
+
+§ 1 14.7
+X turbulence :: = flow
+N M poise | Poiseuille's law | Q = (p₂ − p₁)πr⁴/(8ηl) |
+d Laminar viscous flow through a tube: flow rate is the pressure difference over a resistance R = 8ηl/(πr⁴).
+p laminar flow only; Q ∝ r⁴; resistance analogous to an electrical resistance
+g Poiseuille’s law; Poiseuille’s law for resistance
+R[thm] poise <- eta, flow, Q, pres : Q = Δp/R,  R = 8ηl/(πr⁴) | Viscous flow in a tube | Parabolic velocity profile integrated over the cross section.
+N O Re | Reynolds number | N_R = 2ρvr/η |
+d Dimensionless ratio of inertial to viscous effects; flow in a tube is laminar below about 2000 and turbulent above about 3000.
+g Reynolds number
+R[def] Re <- rho, speed, eta : N_R = 2ρvr/η | Inertia over viscosity | Predicts the onset of turbulence.
+
+# ---------------------------------------------------------------- Chapter 15
+§ 1 15.1
+N O Tper | Period | T |
+d Time for one cycle of a periodic motion (an oscillation).
+g periodic motion; period (T); oscillation
+R[def] Tper <- dtm : T = Δt per cycle | Duration of a cycle | The motion repeats after T.
+N O freq | Frequency | f = 1/T |
+d Number of cycles per unit time; SI unit the hertz.
+g frequency (f)
+R[def] freq <- Tper : f = 1/T | Inverse of the period | Cycles per second.
+N M sho | Simple harmonic oscillator | m d²x/dt² = −kx |
+d A mass on an ideal spring: the restoring force is proportional to displacement, giving simple harmonic motion.
+p linear second-order equation; ω = √(k/m) independent of amplitude (isochronous); solutions superpose
+g simple harmonic oscillator; simple harmonic motion (SHM)
+R[law] sho <- n2, hooke : m ẍ = −k x | Second law with a Hooke force | The equation of motion of a spring–mass system.
+N S shm | Harmonic oscillation | x(t) = A cos(ωt + φ) |
+d The oscillator's state: amplitude A and phase shift φ about the equilibrium position; equivalently the pair (x, v) at one instant.
+m (A, φ) ∈ [0, ∞) × S¹; equivalently a point (x, v) on an ellipse in the phase plane
+g amplitude (A); equilibrium position; phase shift
+R[thm] shm <- sho : x(t) = A cos(ωt + φ) | Solution of the oscillator equation | A and φ are fixed by the initial position and velocity.
+N O kspr | Force constant | k |
+d Stiffness of a spring: force per unit stretch, in N/m.
+g force constant (k)
+R[def] kspr <- hooke : k = −F/x | Slope of the force law | Measured from the spring's response.
+R[thm] omega <- sho, kspr, m : ω = √(k/m) = 2πf | Oscillator frequency | The angular frequency reappears as the oscillator's natural frequency.
+R[thm] Tper <- omega : T = 2π/ω = 2π√(m/k) | Period of the oscillator | Independent of amplitude.
+
+§ 1 15.2
+X elastic potential energy :: = Uel
+N O Frest | Restoring force | F = −k(x − x₀) |
+d Force that pushes a body back toward a stable equilibrium point; linear for small displacements.
+g restoring force
+R[thm] Frest <- eqpt, F, U : F ≈ −U″(x₀)(x − x₀) | Near a minimum of U | Every stable equilibrium behaves like a spring for small displacements.
+X stable equilibrium point :: = eqpt
+R[thm] Emech <- shm, Uel, K : E = ½kx² + ½mv² = ½kA² | Energy of the oscillator | Kinetic and potential energy exchange, their sum fixed by the amplitude.
+
+§ 1 15.3
+R[analog] shm <- circ, omega : x(t) = A cos(ωt + φ) is the projection of uniform circular motion | Reference circle | Simple harmonic motion is one component of uniform circular motion.
+
+§ 1 15.4
+N M spend | Simple pendulum | T = 2π√(L/g) |
+d A point mass on a light string; for small angles it is a harmonic oscillator whose period depends only on length and g.
+p small-angle approximation sin θ ≈ θ; period independent of mass and (small) amplitude
+g simple pendulum
+R[approx] spend <- sho, n2, g : d²θ/dt² = −(g/L) sin θ ≈ −(g/L)θ | Small angles | The same equation as the spring with k/m → g/L.
+N M ppend | Physical pendulum | T = 2π√(I/(mgL)) |
+d An extended body swinging about a pivot; its period depends on its moment of inertia and the distance L from pivot to centre of mass.
+p small angles; reduces to the simple pendulum for I = mL²
+g physical pendulum
+R[approx] ppend <- n2rot, I, sho, w : I d²θ/dt² = −mgL sin θ ≈ −mgLθ | Torque of gravity | Second law for rotation with small angles.
+N M tpend | Torsional pendulum | T = 2π√(I/κ) |
+d A body twisting on a wire whose restoring torque is proportional to the twist angle.
+p linear restoring torque τ = −κθ; exact harmonic motion for elastic twist
+g torsional pendulum
+R[thm] tpend <- n2rot, I, sho : I d²θ/dt² = −κθ | Restoring torque | Rotational version of the spring–mass system.
+
+§ 1 15.5
+N M damp | Damped oscillator | mẍ + bẋ + kx = 0 |
+d An oscillator with a drag force proportional to velocity; it is underdamped (decaying oscillation), critically damped or overdamped (no oscillation).
+p linear; underdamped b² < 4mk: x = A₀e^{−bt/2m} cos(ωt + φ), ω = √(ω₀² − (b/2m)²); critical b² = 4mk; overdamped b² > 4mk
+g natural angular frequency; underdamped; critically damped; overdamped
+R[gen] damp <- sho, FD : add −b v (slow viscous drag) | Oscillator with drag | The linear drag law added to the spring force.
+
+§ 1 15.6
+N M forced | Driven oscillator and resonance | mẍ + bẋ + kx = F₀ sin ωt |
+d A damped oscillator pushed periodically settles into motion at the driving frequency; its amplitude peaks (resonance) when the driving frequency is near the natural one.
+p steady state at the driving frequency; A = F₀/√(m²(ω² − ω₀²)² + b²ω²); sharper resonance for weaker damping
+g resonance
+R[gen] forced <- damp : add a periodic driving force F₀ sin ωt | Driven damped oscillator | The response is largest near ω = ω₀.
+
+# ---------------------------------------------------------------- Chapter 16
+§ 1 16.1
+N S wave | Wave | y(x, t) |
+d A disturbance that travels through a medium (mechanical wave) while each part of the medium only oscillates about its equilibrium; transverse or longitudinal.
+m displacement field y(x, t) of the medium, ℝ × ℝ → ℝ (or a vector field in 3D)
+g wave; mechanical wave; transverse wave; longitudinal wave
+R[gen] wave <- shm, sys : coupled oscillators of a medium, each delayed along the propagation | Oscillation that travels | Neighbouring parts of the medium push on each other.
+N O lam | Wavelength | λ |
+d Distance between adjacent identical points of a periodic wave.
+g wavelength
+R[read] lam <- wave : y(x + λ, t) = y(x, t) | Spatial period | Read off a snapshot of the wave.
+N O vwave | Wave speed | v = λ/T = λf |
+d Speed at which the disturbance propagates; set by the medium, not by the source.
+g wave velocity; wave speed
+R[thm] vwave <- lam, Tper, freq : v = λ/T = λ f | One wavelength per period | The pattern advances λ during each period.
+
+§ 1 16.2
+N S trav | Traveling wave function | y = f(x ∓ vt) |
+d A wave shape that moves without changing; a pulse is a single such disturbance and y = A sin(kx − ωt + φ) is the periodic case.
+m function of the single variable x − vt (or x + vt); periodic case y = A sin(kx ∓ ωt + φ)
+g wave function; pulse
+R[thm] trav <- wave, vwave : y(x, t) = f(x − vt) | Shape moving at v | The same profile shifted by vt.
+N O kwave | Wave number | k = 2π/λ |
+d Spatial angular frequency of a wave, in rad/m; v = ω/k.
+g wave number
+R[def] kwave <- lam : k = 2π/λ | Radians per length | Companion of ω = 2π/T.
+N M waveeq | Linear wave equation | ∂²y/∂x² = (1/v²) ∂²y/∂t² |
+d The equation satisfied by every wave travelling at speed v in a linear medium.
+p linear (solutions superpose); second order in x and t; general solution f(x − vt) + g(x + vt)
+g linear wave equation
+R[thm] waveeq <- trav, ddt : ∂²f(x − vt)/∂t² = v² ∂²f(x − vt)/∂x² | Differentiate the wave function | Every travelling profile satisfies it.
+
+§ 1 16.3
+R[thm] waveeq <- n2, T, lmd : μ dx ∂²y/∂t² = F_T ∂²y/∂x² dx | Second law for a string element | The net transverse tension force on a small piece of string gives the wave equation.
+R[thm] vwave <- T, lmd, waveeq : v = √(F_T/μ) | Speed on a string | Tension over linear mass density.
+R[thm] vwave <- Bmod, rho : v = √(B/ρ) | Compression wave in a fluid | Elastic property over inertial property.
+
+§ 1 16.4
+N O Pwave | Wave power | P_ave = ½μA²ω²v |
+d Energy per unit time carried by a wave; proportional to the square of the amplitude and of the frequency.
+R[thm] Pwave <- trav, lmd, omega, vwave, K : P_ave = ½ μ A² ω² v | Energy per wavelength per period | Kinetic plus potential energy of the string per wavelength, divided by T.
+N O Iint | Intensity | I = P/A |
+d Power per unit area carried by a wave; for a spherical wave I = P/(4πr²).
+g intensity (I)
+R[def] Iint <- Pwave : I = P/A;  spherical I = P/(4πr²) | Power per area | Falls as 1/r² for a point source.
+
+§ 1 16.5
+N M bc | Boundary conditions | fixed or free end |
+d At a fixed end the displacement is zero and a reflected pulse is inverted; at a free end the slope is zero and the pulse returns upright.
+p fixed: y = 0; free: ∂y/∂x = 0; partial reflection and transmission at a change of medium
+g fixed boundary condition; free boundary condition
+R[thm] bc <- waveeq : reflected wave chosen to satisfy the end condition | Reflection | The incident and reflected waves together meet the condition at the end.
+N S interf | Interference | y_R = [2A cos(φ/2)] sin(kx − ωt + φ/2) |
+d Two overlapping waves add constructively (in phase, double amplitude) or destructively (half a cycle apart, cancel).
+m superposed wave field; resultant amplitude 2A|cos(φ/2)| set by the phase difference φ
+g interference; constructive interference; destructive interference
+
+N M superp | Superposition principle | y = y₁ + y₂ |
+d When waves overlap, the displacements add; follows from the linearity of the wave equation.
+p linearity; holds for small amplitudes in linear media; waves pass through each other unchanged
+g superposition
+R[thm] superp <- waveeq : L[y₁ + y₂] = L[y₁] + L[y₂] = 0 | Linearity | Sums of solutions are solutions.
+R[thm] interf <- superp, trav : A sin(kx − ωt) + A sin(kx − ωt + φ) | Sum of two waves | Trigonometric identity for the sum of two sines.
+§ 1 16.6
+N S standw | Standing wave | y = [2A sin kx] cos ωt |
+d Two equal waves moving in opposite directions produce a pattern that does not travel: nodes stay at rest, antinodes oscillate most.
+m product of a fixed spatial profile and a time oscillation; nodes at kx = nπ
+g standing wave; node; antinode
+R[thm] standw <- superp, trav, bc : A sin(kx − ωt) + A sin(kx + ωt) = 2A sin kx cos ωt | Counter-propagating waves | Reflection from the ends supplies the second wave.
+N S modes | Normal modes | λ_n = 2L/n,  f_n = n v/2L |
+d A string fixed at both ends can only hold standing waves that fit its length: the fundamental and its overtones.
+m discrete family n = 1, 2, 3, …; any motion is a superposition of modes
+g normal mode; fundamental frequency; overtone
+R[thm] modes <- standw, bc, vwave : nodes at both ends ⇒ L = nλ/2 | Fit the length | The boundary conditions select the wavelengths.
+R[thm] forced <- modes : driving at f_n gives large amplitude | Resonance of a string | Each normal mode is an oscillator that resonates when driven at its frequency.
+
+# ---------------------------------------------------------------- Chapter 17
+§ 1 17.1
+N S sound | Sound wave | Δp(x, t),  s(x, t) |
+d A longitudinal wave of compressions and rarefactions in a medium; the pressure wave is a quarter cycle out of phase with the displacement wave.
+m pressure field Δp = Δp_max sin(kx ∓ ωt + φ) and displacement field s = s_max cos(kx ∓ ωt + φ)
+g sound
+R[thm] sound <- wave, pres, Bmod : Δp = −B ∂s/∂x | Pressure wave in a fluid | The displacement wave compresses and expands the medium.
+X hearing :: perception of sound (physiology)
+
+§ 1 17.2
+N O vsound | Speed of sound | v = √(B/ρ) |
+d Set by an elastic property over an inertial property of the medium: √(B/ρ) in fluids, √(Y/ρ) in solids, √(γRT/M) in an ideal gas.
+R[thm] vsound <- sound, Bmod, rho : v = √(B/ρ) | Elastic over inertial property | Newton's second law for a slab of fluid.
+R[thm] vsound <- Ymod, rho : v = √(Y/ρ) | In a solid rod | Young's modulus replaces B.
+
+§ 1 17.3
+N O beta | Sound intensity level | β = 10 log₁₀(I/I₀) dB |
+d Logarithmic measure of intensity relative to the threshold I₀ = 10⁻¹² W/m².
+g sound intensity level
+R[def] beta <- Iint : β = 10 log₁₀(I/I₀) | Logarithmic scale | A factor 10 in intensity adds 10 dB.
+R[thm] Iint <- sound, rho, vsound : I = (Δp_max)²/(2ρv) | Intensity of a sound wave | From the pressure amplitude.
+X sound pressure level; loudness; phon; pitch; notes; timbre :: how sound is perceived and described in music; no new model
+X transducer :: a device
+
+§ 1 17.4
+N S tubemodes | Air-column modes | f_n = nv/2L or nv/4L |
+d Standing sound waves in a tube: open at both ends all harmonics f_n = nv/2L; closed at one end only odd ones, f_n = nv/4L.
+m discrete modes; displacement antinode at an open end, node at a closed end
+g fundamental; harmonics; overtones
+R[thm] tubemodes <- modes, sound, bc : open end ↔ antinode, closed end ↔ node | Boundary conditions in a tube | The string's mode counting with acoustic end conditions.
+
+§ 1 17.6
+N O fbeat | Beat frequency | f_B = |f₂ − f₁| |
+d Two sounds of slightly different frequency produce a loudness that rises and falls at the difference frequency.
+g beats; beat frequency
+R[thm] fbeat <- superp, freq : cos ω₁t + cos ω₂t = 2 cos(Δω t/2) cos(ω̄t) | Superposition in time | Slowly varying envelope at the difference frequency.
+
+§ 1 17.7
+N O fdop | Doppler-shifted frequency | f_o = f_s (v ± v_o)/(v ∓ v_s) |
+d The frequency heard changes when source or observer moves through the medium: higher when approaching, lower when receding.
+g Doppler effect; Doppler shift
+R[thm] fdop <- vsound, freq, galrel : wavelength compressed by the source's motion, crossing rate changed by the observer's | Moving source and observer | Velocities are measured relative to the medium.
+
+§ 1 17.8
+N S shock | Shock wave | sin θ = v/v_s = 1/M |
+d A source faster than sound piles up its wavefronts on a cone; the pressure jump is heard as a sonic boom, and a boat's bow wake is the surface analogue.
+m conical envelope of spherical wavefronts, half-angle θ with sin θ = v/v_s (Mach number M = v_s/v)
+g shock wave; sonic boom; bow wake
+R[thm] shock <- vsound, superp : wavefronts emitted at earlier positions overlap on a cone | Supersonic source | Constructive superposition along the envelope.

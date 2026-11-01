@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEN Learning: University Physics Network</title>
+<meta name="description" content="A university physics course read as a growing concept graph of observables, models and states: a concise text with the network growing beside it, built on the structure of OpenStax University Physics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+:root {
+  --paper: #FAF8F3; --panel: #FFFFFF; --ink: #1D2430; --muted: #5B6573; --rule: #D9DDE3;
+  --obs: #A86C12; --mod: #6A45B5; --sta: #0E7C70; --and: #1F6CD0; --or: #C42A72; --rel: #2E8B3E; --q: #D9531E; --on-and: #FFFFFF;
+  --f-display: "Literata", Georgia, serif; --f-ui: "Atkinson Hyperlegible", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14191F; --panel: #1B222B; --ink: #E5E9EE; --muted: #9AA5B2; --rule: #2E3946;
+    --obs: #E2A64A; --mod: #B49AF0; --sta: #41C3AF; --and: #5EA3F5; --or: #F06AA8; --rel: #6CCB7B; --q: #FF8A5B; --on-and: #0E1620;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #14191F; --panel: #1B222B; --ink: #E5E9EE; --muted: #9AA5B2; --rule: #2E3946;
+  --obs: #E2A64A; --mod: #B49AF0; --sta: #41C3AF; --and: #5EA3F5; --or: #F06AA8; --rel: #6CCB7B; --q: #FF8A5B; --on-and: #0E1620;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--f-ui); }
+a { color: var(--and); text-underline-offset: 2px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+header.top { border-bottom: 1px solid var(--rule); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+.brand { font-weight: 700; letter-spacing: .02em; }
+.brand span { color: var(--muted); font-weight: 400; }
+.btn { font: inherit; font-size: .85rem; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); padding: 5px 11px; border-radius: 7px; cursor: pointer; }
+.hero { padding: 44px 0 18px; }
+.eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.1; margin: 8px 0 14px; text-wrap: balance; }
+.lede { font-family: var(--f-display); font-size: 1.15rem; line-height: 1.65; max-width: 64ch; margin: 0; }
+h2 { font-family: var(--f-display); font-weight: 600; font-size: 1.55rem; margin: 46px 0 10px; }
+h3 { font-size: 1rem; margin: 0 0 4px; }
+p { max-width: 70ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+.cta a { text-decoration: none; padding: 9px 16px; border-radius: 8px; font-weight: 700; border: 1px solid var(--rule); color: var(--ink); background: var(--panel); }
+.cta a.primary { background: var(--and); border-color: var(--and); color: var(--on-and); }
+.versions { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 14px; }
+.vcard { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.vcard img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--rule); }
+.vcard .b { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.vcard .tag { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.vcard .tag.latest { color: var(--and); }
+.vcard p { margin: 0; font-size: .95rem; }
+.vcard .open { margin-top: auto; padding-top: 8px; font-weight: 700; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 10px 0; font-size: .92rem; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 14px 0; }
+.stat { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 10px 12px; }
+.stat b { display: block; font-family: var(--f-display); font-size: 1.6rem; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { font-size: .82rem; color: var(--muted); }
+ul.plain { padding-left: 20px; max-width: 72ch; }
+ul.plain li { margin: 4px 0; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: 10px 0; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.tablewrap { overflow-x: auto; }
+code { font-size: .9em; background: color-mix(in srgb, var(--ink) 7%, transparent); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font-size: .82rem; line-height: 1.5; }
+.note { background: var(--panel); border-left: 3px solid var(--q); padding: 10px 14px; border-radius: 0 8px 8px 0; max-width: 72ch; }
+footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 18px 0 40px; font-size: .85rem; color: var(--muted); }
+@media (max-width: 520px) { .hero { padding-top: 28px; } h2 { margin-top: 36px; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">GEN Learning <span>· Great Epistemic Network</span></div>
+  <button class="btn" id="theme" type="button">Theme</button>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div class="eyebrow">A university physics course as a growing concept graph</div>
+  <h1>University Physics Network</h1>
+  <p class="lede">A concise calculus-based physics course whose concept graph grows beside the text as you read. Every quantity, law and mathematical structure appears at the paragraph that introduces it; every connection appears at the paragraph that explains it. Click a coloured word, a node or an edge, and its explanation opens together with the paragraph that introduces it.</p>
+  <div class="cta">
+    <a class="primary" href="v2/">Start reading (v2)</a>
+    <a href="v1/">Chapter explorer (v1)</a>
+    <a href="https://github.com/tahmeedhossain/GEN_Learning">Source on GitHub</a>
+  </div>
+</section>
+
+<h2>Why a concept graph of a course</h2>
+<p>Science starts from observations of <b>observables</b>. They hint at the <b>state</b> of a system: a point, a vector, a field, a distribution. Observing, hypothesising and checking against new observations turns hypotheses into <b>models</b>. A model gives the observable outcomes for a given state, and the dynamical evolution of states. Layering observables, states and models, and labelling each edge with the mathematical step that establishes it, reduces a large body of physical modelling to edges that can be checked one at a time.</p>
+<p>The Great Epistemic Network project uses this structure to make a field easy to review and to visualise. It also aims to automate the generation of research ideas: an edge that is missing or unverified is a candidate question. GEN Learning applies it to teaching. A student reading a first course sees how each new idea rests on earlier ones, which earlier chapters a chapter actually uses, and where classical reasoning fails and relativity or quantum theory takes over.</p>
+<div class="legend">
+  <span><i class="sw" style="background:var(--obs);border-radius:50%"></i>Observable: what is measured</span>
+  <span><i class="sw" style="background:var(--mod)"></i>Model: a law or mathematical structure</span>
+  <span><i class="sw" style="background:var(--sta)"></i>State: what describes the system</span>
+  <span><i class="sw" style="background:var(--and);height:3px;width:18px"></i>AND: inputs needed together</span>
+  <span><i class="sw" style="background:var(--or);height:3px;width:18px"></i>OR: alternative routes</span>
+</div>
+
+<h2>Versions</h2>
+<p>Both versions stay online. A switcher at the bottom left of each page moves between them.</p>
+<div class="versions">
+  <article class="vcard">
+    <a href="v2/"><img src="assets/img/v2_reader.jpg" alt="Version 2: the reading text on the left with a selected term; the Chapter 5 graph on the right with a card showing the concept and the paragraph that introduces it" width="1200" height="750" loading="lazy"></a>
+    <div class="b">
+      <div class="tag latest">v2 · latest</div>
+      <h3>Reader</h3>
+      <p>A text of 620 paragraphs (about 80 000 words) covering 44 chapters and 314 sections, with the graph beside it. Scrolling drives the growth of the graph. Earlier-chapter concepts appear only when a link in the current chapter uses them. Cards for concepts and links show the paragraph that introduces them, the other paragraphs that discuss them, and where they come from.</p>
+      <a class="open" href="v2/">Open v2 →</a>
+    </div>
+  </article>
+  <article class="vcard">
+    <a href="v1/"><img src="assets/img/v1_explorer.jpg" alt="Version 1: chapter list on the left, the Chapter 5 graph with a step slider in the middle, and a concept card on the right" width="1200" height="750" loading="lazy"></a>
+    <div class="b">
+      <div class="tag">v1</div>
+      <h3>Chapter explorer</h3>
+      <p>The same network, stepped through concept by concept and chapter by chapter, with links out to each OpenStax section and a book map of which chapters feed which. It has no reading text on the page; v2 was built because the network should grow while the text is read.</p>
+      <a class="open" href="v1/">Open v1 →</a>
+    </div>
+  </article>
+</div>
+
+<h2>What the network contains</h2>
+<div class="stats">
+  <div class="stat"><b>445</b><span>concepts: 191 observables, 172 models, 82 states</span></div>
+  <div class="stat"><b>516</b><span>links: 401 with several inputs (AND); 72 concepts reached by alternative routes (OR)</span></div>
+  <div class="stat"><b>365 · 22 · 58</b><span>classical · relativistic · quantum concepts</span></div>
+  <div class="stat"><b>6</b><span>failed classical predictions the book discusses</span></div>
+  <div class="stat"><b>1024</b><span>book key terms: 915 drawn as concepts, 40 matched to another section, 69 not drawn with reasons</span></div>
+</div>
+<figure style="margin:16px 0">
+  <img src="assets/img/v2_relativity.jpg" alt="Version 2 at Volume 3, Chapter 5: the text explains the Michelson–Morley null result; in the graph a dashed grey link marked with a cross shows the failed Galilean prediction" width="1200" height="750" loading="lazy" style="width:100%;height:auto;border:1px solid var(--rule);border-radius:10px">
+  <figcaption style="font-size:.85rem;color:var(--muted);margin-top:6px">Relativity (Vol. 3, §5.1): the Galilean prediction for the Michelson–Morley experiment is drawn as a broken grey link, and the second postulate enters as a relativistic concept (green ring).</figcaption>
+</figure>
+<p>Link kinds: 411 classical, 8 relativistic, 23 quantum, 13 from classical to relativistic, 38 into quantum theory, 17 back to classical as a limit, and 6 failed classical predictions. The failed predictions are:</p>
+<ul class="plain">
+  <li>equipartition and the heat capacity of hydrogen (Vol. 2 §2.3);</li>
+  <li>Galilean velocity addition against the Michelson–Morley result (Vol. 3 §5.1);</li>
+  <li>the ultraviolet catastrophe (§6.1);</li>
+  <li>the wave picture of the photoelectric effect (§6.2);</li>
+  <li>the collapsing planetary atom (§6.4);</li>
+  <li>the impenetrable classical barrier (§7.6).</li>
+</ul>
+
+<h2>The book and the text</h2>
+<p>The course follows the structure of OpenStax <i>University Physics</i>, Volumes 1–3, by Samuel J. Ling, Jeff Sanny and William Moebs (OpenStax, Rice University). The book supplies the chapters and sections, the key terms of each section, and the order in which they first appear. Every concept is placed in the section where the book introduces it, and a compiler checks the placement.</p>
+<p>The reading text of v2 is written for this site and does not reproduce OpenStax wording. It introduces exactly the network's concepts in the book's order; each section links to its OpenStax page for figures, worked examples and problems. Rules checked by script:</p>
+<ul class="plain">
+  <li>every section has text;</li>
+  <li>a paragraph links every concept it introduces, and the target of every link it introduces;</li>
+  <li>no paragraph refers to a concept before it is introduced;</li>
+  <li>the network records are identical to the network source.</li>
+</ul>
+<p class="note"><b>AI-generated content.</b> The text, the descriptions of concepts and links, and the pages were produced with AI assistance (Claude, Anthropic). Five independent AI reviewers checked the physics of the text and recomputed every worked number; they found no definite errors and flagged 13 imprecisions, which were corrected. The text has not yet had a full human review. Corrections and additions are welcome as issues or pull requests.</p>
+
+<h2>Data and sources</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Path</th><th>Contents</th></tr></thead>
+<tbody>
+<tr><td><a href="data/v2/university_physics_network_v2.json"><code>data/v2/university_physics_network_v2.json</code></a></td><td>v2 compiled network with the text: nodes, routes, paragraphs, chapters, coverage (schema <code>gen-epistemic-network/2-reader</code>)</td></tr>
+<tr><td><code>data/v2/book/*.gen</code></td><td>v2 source: network records with the reading text (<code>P</code> paragraphs, <code>Q</code> display equations)</td></tr>
+<tr><td><code>data/v2/src/*.gen</code></td><td>v2 network records only; the integrity reference for the text files</td></tr>
+<tr><td><a href="data/v2/reader_report.md"><code>data/v2/reader_report.md</code></a>, <a href="data/v2/coverage.csv"><code>coverage.csv</code></a></td><td>compile report (statistics, text per chapter) and how every book key term is handled</td></tr>
+<tr><td><a href="data/v1/university_physics_network_v1.json"><code>data/v1/university_physics_network_v1.json</code></a>, <code>data/v1/src/*.gen</code></td><td>v1 compiled network and source (schema <code>gen-epistemic-network/1-book</code>)</td></tr>
+<tr><td><a href="data/openstax_structure.json"><code>data/openstax_structure.json</code></a></td><td>chapters, sections, page links and key terms extracted from the OpenStax source (no definitions)</td></tr>
+<tr><td><code>page/</code>, <code>scripts/</code>, <code>docs/</code></td><td>page templates, extraction, compilers, checkers, page builds and headless tests; the writing specification and the reader design</td></tr>
+</tbody></table></div>
+<p>The repository README has the rebuild commands and the change log, including the network corrections made in v2.</p>
+
+<h2>Licence and citation</h2>
+<p>The text, network data and descriptions are an adaptation of OpenStax <i>University Physics</i> and are shared under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>, the book's licence. The code (page HTML/JavaScript, <code>assets/</code>, <code>scripts/</code>) is under the MIT licence. See <code>LICENSE</code> and <code>CITATION.cff</code>.</p>
+<p>OpenStax credit: <i>University Physics</i>, Volumes 1–3, senior contributing authors Samuel J. Ling (Truman State University), Jeff Sanny (Loyola Marymount University), William Moebs; OpenStax, Rice University. Access for free at <a href="https://openstax.org/details/books/university-physics-volume-1">openstax.org</a>.</p>
+</main>
+
+<footer><div class="wrap">
+  GEN Learning is part of the Great Epistemic Network, alongside the electromagnetism reader (<a href="https://github.com/tahmeedhossain/GEN_epistemic_evolution">GEN_epistemic_evolution</a>), the local and global conservation pages (<a href="https://github.com/tahmeedhossain/GEN_LocGlob_Flow">GEN_LocGlob_Flow</a>), the nonclassicality network (<a href="https://github.com/tahmeedhossain/GEN_GPT_Level">GEN_GPT_Level</a>) and the quantum resource theory network (<a href="https://github.com/tahmeedhossain/GEN_QRT_Level">GEN_QRT_Level</a>). Tahmeed Hossain, Department of Theoretical Physics, University of Dhaka.
+</div></footer>
+<script>
+document.getElementById("theme").addEventListener("click", function () {
+  var r = document.documentElement;
+  var dark = r.dataset.theme ? r.dataset.theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme = dark ? "light" : "dark";
+});
+</script>
+</body>
+</html>

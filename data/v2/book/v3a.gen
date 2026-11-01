@@ -1,0 +1,393 @@
+# University Physics Volume 3, chapters 1-5 (optics and special relativity)
+
+§ 3 1.0
+P Volume 2 ended with light as an [[emwave|electromagnetic wave]] that travels through vacuum at the speed [[c|c]]. This chapter follows light as it meets matter. In a uniform material light travels more slowly and in straight lines, so for most purposes it can be traced as rays. At a boundary a ray is partly reflected and partly refracted, and both effects obey simple rules for the angles. The same rules explain total internal reflection and the separation of colours by a prism. The chapter closes with two properties that rays cannot describe: the wave construction of Huygens, and polarization, the direction in which the electric field of light oscillates.
+§ 3 1.1
+P Light needs no medium. In vacuum all electromagnetic radiation travels at the [[c|speed of light]], c = 2.997 924 58 × 10⁸ m/s, a value now fixed exactly by the definition of the metre. Ole Roemer first estimated it in 1676 from the timing of eclipses of Jupiter's moon Io. Fizeau in 1849 and later Foucault measured it on Earth with a toothed wheel and a rotating mirror, and Michelson refined the rotating-mirror method. In matter light is slower. The [[nidx|index of refraction]] of a medium compares the two speeds, n = c/v, where v is the [[vwave|wave speed]] of light in the medium. Since v ≤ c, n ≥ 1: n = 1.000 293 for air at standard conditions, 1.33 for water and about 1.5 for glass. In water, v = c/1.33 = 2.25 × 10⁸ m/s.
+N O nidx | Index of refraction | n = c/v |
+d Ratio of the speed of light in vacuum to its speed in a medium; at least 1.
+g index of refraction
+R[def] nidx <- c, vwave : n = c/v | Slowing of light | Light travels more slowly in matter.
+P Light reaches a point from its source in three ways: directly through vacuum or air, through a transparent medium such as glass, or after reflection from a surface. In each case, as long as the medium is uniform, the energy travels along straight lines called rays. The [[raymod|ray model of light]] describes light by these paths alone, which bend or split only at boundaries; it is the basis of geometric optics. It approximates the [[emwave|electromagnetic wave]] and holds when mirrors, lenses and openings are much larger than the [[lam|wavelength]], about 0.5 µm for visible light. When an opening is comparable to the wavelength, light spreads beyond the straight-line shadow and the ray picture fails; Chapters 3 and 4 treat those cases.
+N M raymod | Ray model of light | straight rays |
+d Geometric optics: light travels along straight rays in a uniform medium, bending only at boundaries. Valid when objects and apertures are much larger than the wavelength.
+p rays straight in a uniform medium; reversible paths; ignores interference and diffraction (λ → 0 limit)
+g ray; geometric optics
+R[approx] raymod <- emwave, lam : apertures ≫ λ | Short-wavelength limit | Wave effects become negligible.
+
+§ 3 1.2
+P Angles at a surface are measured from the normal, the line perpendicular to the surface at the point where the ray strikes it. The [[reflect|law of reflection]] states that a ray leaves a smooth surface at the same angle to the normal as it arrives, θ_r = θ_i, and that the incident ray, the normal and the reflected ray lie in one plane. Within the [[raymod|ray model]] this is an empirical rule, tested with mirrors and polished metals. A rough surface obeys the same law at each small patch, but the patches face in many directions, so a parallel beam leaves in all directions as *diffused light*; that is why a printed page can be read from any angle. Three mutually perpendicular mirrors form a *corner reflector*, which returns any ray parallel to its incoming direction; such reflectors are used on bicycles and were placed on the Moon for laser ranging.
+N M reflect | Law of reflection | θ_r = θ_i |
+d A ray reflects from a smooth surface at the same angle to the normal as it arrived, in the same plane.
+p angles measured from the normal; incident ray, normal and reflected ray coplanar; rough surfaces scatter diffusely
+g law of reflection
+R[law] reflect <- raymod : θ_r = θ_i | Rule for rays at a mirror | Empirical within the ray model.
+X corner reflector :: a device: three mutually perpendicular mirrors
+
+§ 3 1.3
+P A ray that crosses the boundary between two media changes direction. This is refraction. The [[snell|law of refraction]], or Snell’s law after Willebrord Snell, relates the angles θ₁ and θ₂ of the incident and refracted rays, both measured from the normal, to the [[nidx|indices of refraction]] of the two media: n₁ sin θ₁ = n₂ sin θ₂. Like the law of reflection, it is an empirical rule of the [[raymod|ray model]], and it holds for either direction of travel. A ray entering a medium of higher index bends toward the normal; a ray entering a medium of lower index bends away from it. Light passing from air (n = 1.00) into water (n = 1.33) at θ₁ = 45.0° has sin θ₂ = 0.707/1.33 = 0.532, so θ₂ = 32.1°. At normal incidence the ray goes straight through.
+N M snell | Law of refraction | n₁ sin θ₁ = n₂ sin θ₂ |
+d A ray entering a medium of different index bends toward the normal if the new index is larger (Snell's law).
+p angles from the normal; reversible; bending set by the ratio of indices
+g refraction; law of refraction
+R[law] snell <- raymod, nidx : n₁ sin θ₁ = n₂ sin θ₂ | Snell's law | Empirical within the ray model.
+
+§ 3 1.4
+P When light passes into a medium of lower index, n₁ > n₂, the refracted ray bends away from the normal, and θ₂ reaches 90° before θ₁ does. Setting θ₂ = 90° in the [[snell|law of refraction]] gives the [[thetac|critical angle]], sin θ_c = n₂/n₁. For θ₁ > θ_c no refracted ray exists and all the light returns into the first medium. This is total internal reflection. For glass (n = 1.50) in air θ_c = 41.8°, and for diamond (n = 2.42) θ_c = 24.4°, so light inside cut *diamonds* is reflected many times before it escapes, which makes them sparkle. In *fiber optics*, light travels along a thin glass core surrounded by a *cladding* of slightly lower index and stays inside by repeated total internal reflection. Bundles of fibres carry images in an *endoscope*, and single fibres carry signals of *high bandwidth* over long distances with little loss.
+N O thetac | Critical angle | sin θ_c = n₂/n₁ |
+d Angle of incidence beyond which light going into a medium of lower index is totally reflected (total internal reflection).
+g critical angle; total internal reflection
+R[thm] thetac <- snell : θ₂ = 90° ⇒ sin θ_c = n₂/n₁ | Refracted ray grazing | Possible only for n₁ > n₂.
+X fiber optics :: an application of total internal reflection
+
+§ 3 1.5
+P The [[nidx|index of refraction]] of a material is not a single number: it depends on the [[lam|wavelength]] of the light. This [[dispn|dispersion]], n = n(λ), is a measured property of each material. In glass and water n decreases slowly with wavelength across the visible range, so violet light is refracted more than red; in a typical glass n is about one percent larger at 400 nm than at 700 nm. A prism therefore spreads white light into its colours. A *rainbow* forms in the same way in raindrops. Sunlight is refracted on entering a drop, reflected from its back surface and refracted again on leaving, and each colour emerges most strongly at its own angle from the direction opposite the Sun: about 42° for red and about 40° for violet, so red lies on the outside of the bow. Dispersion is useful in spectrometers but harmful in lenses and optical fibres, where it blurs images and spreads pulses.
+N M dispn | Dispersion | n(λ) |
+d The index of refraction depends on wavelength, so a prism spreads white light into colours.
+p n decreases with λ in the visible for glass; different colours refract by different angles; rainbows
+g dispersion
+R[law] dispn <- nidx, lam : n = n(λ) | Wavelength-dependent index | Measured property of the material.
+
+§ 3 1.6
+P Rays describe where light goes but not why. The wave description, called wave optics, rests on [[huygens|Huygens’s principle]]: every point of a wavefront is a source of secondary spherical wavelets that spread forward at the local [[vwave|wave speed]] v, and the wavefront a time Δt later is the surface tangent to all the wavelets, their envelope. The principle applies to any [[wave|wave]]. It follows from the [[superp|superposition principle]]: the disturbance at a later time is the sum of the wavelets, and they reinforce one another only along the envelope. At the edge of an obstacle or opening there are no neighbouring wavelets to cancel the sideways spread, so the wave bends into the geometric shadow. This bending is diffraction, and it is noticeable only when the opening is not much larger than the wavelength.
+N M huygens | Huygens's principle | wavefront = envelope of wavelets |
+d Every point on a wavefront is a source of secondary wavelets; the new wavefront is their envelope. It explains reflection, refraction and diffraction (wave optics).
+p wave picture of light; wavelets travel at the local wave speed; with superposition gives diffraction
+g wave optics; Huygens’s principle
+R[thm] huygens <- wave, superp, vwave : envelope of wavelets after time Δt | Wave picture | Superposition of secondary waves.
+P Huygens’s construction recovers both laws of geometric optics. In reflection, the incident and reflected wavelets travel in the same medium at the same speed, so in a time Δt the edge of the incoming wavefront and the first reflected wavelet cover the same distance vΔt. The two right triangles built on the mirror are congruent, which gives the [[reflect|law of reflection]], θ_r = θ_i. In refraction, the wavelets in the second medium travel at v₂ while the incoming front advances at v₁. Over a length w of the boundary, sin θ₁ = v₁Δt/w and sin θ₂ = v₂Δt/w, so sin θ₁/v₁ = sin θ₂/v₂. With v = c/n this is the [[snell|law of refraction]]. The wavefront turns because the [[vwave|wave speed]] changes, so [[huygens|Huygens’s principle]] explains why the index of refraction sets the bending.
+R[thm] reflect <- huygens : incident and reflected wavelets travel at the same speed in one medium ⇒ θ_r = θ_i | Reflection from wavelets | Geometry of the reflected envelope.
+R[thm] snell <- huygens, vwave : sin θ₁/v₁ = sin θ₂/v₂ | Refraction from wavelets | The wavefront turns because the speed changes.
+
+§ 3 1.7
+P An [[emwave|electromagnetic wave]] is transverse: its electric and magnetic fields oscillate perpendicular to the direction of travel. The [[pol|polarization]] of light is the direction of its electric field within that perpendicular plane, called the direction of polarization. Only transverse waves can be polarized in this sense; a longitudinal wave such as sound has only one direction of oscillation. Light whose field stays along one line is polarized, for example vertically polarized or horizontally polarized relative to the ground. Light from the Sun or a lamp is unpolarized: it comes from many independent atoms, and its direction of polarization changes randomly in time. Sunlight scattered by air molecules is partly polarized, most strongly at 90° from the Sun, because the oscillating molecular dipoles do not radiate along their own axis.
+N S pol | Polarization | direction of E⃗ |
+d The direction of the electric field of light in the plane perpendicular to its travel: fixed for polarized light (vertically, horizontally…), random for unpolarized light.
+m unit vector (direction of polarization) in the plane ⟂ k⃗; unpolarized = random mixture
+g polarization; polarized; unpolarized; direction of polarization; vertically polarized; horizontally polarized
+R[read] pol <- emwave : direction of E⃗ ⟂ k⃗ | Transverse wave | Only transverse waves can be polarized.
+P A polarizing filter transmits only the component of the electric field along its axis. If polarized light with field amplitude E₀ meets a filter whose axis makes an angle θ with the [[pol|direction of polarization]], the transmitted amplitude is E = E₀ cos θ. The [[Iint|intensity]] is proportional to the square of the field amplitude, so the transmitted intensity is I = I₀ cos²θ. This is [[malus|Malus’s law]]. Unpolarized light averages cos²θ over all directions and loses half its intensity in the first filter. Two filters with axes 60.0° apart therefore pass (1/2)(cos 60.0°)² = 1/8 of the incident unpolarized intensity, and crossed filters pass none. *Liquid crystal displays (LCDs)* use this effect: between crossed filters, a liquid crystal layer rotates the direction of polarization and lets light through, unless a voltage across the layer stops the rotation.
+N M malus | Malus's law | I = I₀ cos²θ |
+d A polarizing filter transmits the field component along its axis, so intensity falls as cos²θ.
+p projection of E⃗ on the axis; intensity ∝ E²; unpolarized light loses half
+g Malus’s law
+R[thm] malus <- pol, Iint : E = E₀ cos θ ⇒ I = I₀ cos²θ | Field component along the axis | Intensity goes as the square of the field.
+P Reflection also polarizes light. At one angle of incidence the reflected light is completely polarized parallel to the surface. This [[brewster|Brewster’s angle]] θ_b is reached when the reflected and refracted rays are perpendicular, θ_b + θ₂ = 90°. Then sin θ₂ = cos θ_b, and the [[snell|law of refraction]] n₁ sin θ_b = n₂ cos θ_b gives Brewster’s law, tan θ_b = n₂/n₁. The cause is that the dipoles in the second medium oscillate along the refracted field; for [[pol|polarization]] in the plane of incidence they would point along the reflected ray, and a dipole does not radiate along its axis. For reflection from water, θ_b = tan⁻¹ 1.33 = 53.1°. Some materials are *optically active* and rotate the direction of polarization; others are *birefringent*, with an index that depends on polarization. *Optical stress analysis* places a transparent model between crossed filters, where stress-induced birefringence shows as coloured fringes.
+N O brewster | Brewster's angle | tan θ_b = n₂/n₁ |
+d Angle of incidence at which reflected light is completely polarized parallel to the surface.
+g Brewster’s law; Brewster’s angle
+R[thm] brewster <- pol, snell : reflected and refracted rays perpendicular ⇒ tan θ_b = n₂/n₁ | Polarization by reflection | Dipoles in the medium cannot radiate along their axis.
+X optically active; birefringent :: materials that rotate or split polarization, described qualitatively
+
+# ---------------------------------------------------------------- Chapter 2
+§ 3 2.0
+P Chapter 1 gave the rules for a single ray at a surface. This chapter applies them to many rays at once to explain how mirrors and lenses form images. Rays leaving one point of an object are followed through each [[reflect|reflection]] or [[snell|refraction]]; the point where they meet again, or from which they appear to diverge, is the image of that point. For rays close to the axis the geometry reduces to one equation that locates the image and one that gives its size. The same two equations then describe the eye, the camera, the magnifier, the microscope and the telescope.
+§ 3 2.1
+P An optical [[image|image]] of a point is the point where rays from it meet after reflection or refraction, or the point from which they appear to come. If the rays actually converge there, it is a real image and can be caught on a screen. If they only appear to diverge from it, it is a virtual image, which can be seen but not projected. A plane mirror forms a virtual image. By the [[reflect|law of reflection]], each ray from an object point leaves the mirror as if from a point the same distance behind it on the same normal, and tracing the reflected rays back in the [[raymod|ray model]] shows that all of them pass through that point. With the object distance d_o positive in front of the mirror and the image distance d_i negative behind it, d_i = −d_o. The image is upright, the same size as the object, and reversed front to back.
+N S image | Optical image | real or virtual |
+d Where rays from a point of an object meet (real image, can be caught on a screen) or appear to come from (virtual image). A plane mirror forms a virtual image as far behind as the object is in front.
+m point-to-point map from object positions (object distance d_o) to image positions (image distance d_i)
+g plane mirror; virtual image; real image; object distance; image distance
+R[thm] image <- raymod, reflect : plane mirror: d_i = −d_o | Rays traced back | Reflected rays appear to diverge from a point behind the mirror.
+
+§ 3 2.2
+P A curved mirror is usually part of a sphere of radius R. It is a concave mirror if it reflects on the inside of the sphere and a convex mirror if it reflects on the outside. The optical axis is the line through the centre of curvature and the centre of the mirror, its vertex. Rays parallel to the axis are reflected through the focal point, or appear to come from it, at a focal length f = R/2 from the vertex. This holds only for rays close to the axis, where the small-angle approximation sin θ ≈ θ is valid. Applying the [[reflect|law of reflection]] at the spherical surface within that approximation shows that all rays from one object point meet at one [[image|image]] point, located by the [[mirroreq|mirror equation]]. By convention f > 0 for concave and f < 0 for convex mirrors, and d_o > 0 for a real object and d_i > 0 for a real image.
+Q 1/d_o + 1/d_i = 1/f
+N M mirroreq | Mirror equation | 1/d_o + 1/d_i = 1/f |
+d For a curved (spherical) mirror and rays near the optical axis, object and image distances are related through the focal length f = R/2.
+p small-angle (paraxial) approximation; concave f > 0, convex f < 0; focal point where parallel rays meet
+g curved mirror; convex mirror; concave mirror; optical axis; vertex; focal point; focal length; small-angle approximation
+R[thm] mirroreq <- reflect, image : sin θ ≈ θ for rays near the axis | Paraxial ray geometry | Law of reflection at a spherical surface.
+P Images are also located by ray tracing with a few principal rays from the top of the object: a ray parallel to the axis is reflected through the focal point, a ray through the focal point is reflected parallel to the axis, and a ray that strikes the vertex is reflected symmetrically about the axis. That last ray forms two similar triangles, one with the object height h_o and one with the image height h_i, and gives the linear [[mag|magnification]] m = h_i/h_o = −d_i/d_o. Together with the [[mirroreq|mirror equation]] it fixes the size and orientation of the [[image|image]]: m < 0 means inverted, and |m| > 1 means enlarged. For a concave mirror with f = 10.0 cm and an object 30.0 cm away, 1/d_i = 1/(10.0 cm) − 1/(30.0 cm), so d_i = 15.0 cm and m = −0.500: a real, inverted image half the size of the object.
+N O mag | Magnification | m = h_i/h_o = −d_i/d_o |
+d Image height over object height; negative for an inverted image.
+g linear magnification; magnification
+R[thm] mag <- mirroreq, image : m = −d_i/d_o | Similar triangles | From the ray through the vertex.
+P The [[mirroreq|mirror equation]] is exact only for rays very close to the axis. Rays that strike a spherical mirror far from the axis violate sin θ ≈ θ and cross the axis slightly closer to the mirror than the focal point, so the image of a point becomes a small blur. Such departures from ideal imaging are called [[aberr|aberrations]]. This one is spherical aberration. Coma is the comet-shaped blur of points away from the axis, and there are others. Aberrations are reduced by a stop that blocks the rays far from the axis, at the cost of light, or by surfaces that are not spherical: a parabolic mirror brings all rays parallel to its axis to a single focus.
+N M aberr | Aberrations | departures from ideal imaging |
+d Real mirrors and lenses do not bring all rays to one point: spherical aberration (rays far from the axis), coma (off-axis points), and others.
+p appear where the small-angle approximation fails; reduced by aperture stops or aspheric shapes
+g aberration; spherical aberration; coma
+R[thm] aberr <- mirroreq : rays far from the axis violate sin θ ≈ θ | Limits of the paraxial approximation | Rays from one point miss the ideal image point.
+
+§ 3 2.3
+P A single spherical boundary between media of indices n₁, on the object side, and n₂ also forms images. Applying the [[snell|law of refraction]] at the surface in its small-angle form, n₁θ₁ ≈ n₂θ₂, with the same geometry as for the mirror, sends every paraxial ray from an object point through one [[image|image]] point. The result for [[refrsurf|refraction at a curved surface]] is n₁/d_o + n₂/d_i = (n₂ − n₁)/R, with R > 0 when the centre of curvature lies on the outgoing side. The surface has two foci: the first focus, or object focus, at d_o = n₁R/(n₂ − n₁), and the second focus, or image focus, at d_i = n₂R/(n₂ − n₁). For a flat surface R → ∞ and d_i = −(n₂/n₁)d_o, a virtual image at the apparent depth. A stone 1.00 m deep in water (n₁ = 1.33), seen from above in air, appears 1.00 m/1.33 = 0.752 m deep.
+N M refrsurf | Refraction at a curved surface | n₁/d_o + n₂/d_i = (n₂ − n₁)/R |
+d A single spherical boundary between media forms images; for a flat boundary it gives the apparent depth h_i = (n₂/n₁)h_o.
+p paraxial; object focus and image focus differ when n₁ ≠ n₂; flat surface R → ∞
+g apparent depth; first focus or object focus; second focus or image focus
+R[thm] refrsurf <- snell, image : n₁θ₁ ≈ n₂θ₂ at a spherical surface | Paraxial Snell's law | Same geometry as the mirror.
+
+§ 3 2.4
+P A lens is a piece of glass or plastic with two refracting surfaces. A lens thicker at the centre, convex in shape, bends parallel rays together and is a converging lens; a lens thinner at the centre, concave in shape, spreads them apart and is a diverging lens. Thin lenses are those whose thickness is small compared with the radii and with the object and image distances; this is the thin-lens approximation. The result for [[refrsurf|refraction at a curved surface]] is then applied twice: the image formed by the first surface is the object of the second, and the two equations add. The outcome is the [[thinlens|thin-lens]] equation, of the same form as the mirror equation, with the focal length given by the lens maker’s equation for a lens of index n₂ in a medium of index n₁.
+Q 1/d_o + 1/d_i = 1/f
+Q 1/f = (n₂/n₁ − 1)(1/R₁ − 1/R₂)
+N M thinlens | Thin lens | 1/d_o + 1/d_i = 1/f |
+d Two refracting surfaces close together: converging lenses (f > 0) and diverging lenses (f < 0), with 1/f = (n₂/n₁ − 1)(1/R₁ − 1/R₂) (lens maker's equation). Images are found by ray tracing.
+p thin-lens approximation; paraxial; parallel rays meet in the focal plane; same form as the mirror equation
+g converging (or convex) lens; diverging (or concave) lens; focal plane; ray tracing; thin-lens approximation
+R[thm] thinlens <- refrsurf : image of the first surface is the object of the second | Two surfaces in sequence | Thickness neglected.
+P The sign conventions follow those of the mirror: f > 0 for a converging and f < 0 for a diverging lens, d_i > 0 for a real image on the far side of the lens, and m = −d_i/d_o. Parallel rays meet in the focal plane, a distance f from the lens. In ray tracing, a ray parallel to the axis leaves through the far focal point of a converging lens, or as if from the near focal point of a diverging lens; a ray through the centre goes straight on. A glass [[thinlens|thin lens]] (n₂ = 1.50) in air with R₁ = 20.0 cm and R₂ = −20.0 cm has 1/f = 0.50 × 2/(20.0 cm), so f = 20.0 cm. An object 60.0 cm away then gives d_i = 30.0 cm and m = −0.500. Because of [[dispn|dispersion]], a single lens focuses different colours at slightly different points; these are chromatic aberrations.
+
+§ 3 2.5
+P Light enters the eye through the cornea, which does most of the bending, and then passes through the lens to the retina, where receptor cells record the image. The distance from lens to retina is fixed, about 2.0 cm, so [[eye|the eye]] focuses on objects at different distances by changing the shape, and with it the focal length, of its lens. This is accommodation. The far point is the greatest distance at which an object is seen sharply, normally infinity; the near point is the closest, normally about 25 cm in young adults and farther with age. In nearsightedness, or myopia, the eye converges light too strongly, so the far point is at a finite distance. In farsightedness, or hyperopia, it converges light too weakly, so the near point is too far away. Both are corrected by a lens in front of the eye.
+N M eye | The eye as an optical system | variable-power lens, fixed retina |
+d The eye images onto the retina at fixed distance by changing its power (accommodation) between the near and far points; myopia and hyperopia are corrected with lenses.
+p image distance fixed; power adjustable; near point ≈ 25 cm normally; corrections add optical power
+g accommodation; near point; far point; nearsightedness (or myopia); farsightedness (or hyperopia)
+
+P The strength of a lens is expressed by its [[Popt|optical power]] P = 1/f, measured in diopters, 1 D = 1 m⁻¹. For [[thinlens|thin lenses]] in contact the powers add, P_{total} = P₁ + P₂ + …, because each lens acts on the image formed by the one before. The [[eye|eye]] is then a thin lens of variable power with the image distance fixed at the retina, 1/d_o + 1/d_{retina} = P_{eye}. With d_{retina} = 2.00 cm, a distant object needs P_{eye} = 50.0 D and an object at 25.0 cm needs 54.0 D, so normal accommodation spans about 4 D. A myopic eye with far point 0.500 m is corrected by a diverging lens of −2.0 D, which forms virtual images of distant objects at 0.500 m. A hyperopic eye with near point 1.00 m needs +3.0 D, which places the image of an object at 25 cm at 1.00 m. Both values neglect the distance between lens and eye.
+N O Popt | Optical power | P = 1/f |
+d Inverse focal length in diopters (m⁻¹); powers of thin lenses in contact add.
+g optical power
+R[def] Popt <- thinlens : P = 1/f;  P_total = Σ P_i | Inverse focal length | Additive for close lenses.
+R[thm] eye <- thinlens, Popt : 1/d_o + 1/d_retina = P_eye | Thin-lens model of the eye | Accommodation changes P_eye.
+§ 3 2.6
+X charge-coupled device (CCD) :: an image sensor in a camera
+P Cameras form a real, inverted, reduced image of a scene on a light-sensitive surface. The lens system acts as a converging [[thinlens|thin lens]], and for a distant object the [[image|image]] lies almost in the focal plane. To focus on nearer objects the lens is moved away from the sensor: a lens of focal length 50.0 mm focused on an object 2.00 m away needs d_i = 51.3 mm, 1.3 mm more than for an object at infinity. An adjustable aperture sets how much light reaches the sensor. In a digital camera the sensor is a charge-coupled device (CCD) or a similar chip, an array of millions of pixels in which absorbed light frees electric charge that is read out pixel by pixel.
+
+§ 3 2.7
+P How large an object looks depends on the angle it subtends at the eye. Without help, the largest useful angle comes from holding the object at the near point of the [[eye|eye]], 25 cm. A simple magnifier, or magnifying glass, is a converging [[thinlens|thin lens]] with the object inside its focal length; it forms an enlarged virtual image that the eye can focus on. Its [[Mang|angular magnification]] is M = θ_{image}/θ_{object}, where θ_{object} is the angle the object subtends at 25 cm. For small angles, a lens of focal length f held a distance ℓ from the eye, with the image a distance L from the eye, gives M = (25 cm/L)(1 + (L − ℓ)/f). With the lens at the eye and the image at the near point, M = 1 + 25 cm/f, the largest value; with the image at infinity, M = 25 cm/f. A lens with f = 5.00 cm gives M from 5.0 to 6.0.
+N O Mang | Angular magnification | M = θ_image/θ_object |
+d How much larger an object appears through an instrument than to the unaided eye at the near point; a simple magnifier gives at most 1 + 25 cm/f.
+g angular magnification; simple magnifier (or magnifying glass)
+R[thm] Mang <- thinlens, eye : M = (25 cm/L)(1 + (L − ℓ)/f) | Lens near the eye | Virtual image placed where the eye can focus.
+
+§ 3 2.8
+P A [[instr|compound microscope]] uses two converging lenses. The objective, of short focal length, forms a real, enlarged image of a nearby object; the eyepiece, used as a simple magnifier, views that image. The image of the objective is the object of the eyepiece, so with each lens treated as a [[thinlens|thin lens]] the net magnification is the product of the objective's linear [[mag|magnification]] and the eyepiece's [[Mang|angular magnification]], M_{net} = m^{obj} M^{eye}. For the final image at the near point, and with the object just outside the objective's focal point so that d_o^{obj} ≈ f^{obj}, this gives M_{net} ≈ −d_i^{obj}(f^{eye} + 25 cm)/(f^{obj} f^{eye}). An objective with f^{obj} = 0.400 cm that forms its image 16.0 cm away, used with an eyepiece of f^{eye} = 2.50 cm, gives M_{net} ≈ −(16.0)(27.5)/(0.400 × 2.50) = −440. A refracting telescope also has two lenses, but its objective forms a real image of a distant object near its focal plane, and the angular magnification is −f^{obj}/f^{eye}.
+N M instr | Microscope and telescope | M_net = m_obj M_eye |
+d Two-lens instruments: the objective forms a real image that the eyepiece magnifies; magnifications multiply.
+p net magnification = product; microscope: −d_i^obj(f^eye + 25 cm)/(f^obj f^eye); telescope angular magnification −f_obj/f_eye
+g compound microscope; objective; eyepiece; net magnification
+R[thm] instr <- thinlens, mag, Mang : image of the objective = object of the eyepiece | Lenses in series | Magnifications multiply.
+X Newtonian design; Cassegrain design :: arrangements of telescope mirrors
+P Telescopes gather light from distant objects. Galileo turned a two-lens telescope to the sky in 1609 and soon found moons orbiting Jupiter. Large lenses sag and suffer chromatic aberrations, so most large telescopes use a concave mirror as the objective; Newton built the first practical reflecting telescope. In the Newtonian design a small flat mirror sends the light out through the side of the tube to the eyepiece. In the Cassegrain design a small convex mirror sends it back through a hole in the primary mirror. A larger mirror collects more light and, as Chapter 4 shows, resolves finer detail. Each Keck telescope in Hawaii has a 10 m primary mirror made of 36 hexagonal segments, and the Hubble telescope, in orbit above the blurring atmosphere since 1990, has a 2.4 m mirror.
+
+# ---------------------------------------------------------------- Chapter 3
+§ 3 3.0
+P Geometric optics treats light as rays and ignores its wavelength, which is valid only when every opening is much larger than λ. When two or more light waves overlap, the [[superp|superposition principle]] adds their fields, and bright and dark bands appear where the waves arrive in or out of step. This chapter studies such [[interf|interference]] of light: from two slits, from many slits, from the two surfaces of a thin film, and in an interferometer that measures lengths in fractions of a wavelength. These effects belong to wave optics, the description of light based on [[huygens|Huygens’s principle]].
+§ 3 3.1
+P Two light waves give a steady interference pattern only if their relative phase stays fixed. Waves with a constant phase difference are [[coh|coherent waves]]; waves whose phase difference changes randomly are incoherent. Two separate lamps are incoherent: each emits short, independent wave trains from many atoms, so the phase difference of their [[emwave|electromagnetic waves]] wanders rapidly, the interference averages out, and the intensities simply add. Coherent sources are made by splitting the light of one source into two parts, or by using a laser. The light should also be monochromatic, of a single wavelength, so that patterns of different colours do not overlap and wash out. Where coherent waves arrive in phase, *constructive interference* gives brightness; where they arrive half a cycle apart, *destructive interference* gives darkness.
+N S coh | Coherent light | fixed phase relation |
+d Light waves whose phase difference stays constant (coherent), usually of one wavelength (monochromatic); incoherent light washes out interference.
+m set of waves with time-independent relative phases; monochromatic = single frequency
+g coherent waves; incoherent; monochromatic
+R[def] coh <- emwave : φ₁ − φ₂ constant in time | Stable phase difference | Required for a stationary interference pattern.
+P In Thomas Young's experiment of the early nineteenth century, light from one source passes through two narrow parallel slits a distance d apart. By [[huygens|Huygens’s principle]] each slit acts as a source of wavelets, and the two sources are [[coh|coherent]] because the same wavefront feeds both. On a distant screen the two waves show [[interf|interference]] and form bright and dark interference fringes. In a direction at angle θ from the central axis, the wave from one slit travels an extra distance Δl = d sin θ, provided the screen is far away compared with d so that the two paths are nearly parallel. This [[dslit|double-slit interference]] gives brightness where the path difference is a whole number of wavelengths, d sin θ = mλ, and darkness halfway between, d sin θ = (m + ½)λ, with m = 0, ±1, ±2, …. Young's fringes were early evidence that light is a wave.
+N S dslit | Double-slit interference | d sin θ = mλ |
+d Young's experiment: light from two slits forms bright fringes where the path difference is a whole number of wavelengths (order m) and dark fringes halfway between.
+m intensity pattern on a screen: bright at d sin θ = mλ, dark at d sin θ = (m + ½)λ; y_m = mλD/d
+g fringes; order
+R[thm] dslit <- interf, coh, huygens : Δl = d sin θ;  Δl = mλ bright, (m + ½)λ dark | Path difference | Superposition of waves from two coherent sources.
+
+§ 3 3.2
+P The integer m in the [[dslit|double-slit]] conditions is the order of a bright fringe. The central fringe, m = 0, lies where the two paths are equal; the first-order fringes on either side have a path difference of one [[lam|wavelength]]. On a screen at distance D, a fringe at angle θ lies at y = D tan θ from the centre. For small angles tan θ ≈ sin θ = mλ/d, so the bright fringes lie at y_m = mλD/d and are equally spaced. With slits 0.100 mm apart, light of 600 nm and a screen 2.00 m away, the spacing is (600 × 10⁻⁹ m)(2.00 m)/(1.00 × 10⁻⁴ m) = 12.0 mm. Measuring the fringes thus gives the wavelength of light. Since |sin θ| ≤ 1, the order cannot exceed d/λ.
+Q y_m = mλD/d
+§ 3 3.3
+P With N equally spaced slits, adjacent slits still differ in path by d sin θ, so wherever d sin θ = mλ all N waves arrive in phase. These principal maxima lie at the same angles as the [[dslit|double-slit]] fringes but are brighter and narrower. By the [[superp|superposition principle]], the field on the screen is the sum of N waves of equal amplitude with a phase step φ = 2πd sin θ/λ between neighbours. Drawn as [[phasor|phasors]], they form a chain of N arrows, each turned by φ from the last. At a principal maximum the chain is straight: the amplitude is N times that of one slit and the intensity N² times. Between adjacent principal maxima the chain closes, giving zero, at N − 1 angles, and between these zeros lie N − 2 weak secondary maxima. This is [[multislit|multiple-slit interference]]. For three slits the single secondary maximum, at φ = π, has 1/9 of the principal intensity.
+N S multislit | Multiple-slit interference | principal and secondary maxima |
+d With N slits the principal maxima stay at d sin θ = mλ but become sharper, with N − 2 weak secondary maxima between them.
+m intensity pattern with principal maxima at d sin θ = mλ and N − 2 secondary maxima in between
+g principal maximum; secondary maximum
+R[thm] multislit <- dslit, superp, phasor : sum of N phasors | Phasor sum | Full constructive interference only at the principal maxima.
+
+§ 3 3.4
+P [[thinfilm|Thin-film interference]] occurs when light reflected from the top of a thin film overlaps light reflected from its bottom. Near normal incidence, the second wave travels an extra distance 2t through a film of thickness t, where its wavelength is λ/n, with n the film's [[nidx|index of refraction]]. [[reflect|Reflection]] from a medium of higher index shifts the phase by π, half a wavelength, while reflection from a lower index does not. Their [[interf|interference]] thus depends on t, n and these shifts. In a soap bubble in air only the top reflection is shifted, so reflection is strongest where 2nt = (m + ½)λ, and regions of different thickness show different colours. Nonreflective coatings use the opposite case: on glass (n = 1.50), a magnesium fluoride layer (n = 1.38) has both reflections shifted and cancels 550 nm light when t = 550 nm/(4 × 1.38) = 99.6 nm. Newton’s rings are the circular fringes of the air film between a curved lens and a flat plate.
+N S thinfilm | Thin-film interference | 2nt = mλ or (m + ½)λ |
+d Light reflected from the top and bottom of a thin film interferes; a half-wavelength phase change on reflection from a higher-index medium decides which colours are reinforced (soap bubbles, Newton's rings).
+m interference pattern set by thickness t, index n and reflection phase shifts
+g thin-film interference; Newton’s rings
+R[thm] thinfilm <- interf, nidx, reflect : path difference 2t in the film, wavelength λ/n there | Two reflections | Phase change π on reflection from a medium of higher refractive index.
+
+§ 3 3.5
+P An interferometer uses interference to measure lengths or changes of optical path. In the [[michint|Michelson interferometer]], devised by Albert Michelson, a half-silvered mirror splits a beam into two [[coh|coherent]] parts that travel along perpendicular arms, reflect from mirrors at their ends and recombine. Their [[interf|interference]] depends on the difference between the two round-trip paths. Moving one end mirror by Δd changes that difference by 2Δd, so the pattern shifts by one fringe each time the mirror moves λ₀/2, where λ₀ is the vacuum wavelength: Δd = mλ₀/2 after m fringes pass. Counting 1000 fringes of 633 nm light thus measures a displacement of 0.3165 mm. A change of medium in one arm also shifts the fringes: a gas cell of length L and index n adds 2(n − 1)L to the optical path, which moves the pattern by 2(n − 1)L/λ₀ fringes as the cell fills.
+N M michint | Michelson interferometer | Δd = mλ₀/2 |
+d Splits a beam, sends the halves along two arms and recombines them; moving one mirror by λ/2 shifts the pattern by one fringe.
+p measures lengths in units of λ/2; sensitive to changes of optical path in either arm
+g interferometer
+R[thm] michint <- interf, coh : path difference 2Δd | Two-arm interference | Each fringe is a half-wavelength of mirror travel.
+
+# ---------------------------------------------------------------- Chapter 4
+§ 3 4.0
+P Chapter 3 combined waves from a few separate sources. Light passing an edge or a single opening also interferes with itself, because by [[huygens|Huygens’s principle]] every part of the opening sends out wavelets. The result is diffraction: light spreads into the geometric shadow and forms fringes. A famous test came from Fresnel's wave theory of diffraction. Poisson argued that the theory predicted a bright spot at the centre of the shadow of a small disk, which seemed absurd; Arago then observed the spot, now called Poisson’s spot. This chapter treats single slits, gratings, circular apertures, X-rays in crystals and holograms.
+§ 3 4.1
+P Diffraction through a slit of width a is analysed by applying [[huygens|Huygens’s principle]] inside the opening. Each point across the slit emits wavelets, [[coh|coherent]] because one incident wavefront feeds them, and by the [[superp|superposition principle]] the wave on a distant screen is their sum. Straight ahead they all add, giving a broad central maximum. At an angle θ, pair each wavelet from the top half of the slit with the one a/2 below it. If their path difference (a/2) sin θ is half a wavelength, every pair cancels and the screen is dark. Dividing the slit into 4, 6, … parts gives further dark directions. This is [[sslit|single-slit diffraction]], and the minima of the single-slit diffraction pattern follow the condition for destructive interference for a single slit: a sin θ = mλ, with m = ±1, ±2, … but not 0. For a = 2.00 µm and λ = 550 nm, the first minimum lies at sin θ = 0.275, θ = 16.0°.
+N S sslit | Single-slit diffraction | a sin θ = mλ (dark) |
+d Light spreads after passing a narrow slit; wavelets from different parts of the slit cancel at angles where a sin θ = mλ.
+m intensity pattern with a broad central maximum and minima at a sin θ = mλ, m = ±1, ±2, …
+g diffraction; destructive interference for a single slit
+R[thm] sslit <- huygens, superp, coh : pair wavelets half a slit apart | Wavelets across the slit | Huygens's principle applied inside the aperture.
+
+§ 3 4.2
+P The intensity across the [[sslit|single-slit]] pattern follows from a phasor diagram. Divide the slit into N strips, each contributing a small [[phasor|phasor]] ΔE₀. Between the two edges of the slit the phase difference is φ = 2πa sin θ/λ, so the chain of phasors bends steadily through the total angle φ. As N becomes large the chain becomes an arc of a circle of length E₀ = NΔE₀, the amplitude straight ahead, and the resultant is the chord of that arc, E = E₀ sin β/β with β = φ/2. Squaring gives the [[Isslit|single-slit intensity]]. It vanishes at β = mπ, that is a sin θ = mλ, as found before. The secondary maxima lie near β ≈ ±1.43π, ±2.46π, …, and the first has only 4.7 % of the central intensity. The width of the central peak, between the minima at sin θ = ±λ/a, grows as the slit narrows.
+Q I = I₀ (sin β/β)²,   β = πa sin θ/λ
+N O Isslit | Single-slit intensity | I = I₀ (sin β/β)² |
+d Intensity across the single-slit pattern, β = πa sin θ/λ; the central peak's width is set by λ/a.
+g width of the central peak
+R[thm] Isslit <- sslit, phasor : phasors along an arc ⇒ E = E₀ sin β/β | Phasor sum over the slit | Continuous version of the N-slit sum.
+
+§ 3 4.3
+P Real double slits have a finite width a as well as a separation d. Each slit diffracts with the [[Isslit|single-slit intensity]], and the two diffracted waves then interfere as in [[dslit|double-slit interference]]. The intensity is the product of the two patterns: the interference factor cos²(φ/2), with φ = 2πd sin θ/λ, under the diffraction envelope (sin β/β)². This is the [[dsdiff|two-slit diffraction pattern]]. Since d > a, the fringes are narrower than the envelope, and several fit under its central peak. An interference maximum that falls exactly on a diffraction minimum is absent, a missing order. This happens when d sin θ = mλ and a sin θ = m′λ hold together, that is at m = (d/a)m′. If d = 3a, the orders ±3, ±6, … are missing, and the central peak of the envelope holds 5 bright fringes, m = 0, ±1, ±2.
+Q I = I₀ cos²(φ/2) (sin β/β)²
+N S dsdiff | Two-slit diffraction pattern | interference × envelope |
+d With slits of finite width, the double-slit fringes are modulated by the single-slit envelope; fringes falling on envelope minima are missing orders.
+m product of the double-slit interference intensity and the single-slit diffraction envelope
+g two-slit diffraction pattern; missing order
+R[thm] dsdiff <- dslit, Isslit : I = I₀ cos²(φ/2) (sin β/β)² | Product of patterns | Each slit diffracts; the two diffracted waves interfere.
+
+§ 3 4.4
+P A [[grating|diffraction grating]] is a [[multislit|multiple-slit]] array with a very large number of equally spaced lines, often hundreds per millimetre, ruled or etched on glass or on a reflecting surface. Its principal maxima still lie at d sin θ = mλ, but as the number of lines N grows their angular width shrinks in proportion to 1/N and the secondary maxima become negligible. Each wavelength is therefore sent into sharp lines at its own angles. This spectroscopic dispersion makes the grating the main tool for measuring wavelengths. A grating with 600 lines per millimetre has d = 1.667 µm, so light of 500 nm appears in first order at sin θ = 0.500 µm/1.667 µm = 0.300, θ = 17.5°. Natural periodic structures, such as the tracks of a compact disc or the scales of some butterfly wings, act as gratings and produce iridescence.
+N M grating | Diffraction grating | d sin θ = mλ |
+d Thousands of equally spaced slits give very sharp principal maxima, so a grating separates wavelengths precisely.
+p sharpness grows with the number of lines; resolves close wavelengths; spectroscopy
+g diffraction grating
+R[thm] grating <- multislit : N → large ⇒ narrow principal maxima | Many slits | The N-slit pattern in the limit of large N.
+
+§ 3 4.5
+P Light passing a circular aperture of diameter D, such as a lens or a telescope mirror, also diffracts. The calculation for a round opening follows the same steps as for the [[sslit|single slit]] and gives a bright central disk whose first dark ring lies at sin θ = 1.22λ/D; the factor 1.22 comes from the round shape. The image of a point source is therefore never a point. By the [[rayl|Rayleigh criterion]], two point sources are just resolved when the centre of one pattern falls on the first minimum of the other, θ_{min} = 1.22λ/D for small angles. This diffraction limit bounds the resolution of every optical instrument and favours large apertures and short wavelengths. For the Hubble Space Telescope, D = 2.4 m and λ = 550 nm give θ_{min} = 2.8 × 10⁻⁷ rad. A laser beam leaving an aperture of diameter D likewise spreads at an angle of about 1.22λ/D.
+N O rayl | Rayleigh criterion | θ_min = 1.22 λ/D |
+d Two point sources are just resolved when the central maximum of one falls on the first minimum of the other; diffraction limits every optical instrument's resolution.
+g Rayleigh criterion; resolution; diffraction limit
+R[thm] rayl <- sslit : first dark ring of a circular aperture at sin θ = 1.22λ/D | Circular-aperture diffraction | The slit result with a numerical factor from the round shape.
+
+§ 3 4.6
+P A grating works best when its spacing is not much larger than the wavelength. Neighbouring atoms in a crystal are about 0.1 nm apart, comparable to the wavelengths of X-rays in the [[spectrum|electromagnetic spectrum]], so a crystal acts as a three-dimensional [[grating|grating]] for X-rays. Max von Laue showed this in 1912, founding X-ray diffraction. William Henry Bragg and William Lawrence Bragg treated it as reflection from parallel planes of atoms, the Bragg planes. Waves reflected from adjacent planes a distance d apart differ in path by 2d sin θ, with θ measured from the planes rather than from the normal. Their [[interf|interference]] is constructive when this difference is a whole number of wavelengths, which is [[bragg|Bragg’s law]]. In rock salt d = 0.282 nm, so X-rays of 0.154 nm reflect strongly in first order at sin θ = 0.154/0.564 = 0.273, θ = 15.8°. X-ray diffraction images of DNA were key evidence for its double helix in 1953.
+Q mλ = 2d sin θ,   m = 1, 2, 3, …
+N M bragg | Bragg's law | mλ = 2d sin θ |
+d X-rays reflected from successive planes of atoms in a crystal (Bragg planes) interfere constructively when the extra path 2d sin θ is a whole number of wavelengths.
+p crystal acts as a 3D grating; measures atomic spacings d ~ λ of X-rays
+g X-ray diffraction; Bragg planes
+R[thm] bragg <- interf, spectrum, grating : path difference 2d sin θ between adjacent planes | Reflection from atomic planes | X-ray wavelengths match atomic spacings.
+
+§ 3 4.7
+P A photograph records only the intensity of light, so the phase, which carries information about depth, is lost. A hologram records both. [[coh|Coherent]] light from a laser is split: one part illuminates the object, and the other, the reference beam, goes directly to the recording plate. The [[interf|interference]] of the object light with the reference beam produces fine fringes whose spacing and contrast encode the phase and amplitude of the object wave at each point. After development the recorded fringes act as a complex [[grating|diffraction grating]]. Illuminated by the reference beam alone, the hologram diffracts it into a copy of the original object wave, and an observer sees a three-dimensional image that changes with the viewing angle. This is [[holo|holography]]. Dennis Gabor proposed it in the late 1940s, but bright holograms became practical only with lasers.
+N M holo | Holography | interference with a reference beam |
+d A hologram records the interference of object light with a reference beam, storing amplitude and phase; illuminated again, it reconstructs a three-dimensional image.
+p needs coherent light; records phase as well as intensity; reconstruction by diffraction
+g hologram; holography
+R[thm] holo <- interf, coh, grating : recorded fringes act as a diffraction grating | Interference recorded | The developed pattern diffracts the reference beam into the object wave.
+
+# ---------------------------------------------------------------- Chapter 5
+§ 3 5.0
+P Newtonian mechanics assumes one universal time, combines velocities by the rules of [[galrel|relative motion]], and has the same laws in every [[inframe|inertial frame]]. Maxwell's equations, completed in the 1860s, predict electromagnetic waves that travel at one speed, [[c|c]], without saying relative to what. If velocities combine in the Galilean way, the two theories cannot both hold in every inertial frame. In 1905 Albert Einstein resolved the conflict by keeping the equivalence of inertial frames and making the speed of light the same in all of them. This chapter derives the consequences for time, length, velocity, momentum and energy.
+§ 3 5.1
+X rest frame; inertial frame of reference :: = inframe
+X Galilean relativity :: = galrel
+P In Newtonian mechanics the laws of motion have the same form in every [[inframe|inertial frame of reference]], so no mechanical experiment inside a closed cabin moving at constant velocity reveals that motion. This is [[galrel|Galilean relativity]], and with it velocities measured in two frames differ by the frame velocity, u = u′ + v. [[maxwell|Maxwell's equations]], however, contain one speed, the [[c|speed of light]], with no reference to any frame. Nineteenth-century physicists concluded that light moves at c only relative to a medium, the ether, that is, only in the ether's rest frame; in any other frame its speed would follow from Galilean addition. Electromagnetism would then single out one frame. The [[SR|special theory of relativity]] removes this conflict. It rests on two postulates and reduces to Newtonian mechanics when all speeds are much less than c.
+N M SR | Special relativity | postulates 1 + 2 | rel
+d Einstein's theory of space and time for inertial frames, built on two postulates; it reconciles mechanics with electromagnetism.
+p kinematics of inertial frames; reduces to Newtonian mechanics for v ≪ c; space and time mix
+g special theory of relativity
+P The [[sr1|first postulate]] of special relativity extends [[galrel|Galilean relativity]] from mechanics to all of physics: the laws of physics, including [[maxwell|Maxwell's equations]], have the same form in every [[inframe|inertial frame]]. No experiment of any kind, mechanical, electrical or optical, can then detect uniform motion, and there is no preferred frame, in particular no ether frame in which light is special. The postulate is a generalisation: the principle was established for mechanics and is asserted for electromagnetism as well. Its consequence is sharp. If Maxwell's equations hold unchanged in every inertial frame, so does the speed of the waves they predict, and that contradicts Galilean velocity addition. Experiment had to decide.
+N M sr1 | First postulate | same laws in all inertial frames | rel ax
+d The laws of physics, including electromagnetism, have the same form in every inertial frame.
+p extends Galilean relativity from mechanics to all physics; no preferred frame (no ether)
+g first postulate of special relativity
+R[gen] sr1 <- inframe, galrel, maxwell : mechanics and electromagnetism alike | Relativity principle for all laws | Galilean relativity applied to Maxwell's equations too.
+P The ether hypothesis was tested with the [[michint|Michelson interferometer]]. In 1887 Michelson and Morley mounted one on a stone slab floating on mercury, folded each arm with mirrors to an effective length of about 11 m, and watched the fringes while the whole apparatus slowly rotated. Any difference between the [[c|speed of light]] along and across Earth's motion would change the travel times in the two arms as they exchanged directions, and so move the fringes. The fringes did not move beyond the small scatter of the readings, and later repetitions at other times of year, when Earth moves in a different direction, agreed. This null [[mmnull|Michelson–Morley result]] of the Michelson-Morley experiment shows that light travels at the same speed in every direction relative to the moving Earth.
+N O mmnull | Michelson–Morley result | no fringe shift |
+d An interferometer turned relative to Earth's motion showed no change in the speed of light: there is no detectable motion through an ether.
+g Michelson-Morley experiment
+R[meas] mmnull <- michint, c : fringes unchanged on rotation | Null result (1887) | Light speed the same along and across Earth's motion.
+P Galilean physics predicted a clear shift. Suppose Earth moves through the ether at its orbital speed, v ≈ 3.0 × 10⁴ m/s. By [[galrel|Galilean velocity addition]], light in an arm of length L along the motion travels at c − v one way and c + v back, taking (2L/c)/(1 − v²/c²); in the perpendicular arm it takes (2L/c)/√(1 − v²/c²). The times differ by about (L/c)(v²/c²), and turning the [[michint|interferometer]] through 90° exchanges the arms, so the fringes should shift by ΔN below. With L = 11 m, λ = 550 nm and v²/c² = 1.0 × 10⁻⁸, ΔN ≈ 0.40 fringe; the observed shift was less than a twentieth of this. The [[c|speed]] of light does not change with the motion of the apparatus, and [[mmnull|the null result]] forced a choice: give up the relativity principle for light, or give up Galilean velocity addition and the absolute time on which it rests.
+Q ΔN ≈ 2Lv²/(λc²)
+R[fail] mmnull <- galrel, michint, c : Galilean addition c ± v predicts a shift ∝ v²/c²; none observed | Ether prediction fails | Velocity addition of classical relative motion does not apply to light.
+P Einstein took the second option in 1905 with the [[sr2|second postulate of special relativity]]: light in vacuum travels at the same [[c|speed]] c in every inertial frame, whatever the motion of its source or of the observer. Theory and experiment agree on this. [[maxwell|Maxwell's equations]] give c = 1/√(ε₀μ₀), built from two constants that contain no reference to a frame, and the [[mmnull|Michelson–Morley result]] shows no dependence of c on the motion of the apparatus. Together with the [[sr1|first postulate]], the second postulate is the whole basis of [[SR|special relativity]]; everything in the rest of this chapter follows from the two. Galilean velocity addition must therefore be replaced by a rule that reduces to the familiar one for speeds much less than c.
+N M sr2 | Second postulate | c the same in all inertial frames | rel ax
+d Light in vacuum travels at c in every inertial frame, whatever the motion of source or observer.
+p invariance of c; contradicts Galilean velocity addition; implies relativity of simultaneity
+g second postulate of special relativity
+R[law] sr2 <- mmnull, maxwell, c : c = 1/√(ε₀μ₀) contains no frame | Experiment and theory agree | Maxwell's c and the null result both point to an invariant speed.
+R[thm] SR <- sr1, sr2 : the two postulates | Einstein 1905 | All of special relativity follows from them.
+X speed of light :: = c
+
+§ 3 5.2
+P The second postulate makes simultaneity depend on the frame. Consider a thought experiment: a lamp at the midpoint of a railway carriage flashes, and the light travels to detectors at the front and back ends. In the carriage frame both flashes cover equal distances at c and arrive at the same time. Seen from the platform, the carriage moves forward at v while the light travels, and by the [[sr2|second postulate]] the light still moves at c in both directions in this frame, not at c ± v. The back wall moves toward its flash and the front wall away from its flash, so the back detector is reached first. Two events at different places that are simultaneous in one inertial frame are not simultaneous in a frame moving along the line joining them. This [[simul|relativity of simultaneity]] is a basic result of [[SR|special relativity]]: there is no absolute time.
+N M simul | Relativity of simultaneity | t_A = t_B in S ⇏ in S′ | rel
+d Two events simultaneous in one inertial frame are generally not simultaneous in another moving relative to it.
+p consequence of the invariance of c; only for spatially separated events; no absolute time
+g Simultaneity
+R[thm] simul <- sr2, SR : light signals from the midpoint reach the ends at different times in a moving frame | Light-signal thought experiment | Follows from the same c in both frames.
+
+§ 3 5.3
+P A light clock shows the effect of the second postulate on time. A pulse of light bounces between two mirrors a distance d apart, and each round trip is one tick. In the frame where the clock is at rest, the two events that bound a tick, departure from and return to the lower mirror, occur at the same place, and the time between them, Δτ = 2d/c, is the proper time. In a frame where the clock moves sideways at speed v, the pulse follows a longer zigzag path but still travels at c, so the tick lasts longer. A moving clock runs slow compared with the clocks of the observer's frame. This is [[dtdil|time dilation]]. The proper time, measured by one clock present at both events, is the shortest time between them in any inertial frame.
+N O dtdil | Time dilation | Δt = γΔτ | rel
+d A clock moving relative to an observer runs slow: the time between two events at one place in the clock's frame (proper time Δτ) is the shortest.
+g time dilation; proper time
+
+P The size of the effect follows from Pythagoras. During half a tick, Δt/2 in the observer's frame, the clock moves sideways by vΔt/2 while the light covers the hypotenuse cΔt/2 at the [[c|speed of light]], so (cΔt/2)² = d² + (vΔt/2)². With d = cΔτ/2 this gives Δt²(1 − v²/c²) = Δτ². The ratio Δt/Δτ is the [[gamma|Lorentz factor]] γ, which depends only on the [[speed|speed]] v of the clock relative to the observer. The argument uses nothing but the postulates of [[SR|special relativity]]. The factor equals 1 at rest, stays extremely close to 1 at everyday speeds, and grows without bound as v approaches c: γ = 1.25 at v = 0.600c and γ = 10.0 at v = 0.995c.
+Q γ = 1/√(1 − v²/c²)
+N O gamma | Lorentz factor | γ = 1/√(1 − v²/c²) | rel
+d Factor that measures how far relativistic effects depart from Newtonian ones; 1 at rest, infinite at c.
+g Lorentz factor
+R[thm] gamma <- SR, c, speed : γ = 1/√(1 − v²/c²) | From the light clock | Pythagoras for a light path in a moving clock.
+P In [[SR|special relativity]] time dilation therefore reads Δt = γΔτ, with the [[gamma|Lorentz factor]] γ. The dilated interval Δt is read from two clocks of the observer's frame, at the two places where the tick begins and ends, synchronized in that frame. By the [[simul|relativity of simultaneity]] the clock's own frame disagrees with that synchronization, so each observer finds the other's clocks slow without contradiction. Muons test the effect. Their mean lifetime at rest is 2.20 µs, so at 0.995c they would travel only 657 m on average, yet many made high in the atmosphere reach sea level: in Earth's frame they live 22.0 µs and travel about 6.6 km. In the twin paradox the travelling twin ages less, and the twins are not symmetric, since only the traveller changes inertial frame. For v ≪ c, γ ≈ 1 + v²/(2c²), [[dtdil|time dilation]] becomes negligible, and the [[dtm|elapsed time]] is the same in every frame, as Newton assumed.
+Q Δt = γΔτ = Δτ/√(1 − v²/c²)
+R[thm] dtdil <- gamma, simul, SR : Δt = Δτ/√(1 − v²/c²) | Light clock seen moving | Same light speed over a longer path.
+R[lim] dtm <- dtdil : Δt depends on the frame; equal to Δτ only for v ≪ c | Elapsed time is frame dependent | Newton's absolute time is the slow limit.
+§ 3 5.4
+P Lengths depend on the frame as well. The proper length L₀ of an object is its length in its own [[inframe|rest frame]]. Measuring a moving object means locating both ends at the same time, and simultaneity is relative. Take a muon and a stretch of atmosphere at rest relative to Earth; both frames agree on their relative speed v. In Earth's frame the stretch has its proper length L₀ and the muon crosses it in the dilated time Δt, so L₀ = vΔt. In the muon's frame the atmosphere moves past, the crossing takes the proper time Δτ, and the length is L = vΔτ. By [[dtdil|time dilation]] Δt = γΔτ, so L = L₀/γ with the [[gamma|Lorentz factor]] γ. This is [[Lcon|length contraction]]: a moving body is shorter along its motion, while its dimensions across the motion are unchanged. At 0.995c, 6.6 km of atmosphere is only about 660 m long in the muon's frame.
+N O Lcon | Length contraction | L = L₀/γ | rel
+d A body is longest in its own rest frame (proper length L₀); measured while it moves, it is shorter along the motion, L = L₀/γ.
+g length contraction; proper length
+R[thm] Lcon <- dtdil, gamma : both frames agree on the relative speed ⇒ L = vΔτ, L₀ = vΔt | Consistency with time dilation | Distances shrink as clocks slow.
+
+§ 3 5.5
+X Galilean transformation :: = galrel
+P An event happens at one place at one instant and has coordinates (x, y, z, t) in a frame S. Let a frame S′ move at velocity v along the x-axis of S, with the origins together at t = t′ = 0. The Galilean transformation of classical mechanics, x′ = x − vt, y′ = y, z′ = z, t′ = t, gives a light pulse the speed c − v in S′ and so violates the [[sr2|second postulate]]. Its replacement must be linear, so that uniform motion stays uniform in every frame as the [[sr1|first postulate]] requires, and it must keep x² − c²t² unchanged, so that a pulse with x = ct has x′ = ct′. The only such map is the [[lorentzT|Lorentz transformation]], with y′ = y, z′ = z and the [[gamma|Lorentz factor]] γ. For v ≪ c, γ ≈ 1 and vx/c² is negligible at ordinary distances, so it reduces to the Galilean form: classical [[galrel|relative motion]] is the slow limit.
+Q x′ = γ(x − vt),   t′ = γ(t − vx/c²)
+N M lorentzT | Lorentz transformation | x′ = γ(x − vt),  t′ = γ(t − vx/c²) | rel
+d Converts the coordinates of an event between two inertial frames so that the speed of light is the same in both.
+p linear; preserves the interval (Δs)² = Δx² + Δy² + Δz² − c²Δt²; forms a group; reduces to the Galilean transformation for v ≪ c
+g event; Lorentz transformation
+R[thm] lorentzT <- sr1, sr2, gamma : linear map keeping x² − c²t² invariant | Required by the postulates | The only linear transformation consistent with both postulates.
+R[lim] galrel <- lorentzT : v ≪ c ⇒ x′ = x − vt, t′ = t | Galilean limit | Classical relative motion is the slow limit.
+P The [[lorentzT|Lorentz transformation]] mixes space and time, but one combination is the same in every [[frame|reference frame]]: the interval (Δs)² between two events. Space and time therefore form one four-dimensional geometry, [[spacetime|space-time]], in which an event is a point and the history of a particle is a curve, its world line. Light leaving an event spreads along its light cone, where (Δs)² = 0. Events inside the cone, with (Δs)² < 0, can be linked by signals slower than light, have the same time order in all frames, and are separated by the proper time Δτ = √(−(Δs)²)/c. Events outside the cone have no frame-independent order; this is the [[simul|relativity of simultaneity]] in geometric form. The twin paradox becomes geometry: between departure and return, the bent world line of the travelling twin has less proper time than the straight one of the twin at home.
+Q (Δs)² = Δx² + Δy² + Δz² − c²Δt²
+N S spacetime | Space-time | events (ct, x, y, z) | rel
+d The four-dimensional arena of special relativity; a particle's history is a world line, and the interval between events is the same in all frames.
+m Minkowski space ℝ⁴ with interval (Δs)² = Δx² + Δy² + Δz² − c²Δt²; world lines are curves in it
+g world line
+R[thm] spacetime <- lorentzT, frame : (Δs)² invariant | Geometry of the transformation | Space and time combined into one geometry.
+
+§ 3 5.6
+P Velocities transform as ratios of transformed displacements. A body moving along x at velocity u′ in S′ covers dx′ = u′dt′ in a time dt′. The inverse [[lorentzT|Lorentz transformation]] gives dx = γ(dx′ + v dt′) and dt = γ(dt′ + v dx′/c²) in S, and the velocity in S is the [[ddt|time derivative]] u = dx/dt. Dividing gives [[reladd|relativistic velocity addition]]. A spacecraft moving at 0.600c relative to Earth fires a probe forward at 0.800c relative to itself; observers on Earth measure the probe's speed as (0.800 + 0.600)c/(1 + 0.480) = 0.946c, not 1.400c. Combining c with any v gives c again, as the second postulate requires, and speeds below c never combine to reach c. For u′ and v both much less than c the denominator is close to 1, and the rule reduces to classical (Galilean) velocity addition, u = u′ + v.
+Q u = (u′ + v)/(1 + vu′/c²)
+N M reladd | Relativistic velocity addition | u = (u′ + v)/(1 + vu′/c²) | rel
+d Velocities combine so that no sum of speeds below c ever exceeds c; for slow speeds this reduces to classical (Galilean) velocity addition.
+p reduces to u = u′ + v for v, u′ ≪ c; c combined with any v gives c
+g relativistic velocity addition
+R[thm] reladd <- lorentzT, ddt : u = dx/dt from the transformed dx′, dt′ | Differentiate the transformation | Ratio of transformed displacements.
+X classical (Galilean) velocity addition :: = galrel
+
+§ 3 5.7
+P Light from a moving source is shifted in [[freq|frequency]], as sound is, but for a different reason. The Doppler shift of sound depends on the speeds of source and observer relative to the air; light needs no medium, so only their relative velocity can matter. Let a source recede at speed v and emit wave crests with the period T_s = 1/f_s of its own frame. By [[dtdil|time dilation]] the observer finds the crests emitted at intervals γT_s, during which the source moves a further vγT_s away. Each crest travels to the observer at c by the [[sr2|second postulate]], so it arrives later by vγT_s/c, and the observed period is γT_s(1 + v/c). This gives the [[relDop|relativistic Doppler effect]]. A receding source shows a lower frequency, a red shift; for an approaching source v is replaced by −v and the frequency rises. At v = 0.600c the received frequency is f_s√(0.400/1.600) = 0.500f_s.
+Q f_{obs} = f_s √((1 − v/c)/(1 + v/c))
+N O relDop | Relativistic Doppler effect | f_obs = f_s √((1 − v/c)/(1 + v/c)) | rel
+d The frequency of light from a receding source is lower (red shift), from an approaching one higher; it depends only on the relative velocity.
+R[thm] relDop <- dtdil, freq, sr2 : wave crests emitted at dilated intervals, received at c | Time dilation plus travel time | No medium is involved, unlike sound.
+
+§ 3 5.8
+P In Newtonian mechanics the total [[p|momentum]] mu⃗ of an isolated system is conserved in every inertial frame related by Galilean transformations. Under the Lorentz transformation, however, a collision that conserves the total mu⃗ in one frame does not conserve it in another. To keep [[pcons|conservation of momentum]] valid in all inertial frames, momentum is redefined as the [[prel|relativistic momentum]], with the [[gamma|Lorentz factor]] γ taken at the speed u of the body. Here m is the rest mass, measured with the body at rest, and is the same in every frame. For u ≪ c, γ ≈ 1 and the classical momentum p⃗ = mu⃗ returns. An electron at 0.600c, where γ = 1.25, has p = 1.25 × (9.11 × 10⁻³¹ kg)(0.600)(3.00 × 10⁸ m/s) = 2.05 × 10⁻²² kg·m/s. As u approaches c, p grows without bound, so a finite force acting for a finite time cannot bring a massive body to c.
+Q p⃗ = γmu⃗ = mu⃗/√(1 − u²/c²)
+N O prel | Relativistic momentum | p⃗ = γmu⃗ | rel
+d The momentum conserved in all inertial frames; m is the rest mass, the same in every frame.
+g relativistic momentum; rest mass
+R[thm] prel <- p, gamma, pcons : p⃗ = m u⃗/√(1 − u²/c²) | Conserved in every frame | Classical momentum is not conserved in all frames under Lorentz transformations.
+R[lim] p <- prel : u ≪ c ⇒ p⃗ = mu⃗ | Classical limit | Newton's momentum recovered.
+
+§ 3 5.9
+X speed of light :: = c
+P The [[wet|work–energy theorem]] still holds: the kinetic energy of a body equals the work done to bring it from rest to its speed. With the force F = dp/dt along the motion, the work is ∫F dx = ∫(dp/dt) dx = ∫u dp. Using the [[prel|relativistic momentum]] p = γmu and integrating by parts from rest to speed u gives the [[Krel|relativistic kinetic energy]]. As u approaches c, γ and with it K grow without bound, so no finite amount of work brings a massive body to the [[c|speed of light]]. For u ≪ c the expansion γ = 1 + u²/(2c²) + … gives K ≈ ½mu², the Newtonian [[K|kinetic energy]]. The difference matters at high speed: at u = 0.600c, K = 0.250mc², while ½mu² = 0.180mc².
+Q K = (γ − 1)mc²
+N O Krel | Relativistic kinetic energy | K = (γ − 1)mc² | rel
+d Work needed to bring a body from rest to speed u; it grows without bound as u → c, so no massive body reaches c.
+g relativistic kinetic energy
+R[thm] Krel <- wet, prel : K = ∫ F dx = ∫ u dp = (γ − 1)mc² | Work–energy theorem with relativistic momentum | Same theorem, new momentum.
+R[lim] K <- Krel : (γ − 1)mc² ≈ ½mu² for u ≪ c | Newtonian limit | First term of the expansion of γ.
+P The [[Krel|relativistic kinetic energy]] is the difference of two terms, K = γmc² − mc². The second term does not depend on speed and is itself an energy: the rest energy E₀ = mc² that a body has in its rest frame. The [[Erel|total energy]] is then E = K + mc² = γmc², and mass is a form of energy. One kilogram of matter has a rest energy of (1.00 kg)(3.00 × 10⁸ m/s)² = 9.00 × 10¹⁶ J; in nuclear reactions a measurable fraction of the rest mass becomes kinetic energy. Combining E = γmc² with the [[prel|relativistic momentum]] p = γmu eliminates the speed: E² − (pc)² = γ²m²c⁴(1 − u²/c²) = (mc²)², the same in every frame. The relation also holds for a particle of zero mass, which has E = pc and must travel at c.
+Q E = γmc²,   E² = (pc)² + (mc²)²
+N O Erel | Total energy and rest energy | E = γmc²,  E₀ = mc² | rel
+d Total energy of a body: kinetic energy plus its rest energy mc²; mass is a form of energy. E² = (pc)² + (mc²)².
+g total energy; rest energy
+R[thm] Erel <- Krel, prel : E = K + mc² = γmc²;  E² = (pc)² + (mc²)² | Rest energy | The constant in the kinetic energy is itself energy.

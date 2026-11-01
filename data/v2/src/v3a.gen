@@ -1,0 +1,311 @@
+# University Physics Volume 3, chapters 1-5 (optics and special relativity)
+
+§ 3 1.1
+N O nidx | Index of refraction | n = c/v |
+d Ratio of the speed of light in vacuum to its speed in a medium; at least 1.
+g index of refraction
+R[def] nidx <- c, vwave : n = c/v | Slowing of light | Light travels more slowly in matter.
+N M raymod | Ray model of light | straight rays |
+d Geometric optics: light travels along straight rays in a uniform medium, bending only at boundaries. Valid when objects and apertures are much larger than the wavelength.
+p rays straight in a uniform medium; reversible paths; ignores interference and diffraction (λ → 0 limit)
+g ray; geometric optics
+R[approx] raymod <- emwave, lam : apertures ≫ λ | Short-wavelength limit | Wave effects become negligible.
+
+§ 3 1.2
+N M reflect | Law of reflection | θ_r = θ_i |
+d A ray reflects from a smooth surface at the same angle to the normal as it arrived, in the same plane.
+p angles measured from the normal; incident ray, normal and reflected ray coplanar; rough surfaces scatter diffusely
+g law of reflection
+R[law] reflect <- raymod : θ_r = θ_i | Rule for rays at a mirror | Empirical within the ray model.
+X corner reflector :: a device: three mutually perpendicular mirrors
+
+§ 3 1.3
+N M snell | Law of refraction | n₁ sin θ₁ = n₂ sin θ₂ |
+d A ray entering a medium of different index bends toward the normal if the new index is larger (Snell's law).
+p angles from the normal; reversible; bending set by the ratio of indices
+g refraction; law of refraction
+R[law] snell <- raymod, nidx : n₁ sin θ₁ = n₂ sin θ₂ | Snell's law | Empirical within the ray model.
+
+§ 3 1.4
+N O thetac | Critical angle | sin θ_c = n₂/n₁ |
+d Angle of incidence beyond which light going into a medium of lower index is totally reflected (total internal reflection).
+g critical angle; total internal reflection
+R[thm] thetac <- snell : θ₂ = 90° ⇒ sin θ_c = n₂/n₁ | Refracted ray grazing | Possible only for n₁ > n₂.
+X fiber optics :: an application of total internal reflection
+
+§ 3 1.5
+N M dispn | Dispersion | n(λ) |
+d The index of refraction depends on wavelength, so a prism spreads white light into colours.
+p n decreases with λ in the visible for glass; different colours refract by different angles; rainbows
+g dispersion
+R[law] dispn <- nidx, lam : n = n(λ) | Wavelength-dependent index | Measured property of the material.
+
+§ 3 1.6
+N M huygens | Huygens's principle | wavefront = envelope of wavelets |
+d Every point on a wavefront is a source of secondary wavelets; the new wavefront is their envelope. It explains reflection, refraction and diffraction (wave optics).
+p wave picture of light; wavelets travel at the local wave speed; with superposition gives diffraction
+g wave optics; Huygens’s principle
+R[thm] huygens <- wave, superp, vwave : envelope of wavelets after time Δt | Wave picture | Superposition of secondary waves.
+R[thm] reflect <- huygens : incident and reflected wavelets travel at the same speed in one medium ⇒ θ_r = θ_i | Reflection from wavelets | Geometry of the reflected envelope.
+R[thm] snell <- huygens, vwave : sin θ₁/v₁ = sin θ₂/v₂ | Refraction from wavelets | The wavefront turns because the speed changes.
+
+§ 3 1.7
+N S pol | Polarization | direction of E⃗ |
+d The direction of the electric field of light in the plane perpendicular to its travel: fixed for polarized light (vertically, horizontally…), random for unpolarized light.
+m unit vector (direction of polarization) in the plane ⟂ k⃗; unpolarized = random mixture
+g polarization; polarized; unpolarized; direction of polarization; vertically polarized; horizontally polarized
+R[read] pol <- emwave : direction of E⃗ ⟂ k⃗ | Transverse wave | Only transverse waves can be polarized.
+N M malus | Malus's law | I = I₀ cos²θ |
+d A polarizing filter transmits the field component along its axis, so intensity falls as cos²θ.
+p projection of E⃗ on the axis; intensity ∝ E²; unpolarized light loses half
+g Malus’s law
+R[thm] malus <- pol, Iint : E = E₀ cos θ ⇒ I = I₀ cos²θ | Field component along the axis | Intensity goes as the square of the field.
+N O brewster | Brewster's angle | tan θ_b = n₂/n₁ |
+d Angle of incidence at which reflected light is completely polarized parallel to the surface.
+g Brewster’s law; Brewster’s angle
+R[thm] brewster <- pol, snell : reflected and refracted rays perpendicular ⇒ tan θ_b = n₂/n₁ | Polarization by reflection | Dipoles in the medium cannot radiate along their axis.
+X optically active; birefringent :: materials that rotate or split polarization, described qualitatively
+
+# ---------------------------------------------------------------- Chapter 2
+§ 3 2.1
+N S image | Optical image | real or virtual |
+d Where rays from a point of an object meet (real image, can be caught on a screen) or appear to come from (virtual image). A plane mirror forms a virtual image as far behind as the object is in front.
+m point-to-point map from object positions (object distance d_o) to image positions (image distance d_i)
+g plane mirror; virtual image; real image; object distance; image distance
+R[thm] image <- raymod, reflect : plane mirror: d_i = −d_o | Rays traced back | Reflected rays appear to diverge from a point behind the mirror.
+
+§ 3 2.2
+N M mirroreq | Mirror equation | 1/d_o + 1/d_i = 1/f |
+d For a curved (spherical) mirror and rays near the optical axis, object and image distances are related through the focal length f = R/2.
+p small-angle (paraxial) approximation; concave f > 0, convex f < 0; focal point where parallel rays meet
+g curved mirror; convex mirror; concave mirror; optical axis; vertex; focal point; focal length; small-angle approximation
+R[thm] mirroreq <- reflect, image : sin θ ≈ θ for rays near the axis | Paraxial ray geometry | Law of reflection at a spherical surface.
+N O mag | Magnification | m = h_i/h_o = −d_i/d_o |
+d Image height over object height; negative for an inverted image.
+g linear magnification; magnification
+R[thm] mag <- mirroreq, image : m = −d_i/d_o | Similar triangles | From the ray through the vertex.
+N M aberr | Aberrations | departures from ideal imaging |
+d Real mirrors and lenses do not bring all rays to one point: spherical aberration (rays far from the axis), coma (off-axis points), and others.
+p appear where the small-angle approximation fails; reduced by aperture stops or aspheric shapes
+g aberration; spherical aberration; coma
+R[thm] aberr <- mirroreq : rays far from the axis violate sin θ ≈ θ | Limits of the paraxial approximation | Rays from one point miss the ideal image point.
+
+§ 3 2.3
+N M refrsurf | Refraction at a curved surface | n₁/d_o + n₂/d_i = (n₂ − n₁)/R |
+d A single spherical boundary between media forms images; for a flat boundary it gives the apparent depth h_i = (n₂/n₁)h_o.
+p paraxial; object focus and image focus differ when n₁ ≠ n₂; flat surface R → ∞
+g apparent depth; first focus or object focus; second focus or image focus
+R[thm] refrsurf <- snell, image : n₁θ₁ ≈ n₂θ₂ at a spherical surface | Paraxial Snell's law | Same geometry as the mirror.
+
+§ 3 2.4
+N M thinlens | Thin lens | 1/d_o + 1/d_i = 1/f |
+d Two refracting surfaces close together: converging lenses (f > 0) and diverging lenses (f < 0), with 1/f = (n₂/n₁ − 1)(1/R₁ − 1/R₂) (lens maker's equation). Images are found by ray tracing.
+p thin-lens approximation; paraxial; parallel rays meet in the focal plane; same form as the mirror equation
+g converging (or convex) lens; diverging (or concave) lens; focal plane; ray tracing; thin-lens approximation
+R[thm] thinlens <- refrsurf : image of the first surface is the object of the second | Two surfaces in sequence | Thickness neglected.
+
+§ 3 2.5
+N M eye | The eye as an optical system | variable-power lens, fixed retina |
+d The eye images onto the retina at fixed distance by changing its power (accommodation) between the near and far points; myopia and hyperopia are corrected with lenses.
+p image distance fixed; power adjustable; near point ≈ 25 cm normally; corrections add optical power
+g accommodation; near point; far point; nearsightedness (or myopia); farsightedness (or hyperopia)
+
+N O Popt | Optical power | P = 1/f |
+d Inverse focal length in diopters (m⁻¹); powers of thin lenses in contact add.
+g optical power
+R[def] Popt <- thinlens : P = 1/f;  P_total = Σ P_i | Inverse focal length | Additive for close lenses.
+R[thm] eye <- thinlens, Popt : 1/d_o + 1/d_retina = P_eye | Thin-lens model of the eye | Accommodation changes P_eye.
+§ 3 2.6
+X charge-coupled device (CCD) :: an image sensor in a camera
+
+§ 3 2.7
+N O Mang | Angular magnification | M = θ_image/θ_object |
+d How much larger an object appears through an instrument than to the unaided eye at the near point; a simple magnifier gives at most 1 + 25 cm/f.
+g angular magnification; simple magnifier (or magnifying glass)
+R[thm] Mang <- thinlens, eye : M = (25 cm/L)(1 + (L − ℓ)/f) | Lens near the eye | Virtual image placed where the eye can focus.
+
+§ 3 2.8
+N M instr | Microscope and telescope | M_net = m_obj M_eye |
+d Two-lens instruments: the objective forms a real image that the eyepiece magnifies; magnifications multiply.
+p net magnification = product; microscope: −d_i^obj(f^eye + 25 cm)/(f^obj f^eye); telescope angular magnification −f_obj/f_eye
+g compound microscope; objective; eyepiece; net magnification
+R[thm] instr <- thinlens, mag, Mang : image of the objective = object of the eyepiece | Lenses in series | Magnifications multiply.
+X Newtonian design; Cassegrain design :: arrangements of telescope mirrors
+
+# ---------------------------------------------------------------- Chapter 3
+§ 3 3.1
+N S coh | Coherent light | fixed phase relation |
+d Light waves whose phase difference stays constant (coherent), usually of one wavelength (monochromatic); incoherent light washes out interference.
+m set of waves with time-independent relative phases; monochromatic = single frequency
+g coherent waves; incoherent; monochromatic
+R[def] coh <- emwave : φ₁ − φ₂ constant in time | Stable phase difference | Required for a stationary interference pattern.
+N S dslit | Double-slit interference | d sin θ = mλ |
+d Young's experiment: light from two slits forms bright fringes where the path difference is a whole number of wavelengths (order m) and dark fringes halfway between.
+m intensity pattern on a screen: bright at d sin θ = mλ, dark at d sin θ = (m + ½)λ; y_m = mλD/d
+g fringes; order
+R[thm] dslit <- interf, coh, huygens : Δl = d sin θ;  Δl = mλ bright, (m + ½)λ dark | Path difference | Superposition of waves from two coherent sources.
+
+§ 3 3.3
+N S multislit | Multiple-slit interference | principal and secondary maxima |
+d With N slits the principal maxima stay at d sin θ = mλ but become sharper, with N − 2 weak secondary maxima between them.
+m intensity pattern with principal maxima at d sin θ = mλ and N − 2 secondary maxima in between
+g principal maximum; secondary maximum
+R[thm] multislit <- dslit, superp, phasor : sum of N phasors | Phasor sum | Full constructive interference only at the principal maxima.
+
+§ 3 3.4
+N S thinfilm | Thin-film interference | 2nt = mλ or (m + ½)λ |
+d Light reflected from the top and bottom of a thin film interferes; a half-wavelength phase change on reflection from a higher-index medium decides which colours are reinforced (soap bubbles, Newton's rings).
+m interference pattern set by thickness t, index n and reflection phase shifts
+g thin-film interference; Newton’s rings
+R[thm] thinfilm <- interf, nidx, reflect : path difference 2t in the film, wavelength λ/n there | Two reflections | Phase change π on reflection from a medium of higher refractive index.
+
+§ 3 3.5
+N M michint | Michelson interferometer | Δd = mλ₀/2 |
+d Splits a beam, sends the halves along two arms and recombines them; moving one mirror by λ/2 shifts the pattern by one fringe.
+p measures lengths in units of λ/2; sensitive to changes of optical path in either arm
+g interferometer
+R[thm] michint <- interf, coh : path difference 2Δd | Two-arm interference | Each fringe is a half-wavelength of mirror travel.
+
+# ---------------------------------------------------------------- Chapter 4
+§ 3 4.1
+N S sslit | Single-slit diffraction | a sin θ = mλ (dark) |
+d Light spreads after passing a narrow slit; wavelets from different parts of the slit cancel at angles where a sin θ = mλ.
+m intensity pattern with a broad central maximum and minima at a sin θ = mλ, m = ±1, ±2, …
+g diffraction; destructive interference for a single slit
+R[thm] sslit <- huygens, superp, coh : pair wavelets half a slit apart | Wavelets across the slit | Huygens's principle applied inside the aperture.
+
+§ 3 4.2
+N O Isslit | Single-slit intensity | I = I₀ (sin β/β)² |
+d Intensity across the single-slit pattern, β = πa sin θ/λ; the central peak's width is set by λ/a.
+g width of the central peak
+R[thm] Isslit <- sslit, phasor : phasors along an arc ⇒ E = E₀ sin β/β | Phasor sum over the slit | Continuous version of the N-slit sum.
+
+§ 3 4.3
+N S dsdiff | Two-slit diffraction pattern | interference × envelope |
+d With slits of finite width, the double-slit fringes are modulated by the single-slit envelope; fringes falling on envelope minima are missing orders.
+m product of the double-slit interference intensity and the single-slit diffraction envelope
+g two-slit diffraction pattern; missing order
+R[thm] dsdiff <- dslit, Isslit : I = I₀ cos²(φ/2) (sin β/β)² | Product of patterns | Each slit diffracts; the two diffracted waves interfere.
+
+§ 3 4.4
+N M grating | Diffraction grating | d sin θ = mλ |
+d Thousands of equally spaced slits give very sharp principal maxima, so a grating separates wavelengths precisely.
+p sharpness grows with the number of lines; resolves close wavelengths; spectroscopy
+g diffraction grating
+R[thm] grating <- multislit : N → large ⇒ narrow principal maxima | Many slits | The N-slit pattern in the limit of large N.
+
+§ 3 4.5
+N O rayl | Rayleigh criterion | θ_min = 1.22 λ/D |
+d Two point sources are just resolved when the central maximum of one falls on the first minimum of the other; diffraction limits every optical instrument's resolution.
+g Rayleigh criterion; resolution; diffraction limit
+R[thm] rayl <- sslit : first dark ring of a circular aperture at sin θ = 1.22λ/D | Circular-aperture diffraction | The slit result with a numerical factor from the round shape.
+
+§ 3 4.6
+N M bragg | Bragg's law | mλ = 2d sin θ |
+d X-rays reflected from successive planes of atoms in a crystal (Bragg planes) interfere constructively when the extra path 2d sin θ is a whole number of wavelengths.
+p crystal acts as a 3D grating; measures atomic spacings d ~ λ of X-rays
+g X-ray diffraction; Bragg planes
+R[thm] bragg <- interf, spectrum, grating : path difference 2d sin θ between adjacent planes | Reflection from atomic planes | X-ray wavelengths match atomic spacings.
+
+§ 3 4.7
+N M holo | Holography | interference with a reference beam |
+d A hologram records the interference of object light with a reference beam, storing amplitude and phase; illuminated again, it reconstructs a three-dimensional image.
+p needs coherent light; records phase as well as intensity; reconstruction by diffraction
+g hologram; holography
+R[thm] holo <- interf, coh, grating : recorded fringes act as a diffraction grating | Interference recorded | The developed pattern diffracts the reference beam into the object wave.
+
+# ---------------------------------------------------------------- Chapter 5
+§ 3 5.1
+X rest frame; inertial frame of reference :: = inframe
+X Galilean relativity :: = galrel
+N M SR | Special relativity | postulates 1 + 2 | rel
+d Einstein's theory of space and time for inertial frames, built on two postulates; it reconciles mechanics with electromagnetism.
+p kinematics of inertial frames; reduces to Newtonian mechanics for v ≪ c; space and time mix
+g special theory of relativity
+N M sr1 | First postulate | same laws in all inertial frames | rel ax
+d The laws of physics, including electromagnetism, have the same form in every inertial frame.
+p extends Galilean relativity from mechanics to all physics; no preferred frame (no ether)
+g first postulate of special relativity
+R[gen] sr1 <- inframe, galrel, maxwell : mechanics and electromagnetism alike | Relativity principle for all laws | Galilean relativity applied to Maxwell's equations too.
+N O mmnull | Michelson–Morley result | no fringe shift |
+d An interferometer turned relative to Earth's motion showed no change in the speed of light: there is no detectable motion through an ether.
+g Michelson-Morley experiment
+R[meas] mmnull <- michint, c : fringes unchanged on rotation | Null result (1887) | Light speed the same along and across Earth's motion.
+R[fail] mmnull <- galrel, michint, c : Galilean addition c ± v predicts a shift ∝ v²/c²; none observed | Ether prediction fails | Velocity addition of classical relative motion does not apply to light.
+N M sr2 | Second postulate | c the same in all inertial frames | rel ax
+d Light in vacuum travels at c in every inertial frame, whatever the motion of source or observer.
+p invariance of c; contradicts Galilean velocity addition; implies relativity of simultaneity
+g second postulate of special relativity
+R[law] sr2 <- mmnull, maxwell, c : c = 1/√(ε₀μ₀) contains no frame | Experiment and theory agree | Maxwell's c and the null result both point to an invariant speed.
+R[thm] SR <- sr1, sr2 : the two postulates | Einstein 1905 | All of special relativity follows from them.
+X speed of light :: = c
+
+§ 3 5.2
+N M simul | Relativity of simultaneity | t_A = t_B in S ⇏ in S′ | rel
+d Two events simultaneous in one inertial frame are generally not simultaneous in another moving relative to it.
+p consequence of the invariance of c; only for spatially separated events; no absolute time
+g Simultaneity
+R[thm] simul <- sr2, SR : light signals from the midpoint reach the ends at different times in a moving frame | Light-signal thought experiment | Follows from the same c in both frames.
+
+§ 3 5.3
+N O dtdil | Time dilation | Δt = γΔτ | rel
+d A clock moving relative to an observer runs slow: the time between two events at one place in the clock's frame (proper time Δτ) is the shortest.
+g time dilation; proper time
+
+N O gamma | Lorentz factor | γ = 1/√(1 − v²/c²) | rel
+d Factor that measures how far relativistic effects depart from Newtonian ones; 1 at rest, infinite at c.
+g Lorentz factor
+R[thm] gamma <- SR, c, speed : γ = 1/√(1 − v²/c²) | From the light clock | Pythagoras for a light path in a moving clock.
+R[thm] dtdil <- gamma, simul, SR : Δt = Δτ/√(1 − v²/c²) | Light clock seen moving | Same light speed over a longer path.
+R[lim] dtm <- dtdil : Δt depends on the frame; equal to Δτ only for v ≪ c | Elapsed time is frame dependent | Newton's absolute time is the slow limit.
+§ 3 5.4
+N O Lcon | Length contraction | L = L₀/γ | rel
+d A body is longest in its own rest frame (proper length L₀); measured while it moves, it is shorter along the motion, L = L₀/γ.
+g length contraction; proper length
+R[thm] Lcon <- dtdil, gamma : both frames agree on the relative speed ⇒ L = vΔτ, L₀ = vΔt | Consistency with time dilation | Distances shrink as clocks slow.
+
+§ 3 5.5
+X Galilean transformation :: = galrel
+N M lorentzT | Lorentz transformation | x′ = γ(x − vt),  t′ = γ(t − vx/c²) | rel
+d Converts the coordinates of an event between two inertial frames so that the speed of light is the same in both.
+p linear; preserves the interval (Δs)² = Δx² + Δy² + Δz² − c²Δt²; forms a group; reduces to the Galilean transformation for v ≪ c
+g event; Lorentz transformation
+R[thm] lorentzT <- sr1, sr2, gamma : linear map keeping x² − c²t² invariant | Required by the postulates | The only linear transformation consistent with both postulates.
+R[lim] galrel <- lorentzT : v ≪ c ⇒ x′ = x − vt, t′ = t | Galilean limit | Classical relative motion is the slow limit.
+N S spacetime | Space-time | events (ct, x, y, z) | rel
+d The four-dimensional arena of special relativity; a particle's history is a world line, and the interval between events is the same in all frames.
+m Minkowski space ℝ⁴ with interval (Δs)² = Δx² + Δy² + Δz² − c²Δt²; world lines are curves in it
+g world line
+R[thm] spacetime <- lorentzT, frame : (Δs)² invariant | Geometry of the transformation | Space and time combined into one geometry.
+
+§ 3 5.6
+N M reladd | Relativistic velocity addition | u = (u′ + v)/(1 + vu′/c²) | rel
+d Velocities combine so that no sum of speeds below c ever exceeds c; for slow speeds this reduces to classical (Galilean) velocity addition.
+p reduces to u = u′ + v for v, u′ ≪ c; c combined with any v gives c
+g relativistic velocity addition
+R[thm] reladd <- lorentzT, ddt : u = dx/dt from the transformed dx′, dt′ | Differentiate the transformation | Ratio of transformed displacements.
+X classical (Galilean) velocity addition :: = galrel
+
+§ 3 5.7
+N O relDop | Relativistic Doppler effect | f_obs = f_s √((1 − v/c)/(1 + v/c)) | rel
+d The frequency of light from a receding source is lower (red shift), from an approaching one higher; it depends only on the relative velocity.
+R[thm] relDop <- dtdil, freq, sr2 : wave crests emitted at dilated intervals, received at c | Time dilation plus travel time | No medium is involved, unlike sound.
+
+§ 3 5.8
+N O prel | Relativistic momentum | p⃗ = γmu⃗ | rel
+d The momentum conserved in all inertial frames; m is the rest mass, the same in every frame.
+g relativistic momentum; rest mass
+R[thm] prel <- p, gamma, pcons : p⃗ = m u⃗/√(1 − u²/c²) | Conserved in every frame | Classical momentum is not conserved in all frames under Lorentz transformations.
+R[lim] p <- prel : u ≪ c ⇒ p⃗ = mu⃗ | Classical limit | Newton's momentum recovered.
+
+§ 3 5.9
+X speed of light :: = c
+N O Krel | Relativistic kinetic energy | K = (γ − 1)mc² | rel
+d Work needed to bring a body from rest to speed u; it grows without bound as u → c, so no massive body reaches c.
+g relativistic kinetic energy
+R[thm] Krel <- wet, prel : K = ∫ F dx = ∫ u dp = (γ − 1)mc² | Work–energy theorem with relativistic momentum | Same theorem, new momentum.
+R[lim] K <- Krel : (γ − 1)mc² ≈ ½mu² for u ≪ c | Newtonian limit | First term of the expansion of γ.
+N O Erel | Total energy and rest energy | E = γmc²,  E₀ = mc² | rel
+d Total energy of a body: kinetic energy plus its rest energy mc²; mass is a form of energy. E² = (pc)² + (mc²)².
+g total energy; rest energy
+R[thm] Erel <- Krel, prel : E = K + mc² = γmc²;  E² = (pc)² + (mc²)² | Rest energy | The constant in the kinetic energy is itself energy.

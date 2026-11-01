@@ -1,0 +1,290 @@
+# University Physics Volume 2, chapters 11-16 (magnetism, induction, ac circuits, electromagnetic waves)
+
+§ 2 11.1
+N S magnet | Magnetic poles | N, S |
+d Every magnet has a north and a south pole; like poles repel, unlike attract, and cutting a magnet never isolates a single pole.
+m pair of poles of a magnetic dipole; no isolated monopoles observed
+g north magnetic pole; south magnetic pole
+R[meas] magnet <- F : forces between magnets; a compass needle aligns north–south | Observed attraction and repulsion | The oldest magnetic observations.
+
+§ 2 11.2
+N M lorentzF | Magnetic force on a moving charge | F⃗ = q v⃗ × B⃗ | ax
+d A charge moving through a magnetic field feels a force perpendicular to both its velocity and the field (right-hand rule); the force does no work.
+p velocity-dependent; ⟂ to v⃗ and B⃗; magnitude qvB sin θ; does no work, changes only direction
+g magnetic force; right-hand rule-1
+N S Bfield | Magnetic field | B⃗(r⃗) |
+d The field around magnets and currents, mapped by a compass; its field lines form closed loops. SI unit the tesla (1 G = 10⁻⁴ T).
+m divergence-free vector field on ℝ³: field lines close on themselves
+g magnetic field lines; tesla; gauss
+R[meas] Bfield <- magnet : direction mapped with a compass needle | Field around a magnet | The needle aligns with B⃗.
+R[def] Bfield <- lorentzF, F : B⃗ is the field for which F⃗ = q v⃗ × B⃗ | Defined by the force on a moving charge | Measured with a moving test charge, as E⃗ is with a charge at rest.
+N O Bval | Magnetic field value | B⃗ |
+d Field at one point, defined through the force on a moving test charge: B = F/(qv sin θ).
+R[read] Bval <- Bfield : B⃗ at one point | Value of the field | Where the moving charge is.
+R[law] F <- lorentzF, q, vvec, Bval, cross : F⃗ = q v⃗ × B⃗ | Force on a moving charge | Enters the second law like any force.
+
+§ 2 11.3
+N S helix | Circular and helical orbits | r = mv/(qB) |
+d A charge in a uniform field moves on a circle of radius mv/(qB) with period 2πm/(qB); a velocity component along B⃗ turns the circle into a helix.
+m helix around a field line: uniform circular motion in the plane ⟂ B⃗ plus uniform motion along B⃗
+g helical motion
+R[thm] helix <- lorentzF, Fc, circ : qvB = mv²/r ⇒ r = mv/(qB),  T = 2πm/(qB) | Magnetic force as centripetal force | The period does not depend on speed.
+X cosmic rays :: charged particles from space, an example of motion along field lines
+
+§ 2 11.4
+R[thm] F <- lorentzF, curr, cross : F⃗ = I l⃗ × B⃗ | Force on a current-carrying wire | Sum of the forces on the moving carriers.
+
+§ 2 11.5
+N O mu | Magnetic dipole moment | μ⃗ = NIA n̂ |
+d Current times area of a loop (times the number of turns), along the loop's normal; a current loop is a magnetic dipole.
+g magnetic dipole; magnetic dipole moment
+R[def] mu <- curr, L : μ⃗ = N I A n̂ | Current times area | Direction by the right-hand rule.
+R[thm] tau <- mu, Bval, cross : τ⃗ = μ⃗ × B⃗ | Torque on a current loop | Forces on opposite sides form a couple.
+R[thm] U <- mu, Bval, dot : U = −μ⃗·B⃗ | Energy of a dipole in a field | Lowest when aligned with the field.
+X motor (dc) :: an application of the torque on a current loop
+
+§ 2 11.6
+N O VH | Hall voltage | V = Blv_d |
+d Voltage across a current-carrying strip in a magnetic field, from carriers pushed to one side; its sign reveals the sign of the carriers.
+g Hall effect
+R[thm] VH <- lorentzF, vd, Bval : qE = qv_dB ⇒ V = Blv_d = IBl/(neA) | Balance of electric and magnetic forces | Steady state when the transverse field cancels the magnetic force.
+N M vsel | Velocity selector | v = E/B |
+d Crossed electric and magnetic fields pass undeflected only particles with speed E/B.
+p force balance qE = qvB; independent of charge and mass
+g velocity selector
+R[thm] vsel <- lorentzF, Eval : qE⃗ + qv⃗ × B⃗ = 0 | Crossed fields | Electric and magnetic forces cancel at one speed.
+
+§ 2 11.7
+X cyclotron; dees; mass spectrometer :: instruments built on circular orbits in a magnetic field
+
+# ---------------------------------------------------------------- Chapter 12
+§ 2 12.1
+N M bs | Biot–Savart law | dB⃗ = (μ₀/4π) I dl⃗ × r̂/r² | ax
+d Each element of a current contributes to the magnetic field in proportion to the current and inversely to the square of the distance, perpendicular to both element and line of sight.
+p inverse square per element; perpendicular to dl⃗ and r̂; linear (superposition of elements)
+g Biot-Savart law
+N O mu0 | Permeability of free space | μ₀ | prim
+d Constant in the magnetic field laws, 4π × 10⁻⁷ T·m/A.
+g permeability of free space
+R[law] Bfield <- bs, curr, mu0, cross, integ : B⃗ = (μ₀/4π) ∫ I dl⃗ × r̂/r² | Field from currents | Integrate over the wire.
+
+§ 2 12.2
+N O Bwire | Field of a long straight wire | B = μ₀I/(2πR) |
+d Circles around the wire, falling inversely with distance (right-hand rule for its direction).
+R[thm] Bwire <- bs, curr, mu0 : ∫_{−∞}^{∞} μ₀I dx sin θ/(4πr²) = μ₀I/(2πR) | Biot–Savart for a line | Integrate along the infinite wire.
+
+§ 2 12.3
+N O Fpar | Force between parallel currents | F/l = μ₀I₁I₂/(2πr) |
+d Parallel currents attract and antiparallel currents repel; this force once defined the ampere.
+R[thm] Fpar <- Bwire, lorentzF, curr : F = I₂ l B₁ with B₁ = μ₀I₁/(2πr) | One wire in the other's field | Third-law pair of magnetic forces.
+
+§ 2 12.5
+N M ampere | Ampère's law | ∮B⃗·dl⃗ = μ₀ I_enc |
+d The line integral of the magnetic field around any closed loop equals μ₀ times the current through it.
+p steady currents only; any closed loop; useful with symmetry; incomplete for changing fields (Maxwell's correction)
+g Ampère’s law
+R[thm] ampere <- bs, Bwire, integ : ∮ (μ₀I/2πr) r dθ = μ₀I | Generalises the wire result | Consistent with Biot–Savart for steady currents.
+
+§ 2 12.6
+N S solen | Solenoid and toroid | B = μ₀nI |
+d A long coil has a nearly uniform field inside, B = μ₀nI, and almost none outside; a toroid confines its field, B = μ₀NI/(2πr).
+m uniform axial field inside a long solenoid; azimuthal field inside a toroid, zero outside
+g solenoid; toroid
+R[thm] solen <- ampere, curr, symm : B l = μ₀ n l I | Ampère loop through the coil | Symmetry makes B uniform inside.
+
+§ 2 12.7
+N M magmat | Magnetism in matter | μ = (1 + χ) μ₀ |
+d Atomic magnetic dipoles respond to a field: weakly along it (paramagnetic, χ > 0), weakly against it (diamagnetic, χ < 0), or strongly with domains and hysteresis (ferromagnetic).
+p paramagnetic and diamagnetic linear with small χ; ferromagnetic nonlinear, history-dependent (hysteresis), domains
+g paramagnetic materials; ferromagnetic materials; diamagnetic materials; magnetic susceptibility; magnetic domains; hysteresis
+R[thm] magmat <- mu, atom, Bfield : atomic dipoles μ⃗ align or oppose B⃗ | Atomic dipoles | Sum of atomic magnetic moments per volume.
+
+# ---------------------------------------------------------------- Chapter 13
+§ 2 13.1
+N O PhiB | Magnetic flux | Φ_m = ∫B⃗·n̂ dA |
+d Amount of magnetic field through a surface; SI unit the weber.
+g magnetic flux
+R[def] PhiB <- Bfield, dot, integ : Φ_m = ∫_S B⃗·n̂ dA | Surface integral | Uniform field: BA cos θ.
+N M faraday | Faraday's law | ε = −N dΦ_m/dt | ax
+d A changing magnetic flux through a circuit induces an emf in it, whether the field, the area or the orientation changes.
+p linear; any cause of flux change; minus sign = Lenz's law; an induced emf without batteries
+g Faraday’s law; induced emf
+R[law] emf <- faraday, PhiB, ddt : ε = −N dΦ_m/dt | Induced emf | Rate of change of flux.
+
+§ 2 13.2
+N M lenz | Lenz's law | induced current opposes the change |
+d The induced emf drives a current whose magnetic field opposes the change of flux that produced it.
+p sign rule of Faraday's law; required by energy conservation
+g Lenz’s law
+R[thm] lenz <- faraday, econs : an aiding current would grow without limit | Energy argument | The minus sign keeps energy conserved.
+
+§ 2 13.3
+N O emfmot | Motional emf | ε = Blv |
+d Emf in a conductor moving through a magnetic field.
+g motionally induced emf
+R[thm] emfmot <- lorentzF, Bval, speed : F/q = vB along the rod of length l | Magnetic force on the carriers | Work per charge along the moving rod.
+R[thm] emfmot <- faraday, PhiB : dΦ_m/dt = B l dx/dt | Same result from flux | The circuit's area grows at lv.
+
+§ 2 13.4
+N S Eind | Induced electric field | ∮E⃗·dl⃗ = −dΦ_m/dt |
+d A changing magnetic field creates an electric field whose lines close on themselves; it is not conservative.
+m nonconservative electric vector field with closed field lines
+g induced electric field
+R[thm] Eind <- faraday, Efield, integ : ε = ∮E⃗·dl⃗ | Emf as circulation of E⃗ | The induced emf is the work of an electric field around the loop.
+
+§ 2 13.5
+N O eddy | Eddy currents | loops induced in bulk conductors |
+d Currents induced in a conductor moving in, or exposed to, a changing magnetic field; by Lenz's law they oppose the motion (magnetic damping).
+g eddy current; magnetic damping
+R[thm] eddy <- faraday, lenz, cond : changing flux through loops inside the conductor | Induction in bulk metal | Dissipated as heat.
+
+§ 2 13.6
+N M gen | Electric generator | ε = NBAω sin ωt |
+d A coil turning in a magnetic field produces a sinusoidal emf with peak NBAω; a motor's coil produces the same, called back emf.
+p sinusoidal output; peak emf ∝ ω; motors and generators are the same device run in reverse
+g electric generator; peak emf; back emf
+R[thm] gen <- faraday, PhiB, angvel : Φ_m = BA cos ωt ⇒ ε = NBAω sin ωt | Rotating coil | The flux changes as the coil turns.
+
+# ---------------------------------------------------------------- Chapter 14
+§ 2 14.1
+N O Mind | Mutual inductance | M = N₂Φ₂₁/I₁ |
+d Flux through one circuit per current in another; a changing current in one induces emf ε₂ = −M dI₁/dt in the other. SI unit the henry.
+g inductance; mutual inductance; henry (H)
+R[def] Mind <- faraday, PhiB, curr : M = N₂Φ₂₁/I₁,  ε₂ = −M dI₁/dt | Flux linkage | Purely geometric, the same both ways.
+
+§ 2 14.2
+N O Lind | Self-inductance | L = NΦ_m/I |
+d A coil's own flux per unit of its current; a changing current induces ε = −L dI/dt that opposes the change. An inductor is a coil built for this.
+g self-inductance; inductor
+R[def] Lind <- faraday, PhiB, curr : ε = −L dI/dt | Induction on itself | Flux linkage of the coil with its own field.
+R[thm] Lind <- solen : L = μ₀N²A/l | Solenoid | From B = μ₀nI inside.
+
+§ 2 14.3
+N O UL | Energy in an inductor | U = ½LI² |
+d Work done against the back emf while the current builds up, stored in the magnetic field.
+R[thm] UL <- Lind, curr, W : U = ∫ L I dI = ½LI² | Work against the induced emf | Power LI dI/dt integrated.
+N O uB | Magnetic energy density | u_B = B²/(2μ₀) |
+d Energy per unit volume stored in a magnetic field.
+g magnetic energy density
+R[thm] uB <- UL, solen, mu0 : ½LI²/(Al) with L = μ₀n²Al, B = μ₀nI | Energy per volume | The energy belongs to the field.
+
+§ 2 14.4
+N M rl | RL circuit | I = (ε/R)(1 − e^{−t/τ_L}) |
+d Current in a resistor–inductor circuit rises or decays exponentially with time constant τ_L = L/R.
+p first-order linear equation; τ_L = L/R
+g inductive time constant
+R[thm] rl <- kirch, Lind, ohm : ε − IR − L dI/dt = 0 | Loop rule with an inductor | First-order equation for I(t).
+
+§ 2 14.5
+N M lc | LC circuit | q = q₀ cos(ωt + φ),  ω = 1/√(LC) |
+d Charge sloshes between a capacitor and an inductor; energy passes between electric and magnetic fields.
+p undamped harmonic oscillation; ω = 1/√(LC); total energy q²/2C + LI²/2 constant
+g LC circuit
+R[thm] lc <- kirch, Lind, Cap : L d²q/dt² + q/C = 0 | Loop rule | A harmonic oscillator equation for q.
+R[analog] lc <- sho : L ↔ m,  1/C ↔ k,  q ↔ x | Same equation as a spring | Electrical and mechanical oscillators share their mathematics.
+
+§ 2 14.6
+N M rlc | RLC circuit | q = q₀ e^{−Rt/2L} cos(ω′t + φ) |
+d Adding resistance damps the LC oscillation: underdamped, critically damped or overdamped as for a mechanical oscillator.
+p damped oscillation; ω′ = √(1/LC − (R/2L)²); energy dissipated in R
+g RLC circuit
+R[thm] rlc <- lc, Rres, kirch : L q̈ + R q̇ + q/C = 0 | Loop rule with R | Damped oscillator equation.
+R[analog] rlc <- damp : R ↔ b | Damped spring analogue | Resistance plays the role of the drag coefficient.
+
+# ---------------------------------------------------------------- Chapter 15
+§ 2 15.1
+N S acsrc | Alternating source | v = V₀ sin ωt |
+d A source whose voltage (and current) reverses periodically; direct current (dc) flows one way only.
+m sinusoidal function of time with amplitude V₀ and angular frequency ω
+g direct current (dc); alternating current (ac); ac voltage; ac current
+R[thm] acsrc <- gen : generator output V₀ sin ωt | From the generator | Power stations supply sinusoidal voltage.
+
+§ 2 15.2
+N M phasor | Phasors | rotating vectors |
+d Represents a sinusoid A sin(ωt + φ) as a vector of length A rotating at ω; sinusoids of one frequency add as vectors.
+p projection of uniform circular motion; same-frequency sums = vector sums; phase = angle
+g phasor diagrams
+R[analog] phasor <- circ, vadd : A sin(ωt + φ) = projection of a rotating vector | Reference circle again | Same idea as relating SHM to circular motion.
+N O XC | Capacitive reactance | X_C = 1/(ωC) |
+d Opposition of a capacitor to alternating current; current leads voltage by 90°.
+g capacitive reactance
+R[thm] XC <- Cap, acsrc : i = C dv/dt = ωCV₀ cos ωt ⇒ V₀/I₀ = 1/(ωC) | Capacitor in an ac circuit | Large at low frequency.
+N O rms | rms current and voltage | V_rms = V₀/√2 |
+d Effective values of a sinusoid: the dc values that deliver the same average power.
+g rms current; rms voltage
+R[def] rms <- acsrc : V_rms = √⟨v²⟩ = V₀/√2 | Root mean square | Average of sin² is ½.
+N O XL | Inductive reactance | X_L = ωL |
+d Opposition of an inductor to alternating current; current lags voltage by 90°.
+g inductive reactance
+R[thm] XL <- Lind, acsrc : v = L di/dt ⇒ V₀/I₀ = ωL | Inductor in an ac circuit | Large at high frequency.
+
+§ 2 15.3
+N O Zimp | Impedance and phase angle | Z = √(R² + (X_L − X_C)²) |
+d Total opposition of a series RLC circuit to ac, I₀ = V₀/Z; the phase angle φ = tan⁻¹((X_L − X_C)/R) is how far current lags voltage.
+g impedance; phase angle
+R[thm] Zimp <- phasor, XL, XC, Rres : V₀ = I₀ √(R² + (X_L − X_C)²) | Phasor sum of the voltages | Voltages across R, L, C differ in phase.
+
+§ 2 15.4
+N O Pac | Average ac power | P_ave = I_rms V_rms cos φ |
+d Power averaged over a cycle; only the resistor dissipates, and cos φ is the power factor.
+g average power; power factor
+R[thm] Pac <- Pel, rms, Zimp : ⟨iv⟩ = ½I₀V₀ cos φ | Average of a product of sinusoids | Reactive elements store and return energy.
+
+§ 2 15.5
+N M acres | AC resonance | ω₀ = 1/√(LC),  Q = ω₀L/R |
+d Current in a series RLC circuit peaks when X_L = X_C; the quality factor measures how sharp the peak is (bandwidth Δω = ω₀/Q).
+p resonance at ω₀ = 1/√(LC); Q = ω₀/Δω; narrow peak for small R
+g resonant frequency; quality factor; bandwidth
+R[thm] acres <- Zimp, rlc : Z minimal when ωL = 1/(ωC) | Minimum impedance | Purely resistive at resonance.
+R[analog] acres <- forced : driven damped oscillator | Same resonance curve | Mechanical and electrical resonance obey the same equation.
+
+§ 2 15.6
+N M transf | Transformer | V_S/V_P = N_S/N_P |
+d Two coils on one iron core: the voltage ratio equals the turns ratio, and the current ratio its inverse, so power is transmitted at high voltage and low current.
+p ideal: P_in = P_out; I_S/I_P = N_P/N_S; works only with ac
+g transformer; transformer equation; step-up transformer; step-down transformer
+R[thm] transf <- Mind, faraday, acsrc : same dΦ/dt per turn in both coils | Shared flux | Each turn has the same induced emf.
+
+# ---------------------------------------------------------------- Chapter 16
+§ 2 16.1
+N M maxwell | Maxwell's equations | four field laws |
+d Gauss's law for E⃗, Gauss's law for B⃗ (no monopoles), Faraday's law, and Ampère's law with Maxwell's displacement current; with the Lorentz force they complete classical electromagnetism.
+p linear in E⃗ and B⃗; a changing E⃗ makes B⃗ as a changing B⃗ makes E⃗; predict waves travelling at 1/√(ε₀μ₀)
+g Maxwell’s equations
+N O Id | Displacement current | I_d = ε₀ dΦ_E/dt |
+d Maxwell's term: a changing electric flux acts like a current in Ampère's law, needed where a capacitor interrupts the conduction current.
+g displacement current
+R[thm] Id <- PhiE, eps0, ddt, ampere : Ampère's law fails across a charging capacitor unless I → I + ε₀ dΦ_E/dt | Consistency with charge conservation | The same loop bounded by two surfaces must give one answer.
+R[thm] maxwell <- gauss, faraday, ampere, Id, Bfield : ∮E⃗·dA⃗ = q/ε₀;  ∮B⃗·dA⃗ = 0;  ∮E⃗·dl⃗ = −dΦ_m/dt;  ∮B⃗·dl⃗ = μ₀I + μ₀ε₀ dΦ_E/dt | Assembled and corrected | Gauss for B⃗ records that field lines close.
+N S EB | Electromagnetic field | (E⃗, B⃗)(r⃗, t) |
+d The dynamical state of classical electromagnetism: electric and magnetic fields at every point and time, evolving by Maxwell's equations.
+m pair of vector fields on space-time satisfying Maxwell's equations
+R[law] EB <- maxwell, Efield, Bfield : E⃗, B⃗ evolve together | Fields as one system | Static fields are special cases.
+
+§ 2 16.2
+N S emwave | Plane electromagnetic wave | E = cB,  E⃗ ⟂ B⃗ ⟂ k⃗ |
+d A solution of Maxwell's equations in empty space: transverse electric and magnetic fields in phase, travelling at c = 1/√(ε₀μ₀).
+m E_y = E₀ sin(kx − ωt), B_z = (E₀/c) sin(kx − ωt); transverse, in phase
+R[thm] emwave <- maxwell, waveeq, EB : ∂²E_y/∂x² = ε₀μ₀ ∂²E_y/∂t² | Wave equation from the field laws | The same equation as for waves on a string.
+R[thm] c <- eps0, mu0, emwave : c = 1/√(ε₀μ₀) | Speed of light predicted | Two electrical constants give the measured speed of light: light is an electromagnetic wave.
+
+§ 2 16.3
+N O Spoynt | Poynting vector | S⃗ = E⃗ × B⃗/μ₀ |
+d Energy flux of the electromagnetic field: energy per unit area per unit time, along the direction of propagation.
+g Poynting vector
+R[thm] Spoynt <- emwave, uE, uB, cross : u = ε₀E² (equal electric and magnetic parts);  S = cu | Energy carried at c | Field energy density moving at the wave speed.
+R[thm] Iint <- Spoynt : I = S_avg = cε₀E₀²/2 | Intensity of light | Time-averaged Poynting flux.
+
+§ 2 16.4
+N O prad | Radiation pressure | p = I/c (absorbed), 2I/c (reflected) |
+d Pressure exerted by light because electromagnetic waves carry momentum U/c.
+g radiation pressure
+R[thm] prad <- Spoynt, c, p : momentum per area per time = I/c | Momentum of the field | Reflection doubles the momentum change.
+
+§ 2 16.5
+N S spectrum | Electromagnetic spectrum | c = fλ |
+d Electromagnetic waves of all wavelengths: radio, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays, distinguished only by frequency.
+m one-parameter family of plane waves labelled by frequency f (wavelength λ = c/f)
+g radio waves; microwaves; infrared radiation; visible light; ultraviolet radiation; X-ray; gamma ray (γ ray)
+R[thm] spectrum <- emwave, vwave, c : λ = c/f | Same wave, any frequency | Maxwell's equations allow every frequency.
+X radar; thermal agitation :: an application, and the thermal motion of charges named as a source of infrared

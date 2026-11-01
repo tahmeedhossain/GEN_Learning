@@ -1,0 +1,258 @@
+# University Physics Volume 1, chapters 5-9
+
+§ 1 5.1
+X dynamics :: names the branch of mechanics that studies causes of motion
+N O F | Force | F⃗ | prim
+d A push or pull on a body, with magnitude and direction; measured by the stretch of a calibrated spring. SI unit the newton, 1 N = 1 kg·m/s².
+g force; newton
+N M fbd | Free-body diagram | FBD |
+d Isolates one body and draws every external force on it as a vector from the body; the starting point of every force problem.
+p separates the system from its surroundings; only external forces drawn; one diagram per body
+g free-body diagram
+R[def] fbd <- F, vec : each external force drawn as a vector on the isolated body | Isolating the system | Forces are vectors, so the diagram is a list of vectors acting on one body.
+N O Fnet | Net external force | F⃗_net |
+d Vector sum of all external forces on a body.
+g net external force; external force
+R[def] Fnet <- fbd, vadd : F⃗_net = Σ F⃗ = F⃗₁ + F⃗₂ + ⋯ | Vector sum | Forces combine like any vectors, so the order of summation is irrelevant.
+
+§ 1 5.2
+N M n1 | Newton's first law | F⃗_net = 0 ⇒ v⃗ = const | ax
+d A body keeps its velocity unless a net external force acts; this tendency is inertia, measured by mass.
+p defines the class of inertial frames; Galilean invariant; special case F⃗_net = 0 of the second law
+g Newton’s first law of motion; law of inertia; inertia
+N M inframe | Inertial reference frame | inertial frame |
+d A frame in which the first law holds; any frame moving at constant velocity relative to one is also inertial.
+p closed under constant-velocity changes of frame; accelerating or rotating frames excluded
+g inertial reference frame
+R[def] inframe <- n1, frame : frames in which F⃗_net = 0 ⇒ a⃗ = 0 | Frames selected by the first law | The first law picks out the frames in which the other laws are stated.
+
+§ 1 5.3
+N M n2 | Newton's second law | F⃗_net = m a⃗ | ax
+d The net external force on a body equals its mass times its acceleration; one equation per component.
+p linear in the forces (superposition); vector equation; valid in inertial frames; second order in time, so r⃗₀ and v⃗₀ fix the motion
+g Newton’s second law of motion
+R[law] avec <- n2, Fnet, m : a⃗ = F⃗_net / m | Acceleration from force | Forces determine acceleration; mass sets the response.
+R[law] rt <- n2, Fnet, m, integ : m d²r⃗/dt² = F⃗_net;  r⃗(0), v⃗(0) given | Equation of motion | Integrating the second law with initial position and velocity gives the trajectory.
+> integ: integrates the acceleration twice in time
+
+§ 1 5.4
+N O w | Weight | w⃗ = m g⃗ |
+d Gravitational force of the Earth on a body near its surface; proportional to mass, unlike mass itself it depends on location.
+g weight
+R[law] w <- n2, m, g : w⃗ = m g⃗ | Second law in free fall | In free fall the only force is the weight and the acceleration is g⃗.
+X free fall :: = ffall
+
+§ 1 5.5
+N M n3 | Newton's third law | F⃗_AB = −F⃗_BA | ax
+d Forces come in pairs: when A pushes on B, B pushes back on A with an equal and opposite force. The two act on different bodies.
+p equal magnitude, opposite direction; act on different bodies; internal forces of a system cancel in pairs
+g Newton’s third law of motion
+X thrust :: an example of a third-law force pair (rocket propulsion is the §9.7 node)
+
+§ 1 5.6
+N O Nf | Normal force | N⃗ |
+d Contact force perpendicular to a surface, as large as needed to stop the body from moving into it.
+g normal force
+R[law] Nf <- n2, w : N = mg (level);  N = mg cos θ (incline) | Equilibrium across the surface | No acceleration perpendicular to the surface fixes N.
+N O T | Tension | T |
+d Pulling force transmitted along a string or cable.
+g tension
+R[law] T <- n2, w : T = mg for a mass hanging at rest | Equilibrium of a hanging mass | The rope balances the weight.
+N M hooke | Hooke's law | F = −kx | ax
+d A spring pulls back with a force proportional to its stretch from the relaxed length.
+p linear restoring force; k > 0 (force constant); valid below the elastic limit
+g Hooke’s law
+R[law] F <- hooke : F = −kx | Spring force | A force whose value follows from the deformation of a spring; also how forces are measured.
+
+# ---------------------------------------------------------------- Chapter 6
+§ 1 6.2
+N M frict | Friction law | f ≤ μN |
+d Contact force parallel to a surface that opposes relative motion (kinetic) or its onset (static), proportional to the normal force.
+p empirical; usually μ_s > μ_k; nearly independent of contact area; nonconservative
+g friction
+R[law] frict <- Nf : f ∝ N | Proportional to the normal force | The coefficients μ_s, μ_k characterise the pair of surfaces.
+N O fs | Static friction | f_s ≤ μ_s N |
+d Friction between surfaces not sliding relative to each other; adjusts up to a maximum μ_s N.
+g static friction
+R[law] fs <- frict, Nf : f_s ≤ μ_s N | Up to a threshold | Takes whatever value equilibrium requires, up to μ_s N.
+N O fk | Kinetic friction | f_k = μ_k N |
+d Friction between sliding surfaces, opposite to the relative velocity.
+g kinetic friction
+R[law] fk <- frict, Nf : f_k = μ_k N | Sliding friction | Fixed by the normal force once sliding starts.
+
+§ 1 6.3
+N O Fc | Centripetal force | F_c = mv²/r |
+d Net force toward the centre that a circular motion requires; supplied by tension, friction, gravity or a normal force.
+g centripetal force
+R[law] Fc <- n2, ac, m : F_c = m v²/r = m r ω² | Second law for circular motion | Mass times centripetal acceleration.
+N M bank | Banked curve | tan θ = v²/(rg) |
+d A road tilted so the horizontal part of the normal force supplies the centripetal force at a design speed.
+p ideal banking needs no friction; θ independent of mass; one design speed per angle
+g banked curve; ideal banking
+R[thm] bank <- Fc, Nf, w : N sin θ = mv²/r,  N cos θ = mg | Normal force as centripetal force | Dividing the two components gives tan θ = v²/(rg).
+N M noninert | Noninertial frame | a⃗_frame ≠ 0 |
+d An accelerating or rotating frame; the laws of motion hold there only if inertial (fictitious) forces such as the centrifugal force are added.
+p inertial forces proportional to mass; no third-law partner; disappear in an inertial frame
+g noninertial frame of reference; inertial force
+R[thm] noninert <- inframe, galrel, n2 : m a⃗′ = F⃗_net − m a⃗_frame | Second law in an accelerating frame | The frame's acceleration appears as an extra force −m a⃗_frame.
+N O Fcor | Coriolis force | F⃗ = −2m ω⃗ × v⃗′ |
+d Inertial force on a body moving relative to a rotating frame, perpendicular to its velocity; deflects winds and projectiles on Earth.
+g Coriolis force
+R[thm] Fcor <- noninert, omega, vvec, cross : F⃗_Cor = −2m ω⃗ × v⃗′ | Rotating frame | Appears with the centrifugal force when Newton's law is written in a rotating frame.
+
+§ 1 6.4
+N O FD | Drag force | F_D = ½CρAv² |
+d Resistance of a fluid to a body moving through it; grows with the square of speed for fast motion, linearly for slow motion in viscous fluid.
+g drag force
+R[law] FD <- speed : F_D = ½ C ρ A v² (fast);  F_s = 6π r η v (Stokes, slow) | Empirical drag laws | C is the drag coefficient, ρ the fluid density, A the area facing the flow, η the viscosity.
+N O vT | Terminal velocity | v_T = √(2mg/(ρCA)) |
+d Constant speed reached when the drag force balances the weight.
+g terminal velocity
+R[thm] vT <- FD, w, n2 : F_D = mg ⇒ v_T = √(2mg/(ρCA)) | Zero acceleration | The second law with net force zero.
+
+# ---------------------------------------------------------------- Chapter 7
+§ 1 7.1
+N O W | Work | W = ∫F⃗·dr⃗ |
+d Energy transferred by a force acting along a displacement; only the component of force along the path does work. SI unit the joule.
+g work
+R[def] W <- F, dr, dot, integ : W_AB = ∫_A^B F⃗·dr⃗ | Line integral of force | Adds F⃗·dr⃗ along the path; gravity gives −mgΔy, a spring −½k(x_B² − x_A²).
+
+§ 1 7.2
+N O K | Kinetic energy | K = ½mv² |
+d Energy of motion of a particle; depends on the frame through the speed.
+g kinetic energy
+R[def] K <- m, speed : K = ½ m v² | Mass and speed | Scalar, never negative.
+
+§ 1 7.3
+N O Wnet | Net work | W_net |
+d Work done by the net force, equal to the sum of the works of all forces.
+g net work
+R[def] Wnet <- W, Fnet : W_net = ∫F⃗_net·dr⃗ = Σ W_i | Sum of works | Work is linear in the force.
+N M wet | Work–energy theorem | W_net = ΔK |
+d The net work done on a particle equals its change of kinetic energy.
+p scalar consequence of the second law; holds for any forces; the path enters only through W_net
+g work-energy theorem
+R[thm] wet <- n2, Wnet, K : ∫ m (dv⃗/dt)·v⃗ dt = ½mv_B² − ½mv_A² | Integrating the second law | Dot the second law with v⃗ dt and integrate.
+
+§ 1 7.4
+N O P | Power | P = dW/dt |
+d Rate at which work is done; P = F⃗·v⃗ for a force acting on a moving body. Average power is work over elapsed time.
+g power; average power
+R[def] P <- W, ddt : P = dW/dt | Rate of work | Average power W/Δt over a finite interval.
+R[thm] P <- F, vvec, dot : P = F⃗·v⃗ | Force times velocity | dW = F⃗·dr⃗ divided by dt.
+
+# ---------------------------------------------------------------- Chapter 8
+§ 1 8.1
+N O U | Potential energy | U(r⃗) |
+d Energy of a system stored in its configuration; only differences are physical, so the zero can be chosen freely.
+g potential energy; potential energy difference
+R[def] U <- W : ΔU_AB = U_B − U_A = −W_AB | Minus the work | Defined for forces whose work depends only on the end points.
+N O Ugrav | Gravitational potential energy (near Earth) | U = mgy |
+d Potential energy of the body–Earth system for a height y near the surface.
+g gravitational potential energy
+R[thm] Ugrav <- U, w : U(y) = mgy + const | Work of the weight | −W = mg(y_B − y_A).
+N O Uel | Elastic potential energy | U = ½kx² |
+d Potential energy stored in a stretched or compressed spring.
+g elastic potential energy
+R[thm] Uel <- U, hooke : U(x) = ½kx² + const | Work of the spring | −W = ½k(x_B² − x_A²).
+
+§ 1 8.2
+N M cons | Conservative force | ∮F⃗·dr⃗ = 0 |
+d A force whose work between two points is independent of the path; equivalently zero around every closed path, and derivable from a potential energy.
+p path independence ⇔ ∮ = 0 ⇔ F⃗ = −∇U; F⃗·dr⃗ is an exact differential (∂F_x/∂y = ∂F_y/∂x); gravity and springs conservative, friction not
+g conservative force; exact differential
+R[def] cons <- W : W_AB independent of path | Path independence | A property of the work integral of the force.
+R[thm] F <- U, cons : F_ℓ = −dU/dℓ;  F⃗ = −∇U | Force from potential energy | A conservative force is minus the gradient of its potential energy.
+N O Wnc | Work of nonconservative forces | W_nc |
+d Work by forces such as friction or air resistance, which depends on the path and changes the mechanical energy.
+g non-conservative force
+R[def] Wnc <- W, cons : W_nc = W_net − W_cons | Path-dependent part | The part of the work that has no potential energy.
+
+§ 1 8.3
+N O Emech | Mechanical energy | E = K + U |
+d Kinetic plus potential energy of a system.
+g mechanical energy
+R[def] Emech <- K, U : E = K + U | Sum | Depends on the chosen zero of U only through a constant.
+N M econs | Conservation of mechanical energy | ΔE = W_nc |
+d Mechanical energy changes only through the work of nonconservative forces; without them it is a conserved quantity.
+p scalar conservation law; follows from the work–energy theorem with W_cons = −ΔU; energy lost to friction becomes thermal energy
+g energy conservation
+X conserved quantity :: = econs
+R[thm] econs <- wet, U, Wnc, Emech : W_net = −ΔU + W_nc = ΔK ⇒ Δ(K + U) = W_nc | Split the work | Conservative work is moved into the potential energy.
+
+§ 1 8.4
+N M pediag | Potential-energy diagram | U(x) and E |
+d A plot of U(x) with the total energy as a horizontal line; motion is allowed only where E ≥ U, and reverses at turning points.
+p K = E − U(x) ≥ 0; turning points where U(x) = E; force is minus the slope
+g potential energy diagram; turning point
+R[thm] pediag <- econs, U : K = E − U(x) ≥ 0 | Energy conservation on a graph | Reads the allowed motion off U(x).
+N S eqpt | Equilibrium point | dU/dx = 0 |
+d A position where the force vanishes; stable at a minimum of U (small disturbances oscillate), unstable at a maximum.
+m point x₀ with U′(x₀) = 0; stable if U″(x₀) > 0
+g equilibrium point
+R[thm] eqpt <- pediag, F : F = −dU/dx = 0 at x₀ | Flat points of U | Curvature of U decides stability.
+
+§ 1 8.5
+X renewable; non-renewable :: energy resources; societal context without new physics
+
+# ---------------------------------------------------------------- Chapter 9
+§ 1 9.1
+N O p | Momentum | p⃗ = m v⃗ |
+d Mass times velocity; a vector.
+g momentum
+R[def] p <- m, vvec : p⃗ = m v⃗ | Mass times velocity | Same direction as the velocity.
+R[gen] n2 <- p, ddt : F⃗_net = dp⃗/dt | Momentum form of the second law | Reduces to m a⃗ for constant mass; Newton's own form.
+R[thm] K <- p, m : K = p²/2m | Kinetic energy from momentum | Eliminates v.
+
+§ 1 9.2
+N O J | Impulse | J⃗ = ∫F⃗ dt |
+d Time integral of a force; for a short collision, average force times duration.
+g impulse
+R[def] J <- F, integ : J⃗ = ∫_{t_i}^{t_f} F⃗(t) dt = F⃗_ave Δt | Force accumulated over time | The time analogue of work.
+N M imt | Impulse–momentum theorem | J⃗ = Δp⃗ |
+d The impulse of the net force equals the change of momentum.
+p vector; integral form of the second law; independent of the detailed force history
+g impulse-momentum theorem
+R[thm] imt <- n2, J, p : ∫F⃗_net dt = ∫(dp⃗/dt) dt = Δp⃗ | Integrate F = dp/dt | Same content as the second law, over an interval.
+
+§ 1 9.3
+N S sys | System of particles | {m_j, r⃗_j(t)} |
+d A chosen set of bodies; forces split into internal (between members) and external. A closed system has no net external force.
+m N labelled trajectories r⃗_j(t) ∈ ℝ³ with masses m_j
+g system; closed system
+R[def] sys <- rt, m, fbd : {(m_j, r⃗_j(t))}, j = 1…N | Collection of particles | The boundary drawn as in a free-body diagram, now around several bodies.
+N M pcons | Conservation of momentum | Σ p⃗_j = const |
+d The total momentum of a closed system does not change, whatever happens inside it.
+p vector law (one per component); requires zero net external force; holds for any internal forces
+g Law of Conservation of Momentum
+R[thm] pcons <- n2, n3, sys, p : dP⃗/dt = F⃗_ext + Σ internal = F⃗_ext = 0 | Internal forces cancel in pairs | The third law removes internal forces from the sum.
+
+§ 1 9.4
+N M coll | Collisions | P conserved; K? |
+d Collisions conserve momentum; they are classified by kinetic energy: elastic (kept), inelastic (lost), perfectly inelastic (bodies stick together), explosion (gained).
+p momentum conserved in all types; kinetic energy conserved only in elastic collisions; perfectly inelastic loses the most K compatible with P
+g elastic; inelastic; perfectly inelastic; explosion
+R[thm] coll <- pcons, K : P_before = P_after;  K_after vs K_before | Momentum plus energy bookkeeping | Momentum fixes the final motion only together with a statement about K.
+
+§ 1 9.6
+N O rcm | Center of mass | r⃗_CM = Σ m_j r⃗_j / M |
+d Mass-weighted average position of a system; for a continuous body r⃗_CM = (1/M)∫ r⃗ dm.
+g center of mass
+R[def] rcm <- sys, r, m : r⃗_CM = (1/M) Σ m_j r⃗_j | Mass-weighted position | Its derivatives give v⃗_CM and a⃗_CM.
+N M n2sys | Second law for a system | F⃗_ext = M a⃗_CM |
+d The centre of mass moves like a single particle of total mass M acted on by the external forces alone.
+p internal forces drop out (third law); P⃗ = M v⃗_CM; reduces many-body motion to one point plus internal motion
+X external force; internal force :: = n2sys
+R[thm] n2sys <- n2, n3, rcm, sys : Σ m_j a⃗_j = F⃗_ext ⇒ M a⃗_CM = F⃗_ext = dP⃗/dt | Summing the second law | Internal pairs cancel.
+N O lmd | Linear mass density | λ = dm/dx |
+d Mass per unit length of a rod or string; used to integrate over continuous bodies.
+g linear mass density
+R[def] lmd <- m, L : λ = dm/dx | Mass per length | Uniform rod: λ = M/L.
+R[thm] rcm <- lmd, integ : r⃗_CM = (1/M) ∫ r⃗ dm,  dm = λ dx | Continuous body | Sum becomes an integral.
+
+§ 1 9.7
+N M rocket | Rocket equation | Δv = u ln(m_i/m) |
+d A rocket gains speed by ejecting mass backward at exhaust speed u; the gain depends on the logarithm of the mass ratio.
+p momentum conservation for variable mass; logarithmic in mass ratio; independent of burn rate in free space
+g rocket equation
+R[thm] rocket <- pcons, sys : m dv = −u dm ⇒ Δv = u ln(m_i/m) | Momentum of rocket plus exhaust | Applied to the closed system over each instant.

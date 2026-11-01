@@ -1,0 +1,9 @@
+{
+ "latest": "v2",
+ "versions": [
+  {"id": "v2", "name": "Reader", "path": "v2/", "latest": true, "time_axis": "paragraph",
+   "data": "data/v2/university_physics_network_v2.json", "chapters": 44, "sections": 314, "paragraphs": 620, "words": 80195, "nodes": 445, "routes": 516},
+  {"id": "v1", "name": "Chapter explorer", "path": "v1/", "time_axis": "event",
+   "data": "data/v1/university_physics_network_v1.json", "chapters": 44, "events": 465, "nodes": 445, "routes": 516}
+ ]
+}

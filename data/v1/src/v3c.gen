@@ -1,0 +1,199 @@
+# University Physics Volume 3, chapters 9-11 (condensed matter, nuclei, particles and cosmology)
+
+§ 3 9.1
+N M bonds | Molecular bonds | ionic, covalent, van der Waals | q
+d Atoms bind by transferring an electron (ionic bond, energy set by ionization energy, electron affinity and Coulomb attraction), by sharing a pair of electrons in an antisymmetric spin state (covalent bond, exchange symmetry, hybridization), or by induced dipoles (van der Waals bond).
+p equilibrium separation where U(r) is minimum; dissociation energy = depth of the minimum; covalent bonding needs the exclusion principle; polyatomic molecules from hybrid orbitals
+g ionic bond; covalent bond; van der Waals bond; electron affinity; equilibrium separation distance; dissociation energy; exchange symmetry; polyatomic molecule; hybridization
+R[thm] bonds <- coul, econf, pauli : U = E_transfer + U_coul + U_ex | Energy of formation | Coulomb attraction balanced by exclusion-principle repulsion.
+
+§ 3 9.2
+N S molspec | Molecular energy levels | E_r = l(l+1)ħ²/2I,  E_v = (n + ½)ħω | q
+d A diatomic molecule rotates and vibrates with quantized energies; electric dipole transitions obey Δl = ±1 and Δn = ±1, giving band spectra.
+m rotational levels E_r = l(l+1)ħ²/(2I), I = μr₀²; vibrational levels (n + ½)ħω
+g rotational energy level; electric dipole transition; selection rule; vibrational energy level
+R[thm] molspec <- qho, Lq, I, bonds : rigid rotor plus harmonic bond | Rotor and oscillator | Quantized rotation and vibration of the bonded pair.
+R[thm] CV <- molspec, kB : modes with level spacing ≫ k_BT do not absorb heat | Frozen degrees of freedom explained | Why hydrogen's C_V falls at low temperature.
+
+§ 3 9.3
+N S lattice | Crystal lattice | simple cubic, BCC, FCC | q
+d Atoms or ions in a solid arranged in a repeating lattice (simple cubic, body-centered cubic, face-centered cubic); the Madelung constant sums the Coulomb energy of an ionic crystal, and a repulsion constant sets the short-range repulsion.
+m periodic arrangement (Bravais lattice with a basis) with translational symmetry
+g lattice; face-centered cubic (FCC); simple cubic; body-centered cubic (BCC); repulsion constant; Madelung constant
+R[thm] lattice <- bonds, bragg : U_diss = α ke²/r₀ (1 − 1/n) | Bonding in a crystal | Structure measured by X-ray diffraction.
+
+§ 3 9.4
+N S fermigas | Free electron gas | E_F = (h²/8m)(3N/πV)^{2/3} | q
+d Conduction electrons as particles in a three-dimensional box, filling the lowest states two per level (exclusion principle) up to the Fermi energy; occupation at temperature T follows the Fermi factor.
+m filled set of box states up to E_F; density of states g(E) ∝ E^{1/2}; Fermi temperature T_F = E_F/k_B
+g free electron model; Fermi energy; electron number density; density of states; Fermi factor; Fermi temperature
+R[thm] fermigas <- pib, pauli, cond : E = (π²ħ²/2mL²)(n₁² + n₂² + n₃²), two electrons per state | Box states filled | The classical free-electron gas made quantum.
+
+§ 3 9.5
+N S bands | Energy bands | bands and gaps | q
+d In a crystal the atomic levels broaden into energy bands separated by energy gaps; a filled valence band with a large gap gives an insulator, a small gap a semiconductor, a partly filled band a conductor.
+m allowed energy intervals (valence band, conduction band) separated by forbidden gaps
+g energy band; energy gap; valence band; conduction band; semiconductor
+R[thm] bands <- fermigas, lattice, bonds : N atoms ⇒ each level splits into N closely spaced levels | Atomic levels broadened | Periodic potential opens gaps.
+R[thm] cond <- bands : partly filled band ⇒ free carriers | Conductors explained | Electrons can move into empty states at almost no energy cost.
+R[thm] insul <- bands : full band and wide gap ⇒ no free carriers | Insulators explained | No empty states nearby.
+
+§ 3 9.6
+N S doping | Doped semiconductor | n-type, p-type | q
+d Impurity atoms add donor levels (n-type, extra electrons) or acceptor levels (p-type, holes) in the gap; the majority carrier sets the type, and the Hall effect shows its sign.
+m band structure with impurity bands near the conduction band (donors) or the valence band (acceptors); carrier densities of electrons and holes
+g hole; impurity atom; doping; donor impurity; n-type semiconductor; impurity band; acceptor impurity; p-type semiconductor; majority carrier; minority carrier
+R[thm] doping <- bands, econf : group-V atoms donate, group-III atoms accept an electron | Impurity levels | Valence counting.
+R[meas] doping <- VH : sign of the Hall voltage gives the carrier sign | Hall effect | Holes act as positive carriers.
+X drift velocity :: = vd
+
+§ 3 9.7
+N S pn | p–n junction | I = I₀(e^{eV/k_BT} − 1) | q
+d Joining p- and n-type material creates a depletion layer with a built-in field; current flows easily in forward bias and hardly at all in reverse bias, until breakdown.
+m depletion layer with built-in potential; current–voltage relation I = I₀(e^{eV_b/k_BT} − 1)
+g p-n junction; depletion layer; reverse bias configuration; forward bias configuration; breakdown voltage
+R[thm] pn <- doping, kB, dV : diffusion and drift across the depletion layer | Diode equation | Boltzmann factor for carriers crossing the barrier.
+N M transistor | Junction transistor | I_C = βI_B | q
+d Two junctions back to back: a small base current controls a large collector current, so the device amplifies.
+p current gain β; amplifier and switch; built from two p–n junctions
+g junction transistor; base current; collector current; amplifier
+R[thm] transistor <- pn : thin base between two junctions | Two junctions | Carriers injected into the base reach the collector.
+
+§ 3 9.8
+N O Bc | Critical magnetic field | B_c(T) = B_c(0)[1 − (T/T_c)²] | q
+d Field above which superconductivity is destroyed; type I superconductors switch abruptly, type II pass through a mixed state.
+g critical temperature; critical magnetic field; type I superconductor; type II superconductor
+R[meas] Bc <- supercond, Bval, temp : B_c(T) = B_c(0)[1 − (T/T_c)²] | Measured phase boundary | Zero at T_c.
+
+N M bcs | BCS theory | Cooper pairs condense | q
+d Lattice vibrations bind electrons into Cooper pairs, which condense into one quantum state that carries current without resistance.
+p pairing through the lattice; energy gap; macroscopic quantum state; explains T_c and zero resistance
+g BCS theory; Cooper pair
+R[thm] bcs <- fermigas, lattice : electron–lattice attraction binds pairs near E_F | Pairing | An effective attraction through the lattice.
+R[thm] supercond <- bcs : condensed pairs scatter without energy loss | Superconductivity explained | The phenomenon of Volume 2, Chapter 9 explained.
+# ---------------------------------------------------------------- Chapter 10
+§ 3 10.1
+N S nuclide | Nuclide | ᴬ_Z X | q
+d A nucleus specified by its atomic number Z (protons) and neutron number N; mass number A = Z + N counts nucleons. Isotopes share Z. Radius r = r₀A^{1/3}; masses in atomic mass units.
+m pair (Z, N) of nucleon numbers; chart of the nuclides plots N against Z
+g atomic nucleus; nucleons; atomic number; neutron number; mass number; nuclide; chart of the nuclides; isotopes; atomic mass; atomic mass unit; radius of a nucleus
+R[def] nuclide <- nucatom, atom : nucleus of Z protons and N neutrons | Composition of the nucleus | Neutrons add mass without charge.
+N M strong | Strong nuclear force | short-range attraction | q ax
+d Attraction between nucleons, much stronger than the Coulomb repulsion at about 1 fm but negligible beyond a few fm.
+p short range (~fm); charge independent; saturates (each nucleon binds only neighbours)
+g strong nuclear force
+R[thm] nuclide <- strong, coul : stable nuclei balance strong attraction and Coulomb repulsion; N > Z for heavy nuclei | Stability | Extra neutrons add attraction without repulsion.
+
+§ 3 10.2
+N O BE | Binding energy | E_b = Δm c² | q
+d Energy needed to separate a nucleus into its nucleons, equal to the mass defect times c²; binding energy per nucleon peaks near iron.
+g mass defect; binding energy (BE); binding energy per nucleon (BEN)
+R[thm] BE <- nuclide, Erel : Δm = Zm_p + Nm_n − m_nuc;  E_b = Δm c² | Mass defect | Rest energy of the parts minus that of the whole.
+
+§ 3 10.3
+N M decaylaw | Radioactive decay law | N = N₀ e^{−λt} | q
+d Unstable nuclei decay at random with a constant probability λ per unit time, so their number and activity fall exponentially: half-life T½ = 0.693/λ, mean lifetime 1/λ.
+p first-order: dN/dt = −λN; memoryless; activity A = λN in becquerel (1 Ci = 3.7 × 10¹⁰ Bq)
+g radioactivity; decay; decay constant; radioactive decay law; half-life; lifetime; activity; becquerel (Bq); curie (Ci)
+R[law] decaylaw <- nuclide, born : −dN/dt = λN | Constant decay probability | Each nucleus decays independently with probability λ dt.
+N M dating | Radioactive dating | t = ln(N₀/N)/λ | q
+d Ages from the fraction of a radioactive isotope left, as in carbon-14 dating of once-living material.
+p needs known initial ratio; ¹⁴C half-life 5730 y; range limited to a few half-lives
+g radioactive dating; carbon-14 dating
+R[thm] dating <- decaylaw : t = (1/λ) ln(N₀/N) | Invert the decay law | Measured activity gives N.
+
+§ 3 10.4
+N S decay | Nuclear decays | α, β⁻, β⁺, γ | q
+d A parent nucleus becomes a daughter: α decay emits a helium nucleus, β⁻ decay an electron and an antineutrino, β⁺ decay a positron (antielectron) and a neutrino, γ decay a photon from an excited nucleus. Heavy nuclei decay in series; transuranic elements are made artificially.
+m transitions (Z, N) → (Z − 2, N − 2) + α; (Z + 1, N − 1) + e⁻ + ν̄; (Z − 1, N + 1) + e⁺ + ν; excited → ground + γ
+g alpha decay; alpha (α) rays; beta decay; beta (β) rays; gamma decay; gamma (γ) rays; parent nucleus; daughter nucleus; positron; antielectrons; neutrino; antineutrino; decay series; transuranic element
+R[thm] decay <- nuclide, BE, qcons : charge and nucleon number conserved; released energy from mass difference | Decay equations | Bookkeeping of Z, A and energy.
+R[thm] decay <- Ttun : α particle tunnels through the Coulomb barrier | Alpha decay as tunneling | Explains the huge range of α half-lives.
+
+§ 3 10.5
+N S fission | Fission | heavy nucleus → two fragments + neutrons | q
+d A heavy nucleus such as ²³⁵U splits after absorbing a neutron, releasing about 200 MeV and further neutrons; a chain reaction is critical when each fission causes one more on average (critical mass).
+m reaction n + ²³⁵U → fragments + 2–3 n + energy; chain reaction with multiplication factor k (k = 1 critical)
+g fission; criticality; critical mass
+N M liqdrop | Liquid drop model | nucleus as a charged drop | q
+d Treats the nucleus as a drop of incompressible nuclear fluid held by surface tension (strong force) and pushed apart by Coulomb repulsion; deformation splits a heavy drop.
+p binding from volume, surface and Coulomb terms; explains fission of heavy nuclei
+g liquid drop model
+R[analog] liqdrop <- strong, coul, fluid : nuclear density constant, like a liquid | Drop analogy | Short-range saturating force behaves like surface tension.
+R[thm] fission <- liqdrop, BE : heavy nuclei have lower binding energy per nucleon than the fragments | Energy release | Moving toward the peak of the BEN curve.
+X breeder reactor :: a reactor design (application)
+
+§ 3 10.6
+N S fusion | Fusion | light nuclei → heavier nucleus | q
+d Light nuclei combine and release energy; in the Sun four protons become helium by the proton–proton chain. Stars build heavier elements (nucleosynthesis).
+m reactions such as ¹H + ¹H → ²H + e⁺ + ν; proton–proton chain 4¹H → ⁴He + 2e⁺ + 2ν + energy
+g nuclear fusion; proton-proton chain; nucleosynthesis
+R[thm] fusion <- BE, Ttun, mbd : thermal protons tunnel through the Coulomb barrier | Fusion in stars | Only the fastest protons, helped by tunneling, fuse.
+X nuclear fusion reactor :: a reactor design (application)
+
+§ 3 10.7
+N O dose | Radiation dose | rad, rem, Sv |
+d Energy absorbed per kilogram of tissue (rad), weighted by the relative biological effectiveness of the radiation to give the equivalent dose (rem, sievert).
+g radiation dose unit (rad); relative biological effectiveness (RBE); roentgen equivalent man (rem); sievert (Sv)
+R[def] dose <- decay, m : dose = absorbed energy / mass;  equivalent dose = RBE × dose | Energy per mass | The biological weight depends on the kind of radiation.
+X high dose; low dose; moderate dose; positron emission tomography (PET); radioactive tags; radiopharmaceutical; single-photon-emission computed tomography (SPECT) :: medical applications and dose ranges
+
+# ---------------------------------------------------------------- Chapter 11
+§ 3 11.1
+N M forces4 | Fundamental forces | strong, electromagnetic, weak, gravitational | q
+d Four fundamental forces, each carried by bosons: gluons (strong), photons (electromagnetic), W and Z bosons (weak), gravitons (gravity, unobserved). The electromagnetic and weak forces unify into the electroweak force; grand unified theories and a theory of everything are sought.
+p very different strengths and ranges; electroweak unification at high energy; gravity not yet unified
+g fundamental force; weak nuclear force; gluon; W and Z boson; electroweak force; grand unified theory; theory of everything
+R[gen] forces4 <- strong, coul, ngrav, decay : nuclear, electric, gravitational forces and β decay | Four interactions | Beta decay needs a fourth, weak, force.
+N S particles | Elementary particles | leptons, quarks, bosons | q
+d Matter is made of fermions (half-integer spin): leptons such as the electron and neutrino, and quarks, which form hadrons (baryons from three quarks, mesons from a quark and an antiquark). Every particle has an antiparticle, such as the positron. Bosons carry the forces.
+m classification by spin (fermion/boson), charges and quantum numbers; antiparticles with opposite charges; exchange symmetry antisymmetric for fermions
+g fermion; boson; lepton; hadron; baryons; mesons; quark; antiparticle; positron; exchange symmetry
+R[gen] particles <- atom, decay, spin, pauli : electrons, nucleons, neutrinos and their antiparticles classified | From atoms to particles | Spin and the exclusion principle sort fermions from bosons.
+X strong nuclear force :: = strong
+
+§ 3 11.2
+N M pcons2 | Particle conservation laws | baryon number, lepton number, strangeness | q
+d Reactions conserve charge, baryon number and lepton number; strangeness is conserved by the strong and electromagnetic forces but not the weak force.
+p additive quantum numbers; absolute (baryon, lepton number) or approximate (strangeness); forbid reactions such as p → e⁺ + γ
+g baryon number; lepton number; strangeness
+R[gen] pcons2 <- qcons, particles : additive quantum numbers conserved like charge | More conserved charges | Read off from which reactions never occur.
+
+§ 3 11.3
+N M quarkmodel | Quark model | baryon = qqq,  meson = qq̄ | q
+d Hadrons are built from quarks with fractional charges; a new quantum number, color, lets three identical quarks share a state, and only colourless combinations exist.
+p fractional charges ±⅓e, ±⅔e; three colors; quarks confined in hadrons
+g color
+R[thm] quarkmodel <- particles, pauli, pcons2 : quantum numbers of hadrons from constituent quarks | Constituents | Color needed so that the exclusion principle holds.
+
+§ 3 11.4
+X particle accelerator; particle detector; synchrotron; synchrotron radiation :: instruments of particle physics
+
+§ 3 11.5
+N M sm | Standard Model | QED + electroweak + QCD | q
+d The theory of the strong, weak and electromagnetic forces: forces arise from the exchange of virtual particles, pictured in Feynman diagrams; quantum electrodynamics (QED) and quantum chromodynamics (QCD) are its parts.
+p gauge theory; virtual bosons exchanged within ΔE Δt ≥ ħ/2; range ~ ħ/(mc) for a carrier of mass m; gravity not included
+g Standard Model; quantum electrodynamics (QED); quantum chromodynamics (QCD); Feynman diagram; virtual particle
+R[thm] sm <- forces4, quarkmodel, uncertE, photon : force range ≈ ħc/(mc²) of the exchanged boson | Exchange of virtual bosons | Energy–time uncertainty allows a short-lived carrier.
+
+§ 3 11.6
+N O hubble | Hubble's law | v = H₀ d | rel
+d Distant galaxies recede with speeds proportional to their distance, measured from the redshift of their light; H₀ is Hubble's constant.
+g Hubble’s law; Hubble’s constant; redshift
+R[meas] hubble <- relDop, L : speed from redshift, distance from standard candles | Galaxy redshifts (1929) | Linear relation between v and d.
+N M bigbang | Big Bang model | expanding universe | rel
+d The universe expanded from an extremely hot, dense early state; cosmology studies this history.
+p expansion of space, not motion through it; age ≈ 1/H₀; hot early universe cooled as it expanded
+g Big Bang; cosmology
+R[thm] bigbang <- hubble, GR : run the expansion backward | Expanding space-time | General relativity describes the expansion.
+
+§ 3 11.7
+N O cmb | Cosmic microwave background | blackbody at 2.7 K | rel
+d Radiation left from the hot early universe, now a nearly uniform blackbody spectrum at 2.7 K in the microwave range.
+g cosmic microwave background radiation (CMBR)
+R[thm] cmb <- bigbang, bbrad : radiation cooled by expansion, still thermal | Relic radiation | Its blackbody spectrum is evidence for a hot early universe.
+N O dark | Dark matter and dark energy | Ω_dm, Ω_Λ | rel
+d Galaxies rotate too fast for their visible mass (dark matter), and the expansion is accelerating (dark energy); together they make up most of the universe's energy.
+g dark matter; dark energy
+R[meas] dark <- vorb, hubble, bigbang : rotation speeds above √(GM_visible/r); accelerating expansion | Inferred from motion | Gravity requires more mass than is seen.
+X nucleosynthesis :: = fusion
